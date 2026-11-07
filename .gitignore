@@ -1,0 +1,9 @@
+data/
+data_full/
+data_sample/
+data_nodes_only/
+sample/
+*.jsonl.gz
+*.dump
+__pycache__/
+*.pyc
