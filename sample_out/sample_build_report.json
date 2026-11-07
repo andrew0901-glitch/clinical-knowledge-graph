@@ -1,0 +1,23 @@
+{
+  "edges_kept": 255798,
+  "edges_by_type": {
+    "ANCESTOR_OF": 20000,
+    "AUTHORED_BY": 20000,
+    "CITES": 20000,
+    "CONDUCTED_AT": 20000,
+    "HAS_LANGUAGE_RESOURCE": 4885,
+    "HAS_MESH": 20000,
+    "HAS_RIGHTS_EVIDENCE": 20000,
+    "HAS_USE_GRANT": 20000,
+    "IN_TOPIC_GROUP": 3651,
+    "LINKS_TO_RESOURCE": 20000,
+    "PARENT_OF": 20000,
+    "RELATED_TOPIC": 6246,
+    "RESOURCE_TRANSLATION_OF": 20000,
+    "SPONSORED_BY": 20000,
+    "TRANSLATION_OF": 1016,
+    "VALIDATED_BY": 20000
+  },
+  "nodes_kept": 174220,
+  "nodes_missing": 0
+}

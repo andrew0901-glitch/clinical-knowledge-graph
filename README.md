@@ -58,17 +58,23 @@ cypher-shell -a bolt://localhost:7687 -u neo4j -p clinicalevidence \
   -f ../cypher/example_queries.cypher
 ```
 
-For the full graph (all 8 node shards + 8 edge shards, ~5.2 GB compressed,
-~10.1M nodes / ~109.7M edges):
+For the full graph (all 8 node shards + 8 edge shards, ~4.9 GiB compressed,
+10,145,579 nodes / 109,661,337 edges — exact, from `manifest.json`):
 
 ```bash
 python3 download_shards.py --out ../data --all
 python3 load_kgx_to_neo4j.py --data-dir ../data --uri bolt://localhost:7687 \
-  --user neo4j --password clinicalevidence --all
+  --user neo4j --password clinicalevidence
 ```
+(`load_kgx_to_neo4j.py` auto-detects every `nodes__*.jsonl.gz` /
+`edges__*.jsonl.gz` shard present in `--data-dir`; there is no separate
+`--all` flag on the loader itself.)
 
 See `docs/VALIDATION_RESULTS.md` for measured load times, peak RAM and disk
-use on the real full-scale load.
+use on the real full-scale load. **Reserve well more than the ~81 GB the
+loaded graph actually needs** — a full real run of this load filled a
+disk mid-load (see "Full edge load" in that doc for the real incident and
+recovery); plan headroom accordingly.
 
 ## Repo layout
 
