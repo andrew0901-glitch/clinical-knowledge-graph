@@ -1,0 +1,17 @@
+# Neo4j 5 Community for the Lunas Clinical Evidence KG.
+# 1) python scripts/kgx_to_neo4j.py --input ckg --out neo4j_import
+# 2) USE_DOCKER=1 bash scripts/load_neo4j.sh neo4j_import
+# 3) docker compose up -d   ->  http://localhost:7474  (user neo4j / password below)
+services:
+  neo4j:
+    image: neo4j:5-community
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - ./neo4j_data:/data
+    environment:
+      NEO4J_AUTH: neo4j/change-this-password
+      # Size these to your machine. The full graph (~110M relationships) wants roughly 32 GB RAM.
+      NEO4J_server_memory_heap_max__size: 8G
+      NEO4J_server_memory_pagecache_size: 16G

@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use the Lunas Clinical Evidence Knowledge Graph, please cite the dataset."
+title: "Lunas Clinical Evidence Knowledge Graph"
+version: "0.1.0"
+type: dataset
+doi: 10.5281/zenodo.24011485
+date-released: 2026-11-06
+license: CC0-1.0
+url: "https://huggingface.co/datasets/lunas-health/clinical-evidence-kg"
+authors:
+  - family-names: Deveza
+    given-names: Lorenzo
+    orcid: "https://orcid.org/0000-0001-7137-573X"
+    affiliation: "LunasAI LLC"
