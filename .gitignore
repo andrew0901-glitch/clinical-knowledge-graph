@@ -1,5 +1,6 @@
 ckg/
 neo4j_import/
+neo4j_import_sample/
 neo4j_data/
 *.parquet
 __pycache__/

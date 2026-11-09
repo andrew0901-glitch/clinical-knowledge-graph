@@ -9,14 +9,24 @@
 Relationship types: use `original_predicate` (e.g. lunasai:vocab.CITES). Many edges carry the generic
 Biolink predicate biolink:related_to, so `predicate` alone does not distinguish them.
 
-Directions verified against the real, fully-loaded v0.1.0 graph (see docs/VALIDATION_RESULTS.md):
-  * VALIDATED_BY is subject=Article (the results publication), object=ClinicalTrial.
-  * PARENT_OF is subject=the narrower/child MeSHConcept, object=the broader/parent MeSHConcept
-    (e.g. Zona Fasciculata -[PARENT_OF]-> Adrenal Cortex; verified against 15 well-known pairs
+Directions verified against the real, fully-loaded graph (see docs/VALIDATION_RESULTS.md):
+  * VALIDATED_BY is subject=Article (the results publication), object=ClinicalTrial. v0.2.0: this
+    type now holds ONLY the ClinicalTrials.gov RESULT role -- v0.1.0 mixed background/derived
+    references into the same type. Those are now their own types, same direction:
+    CITES_BACKGROUND (BACKGROUND role) and HAS_DERIVED_PUBLICATION (DERIVED role). The old
+    `ctgov_publications.jsonl` sidecar from v0.1.0 no longer exists -- its content is these three
+    native edge types now.
+  * HAS_BROADER is subject=the narrower/child MeSHConcept, object=the broader/parent MeSHConcept
+    (e.g. Zona Fasciculata -[HAS_BROADER]-> Adrenal Cortex; verified against 15 well-known pairs
     and the edges' own parent_tree_numbers/child_tree_numbers), so going subject->object walks
     UP the hierarchy toward broader concepts, and object->subject (i.e. matching on `object`)
-    walks DOWN toward children -- PubMed's MeSH "explode" behavior.
+    walks DOWN toward children -- PubMed's MeSH "explode" behavior. v0.2.0 renamed this from
+    v0.1.0's `PARENT_OF` (export-side name only, to match the real direction; same direction,
+    clearer name). `ANCESTOR_OF` is likewise renamed `HAS_BROADER_ANCESTOR`.
   * AUTHORED_BY is subject=Article, object=Author.
+  * New in v0.2.0: HAS_PMC_RECORD (subject=Article, object=PMCRecord) and PUBLISHED_IN
+    (subject=Article, object=Journal). `Journal` is a first-class node type now.
+  * Removed in v0.2.0: HAS_RIGHTS_EVIDENCE and HAS_USE_GRANT no longer exist.
 """
 import argparse, glob, os, sys
 
@@ -109,7 +119,8 @@ def main():
                 WHERE e.rel = 'HAS_MESH' AND coalesce(e.is_major_topic, false)
                 ORDER BY n.cited_by_count DESC NULLS LAST LIMIT 15""").show(max_width=200)
 
-    print("\n4. Clinical trials linked to a results publication (VALIDATED_BY is subject=Article, object=ClinicalTrial)")
+    print("\n4. Clinical trials linked to a results publication (VALIDATED_BY is subject=Article, "
+          "object=ClinicalTrial; v0.2.0: RESULT role only, see CITES_BACKGROUND/HAS_DERIVED_PUBLICATION for the others)")
     con.sql("""SELECT e.object AS trial, t.name AS trial_title, n.pmid, n.name AS article_title
                FROM edges e LEFT JOIN nodes t ON t.id = e.object LEFT JOIN nodes n ON n.id = e.subject
                WHERE e.rel = 'VALIDATED_BY' LIMIT 10""").show(max_width=200)
@@ -140,7 +151,7 @@ def main():
                 LIMIT 50""").show(max_width=200)
 
     print(f"\n7. MedlinePlus topic '{a.medlineplus_topic}' -> MeSH descriptor (direct HAS_MESH) -> "
-          f"one level DOWN via PARENT_OF to narrower/child descriptors (PubMed MeSH 'explode') -> "
+          f"one level DOWN via HAS_BROADER to narrower/child descriptors (PubMed MeSH 'explode') -> "
           f"articles ranked by MAJOR-TOPIC matches, direct-term matches outranking "
           f"hierarchy-expansion-only matches, check tags excluded")
     check_tags_sql = sql_list(CHECK_TAGS)
@@ -153,12 +164,13 @@ def main():
                     SELECT DISTINCT d.mesh_id FROM direct d JOIN nodes m ON m.id = d.mesh_id
                     WHERE m.name NOT IN {check_tags_sql}
                 ),
-                -- PARENT_OF subject=child, object=parent (verified against real data), so a
-                -- descriptor's CHILDREN are the edges whose OBJECT is that descriptor.
+                -- HAS_BROADER subject=child, object=parent (verified against real data; renamed
+                -- from v0.1.0's PARENT_OF, same direction), so a descriptor's CHILDREN are the
+                -- edges whose OBJECT is that descriptor.
                 child_f AS (
                     SELECT DISTINCT e.subject AS mesh_id
                     FROM edges e JOIN direct_f d ON d.mesh_id = e.object JOIN nodes m ON m.id = e.subject
-                    WHERE e.rel = 'PARENT_OF' AND m.name NOT IN {check_tags_sql}
+                    WHERE e.rel = 'HAS_BROADER' AND m.name NOT IN {check_tags_sql}
                       AND e.subject NOT IN (SELECT mesh_id FROM direct_f)
                 ),
                 matches AS (

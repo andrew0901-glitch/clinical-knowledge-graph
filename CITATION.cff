@@ -1,3 +1,8 @@
+# This file describes the latest PUBLISHED release, currently v0.1.0. v0.2.0 is validated but not
+# yet published to Zenodo/Hugging Face as of this writing, so its version DOI is not yet known --
+# deliberately not filled in here to avoid a fabricated DOI in a machine-parsed citation file.
+# TODO v0.2.0 DOI: once the v0.2.0 Zenodo deposit is published, bump version/date-released/doi
+# below to the v0.2.0 values (same concept DOI 10.5281/zenodo.24011485, new version-specific DOI).
 cff-version: 1.2.0
 message: "If you use the Lunas Clinical Evidence Knowledge Graph, please cite the dataset."
 title: "Lunas Clinical Evidence Knowledge Graph"

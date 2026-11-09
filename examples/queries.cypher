@@ -1,18 +1,40 @@
 // Example Cypher for the Lunas Clinical Evidence KG after loading with scripts/load_neo4j.sh.
 // Relationship types are the native Lunas types (from original_predicate): HAS_MESH, CITES,
-// AUTHORED_BY, VALIDATED_BY, PARENT_OF, ANCESTOR_OF, STUDIES_CONDITION, TESTS_INTERVENTION, ...
+// AUTHORED_BY, VALIDATED_BY, CITES_BACKGROUND, HAS_DERIVED_PUBLICATION, HAS_BROADER,
+// HAS_BROADER_ANCESTOR, HAS_PMC_RECORD, PUBLISHED_IN, STUDIES_CONDITION, TESTS_INTERVENTION, ...
 // Run `CALL db.relationshipTypes()` and `CALL db.labels()` to see exactly what was loaded.
 //
-// IMPORTANT, verified against the real, fully-loaded v0.1.0 graph (not assumed from the schema
+// IMPORTANT, verified against the real, fully-loaded v0.2.0 graph (not assumed from the schema
 // docs -- two of these were backwards in an earlier draft of this file):
 //   * VALIDATED_BY is (:Article)-[:VALIDATED_BY]->(:ClinicalTrial) -- the RESULTS ARTICLE is the
 //     subject, the TRIAL is the object. To go from a trial to its results publication you must
 //     traverse the relationship BACKWARDS: (trial)<-[:VALIDATED_BY]-(article).
-//   * PARENT_OF is (narrower/child :MeSHConcept)-[:PARENT_OF]->(broader/parent :MeSHConcept) --
-//     e.g. (Zona Fasciculata)-[:PARENT_OF]->(Adrenal Cortex). So `(m)-[:PARENT_OF]->(x)` gives
+//     v0.2.0: this type now holds ONLY the ClinicalTrials.gov RESULT role (156,197 edges) -- in
+//     v0.1.0 a single VALIDATED_BY mixed results together with background/derived references.
+//     Those are now their own types, same direction, same backwards-traversal rule:
+//       CITES_BACKGROUND      (:Article)-[:CITES_BACKGROUND]->(:ClinicalTrial)      -- BACKGROUND role
+//       HAS_DERIVED_PUBLICATION (:Article)-[:HAS_DERIVED_PUBLICATION]->(:ClinicalTrial) -- DERIVED role
+//     The old standalone `ctgov_publications.jsonl` sidecar file from v0.1.0 no longer exists --
+//     its content is these three native edge types inside the main graph now.
+//   * HAS_BROADER is (narrower/child :MeSHConcept)-[:HAS_BROADER]->(broader/parent :MeSHConcept) --
+//     e.g. (Zona Fasciculata)-[:HAS_BROADER]->(Adrenal Cortex). So `(m)-[:HAS_BROADER]->(x)` gives
 //     x = m's PARENT (one level UP the hierarchy, toward broader concepts), and
-//     `(x)-[:PARENT_OF]->(m)` gives x = one of m's CHILDREN (one level down).
+//     `(x)-[:HAS_BROADER]->(m)` gives x = one of m's CHILDREN (one level down).
+//     v0.2.0: this is a RENAME of v0.1.0's `PARENT_OF` (export-side name only, to match its real
+//     direction -- the underlying Neo4j relationship type is still physically PARENT_OF/
+//     ANCESTOR_OF in production; only the exported KGX type name changed). Direction is IDENTICAL
+//     to v0.1.0's PARENT_OF -- every query below that used PARENT_OF just has the type renamed,
+//     nothing about its direction logic changed. `ANCESTOR_OF` is likewise renamed to
+//     `HAS_BROADER_ANCESTOR` (the transitive closure of HAS_BROADER; not used by name below but
+//     follows the same direction convention).
 //   * AUTHORED_BY is (:Article)-[:AUTHORED_BY]->(:Author) -- already correct in the original draft.
+//   * New in v0.2.0: HAS_PMC_RECORD is (:Article)-[:HAS_PMC_RECORD]->(:PMCRecord), and
+//     PUBLISHED_IN is (:Article)-[:PUBLISHED_IN]->(:Journal). `Journal` is a first-class node type
+//     now (v0.1.0 had no separate Journal nodes); `Article.journal` (the plain MEDLINE
+//     abbreviation string) still exists unchanged alongside it.
+//   * Removed in v0.2.0: `HAS_RIGHTS_EVIDENCE` and `HAS_USE_GRANT` no longer exist at all (the
+//     whole rights-bookkeeping layer was dropped as an export layer). There is nothing to
+//     `--exclude-type` for rights edges any more in the v0.2.0 release.
 
 // Speed up lookups (run once).
 CREATE INDEX article_id IF NOT EXISTS FOR (n:Article) ON (n.id);
@@ -33,8 +55,8 @@ RETURN a.pmid, a.name AS title, a.journal, a.year, a.cited_by_count
 ORDER BY a.cited_by_count DESC LIMIT 25;
 
 // 3. Same, expanded one level down the MeSH hierarchy (descriptor's real children --
-//    PARENT_OF points from child to parent, so children are found by reversing the arrow)
-MATCH (child:MeSHConcept)-[:PARENT_OF]->(m:MeSHConcept {name: 'Asthma'})
+//    HAS_BROADER points from child to parent, so children are found by reversing the arrow)
+MATCH (child:MeSHConcept)-[:HAS_BROADER]->(m:MeSHConcept {name: 'Asthma'})
 MATCH (a:Article)-[r:HAS_MESH]->(t:MeSHConcept) WHERE (t = m OR t = child) AND r.is_major_topic = true
 WITH a, count(DISTINCT t) AS matched, max(CASE WHEN t = m THEN 1 ELSE 0 END) AS direct
 RETURN a.pmid, a.name, matched, direct, a.cited_by_count
@@ -65,6 +87,9 @@ RETURN au.name, m.name AS topic, count(DISTINCT a) AS articles ORDER BY articles
 //     systematic review. "Guideline"/"Practice Guideline"/"Systematic Review" are the exact
 //     pub_types strings used in this release (verified against the real Article.pub_types data;
 //     "Review" and "Scoping Review" also occur but are not guideline/systematic-review types).
+//     v0.2.0 note: VALIDATED_BY now means ONLY the RESULT role (see the note at the top of this
+//     file) -- this query is now MORE precise than it was against v0.1.0, which mixed background
+//     and derived references into the same type.
 MATCH (t:ClinicalTrial {nct_id: 'NCT00825071'})<-[:VALIDATED_BY]-(resultsArticle:Article)
 MATCH (citingArticle:Article)-[:CITES]->(resultsArticle)
 WHERE any(pt IN citingArticle.pub_types WHERE pt IN ['Guideline', 'Practice Guideline', 'Systematic Review'])
@@ -75,19 +100,21 @@ ORDER BY citingArticle.pmid
 LIMIT 50;
 
 // 6b. MedlinePlus topic -> MeSH descriptor (direct HAS_MESH link; MedlinePlus topics carry
-//     HAS_MESH edges to MeSHConcept the same way articles do) -> one level DOWN via PARENT_OF
+//     HAS_MESH edges to MeSHConcept the same way articles do) -> one level DOWN via HAS_BROADER
 //     to narrower/child descriptors (PubMed's MeSH "explode" behavior: a topic search
 //     automatically pulls in narrower terms, not broader ones) -> articles ranked by number of
 //     matching MAJOR-TOPIC MeSH descriptors, two-tier: a direct-term match always outranks a
 //     hierarchy-expansion-only match, regardless of raw count (ORDER BY direct count first,
 //     then hierarchy count).
 //       IMPORTANT, verified against the real loaded data with 15 well-known MeSH pairs (e.g.
-//       "Cushing Syndrome" -[PARENT_OF]-> "Adrenocortical Hyperfunction", "Adrenal Cortex
-//       Diseases" -[PARENT_OF]-> "Adrenal Gland Diseases"), cross-checked against the edges'
-//       own parent_tree_numbers/child_tree_numbers properties: PARENT_OF's SUBJECT is always
-//       the narrower/child concept and its OBJECT is always the broader/parent concept (despite
-//       the type's name). So "one level down to children" is `(child)-[:PARENT_OF]->(matched)`
-//       -- the arrow points FROM the child TO the matched/parent descriptor, not the reverse.
+//       "Cushing Syndrome" -[HAS_BROADER]-> "Adrenocortical Hyperfunction", "Adrenal Cortex
+//       Diseases" -[HAS_BROADER]-> "Adrenal Gland Diseases"), cross-checked against the edges'
+//       own parent_tree_numbers/child_tree_numbers properties: HAS_BROADER's SUBJECT is always
+//       the narrower/child concept and its OBJECT is always the broader/parent concept (v0.1.0
+//       called this type PARENT_OF, which read backwards; v0.2.0 renamed it to HAS_BROADER --
+//       same direction, clearer name). So "one level down to children" is
+//       `(child)-[:HAS_BROADER]->(matched)` -- the arrow points FROM the child TO the
+//       matched/parent descriptor, not the reverse.
 //     Check tags (the 40 non-subject NLM qualifiers: Humans, Female, Male, Adult, Animals,
 //     age/species/century groups, etc.) are excluded by name -- v0.1.0 carries no is_check_tag
 //     flag on (:MeSHConcept) or on HAS_MESH, so the exclusion list below is the real,
@@ -101,7 +128,7 @@ MATCH (mp:MedlinePlus {name: 'Asthma'})-[:HAS_MESH]->(direct:MeSHConcept)
 WHERE NOT direct.name IN $checkTags
 WITH collect(DISTINCT direct) AS directTerms
 UNWIND directTerms AS d
-OPTIONAL MATCH (narrower:MeSHConcept)-[:PARENT_OF]->(d)
+OPTIONAL MATCH (narrower:MeSHConcept)-[:HAS_BROADER]->(d)
 WHERE narrower IS NOT NULL AND NOT narrower.name IN $checkTags AND NOT narrower IN directTerms
 WITH directTerms, collect(DISTINCT narrower) AS childTerms
 MATCH (a:Article)-[r:HAS_MESH]->(term:MeSHConcept)
@@ -136,4 +163,25 @@ MATCH (au:Author {id: 'lunasai:openalex_author.A5051827275'})<-[:AUTHORED_BY]-(a
 MATCH (a)-[r:HAS_MESH]->(m:MeSHConcept) WHERE r.is_major_topic = true
 RETURN au.name AS author, m.name AS topic, count(DISTINCT a) AS articles
 ORDER BY articles DESC
+LIMIT 25;
+
+// ---------------------------------------------------------------------------------------------
+// New in v0.2.0: PMCRecord and Journal. Added after the v0.2.0 sample rebuild/load test
+// (see docs/VALIDATION_RESULTS.md) -- same style as the queries above.
+// ---------------------------------------------------------------------------------------------
+
+// 6e. Articles that have a PMC identifier record (pmcid/pmid/doi pointer, no full text --
+//     see docs/DATA_NOTES.md) AND a Journal link, with the journal name.
+MATCH (a:Article)-[:HAS_PMC_RECORD]->(p:PMCRecord)
+MATCH (a)-[:PUBLISHED_IN]->(j:Journal)
+RETURN a.pmid, a.name AS title, j.name AS journal, p.id AS pmc_record_id
+ORDER BY a.cited_by_count DESC
+LIMIT 25;
+
+// 6f. A journal's most-cited articles in the graph (PUBLISHED_IN, traversed backwards: the
+//     article is the subject, the journal is the object -- same direction convention as
+//     VALIDATED_BY/AUTHORED_BY above, not the reverse).
+MATCH (j:Journal)<-[:PUBLISHED_IN]-(a:Article)
+RETURN j.name AS journal, a.pmid, a.name AS title, a.cited_by_count
+ORDER BY a.cited_by_count DESC
 LIMIT 25;

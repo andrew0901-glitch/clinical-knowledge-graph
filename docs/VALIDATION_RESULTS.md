@@ -1,4 +1,94 @@
-# Validation results — measured against the real v0.1.0 export, using the real starter package
+# Validation results
+
+Two validation passes are recorded in this file: a **v0.2.0 sample-scale pass** (this release,
+below) and the original **v0.1.0 full-scale pass** (kept below it, unchanged, for history). The
+v0.2.0 pass was NOT a full-scale re-run — it rebuilt and load-tested the sample subgraph and ran
+every example query against it, using the real, validated v0.2.0 release build
+(`release_out/clinical_v02`, 12,067,108 nodes / 105,758,798 edges). The v0.1.0 full-scale numbers
+(full 8-shard download, full load, full dump sizing) were **not** re-measured at v0.2.0 scale —
+that would be a multi-hour undertaking outside this pass's scope — so those sections below are
+historical v0.1.0 measurements, not v0.2.0 claims. Numbers never invented either way.
+
+## v0.2.0 sample-scale validation (this release, measured)
+
+Environment: Docker Desktop (WSL2) on a Linux host, `neo4j:5-community`, run in an isolated
+container on non-default host ports so as not to disturb an unrelated pre-existing `ce-kg-neo4j`
+container found already bound to the default 7474/7687 ports on this shared machine (left
+untouched — ownership/purpose unknown, not created by this pass).
+
+### Bug found rebuilding the sample against the real v0.2.0 release layout
+
+`scripts/build_sample_subgraph.py` looked for files literally named `edges__*.jsonl.gz` /
+`nodes__*.jsonl.gz` directly inside `--data-dir`. The real layout — confirmed against both the
+live v0.1.0 Hugging Face repo's file tree (`https://huggingface.co/api/datasets/lunas-health/
+clinical-evidence-kg/tree/clinical-v0.1.0`) and the v0.2.0 release build — is `nodes/` and
+`edges/` **subdirectories** containing plain `part-*.jsonl.gz` shards; no file anywhere is named
+with that `nodes__`/`edges__` prefix. This script would have found **zero** files against the
+real v0.1.0 download too — it is a pre-existing bug, not something introduced by v0.2.0, just
+never caught because this is the first time anyone ran it against the real downloaded/exported
+layout rather than a `nodes__`-renamed test fixture. Fixed by having it list `<data-dir>/nodes/`
+and `<data-dir>/edges/` directly. (`scripts/kgx_to_neo4j.py`'s own `files()` already checked both
+the `nodes/*.jsonl.gz` and `nodes__*.jsonl.gz` patterns, so it needed no equivalent fix.)
+
+### Sample build (measured, real, against the real v0.2.0 release data)
+
+`scripts/build_sample_subgraph.py --per-type-cap 20000` against the full, real v0.2.0 export
+(`nodes/`, `edges/`, 105,758,798 real edge records scanned):
+
+| Metric | Value |
+|---|---:|
+| Scan time | 295s (edges) + 42s (node lookup) = 337s |
+| Edges kept | 295,798 — **all 18/18 relationship types present** (every type in `manifest.json counts.edges_by_type`) |
+| Nodes kept | 270,864 |
+| Nodes missing (referenced but not found) | **0** — every edge endpoint resolves |
+| `sample_out/nodes__sample.jsonl.gz` | 26,666,822 bytes, sha256 `9e2d3ad72e022ac52d24ca65a9379950fa2c5038c90ac25b4dec3f50d10dfc8a` |
+| `sample_out/edges__sample.jsonl.gz` | 19,529,850 bytes, sha256 `f37b662e4efb1e3b0578a6f17f7d7f04af8d693e579f125eb43a79406e75a9f9` |
+| Combined size | 46,196,672 bytes (~44.1 MiB) |
+
+Per-type counts (18 types, up from 16 in v0.1.0 — `HAS_RIGHTS_EVIDENCE`/`HAS_USE_GRANT` are gone;
+`HAS_PMC_RECORD`/`PUBLISHED_IN` are new; `PARENT_OF`/`ANCESTOR_OF` are renamed `HAS_BROADER`/
+`HAS_BROADER_ANCESTOR`): `HAS_MESH`/`AUTHORED_BY`/`CITES`/`CITES_BACKGROUND`/`VALIDATED_BY`/
+`HAS_DERIVED_PUBLICATION`/`SPONSORED_BY`/`CONDUCTED_AT`/`LINKS_TO_RESOURCE`/
+`RESOURCE_TRANSLATION_OF`/`HAS_BROADER`/`HAS_BROADER_ANCESTOR`/`HAS_PMC_RECORD`/`PUBLISHED_IN` all
+hit the 20,000 cap; `IN_TOPIC_GROUP` 3,651, `RELATED_TOPIC` 6,246, `HAS_LANGUAGE_RESOURCE` 4,885,
+`TRANSLATION_OF` 1,016 are full populations (true totals below the cap), same as v0.1.0.
+
+### Sample load test (measured, real)
+
+```
+python scripts/kgx_to_neo4j.py --input sample_out --out neo4j_import_sample
+USE_DOCKER=1 bash scripts/load_neo4j.sh neo4j_import_sample
+```
+
+| Metric | Value |
+|---|---:|
+| Conversion (`kgx_to_neo4j.py`) | 7.7s |
+| Bulk import (`neo4j-admin database import full`) | 7.858s (`neo4j-admin`'s own "IMPORT DONE" time), 14.7s wall including Docker startup |
+| Imported | **270,864 nodes / 295,798 relationships / 9,783,254 properties** — exact match to the build report |
+| Bad / skipped / duplicate relationships | **0** (checked the full import log for `bad`/`skip`/`duplicate`/`error`/`warn` lines — none found) |
+| Peak memory | 549.8 MiB (`neo4j-admin`'s own summary line) |
+| Labels after load (`CALL db.labels()`) | 11/11: Article, Author, ClinicalTrial, ExternalResource, **Journal**, MeSHConcept, MedlinePlus, MedlinePlusGroup, **PMCRecord**, Sponsor, TrialSite |
+| Relationship types after load (`CALL db.relationshipTypes()`) | 18/18: AUTHORED_BY, CITES, CITES_BACKGROUND, CONDUCTED_AT, **HAS_BROADER**, **HAS_BROADER_ANCESTOR**, HAS_DERIVED_PUBLICATION, HAS_LANGUAGE_RESOURCE, HAS_MESH, **HAS_PMC_RECORD**, IN_TOPIC_GROUP, LINKS_TO_RESOURCE, **PUBLISHED_IN**, RELATED_TOPIC, RESOURCE_TRANSLATION_OF, SPONSORED_BY, TRANSLATION_OF, VALIDATED_BY — confirmed `HAS_RIGHTS_EVIDENCE`/`HAS_USE_GRANT` genuinely absent |
+| Target ("loads in about a minute") | **Met, comfortably** |
+
+### Example queries — run against the loaded v0.2.0 sample (all of `examples/queries.cypher`, including the two new PMC/Journal queries 6e/6f)
+
+Every statement in the updated `examples/queries.cypher` executed with **no syntax or type
+errors** against the loaded sample. Result rows, where present, looked sane (asthma/MeSH queries,
+`VALIDATED_BY`-backwards trial->results->citing-articles, author/MeSH aggregation, the new PMC/
+Journal queries all returned real, readable rows — see the file for live examples: e.g. query 6e
+returned `Pediatric Research` / `Rheumatology Oxford` articles with their PMC id and journal
+name). Four queries returned **zero rows** against this particular random sample, which is
+expected and not a bug: queries 5, 6a and 6b use **literal parameter values** (an author name,
+an NCT id, a MedlinePlus topic name) that were originally chosen against the full v0.1.0 graph —
+nothing guarantees any specific literal id lands inside a ~296K-edge random sample out of 105.8M
+real edges (e.g. the seed trial for 6a, `NCT00825071`, simply isn't one of the 54,222
+`ClinicalTrial` nodes this particular sample happened to keep). The file's own header comment
+already tells readers to swap in ids they care about. This matches v0.1.0's own documented
+behavior for these same literal-parameter queries (see the "Example queries" table below, whose
+real nonzero row counts were always measured against the **full** graph, not the sample).
+
+## v0.1.0 full-scale validation (historical — measured against the real v0.1.0 export, using the real starter package)
 
 All numbers below are **measured**, running the real repo scripts (`scripts/quickstart.py`,
 `scripts/kgx_to_neo4j.py`, `scripts/load_neo4j.sh`) exactly as shipped (plus the bug fixes
@@ -73,7 +163,7 @@ loaded graph):
 **Measured (loaded graph, live query): 10,145,579 nodes / 109,661,337 edges.**
 **Exact match. No gap to explain.**
 
-## Bugs found in the real starter package, running it for real at full scale — and exactly how each was fixed
+## Bugs found in the real starter package, running it for real at full scale (historical v0.1.0 pass) — and exactly how each was fixed
 
 The starter package had evidently never been run end-to-end against the real, full-scale v0.1.0
 export before. Every one of these was invisible on a toy/small fixture and only surfaced once the
@@ -176,10 +266,12 @@ Neo4j containers used for this testing (`ce-kg-neo4j-full`, `ce-kg-neo4j-sample`
 deliberately after use — confirmed via `docker inspect` (`OOMKilled: false` on both) to be clean
 stops, not crashes.
 
-## Example queries — real row counts against the fully-loaded graph
+## Example queries — real row counts against the fully-loaded graph (historical v0.1.0 full-graph run)
 
 See `examples/queries.cypher` and `scripts/quickstart.py` for the full, runnable text. All run
-against the real, fully-loaded 10,145,579-node / 109,661,337-edge graph.
+against the real, fully-loaded v0.1.0 10,145,579-node / 109,661,337-edge graph (query 6a's
+`PARENT_OF` references below are v0.1.0's native name for what v0.2.0 renamed to `HAS_BROADER`).
+These row counts have not been re-measured against the full v0.2.0 graph (only the sample, above).
 
 | # | Traversal | Real result |
 |---|---|---|
@@ -188,7 +280,7 @@ against the real, fully-loaded 10,145,579-node / 109,661,337-edge graph.
 | c | `Article PMID:10021452` -> (`CITES` + shared major-topic MeSH) -> most-cited in-graph papers reachable this way | **32,406 candidate papers**, ranked by in-graph citation count (top 25 shown) |
 | d | `Author "Barton F. Haynes" (A5051827275)` -> their articles -> aggregate major-topic MeSH profile | **206 distinct MeSH topics across 687 (article, topic) pairs** |
 
-## Sample subgraph build + load (measured, real)
+## Sample subgraph build + load (historical v0.1.0 numbers — see the v0.2.0 section at the top of this file for the current sample)
 
 `scripts/build_sample_subgraph.py --per-type-cap 20000` against the full, real 8-edge-shard set:
 
@@ -213,7 +305,7 @@ separate container so it doesn't contend with the full-scale load):
 | All 16 relationship types present after load | Confirmed via `CALL db.relationshipTypes()` |
 | Target ("loads in about a minute") | **Met, comfortably** |
 
-## Neo4j database dump sizing (measured, real — not uploaded anywhere)
+## Neo4j database dump sizing (historical v0.1.0 — measured, real — not uploaded anywhere; not re-measured for v0.2.0)
 
 Both dumps were taken with `neo4j-admin database dump` (Neo4j 5.26.32, the version in this repo's
 `docker-compose.yml`), against the stopped database (Neo4j 5 Community has no online-dump
@@ -242,7 +334,7 @@ statements (on `Article.id`, `ClinicalTrial.id`, `MeSHConcept.id`, `MeSHConcept.
 `MedlinePlus.name`, `Author.id`) are the ones used for this validation and are recreated
 automatically on restore since they're part of the database itself.
 
-## Host environment (for reproducibility)
+## Host environment (for reproducibility — v0.1.0 full-scale pass; the v0.2.0 sample pass ran on the same class of machine, see its section at the top)
 
 24 vCPU / 62 GiB RAM (WSL2 VM), `/dev/sdf` 1007 GB (267–357 GB free at various points during this
 run; shared with other, unrelated concurrent workloads), Docker Desktop 28.4.0, image
