@@ -6,8 +6,11 @@ Works on either download layout:
   Zenodo:        <dir>/nodes__*.jsonl.gz     <dir>/edges__*.jsonl.gz
 
   python scripts/kgx_to_neo4j.py --input ckg --out neo4j_import
-  python scripts/kgx_to_neo4j.py --input ckg --out neo4j_import --exclude-type HAS_RIGHTS_EVIDENCE,HAS_USE_GRANT
   bash scripts/load_neo4j.sh neo4j_import          # then run the bulk import
+
+  # --exclude-type still works (comma-separated relationship types to skip) but v0.2.0 has
+  # nothing comparable to v0.1.0's HAS_RIGHTS_EVIDENCE/HAS_USE_GRANT left to exclude -- that
+  # whole rights-bookkeeping layer was dropped entirely, not just made optional.
 
 How the graph maps to Neo4j:
   * Node label     = the native Lunas label (lunasai_labels) if present, else the Biolink category
@@ -124,10 +127,11 @@ def sample_schema(paths, keyfn, reserved, per_file):
     # IMPORTANT: this must scan each WHOLE file, not just its first `per_file` lines. At full
     # v0.1.0 scale, node records are written in large contiguous blocks by label (e.g. ~1M+
     # Article records before the first ClinicalTrial/Sponsor/TrialSite/MeSHConcept record even
-    # appears in a given shard), and several edge types (PARENT_OF, CONDUCTED_AT, SPONSORED_BY,
-    # ANCESTOR_OF, ...) are similarly clustered. A per-file line cap here silently produced
+    # appears in a given shard), and several edge types (CONDUCTED_AT, SPONSORED_BY,
+    # HAS_BROADER, HAS_BROADER_ANCESTOR, ...; named PARENT_OF/ANCESTOR_OF in v0.1.0) are
+    # similarly clustered. A per-file line cap here silently produced
     # id/:LABEL/extra-only CSVs (every real property swept into the `extra` JSON blob) for 10 of
-    # 11 node labels and 10 of 16 relationship types -- caught only by querying the real,
+    # 11 node labels and 10 of 16 relationship types (v0.1.0 counts) -- caught only by querying the real,
     # fully-loaded graph (see docs/VALIDATION_RESULTS.md). `per_file` still bounds memory and
     # per-record work: once a label/type has contributed `per_file` samples, further records of
     # that label/type are skipped (not merged into the schema dict), so the schema dicts stay
@@ -171,7 +175,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--input", required=True, help="download folder (HF or Zenodo layout)")
     ap.add_argument("--out", required=True)
-    ap.add_argument("--exclude-type", default="", help="comma-separated relationship types to skip, e.g. HAS_RIGHTS_EVIDENCE,HAS_USE_GRANT")
+    ap.add_argument("--exclude-type", default="", help="comma-separated relationship types to skip, e.g. CITES_BACKGROUND,HAS_DERIVED_PUBLICATION")
     ap.add_argument("--sample-per-file", type=int, default=20000)
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)

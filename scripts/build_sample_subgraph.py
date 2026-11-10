@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a small, representative sample subgraph from the real v0.1.0 KGX export.
+"""Build a small, representative sample subgraph from the real KGX export.
 
 Target: ~250K edges, every relationship type present at least once, loads in
 about a minute. Strategy: cap each relationship type at --per-type-cap edges
@@ -7,6 +7,11 @@ about a minute. Strategy: cap each relationship type at --per-type-cap edges
 cap or its true total (from manifest.json counts.edges_by_type, so we know
 when a rare type is exhausted and can stop looking for more of it). Then
 pull every node referenced by a kept edge out of the node shards.
+
+--data-dir must contain `nodes/` and `edges/` subdirectories of `*.jsonl.gz`
+shards -- the real layout used by both the Hugging Face download and the
+exporter's own output (confirmed against the live v0.1.0 HF repo tree and
+the v0.2 release build; there is no flat `nodes__*`/`edges__*` naming).
 
 Usage:
     python3 build_sample_subgraph.py --data-dir ../data --out ../sample \
@@ -48,8 +53,8 @@ def main():
     type_targets = {t: min(args.per_type_cap, n) for t, n in type_totals.items()}
     print("Per-type sample targets:", json.dumps(type_targets, indent=2))
 
-    edge_files = sorted(f for f in os.listdir(args.data_dir)
-                         if f.startswith("edges__") and f.endswith(".jsonl.gz"))
+    edges_dir = os.path.join(args.data_dir, "edges")
+    edge_files = sorted(f for f in os.listdir(edges_dir) if f.endswith(".jsonl.gz"))
 
     type_counts = {t: 0 for t in type_totals}
     needed_ids = set()
@@ -63,7 +68,7 @@ def main():
     for ef in edge_files:
         if all_satisfied():
             break
-        path = os.path.join(args.data_dir, ef)
+        path = os.path.join(edges_dir, ef)
         with gzip.open(path, "rt", encoding="utf-8") as f:
             for line in f:
                 scanned += 1
@@ -99,15 +104,15 @@ def main():
     print(f"Wrote {out_edges_path} ({os.path.getsize(out_edges_path):,} bytes)")
 
     # Second pass: pull referenced nodes out of the node shards.
-    node_files = sorted(f for f in os.listdir(args.data_dir)
-                         if f.startswith("nodes__") and f.endswith(".jsonl.gz"))
+    nodes_dir = os.path.join(args.data_dir, "nodes")
+    node_files = sorted(f for f in os.listdir(nodes_dir) if f.endswith(".jsonl.gz"))
     kept_nodes = []
     found_ids = set()
     t1 = time.time()
     for nf in node_files:
         if len(found_ids) >= len(needed_ids):
             break
-        path = os.path.join(args.data_dir, nf)
+        path = os.path.join(nodes_dir, nf)
         with gzip.open(path, "rt", encoding="utf-8") as f:
             for line in f:
                 s = line.strip()
