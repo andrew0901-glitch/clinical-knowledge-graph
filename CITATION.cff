@@ -1,15 +1,19 @@
-# This file describes the latest PUBLISHED release, currently v0.1.0. v0.2.0 is validated but not
-# yet published to Zenodo/Hugging Face as of this writing, so its version DOI is not yet known --
-# deliberately not filled in here to avoid a fabricated DOI in a machine-parsed citation file.
-# TODO v0.2.0 DOI: once the v0.2.0 Zenodo deposit is published, bump version/date-released/doi
-# below to the v0.2.0 values (same concept DOI 10.5281/zenodo.24011485, new version-specific DOI).
+# This file describes v0.2.1. v0.2.1 ships byte-identical node/edge data to v0.2.0 -- it exists
+# solely to correct the v0.2.0 dataset card (an internal/contractual content leak, wrong license
+# text, a stale "zenodo.TBD" citation placeholder, and a false betweenness-score claim; see
+# lunasai-knowledge-graph's modules/export/release.py fix commit for the full list). The Zenodo
+# draft for v0.2.1 (10.5281/zenodo.24108692, same concept DOI 10.5281/zenodo.24011484 as v0.1.0/
+# v0.2.0) was staged by this pass but had not yet been published by the owner as of this commit --
+# the DOI below is real (Zenodo pre-reserves a version DOI the moment a new-version draft is
+# created) and not a placeholder, but confirm https://doi.org/10.5281/zenodo.24108692 resolves
+# before relying on it if you're reading this very soon after the commit date below.
 cff-version: 1.2.0
 message: "If you use the Lunas Clinical Evidence Knowledge Graph, please cite the dataset."
 title: "Lunas Clinical Evidence Knowledge Graph"
-version: "0.1.0"
+version: "0.2.1"
 type: dataset
-doi: 10.5281/zenodo.24011485
-date-released: 2026-11-06
+doi: 10.5281/zenodo.24108692
+date-released: 2026-11-10
 license: CC0-1.0
 url: "https://huggingface.co/datasets/lunas-health/clinical-evidence-kg"
 authors:

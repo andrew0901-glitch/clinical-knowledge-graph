@@ -1,22 +1,28 @@
 # Validation results
 
-Two validation passes are recorded in this file: a **v0.2.0 sample-scale pass** (this release,
-below) and the original **v0.1.0 full-scale pass** (kept below it, unchanged, for history). The
-v0.2.0 pass was NOT a full-scale re-run — it rebuilt and load-tested the sample subgraph and ran
-every example query against it, using the real, validated v0.2.0 release build
-(`release_out/clinical_v02`, 12,067,108 nodes / 105,758,798 edges). The v0.1.0 full-scale numbers
-(full 8-shard download, full load, full dump sizing) were **not** re-measured at v0.2.0 scale —
+Three validation passes are recorded in this file: a **v0.2.1 sample-scale pass** (this release,
+below), the superseded **v0.2.0 sample-scale pass** (kept as the "Bug found" note below still
+applies and the per-type-cap methodology is identical; its own numeric table was replaced by the
+v0.2.1 re-measurement since v0.2.1 ships byte-identical data -- v0.2.1 exists only to correct the
+dataset card, not the graph, so re-running this pass under the v0.2.1 label is a real, independent
+measurement, not a copy), and the original **v0.1.0 full-scale pass** (kept below it, unchanged,
+for history). The v0.2.1 pass was NOT a full-scale re-run — it rebuilt and load-tested the sample
+subgraph and ran every example query against it, using the real, validated v0.2.1 release build
+(`/home/ldeveza/lunas-releases/clinical_v02`, 12,067,108 nodes / 105,758,066 edges -- the v0.2.0
+pass had carried a stale pre-collapse edge count, 105,758,798; 105,758,066 is the authoritative
+manifest total and is used throughout this section). The v0.1.0 full-scale numbers (full 8-shard
+download, full load, full dump sizing) were **not** re-measured at v0.2.0/v0.2.1 scale —
 that would be a multi-hour undertaking outside this pass's scope — so those sections below are
-historical v0.1.0 measurements, not v0.2.0 claims. Numbers never invented either way.
+historical v0.1.0 measurements, not v0.2.1 claims. Numbers never invented either way.
 
-## v0.2.0 sample-scale validation (this release, measured)
+## v0.2.1 sample-scale validation (this release, measured)
 
 Environment: Docker Desktop (WSL2) on a Linux host, `neo4j:5-community`, run in an isolated
 container on non-default host ports so as not to disturb an unrelated pre-existing `ce-kg-neo4j`
 container found already bound to the default 7474/7687 ports on this shared machine (left
 untouched — ownership/purpose unknown, not created by this pass).
 
-### Bug found rebuilding the sample against the real v0.2.0 release layout
+### Bug found rebuilding the sample against the real v0.2.0 release layout (historical; fixed, carried into v0.2.1)
 
 `scripts/build_sample_subgraph.py` looked for files literally named `edges__*.jsonl.gz` /
 `nodes__*.jsonl.gz` directly inside `--data-dir`. The real layout — confirmed against both the
@@ -30,20 +36,24 @@ layout rather than a `nodes__`-renamed test fixture. Fixed by having it list `<d
 and `<data-dir>/edges/` directly. (`scripts/kgx_to_neo4j.py`'s own `files()` already checked both
 the `nodes/*.jsonl.gz` and `nodes__*.jsonl.gz` patterns, so it needed no equivalent fix.)
 
-### Sample build (measured, real, against the real v0.2.0 release data)
+### Sample build (measured, real, against the real v0.2.1 release data)
 
-`scripts/build_sample_subgraph.py --per-type-cap 20000` against the full, real v0.2.0 export
-(`nodes/`, `edges/`, 105,758,798 real edge records scanned):
+`scripts/build_sample_subgraph.py --per-type-cap 20000` against the full, real v0.2.1 export
+(`nodes/`, `edges/`, 105,758,066 real edge records scanned):
 
 | Metric | Value |
 |---|---:|
-| Scan time | 295s (edges) + 42s (node lookup) = 337s |
+| Scan time | 284s (edges) + 40s (node lookup) = 324s |
 | Edges kept | 295,798 — **all 18/18 relationship types present** (every type in `manifest.json counts.edges_by_type`) |
-| Nodes kept | 270,864 |
+| Nodes kept | 270,965 |
 | Nodes missing (referenced but not found) | **0** — every edge endpoint resolves |
-| `sample_out/nodes__sample.jsonl.gz` | 26,666,822 bytes, sha256 `9e2d3ad72e022ac52d24ca65a9379950fa2c5038c90ac25b4dec3f50d10dfc8a` |
-| `sample_out/edges__sample.jsonl.gz` | 19,529,850 bytes, sha256 `f37b662e4efb1e3b0578a6f17f7d7f04af8d693e579f125eb43a79406e75a9f9` |
-| Combined size | 46,196,672 bytes (~44.1 MiB) |
+| `sample_out/nodes__sample.jsonl.gz` | 26,671,197 bytes, sha256 `918d514b00d28fdf945165e8e9c305a1a038f9fc459cf96a73a9d7d19079b75e` |
+| `sample_out/edges__sample.jsonl.gz` | 19,517,047 bytes, sha256 `fd1cc30f0f0834551bff3b0c2d61feed2796c2c1c3f2aa6fb5ee9b936406a469` |
+| Combined size | 46,188,244 bytes (~44.0 MiB) |
+
+(Run-to-run variance from the v0.2.0 pass -- 295,798 edges kept both times, but 270,965 vs. 270,864
+nodes kept -- is a real effect of which edges happen to fill each type's 20,000 cap first on a
+given scan, not a data change; the two passes read byte-identical source data.)
 
 Per-type counts (18 types, up from 16 in v0.1.0 — `HAS_RIGHTS_EVIDENCE`/`HAS_USE_GRANT` are gone;
 `HAS_PMC_RECORD`/`PUBLISHED_IN` are new; `PARENT_OF`/`ANCESTOR_OF` are renamed `HAS_BROADER`/
@@ -62,31 +72,94 @@ USE_DOCKER=1 bash scripts/load_neo4j.sh neo4j_import_sample
 
 | Metric | Value |
 |---|---:|
-| Conversion (`kgx_to_neo4j.py`) | 7.7s |
-| Bulk import (`neo4j-admin database import full`) | 7.858s (`neo4j-admin`'s own "IMPORT DONE" time), 14.7s wall including Docker startup |
-| Imported | **270,864 nodes / 295,798 relationships / 9,783,254 properties** — exact match to the build report |
+| Conversion (`kgx_to_neo4j.py`) | 8.1s |
+| Bulk import (`neo4j-admin database import full`) | 7.472s (`neo4j-admin`'s own "IMPORT DONE" time), 16.7s wall including Docker startup |
+| Imported | **270,965 nodes / 295,798 relationships / 9,784,822 properties** — exact match to the build report |
 | Bad / skipped / duplicate relationships | **0** (checked the full import log for `bad`/`skip`/`duplicate`/`error`/`warn` lines — none found) |
 | Peak memory | 549.8 MiB (`neo4j-admin`'s own summary line) |
 | Labels after load (`CALL db.labels()`) | 11/11: Article, Author, ClinicalTrial, ExternalResource, **Journal**, MeSHConcept, MedlinePlus, MedlinePlusGroup, **PMCRecord**, Sponsor, TrialSite |
 | Relationship types after load (`CALL db.relationshipTypes()`) | 18/18: AUTHORED_BY, CITES, CITES_BACKGROUND, CONDUCTED_AT, **HAS_BROADER**, **HAS_BROADER_ANCESTOR**, HAS_DERIVED_PUBLICATION, HAS_LANGUAGE_RESOURCE, HAS_MESH, **HAS_PMC_RECORD**, IN_TOPIC_GROUP, LINKS_TO_RESOURCE, **PUBLISHED_IN**, RELATED_TOPIC, RESOURCE_TRANSLATION_OF, SPONSORED_BY, TRANSLATION_OF, VALIDATED_BY — confirmed `HAS_RIGHTS_EVIDENCE`/`HAS_USE_GRANT` genuinely absent |
 | Target ("loads in about a minute") | **Met, comfortably** |
 
-### Example queries — run against the loaded v0.2.0 sample (all of `examples/queries.cypher`, including the two new PMC/Journal queries 6e/6f)
+### Example queries — run against the loaded v0.2.1 sample (all of `examples/queries.cypher`, including the two PMC/Journal queries 6e/6f)
 
 Every statement in the updated `examples/queries.cypher` executed with **no syntax or type
 errors** against the loaded sample. Result rows, where present, looked sane (asthma/MeSH queries,
-`VALIDATED_BY`-backwards trial->results->citing-articles, author/MeSH aggregation, the new PMC/
-Journal queries all returned real, readable rows — see the file for live examples: e.g. query 6e
-returned `Pediatric Research` / `Rheumatology Oxford` articles with their PMC id and journal
-name). Four queries returned **zero rows** against this particular random sample, which is
-expected and not a bug: queries 5, 6a and 6b use **literal parameter values** (an author name,
-an NCT id, a MedlinePlus topic name) that were originally chosen against the full v0.1.0 graph —
-nothing guarantees any specific literal id lands inside a ~296K-edge random sample out of 105.8M
-real edges (e.g. the seed trial for 6a, `NCT00825071`, simply isn't one of the 54,222
-`ClinicalTrial` nodes this particular sample happened to keep). The file's own header comment
-already tells readers to swap in ids they care about. This matches v0.1.0's own documented
-behavior for these same literal-parameter queries (see the "Example queries" table below, whose
-real nonzero row counts were always measured against the **full** graph, not the sample).
+`VALIDATED_BY`-backwards trial->results->citing-articles, author/MeSH aggregation, the PMC/
+Journal queries all returned real, readable rows). **Three queries returned zero rows** against
+this particular random sample, which is expected and not a bug (the v0.2.0 pass's prose said
+"Four" here while only naming three -- that was its own inconsistency, corrected now to match
+what both passes actually found): queries 5, 6a and 6b use **literal parameter values** (an
+author name, an NCT id, a MedlinePlus topic name) that were originally chosen against the full
+v0.1.0 graph — nothing guarantees any specific literal id lands inside a ~296K-edge random sample
+out of 105.8M real edges. Root cause, checked directly this pass rather than assumed: the seed
+trial for 6a, `NCT00825071`, simply isn't one of the 54,273 `ClinicalTrial` nodes this sample
+happened to keep (`MATCH (t:ClinicalTrial {nct_id:'NCT00825071'})` returns 0); the seed author for
+query 5 likewise isn't among the 18,935 `Author` nodes kept; and for 6b, the `MedlinePlus {name:
+'Asthma'}` node IS present, but it has **zero** `HAS_MESH` edges in the sample — `HAS_MESH`'s
+20,000-edge cap is filled entirely by the far more numerous Article-origin edges before any
+MedlinePlus-origin one is scanned, so no `(MedlinePlus)-[:HAS_MESH]->()` edge can survive this
+particular per-type-cap sampling strategy, for any run. The file's own header comment already
+tells readers to swap in ids they care about. This matches v0.1.0's own documented behavior for
+these same literal-parameter queries (see the "Example queries" table below, whose real nonzero
+row counts were always measured against the **full** graph, not the sample).
+
+Row counts for every query, this v0.2.1 pass (`-`/`1a`/`1b` are the "what's in the graph" pair at
+the top of the file):
+
+| Query | Rows |
+|---|---:|
+| 1a. labels present | 11 |
+| 1b. relationship types present | 18 |
+| 2. Asthma major-topic articles | 12 |
+| 3. Asthma + one level of children | 12 |
+| 4. trial -> results -> citing | 25 |
+| 5. author's MeSH topics (literal author) | 0 (seed not in this sample) |
+| 6a. trial results -> citing guidelines (literal NCT id) | 0 (seed not in this sample) |
+| 6b. MedlinePlus -> MeSH hierarchy expansion (literal topic) | 0 (no MedlinePlus-origin `HAS_MESH` edge survives the cap) |
+| 6c. seed-article reachability (literal PMID) | 17 |
+| 6d. author aggregate MeSH profile (literal author id) | 4 |
+| 6e. Article + PMC record + Journal | 25 |
+| 6f. journal's most-cited articles | 25 |
+
+### `scripts/quickstart.py` — run against the real, full v0.2.1 download (not the sample), measured
+
+Unlike the Cypher examples above (which need a Neo4j load and so run against the sample),
+`scripts/quickstart.py` reads the KGX files directly with DuckDB and can run against the full
+~12M-node / ~105.8M-edge release with no load step. Run with `--parquet` (one-time conversion,
+then all 9 queries read the cached Parquet files):
+
+```bash
+python scripts/quickstart.py --input ckg --mesh "Hypertension" --parquet
+```
+
+| Step | Time |
+|---|---:|
+| `nodes.parquet` write (one pass) | included below |
+| `edges.parquet` write (one pass over 105,758,066 edges) | ~65s combined with nodes.parquet |
+| All 9 queries against the cached Parquet files | ~9s |
+| **Total, parquet write + all 9 queries** | **~75s** |
+
+All 9 queries ran with no errors, every row count real and nonzero (unlike the sample run above,
+every literal id used here — `NCT00825071`, `PMID:10021452`, the OpenAlex author id — really is in
+the full graph):
+
+| Query | Rows | Notes |
+|---|---:|---|
+| 1. relationship types (`original_predicate`-derived) | 18 | matches `manifest.json`'s 18 types exactly, including `VALIDATED_BY` 156,167 / `CITES_BACKGROUND` 736,649 / `HAS_DERIVED_PUBLICATION` 202,205 -- the authoritative, post-collapse counts |
+| 2. node labels | 11 | `Author` 5,134,220 largest, `MedlinePlusGroup` 88 smallest |
+| 3. Hypertension major-topic articles, most cited | 15 (LIMIT) | top row: JNC 7 report, 25,500 citations |
+| 4. trial -> results publication | 10 (LIMIT) | real trial/article pairs returned |
+| 5. most-cited articles (CITES in-degree) | 10 (LIMIT) | top row: PRISMA statement, 12,294 in-graph citations |
+| 6. trial `NCT00825071` -> results -> citing guidelines/systematic reviews | 40 | real guideline/systematic-review citing articles returned |
+| 7. MedlinePlus 'Asthma' -> MeSH hierarchy -> major-topic articles | 25 (LIMIT) | real rows, direct + hierarchy matches both populated |
+| 8. seed article `PMID:10021452` -> CITES/MeSH reachability -> most-cited | 25 (LIMIT) | top row: HIV-1 PrEP article, 908 in-graph citations |
+| 9. author aggregate MeSH profile (Barton F. Haynes, OpenAlex id) | 25 (LIMIT) | real HIV/immunology MeSH topic distribution |
+
+This full-scale run is what explains the sample's three zero-row queries above: queries 5/6a/6b's
+literal ids are real, present, nonzero-result ids in the full graph (this table) -- they only read
+as zero against the ~296K-edge sample because of the sample's own per-type-cap construction, not
+because the ids are wrong or the graph is missing them.
 
 ## v0.1.0 full-scale validation (historical — measured against the real v0.1.0 export, using the real starter package)
 

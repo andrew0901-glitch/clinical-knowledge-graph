@@ -2,19 +2,21 @@
 
 KGX JSON Lines (the published Zenodo/Hugging Face export) remains the **canonical, authoritative**
 distribution format for the Lunas Clinical Evidence KG. The two artifacts below are convenience
-layers on top of it. **Section 1 (sample subgraph) is rebuilt and measured for v0.2.0, below.
-Section 2 (Neo4j dump sizing) is historical v0.1.0 — not re-measured at v0.2.0 scale**, since that
-requires a full multi-hour load this pass did not re-run; see
-[VALIDATION_RESULTS.md](VALIDATION_RESULTS.md) for what was and wasn't re-measured. **Neither
-artifact is uploaded anywhere by this repo or this task** — sizing/feasibility only.
+layers on top of it. **Section 1 (sample subgraph) is rebuilt and measured for v0.2.1, below**
+(v0.2.1 ships byte-identical node/edge data to v0.2.0 -- this release only corrects the dataset
+card, so the sample was rebuilt fresh against the same data for an accurate v0.2.1-labeled record,
+not reused from the v0.2.0 pass). **Section 2 (Neo4j dump sizing) is historical v0.1.0 — not
+re-measured at v0.2.0/v0.2.1 scale**, since that requires a full multi-hour load this pass did not
+re-run; see [VALIDATION_RESULTS.md](VALIDATION_RESULTS.md) for what was and wasn't re-measured.
+**Neither artifact is uploaded anywhere by this repo or this task** — sizing/feasibility only.
 
-## 1. Small sample subgraph (v0.2.0, measured)
+## 1. Small sample subgraph (v0.2.1, measured)
 
-A ~44 MiB slice of the real v0.2.0 export, meant to load in under a minute so someone can try the
+A ~44 MiB slice of the real v0.2.1 export, meant to load in under a minute so someone can try the
 schema and example queries before committing to the full multi-GB load.
 
 **Self-consistency (hard requirement, verified):** every one of the 295,798 kept edges has both
-its endpoint nodes present among the 270,864 kept nodes. **0 dangling references.**
+its endpoint nodes present among the 270,965 kept nodes. **0 dangling references.**
 
 **Build procedure (reproducible, real):**
 
@@ -36,14 +38,14 @@ of the node shards. Writes `sample_out/nodes__sample.jsonl.gz` + `sample_out/edg
 in the Zenodo-style flat naming convention (`{kind}__*.jsonl.gz`), so `scripts/kgx_to_neo4j.py`
 and `scripts/quickstart.py` load it with no code changes, just a different `--input` directory.
 
-**Measured build:** 295s to scan all 105,758,798 edges + 42s to resolve the 270,864 referenced
-nodes = 337s total.
+**Measured build:** 284s to scan all 105,758,066 edges + 40s to resolve the 270,965 referenced
+nodes = 324s total.
 
 | File | Size | SHA-256 |
 |---|---:|---|
-| `nodes__sample.jsonl.gz` | 26,666,822 bytes | `9e2d3ad72e022ac52d24ca65a9379950fa2c5038c90ac25b4dec3f50d10dfc8a` |
-| `edges__sample.jsonl.gz` | 19,529,850 bytes | `f37b662e4efb1e3b0578a6f17f7d7f04af8d693e579f125eb43a79406e75a9f9` |
-| **Combined** | **46,196,672 bytes (~44.1 MiB)** | |
+| `nodes__sample.jsonl.gz` | 26,671,197 bytes | `918d514b00d28fdf945165e8e9c305a1a038f9fc459cf96a73a9d7d19079b75e` |
+| `edges__sample.jsonl.gz` | 19,517,047 bytes | `fd1cc30f0f0834551bff3b0c2d61feed2796c2c1c3f2aa6fb5ee9b936406a469` |
+| **Combined** | **46,188,244 bytes (~44.0 MiB)** | |
 
 Per-type counts kept: AUTHORED_BY 20,000 · CITES 20,000 · CITES_BACKGROUND 20,000 · CONDUCTED_AT
 20,000 · HAS_BROADER 20,000 · HAS_BROADER_ANCESTOR 20,000 · HAS_DERIVED_PUBLICATION 20,000 ·
@@ -62,9 +64,12 @@ USE_DOCKER=1 bash scripts/load_neo4j.sh neo4j_import_sample
 
 | Metric | Value |
 |---|---:|
-| Conversion | 7.7s |
-| `neo4j-admin database import full` | 7.858s (reported), 14.7s wall incl. Docker overhead |
-| Nodes / edges loaded | 270,864 / 295,798 (exact match) |
+| Conversion | 8.1s |
+| `neo4j-admin database import full` | 7.472s (reported), 16.7s wall incl. Docker overhead |
+| Nodes / edges loaded | 270,965 / 295,798 (exact match) |
+| Properties loaded | 9,784,822 |
+| Peak import memory | 549.8 MiB |
+| Labels present after load | 11/11, confirmed via `CALL db.labels()` |
 | Relationship types present after load | 18/18, confirmed via `CALL db.relationshipTypes()` |
 | Bad/skipped/duplicate relationships | 0 |
 
@@ -73,10 +78,10 @@ USE_DOCKER=1 bash scripts/load_neo4j.sh neo4j_import_sample
 A `neo4j-admin database dump` of a fully-loaded graph, so a consumer could in principle skip the
 ~20-minute KGX->Neo4j load and just restore a database. **This was built and measured for sizing
 purposes only against v0.1.0; this task did not upload it anywhere, and did not re-run it for
-v0.2.0** (that requires a full-scale load, out of scope for this pass — see
-VALIDATION_RESULTS.md). Since v0.2.0's full graph (105,758,798 edges) is close in size to v0.1.0's
-(109,661,337 edges) — fewer rights-bookkeeping edges roughly offsetting new PMC/Journal edges —
-these v0.1.0 numbers are a reasonable estimate for v0.2.0's dump size, not a measurement.
+v0.2.0/v0.2.1** (that requires a full-scale load, out of scope for this pass — see
+VALIDATION_RESULTS.md). Since v0.2.0/v0.2.1's full graph (105,758,066 edges) is close in size to
+v0.1.0's (109,661,337 edges) — fewer rights-bookkeeping edges roughly offsetting new PMC/Journal
+edges — these v0.1.0 numbers are a reasonable estimate for v0.2.1's dump size, not a measurement.
 
 **Build procedure (reproducible — used for real on both the full graph and the sample):**
 

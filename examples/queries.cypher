@@ -4,12 +4,12 @@
 // HAS_BROADER_ANCESTOR, HAS_PMC_RECORD, PUBLISHED_IN, STUDIES_CONDITION, TESTS_INTERVENTION, ...
 // Run `CALL db.relationshipTypes()` and `CALL db.labels()` to see exactly what was loaded.
 //
-// IMPORTANT, verified against the real, fully-loaded v0.2.0 graph (not assumed from the schema
-// docs -- two of these were backwards in an earlier draft of this file):
+// IMPORTANT, verified against the real, fully-loaded v0.2.0/v0.2.1 graph (not assumed from the
+// schema docs -- two of these were backwards in an earlier draft of this file):
 //   * VALIDATED_BY is (:Article)-[:VALIDATED_BY]->(:ClinicalTrial) -- the RESULTS ARTICLE is the
 //     subject, the TRIAL is the object. To go from a trial to its results publication you must
 //     traverse the relationship BACKWARDS: (trial)<-[:VALIDATED_BY]-(article).
-//     v0.2.0: this type now holds ONLY the ClinicalTrials.gov RESULT role (156,197 edges) -- in
+//     v0.2.0: this type now holds ONLY the ClinicalTrials.gov RESULT role (156,167 edges) -- in
 //     v0.1.0 a single VALIDATED_BY mixed results together with background/derived references.
 //     Those are now their own types, same direction, same backwards-traversal rule:
 //       CITES_BACKGROUND      (:Article)-[:CITES_BACKGROUND]->(:ClinicalTrial)      -- BACKGROUND role
