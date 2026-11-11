@@ -73,21 +73,21 @@ The import itself is lightweight; **the real cost is disk, not RAM.** Running th
 
 ### 4. Try the sample subgraph first (loads in under a minute)
 
-A self-consistent ~44 MiB slice of the real v0.2.1 export: every one of the 18 relationship types present at least once (capped at 20,000 edges per type, or that type's true total if smaller), plus the real neighborhoods of the four literal seeds `examples/queries.cypher` / `scripts/quickstart.py` use by default (an author, a trial, a MedlinePlus topic, a seed article), so every example query returns real rows, not just every relationship type. Every node referenced by a kept edge is included (0 dangling references), same KGX file-naming convention as the full download so the same scripts load it unchanged. Rebuilt fresh from the real v0.2.1 release data (byte-identical to v0.2.0's); previously this was a ~28 MiB / 174,220-node / 255,798-edge slice of v0.1.0 (16 relationship types).
+A self-consistent ~45 MiB slice of the real v0.2.1 export: every one of the 18 relationship types present at least once (capped at 20,000 edges per type, or that type's true total if smaller), plus the real neighborhoods of the four literal seeds `examples/queries.cypher` / `scripts/quickstart.py` use by default (an author, a trial, a MedlinePlus topic, a seed article), so every example query returns real rows, not just every relationship type, plus the ClinicalTrials.gov condition-to-MeSH edges of every sample trial that has a sponsor or site, so `examples/trial_landscape.py` returns rows too. Every node referenced by a kept edge is included (0 dangling references), same KGX file-naming convention as the full download so the same scripts load it unchanged. Rebuilt fresh from the real v0.2.1 release data (byte-identical to v0.2.0's); previously this was a ~28 MiB / 174,220-node / 255,798-edge slice of v0.1.0 (16 relationship types).
 
 | File | Size | SHA-256 |
 |---|---:|---|
-| `sample_out/nodes__sample.jsonl.gz` | 26,749,842 bytes | `ff86a83d8abbacae3b9cc7e00397b58c7518570e9262a237769e33e7e8eeb718` |
-| `sample_out/edges__sample.jsonl.gz` | 19,551,674 bytes | `d4b82587ac6b92e2e4f92022c3fe0eb13350028d257e4c002388ff2b28d2858b` |
+| `sample_out/nodes__sample.jsonl.gz` | 26,768,729 bytes | `f5b67472953479ec17014d3d55b6202156ace1aabb4ddc9ac395e12c98cb1b4f` |
+| `sample_out/edges__sample.jsonl.gz` | 20,607,023 bytes | `65a3c71b7246695356596764beac1a3b156e8f87d25384ead8d9c9f36c824788` |
 
-271,374 nodes / 296,651 edges. Build it yourself with `scripts/build_sample_subgraph.py` followed by `scripts/seed_sample_subgraph.py` (see [docs/DISTRIBUTION_ARTIFACTS.md](docs/DISTRIBUTION_ARTIFACTS.md)), or load a copy you already have:
+271,924 nodes / 322,615 edges. Build it yourself with `scripts/build_sample_subgraph.py`, then `scripts/seed_sample_subgraph.py`, then `scripts/seed_trial_mesh_sample.py` (see [docs/DISTRIBUTION_ARTIFACTS.md](docs/DISTRIBUTION_ARTIFACTS.md)), or load a copy you already have:
 
 ```bash
 python scripts/kgx_to_neo4j.py --input sample_out --out neo4j_import_sample
 USE_DOCKER=1 bash scripts/load_neo4j.sh neo4j_import_sample
 ```
 
-Measured against the real, reseeded v0.2.1 sample: conversion 7.9s + `neo4j-admin` import 7.9s (271,374 nodes / 296,651 relationships / 9,805,873 properties, 0 bad/skipped/duplicate relationships, peak memory 549.8 MiB) -- well under a minute end to end (excluding Docker image pull). Every one of the 12 queries in [examples/queries.cypher](examples/queries.cypher) now returns real, nonzero rows against this loaded sample (previously 3 returned zero because their literal ids didn't survive the unseeded per-type-cap build); see [docs/VALIDATION_RESULTS.md](docs/VALIDATION_RESULTS.md) for the full row-count table.
+Measured against the real, reseeded v0.2.1 sample: conversion 8.1s + `neo4j-admin` import 8.4s (271,924 nodes / 322,615 relationships / 9,987,419 properties, every relationship imported, peak memory 549.9 MiB) -- well under a minute end to end (excluding Docker image pull). Every one of the 12 queries in [examples/queries.cypher](examples/queries.cypher) now returns real, nonzero rows against this loaded sample (previously 3 returned zero because their literal ids didn't survive the unseeded per-type-cap build); see [docs/VALIDATION_RESULTS.md](docs/VALIDATION_RESULTS.md) for the full row-count table (measured before the trial-to-MeSH seed, which only adds edges). Against this sample the trial landscape tool returns 496 trials for Breast Neoplasms, 160 for Heart Failure, 110 for Alzheimer Disease and 3,293 for Neoplasms.
 
 ### 5. Clinical trial landscape for a condition
 
