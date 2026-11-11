@@ -89,6 +89,24 @@ USE_DOCKER=1 bash scripts/load_neo4j.sh neo4j_import_sample
 
 Measured against the real v0.2.1 sample: conversion 8.1s + `neo4j-admin` import 7.5s (270,965 nodes / 295,798 relationships / 9,784,822 properties, 0 bad/skipped/duplicate relationships, peak memory 549.8 MiB) -- well under a minute end to end (excluding Docker image pull). Every query in [examples/queries.cypher](examples/queries.cypher) ran cleanly against this loaded sample with no syntax/type errors; see [docs/VALIDATION_RESULTS.md](docs/VALIDATION_RESULTS.md) for the full v0.2.1 run.
 
+### 5. Clinical trial landscape for a condition
+
+```bash
+python examples/trial_landscape.py --input ckg --condition "Heart Failure"     # or D006333 / MESH:D006333
+python examples/trial_landscape.py --input ckg --data-check                    # field completeness table
+```
+
+For a MeSH condition descriptor (expanded down its own MeSH tree branches, with direct matches kept
+separate), it writes CSVs and one self-contained `report.html`: trials by sponsor, sponsor class,
+phase and status; a start-year timeline; top sites and countries with how many matching trials are
+recruiting at each (competing-trial density for site selection); and trials with results articles
+(`VALIDATED_BY`) with how often those articles are cited in-graph by guidelines or systematic reviews.
+The first run caches the trial subgraph as Parquet (about 45 s on 16 cores); later runs take 2-3 s.
+Example outputs for breast neoplasms, Alzheimer disease and heart failure are in
+[examples/trial_landscape_examples/](examples/trial_landscape_examples/) (the large per-trial and
+per-site CSVs are left out; rerun to regenerate them). Read the trial notes in
+[docs/DATA_NOTES.md](docs/DATA_NOTES.md#clinical-trials-conditions-sponsors-and-sites) first.
+
 ### Neo4j database dump
 
 A `neo4j-admin database dump` was taken of both the full graph and the sample for sizing purposes only (not distributed from this repo -- see [docs/DISTRIBUTION_ARTIFACTS.md](docs/DISTRIBUTION_ARTIFACTS.md) for the measured sizes and a Hugging Face / Zenodo hosting feasibility assessment). A pre-built dump may be published separately in a later release.

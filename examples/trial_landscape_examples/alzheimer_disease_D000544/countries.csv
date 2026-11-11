@@ -1,0 +1,74 @@
+country,trials,sites,recruiting_trials,sites_with_recruiting_trial
+United States,1794,7695,208,791
+France,397,1136,54,113
+Canada,281,764,40,91
+Spain,244,723,25,89
+United Kingdom,222,758,26,70
+China,206,649,66,238
+Germany,181,675,19,67
+Italy,176,574,30,78
+South Korea,153,345,18,70
+Australia,147,469,14,39
+Netherlands,113,146,11,16
+Sweden,110,194,9,13
+Japan,105,848,15,100
+Poland,96,400,10,55
+Taiwan,94,127,13,25
+Belgium,81,152,9,15
+Finland,56,69,3,7
+Argentina,55,216,14,51
+Brazil,55,126,9,42
+Czechia,55,222,7,28
+Switzerland,54,70,8,9
+Turkey (Türkiye),53,104,5,17
+Denmark,52,68,4,6
+Israel,48,78,6,17
+Austria,45,84,2,5
+Portugal,41,141,6,22
+Chile,39,76,3,10
+Norway,38,53,7,15
+Russia,38,210,2,50
+Mexico,37,105,7,19
+Puerto Rico,37,61,7,13
+Greece,34,107,7,28
+Bulgaria,32,96,4,19
+South Africa,31,116,0,0
+Slovakia,29,83,3,12
+Hungary,26,89,4,14
+Croatia,24,55,5,18
+Hong Kong,24,23,5,5
+Singapore,23,26,2,3
+Romania,22,85,6,30
+New Zealand,19,23,3,2
+Ukraine,19,124,3,36
+Colombia,15,25,4,3
+India,14,56,4,19
+Serbia,14,51,2,12
+Ireland,13,19,2,3
+Estonia,10,13,0,0
+Peru,7,9,0,0
+Philippines,7,6,1,1
+Lithuania,6,6,0,0
+Slovenia,6,14,0,0
+Malaysia,5,13,1,1
+Vietnam,5,8,0,0
+Iceland,4,4,0,0
+Iran,4,4,0,0
+Egypt,3,3,0,0
+Monaco,3,2,0,0
+Thailand,3,3,1,1
+United Arab Emirates,3,3,2,2
+Costa Rica,2,3,0,0
+Martinique,2,2,1,1
+(missing),1,1,0,0
+American Samoa,1,2,0,0
+Bolivia,1,1,0,0
+Cyprus,1,1,1,1
+Dominican Republic,1,1,0,0
+Ecuador,1,1,0,0
+Faroe Islands,1,1,0,0
+Jordan,1,1,0,0
+Latvia,1,1,0,0
+Pakistan,1,2,0,0
+Saudi Arabia,1,1,0,0
+Uruguay,1,1,0,0
