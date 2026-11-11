@@ -7,7 +7,7 @@ apply and explain *why* reseeding was needed), the superseded **v0.2.0 sample-sc
 further below for history), and the original **v0.1.0 full-scale pass** (kept at the bottom,
 unchanged). None of these passes were full-scale re-runs of the v0.2.1 graph itself — only the
 sample subgraph was rebuilt and load-tested each time, using the real, validated v0.2.1 release
-build (`/home/ldeveza/lunas-releases/clinical_v02`, 12,067,108 nodes / 105,758,066 edges). The
+build (12,067,108 nodes / 105,758,066 edges). The
 v0.1.0 full-scale numbers (full 8-shard download, full load, full dump sizing) were **not**
 re-measured at v0.2.0/v0.2.1 scale — that would be a multi-hour undertaking outside this pass's
 scope — so that section is a historical v0.1.0 measurement, not a v0.2.1 claim. Numbers never

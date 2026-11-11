@@ -1,12 +1,6 @@
-# This file describes v0.2.1. v0.2.1 ships byte-identical node/edge data to v0.2.0 -- it exists
-# solely to correct the v0.2.0 dataset card (an internal/contractual content leak, wrong license
-# text, a stale "zenodo.TBD" citation placeholder, and a false betweenness-score claim; see
-# lunasai-knowledge-graph's modules/export/release.py fix commit for the full list). The Zenodo
-# draft for v0.2.1 (10.5281/zenodo.24108692, same concept DOI 10.5281/zenodo.24011484 as v0.1.0/
-# v0.2.0) was staged by this pass but had not yet been published by the owner as of this commit --
-# the DOI below is real (Zenodo pre-reserves a version DOI the moment a new-version draft is
-# created) and not a placeholder, but confirm https://doi.org/10.5281/zenodo.24108692 resolves
-# before relying on it if you're reading this very soon after the commit date below.
+# This file describes v0.2.1, the current published version. v0.2.1 corrects v0.2.0's dataset
+# card metadata; the node/edge data is byte-identical to v0.2.0. Same concept DOI
+# (10.5281/zenodo.24011484) as v0.1.0/v0.2.0.
 cff-version: 1.2.0
 message: "If you use the Lunas Clinical Evidence Knowledge Graph, please cite the dataset."
 title: "Lunas Clinical Evidence Knowledge Graph"
