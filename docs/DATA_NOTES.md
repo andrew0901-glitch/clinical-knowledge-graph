@@ -50,7 +50,10 @@ Measured on the v0.2.1 files with `examples/trial_landscape.py --data-check` (fu
 - **The newest 22,567 trials (NCT07563270 onward) have no `SPONSORED_BY` or `CONDUCTED_AT` edges.**
   That includes 6,586 of the 64,497 recruiting trials and about half of the trials starting in 2026.
   Most of them (16,181) do have condition edges, so they appear in condition counts but not in any
-  sponsor, site or country figure.
+  sponsor, site or country figure. The upstream sponsor/site build had not run since 2026-05-29. It
+  has since been rebuilt and scheduled weekly (for the next release, not v0.2.1). Even then, about 10%
+  of trials have no site edge because ClinicalTrials.gov lists no facility for them; a missing site
+  edge does not by itself mean missing data.
 - **Sites** (`TrialSite`) are facility name + city + state + country (state 53% overall, 100% for
   US sites); no postcode or coordinates. The key is the registered spelling, so one hospital can
   appear as several sites (`examples/trial_landscape.py --merge-sites` merges spelling variants: 1,092,163 -> 940,830). `CONDUCTED_AT.status` (per-site recruitment status) is set on 15.8% of
