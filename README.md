@@ -8,16 +8,14 @@ Documentation, loaders and examples for the **Lunas Clinical Evidence KG**, a pu
 |---|---|---|
 | Core graph v0.1.0 | Hugging Face [`lunas-health/clinical-evidence-kg`](https://huggingface.co/datasets/lunas-health/clinical-evidence-kg) (tag `clinical-v0.1.0`) · Zenodo [10.5281/zenodo.24011485](https://doi.org/10.5281/zenodo.24011485) | CC0 1.0 |
 | Core graph v0.2.0 | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.0`) · Zenodo [10.5281/zenodo.24091964](https://doi.org/10.5281/zenodo.24091964) | CC0 1.0 |
-| Core graph v0.2.1 (docs-only re-release; identical data to v0.2.0) | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.1`) · Zenodo [10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692) (draft staged, **not yet published by the owner** as of this commit -- the DOI is real and pre-reserved, not a placeholder, but confirm the link resolves before relying on it) | CC0 1.0 |
+| Core graph v0.2.1 (current) | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.1`) · Zenodo [10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692) | CC0 1.0 |
 | JEV evidence annotations (sidecar) | Zenodo [10.5281/zenodo.24012855](https://doi.org/10.5281/zenodo.24012855) · also in the Hugging Face repo | Not CC0: rights reserved by LunasAI LLC; model predictions; no model training |
 
-v0.2.0 is published. v0.2.1 ships byte-identical node/edge data to v0.2.0 -- it exists solely to
-correct v0.2.0's dataset card (which carried an internal/contractual content leak, wrong license
-text, a stale DOI placeholder and a false betweenness-score claim), and is staged as a ready
-Zenodo draft pending the owner's publish decision. The Zenodo concept DOI shared by every version
-is [10.5281/zenodo.24011484](https://doi.org/10.5281/zenodo.24011484) -- always resolves to the
-latest published version. The JEV sidecar is unchanged across all three -- none of them ship a
-regenerated JEV file, so the v0.1.0 JEV record above still applies as-is.
+v0.2.1 is the current, published version. It corrects v0.2.0's dataset card metadata; the
+node/edge data is byte-identical to v0.2.0. The Zenodo concept DOI shared by every version is
+[10.5281/zenodo.24011484](https://doi.org/10.5281/zenodo.24011484) -- always resolves to the
+latest published version. The JEV sidecar is unchanged across all three releases -- none of them
+ship a regenerated JEV file, so the v0.1.0 JEV record above still applies as-is.
 
 ## What is in v0.2.1
 
@@ -69,7 +67,7 @@ Then try [examples/queries.cypher](examples/queries.cypher). Node labels are the
 | `load_neo4j.sh` (`neo4j-admin database import full`) | ~7.2 min | 793 MiB (neo4j-admin's own report) | 55 GB final `/data` store |
 | **Total load** | **~22.5 min** | **under 1 GB for conversion+import** | **~85 GB peak** (4.9 GiB download + 25 GB CSV + 55 GB store, coexisting briefly; the 25 GB CSV dir can be deleted once import succeeds, leaving 55 GB) |
 
-The import itself is lightweight; **the real cost is disk, not RAM.** Running the server afterward to query the graph is the one step that benefits from real memory: this repo's `docker-compose.yml` configures 8 GB heap / 16 GB page cache (~32 GB with OS overhead) as a comfortable default for a dedicated machine; the example queries in this repo ran fine against as little as 6 GB heap / 8 GB page cache on a shared host. Reserve disk headroom beyond the ~55 GB final store size -- a prior run on a shared host hit a genuine "no space left on device" mid-import when the *host's* disk (shared with unrelated processes) filled up; that is a shared-disk risk, not something this import needs on its own. **v0.2.0/v0.2.1 removed the rights-bookkeeping edges entirely** (`HAS_RIGHTS_EVIDENCE`/`HAS_USE_GRANT` no longer exist in the graph at all) -- there is nothing of that kind left to `--exclude-type`.
+The import itself is lightweight; **the real cost is disk, not RAM.** Running the server afterward to query the graph is the one step that benefits from real memory: this repo's `docker-compose.yml` configures 8 GB heap / 16 GB page cache (~32 GB with OS overhead) as a comfortable default for a dedicated machine; the example queries ran fine against as little as 6 GB heap / 8 GB page cache. Reserve disk headroom beyond the ~55 GB final store size. **v0.2.0/v0.2.1 removed the rights-bookkeeping edges entirely** (`HAS_RIGHTS_EVIDENCE`/`HAS_USE_GRANT` no longer exist in the graph at all) -- there is nothing of that kind left to `--exclude-type`.
 
 ### 4. Try the sample subgraph first (loads in under a minute)
 
