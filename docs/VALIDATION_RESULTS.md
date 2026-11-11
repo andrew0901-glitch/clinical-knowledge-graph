@@ -1,21 +1,75 @@
 # Validation results
 
-Three validation passes are recorded in this file: a **v0.2.1 sample-scale pass** (this release,
-below), the superseded **v0.2.0 sample-scale pass** (kept as the "Bug found" note below still
-applies and the per-type-cap methodology is identical; its own numeric table was replaced by the
-v0.2.1 re-measurement since v0.2.1 ships byte-identical data -- v0.2.1 exists only to correct the
-dataset card, not the graph, so re-running this pass under the v0.2.1 label is a real, independent
-measurement, not a copy), and the original **v0.1.0 full-scale pass** (kept below it, unchanged,
-for history). The v0.2.1 pass was NOT a full-scale re-run — it rebuilt and load-tested the sample
-subgraph and ran every example query against it, using the real, validated v0.2.1 release build
-(`/home/ldeveza/lunas-releases/clinical_v02`, 12,067,108 nodes / 105,758,066 edges -- the v0.2.0
-pass had carried a stale pre-collapse edge count, 105,758,798; 105,758,066 is the authoritative
-manifest total and is used throughout this section). The v0.1.0 full-scale numbers (full 8-shard
-download, full load, full dump sizing) were **not** re-measured at v0.2.0/v0.2.1 scale —
-that would be a multi-hour undertaking outside this pass's scope — so those sections below are
-historical v0.1.0 measurements, not v0.2.1 claims. Numbers never invented either way.
+Four validation passes are recorded in this file: a **v0.2.1 sample-reseed pass** (this update,
+below -- every example query now returns rows), the preceding **v0.2.1 sample-scale pass** (kept
+immediately after it, since the "Bug found" note and per-type-cap methodology it documents still
+apply and explain *why* reseeding was needed), the superseded **v0.2.0 sample-scale pass** (kept
+further below for history), and the original **v0.1.0 full-scale pass** (kept at the bottom,
+unchanged). None of these passes were full-scale re-runs of the v0.2.1 graph itself — only the
+sample subgraph was rebuilt and load-tested each time, using the real, validated v0.2.1 release
+build (`/home/ldeveza/lunas-releases/clinical_v02`, 12,067,108 nodes / 105,758,066 edges). The
+v0.1.0 full-scale numbers (full 8-shard download, full load, full dump sizing) were **not**
+re-measured at v0.2.0/v0.2.1 scale — that would be a multi-hour undertaking outside this pass's
+scope — so that section is a historical v0.1.0 measurement, not a v0.2.1 claim. Numbers never
+invented either way.
 
-## v0.2.1 sample-scale validation (this release, measured)
+## v0.2.1 sample-reseed pass (this update — every example now returns rows)
+
+The prior v0.2.1 sample-scale pass (next section) measured that 3 of the file's 12 example
+queries returned **zero rows** against the per-type-cap sample — not because of a bug in the
+query or the data, but because that sample's construction gives no guarantee that a specific
+*literal* id (a named author, trial, MedlinePlus topic, or seed article) survives a 20,000-edge
+per-type cap applied to 105.8M real edges. Per the request that prompted this pass: rebuild the
+sample seeded with the **exact starting nodes each example uses**, keep their neighborhoods within
+the size budget, and rerun every example.
+
+**New script**: `scripts/seed_sample_subgraph.py` (run after `build_sample_subgraph.py`, same
+`--data-dir`, against the sample it wrote). It resolves each literal seed's real id and
+neighborhood via DuckDB against the full release (a one-time Parquet cache makes this take
+seconds instead of minutes), then extracts the full original JSON lines for whatever is missing
+from the shard files directly — no property is reconstructed or dropped. See
+[DISTRIBUTION_ARTIFACTS.md](DISTRIBUTION_ARTIFACTS.md) for the exact build/load numbers (net
+addition: 853 edges / 409 nodes; final sample 296,651 edges / 271,374 nodes, 0 dangling
+references, still all 18/18 relationship types present).
+
+**One genuine discovery made while resolving the seeds, worth recording**: query 5's literal
+author filter (`WHERE au.name CONTAINS 'Deveza'`) looked, at a glance, like a leftover/placeholder
+(the repo owner's own surname, not an obviously real literature author) — but it is not a bug.
+The full v0.2.1 graph really does contain six distinct `Author` nodes whose name contains
+"Deveza" (Leticia A. Deveza, Lorenzo R. Deveza, Vítor Devezas, Giordano B. H. Deveza, Clifford
+Deveza, Ricardo C. Deveza — real OpenAlex author records, unrelated to each other and to the
+dataset's own creator field in `CITATION.cff`), two of which (Leticia A. Deveza, 21 articles;
+Lorenzo R. Deveza, 25 articles) have substantial major-topic MeSH coverage. The seed script keeps
+all six authors' `AUTHORED_BY` edges plus their articles' major-topic `HAS_MESH` edges.
+
+**Row counts, this pass, against the reseeded + reloaded sample** (same Neo4j 5 Community /
+Docker environment as the prior pass, same non-default host ports so as not to disturb
+`ce-kg-neo4j`):
+
+| Query | Rows (prior, unseeded sample) | Rows (this pass, seeded sample) |
+|---|---:|---:|
+| 1a. labels present | 11 | 11 |
+| 1b. relationship types present | 18 | 18 |
+| 2. Asthma major-topic articles | 12 | 25 |
+| 3. Asthma + one level of children | 12 | 25 |
+| 4. trial -> results -> citing | 25 | 25 |
+| 5. author's MeSH topics (`CONTAINS 'Deveza'`) | **0** (seed not in sample) | **25** |
+| 6a. trial results -> citing guidelines (literal NCT id) | **0** (seed not in sample) | **40** |
+| 6b. MedlinePlus -> MeSH hierarchy expansion (literal topic) | **0** (no MedlinePlus-origin `HAS_MESH` survived the cap) | **25** |
+| 6c. seed-article reachability (literal PMID) | 17 | 17 |
+| 6d. author aggregate MeSH profile (literal author id) | 4 | 25 |
+| 6e. Article + PMC record + Journal | 25 | 25 |
+| 6f. journal's most-cited articles | 25 | 25 |
+
+Every one of the 12 queries in `examples/queries.cypher` now returns real, nonzero rows against
+the sample (previously 9/12 did). Queries 2 and 3 (both `LIMIT 25`) also picked up extra rows
+(12 -> 25) as a side effect, not a separate fix: the MedlinePlus seed's mesh-hierarchy addition
+(query 6b's neighborhood) adds more major-topic `HAS_MESH` edges into the same `MeSHConcept
+{name: 'Asthma'}` node that queries 2/3 already matched on, so the sample simply has more Asthma
+articles than before. All rows are real graph content (titles, pub_types, MeSH names, journal
+names) — nothing synthesized.
+
+## v0.2.1 sample-scale validation (superseded by the reseed above; kept for the "Bug found" note and the measurements it reports)
 
 Environment: Docker Desktop (WSL2) on a Linux host, `neo4j:5-community`, run in an isolated
 container on non-default host ports so as not to disturb an unrelated pre-existing `ce-kg-neo4j`

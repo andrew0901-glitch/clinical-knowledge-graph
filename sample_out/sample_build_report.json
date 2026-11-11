@@ -1,12 +1,16 @@
 {
-  "edges_kept": 295798,
+  "edges_kept": 296651,
   "edges_by_type": {
-    "HAS_MESH": 20000,
-    "AUTHORED_BY": 20000,
-    "CITES": 20000,
+    "HAS_PMC_RECORD": 20000,
+    "PUBLISHED_IN": 20000,
+    "HAS_MESH": 20664,
+    "AUTHORED_BY": 20103,
+    "CITES": 20079,
     "CITES_BACKGROUND": 20000,
-    "VALIDATED_BY": 20000,
+    "VALIDATED_BY": 20007,
     "HAS_DERIVED_PUBLICATION": 20000,
+    "HAS_BROADER": 20000,
+    "HAS_BROADER_ANCESTOR": 20000,
     "SPONSORED_BY": 20000,
     "CONDUCTED_AT": 20000,
     "IN_TOPIC_GROUP": 3651,
@@ -14,12 +18,13 @@
     "HAS_LANGUAGE_RESOURCE": 4885,
     "LINKS_TO_RESOURCE": 20000,
     "TRANSLATION_OF": 1016,
-    "RESOURCE_TRANSLATION_OF": 20000,
-    "HAS_BROADER": 20000,
-    "HAS_BROADER_ANCESTOR": 20000,
-    "HAS_PMC_RECORD": 20000,
-    "PUBLISHED_IN": 20000
+    "RESOURCE_TRANSLATION_OF": 20000
   },
-  "nodes_kept": 270965,
-  "nodes_missing": 0
+  "nodes_kept": 271374,
+  "nodes_missing": 0,
+  "seeded": true,
+  "seed_additions": {
+    "new_edges_added": 1,
+    "new_nodes_added": 0
+  }
 }

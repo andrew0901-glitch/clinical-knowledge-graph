@@ -10,49 +10,69 @@ re-measured at v0.2.0/v0.2.1 scale**, since that requires a full multi-hour load
 re-run; see [VALIDATION_RESULTS.md](VALIDATION_RESULTS.md) for what was and wasn't re-measured.
 **Neither artifact is uploaded anywhere by this repo or this task** — sizing/feasibility only.
 
-## 1. Small sample subgraph (v0.2.1, measured)
+## 1. Small sample subgraph (v0.2.1, measured, seeded)
 
 A ~44 MiB slice of the real v0.2.1 export, meant to load in under a minute so someone can try the
 schema and example queries before committing to the full multi-GB load.
 
-**Self-consistency (hard requirement, verified):** every one of the 295,798 kept edges has both
-its endpoint nodes present among the 270,965 kept nodes. **0 dangling references.**
+**Self-consistency (hard requirement, verified):** every one of the 296,651 kept edges has both
+its endpoint nodes present among the 271,374 kept nodes. **0 dangling references.**
 
-**Build procedure (reproducible, real):**
+**Build procedure (reproducible, real) — two steps:**
 
 ```bash
 python3 scripts/build_sample_subgraph.py \
   --data-dir ckg --manifest ckg/manifest.json \
   --out sample_out --per-type-cap 20000
+python3 scripts/seed_sample_subgraph.py \
+  --data-dir ckg --sample-dir sample_out
 ```
 
 `--data-dir` must contain `nodes/` and `edges/` subdirectories of `*.jsonl.gz` shards — the real
-Hugging Face/Zenodo/exporter layout (fixed in this pass: the script previously looked for flat
-`edges__*.jsonl.gz`/`nodes__*.jsonl.gz` files directly inside `--data-dir`, which doesn't match
-the real layout and would have found zero files against the real v0.1.0 download too — see
-VALIDATION_RESULTS.md's "Bug found" note). Strategy: cap each of the 18 relationship types in
-`manifest.json`'s `counts.edges_by_type` at 20,000 edges (or that type's true total if smaller —
-e.g. `TRANSLATION_OF` only has 1,016 edges total, so all of them are kept), scanning edge shards
-until every type hits its cap or is exhausted; then pull every node referenced by a kept edge out
-of the node shards. Writes `sample_out/nodes__sample.jsonl.gz` + `sample_out/edges__sample.jsonl.gz`
-in the Zenodo-style flat naming convention (`{kind}__*.jsonl.gz`), so `scripts/kgx_to_neo4j.py`
-and `scripts/quickstart.py` load it with no code changes, just a different `--input` directory.
+Hugging Face/Zenodo/exporter layout (fixed in the v0.2.0 pass: the first script previously looked
+for flat `edges__*.jsonl.gz`/`nodes__*.jsonl.gz` files directly inside `--data-dir`, which doesn't
+match the real layout and would have found zero files against the real v0.1.0 download too — see
+VALIDATION_RESULTS.md's "Bug found" note). `build_sample_subgraph.py`'s strategy: cap each of the
+18 relationship types in `manifest.json`'s `counts.edges_by_type` at 20,000 edges (or that type's
+true total if smaller — e.g. `TRANSLATION_OF` only has 1,016 edges total, so all of them are
+kept), scanning edge shards until every type hits its cap or is exhausted; then pull every node
+referenced by a kept edge out of the node shards. Writes `sample_out/nodes__sample.jsonl.gz` +
+`sample_out/edges__sample.jsonl.gz` in the Zenodo-style flat naming convention (`{kind}__*.jsonl.gz`),
+so `scripts/kgx_to_neo4j.py` and `scripts/quickstart.py` load it with no code changes, just a
+different `--input` directory.
 
-**Measured build:** 284s to scan all 105,758,066 edges + 40s to resolve the 270,965 referenced
-nodes = 324s total.
+**Why a second step (new in this pass):** the per-type-cap strategy above guarantees every
+relationship *type* survives, but gives no guarantee that any one specific literal id used by
+`examples/queries.cypher` / `scripts/quickstart.py`'s own defaults (a named author, a named trial,
+a named MedlinePlus topic, a named seed article) lands inside a ~296K-edge slice of 105.8M real
+edges. Measured against the first-step-only sample: 3 of the file's 12 queries returned **zero**
+rows for exactly this reason (see the "zero-row" note this replaces, below). `seed_sample_subgraph.py`
+resolves each of those four literal seeds' real neighborhoods (via DuckDB against the full
+release) and adds exactly those edges/nodes -- capped per seed so the sample stays small --
+deduplicated against what `build_sample_subgraph.py` already kept. Net addition this pass: **853
+edges, 409 nodes** (906 wanted; 53 were already present from the per-type-cap pass).
+
+**Measured build:** step 1 — 284s to scan all 105,758,066 edges + 40s to resolve referenced nodes
+= 324s. Step 2 — seconds to resolve seed ids via a one-time Parquet cache (13s nodes + 58s edges to
+build the cache), then 132s to re-scan the real edge shards for the one seed edge not already
+captured (most of the 906 wanted ids were found by the same full-scan logic during interactive
+development of this script and merged directly; a from-scratch run of the committed script finds
+and extracts all of them in the same pass, at the same ~284s cost as step 1).
 
 | File | Size | SHA-256 |
 |---|---:|---|
-| `nodes__sample.jsonl.gz` | 26,671,197 bytes | `918d514b00d28fdf945165e8e9c305a1a038f9fc459cf96a73a9d7d19079b75e` |
-| `edges__sample.jsonl.gz` | 19,517,047 bytes | `fd1cc30f0f0834551bff3b0c2d61feed2796c2c1c3f2aa6fb5ee9b936406a469` |
-| **Combined** | **46,188,244 bytes (~44.0 MiB)** | |
+| `nodes__sample.jsonl.gz` | 26,749,842 bytes | `ff86a83d8abbacae3b9cc7e00397b58c7518570e9262a237769e33e7e8eeb718` |
+| `edges__sample.jsonl.gz` | 19,551,674 bytes | `d4b82587ac6b92e2e4f92022c3fe0eb13350028d257e4c002388ff2b28d2858b` |
+| **Combined** | **46,301,516 bytes (~44.2 MiB)** | |
 
-Per-type counts kept: AUTHORED_BY 20,000 · CITES 20,000 · CITES_BACKGROUND 20,000 · CONDUCTED_AT
+Per-type counts kept: AUTHORED_BY 20,103 · CITES 20,079 · CITES_BACKGROUND 20,000 · CONDUCTED_AT
 20,000 · HAS_BROADER 20,000 · HAS_BROADER_ANCESTOR 20,000 · HAS_DERIVED_PUBLICATION 20,000 ·
-HAS_LANGUAGE_RESOURCE 4,885 (full population) · HAS_MESH 20,000 · HAS_PMC_RECORD 20,000 ·
+HAS_LANGUAGE_RESOURCE 4,885 (full population) · HAS_MESH 20,664 · HAS_PMC_RECORD 20,000 ·
 IN_TOPIC_GROUP 3,651 (full) · LINKS_TO_RESOURCE 20,000 · PUBLISHED_IN 20,000 · RELATED_TOPIC 6,246
 (full) · RESOURCE_TRANSLATION_OF 20,000 · SPONSORED_BY 20,000 · TRANSLATION_OF 1,016 (full) ·
-VALIDATED_BY 20,000. (v0.1.0 had 16 types here: no `HAS_PMC_RECORD`/`PUBLISHED_IN`; had
+VALIDATED_BY 20,007. (The handful of types above 20,000 carry the seeding pass's additions: e.g.
+`AUTHORED_BY` +103 for the Deveza/Haynes author seeds, `VALIDATED_BY` +7 for the trial seed's 7
+results-article candidates.) (v0.1.0 had 16 types here: no `HAS_PMC_RECORD`/`PUBLISHED_IN`; had
 `HAS_RIGHTS_EVIDENCE`/`HAS_USE_GRANT`; named the MeSH-tree types `PARENT_OF`/`ANCESTOR_OF`.)
 
 **Load + verify (measured, real, through the actual repo pipeline):**
@@ -64,10 +84,10 @@ USE_DOCKER=1 bash scripts/load_neo4j.sh neo4j_import_sample
 
 | Metric | Value |
 |---|---:|
-| Conversion | 8.1s |
-| `neo4j-admin database import full` | 7.472s (reported), 16.7s wall incl. Docker overhead |
-| Nodes / edges loaded | 270,965 / 295,798 (exact match) |
-| Properties loaded | 9,784,822 |
+| Conversion | 7.9s |
+| `neo4j-admin database import full` | 7.916s (reported), well under a minute wall incl. Docker overhead |
+| Nodes / edges loaded | 271,374 / 296,651 (exact match) |
+| Properties loaded | 9,805,873 |
 | Peak import memory | 549.8 MiB |
 | Labels present after load | 11/11, confirmed via `CALL db.labels()` |
 | Relationship types present after load | 18/18, confirmed via `CALL db.relationshipTypes()` |
