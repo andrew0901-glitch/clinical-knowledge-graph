@@ -25,6 +25,7 @@ TrialSite,city,1092130,1092163,100.0,
 TrialSite,state,581089,1092163,53.21,
 TrialSite,country,1092130,1092163,100.0,
 TrialSite,"state, sites in United States",319570,319570,100.0,
+TrialSite,distinct sites after --merge-sites spelling merge,940830,1092163,86.14,basic merge within city and country; coverage = after / before
 ClinicalTrial,has >=1 CONDUCTED_AT site,515644,605610,85.14,
 CONDUCTED_AT,site-level recruitment status on edge,499281,3153344,15.83,
 CONDUCTED_AT,"site-level status, edges of RECRUITING trials",325990,336181,96.97,

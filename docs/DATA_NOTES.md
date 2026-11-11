@@ -33,9 +33,16 @@ Measured on the v0.2.1 files with `examples/trial_landscape.py --data-check` (fu
   trials, 77.8% of trials with a registry record) and expand the hierarchy yourself; the
   `mesh-ancestor` edges select the same trials. Against the ClinicalTrials.gov API on 999 random
   trials, the `mesh-list` condition edges had 98.1% recall and 99.85% precision. The misses are
-  Supplementary Concept Records (the graph holds descriptors only) and descriptors renamed in MeSH
-  2026 (the edges were matched by name; for example `Postoperative Pain`, formerly
-  `Pain, Postoperative`, has no trial edges).
+  Supplementary Concept Records (the graph holds descriptors only) and browse terms that failed a
+  name match: the edges were built by matching CT.gov's term names to MeSH descriptor names, and
+  CT.gov uses MeSH's inverted form (`Pain, Postoperative`, `Depressive Disorder, Major`) where the
+  descriptor names here are natural form (`Postoperative Pain`, `Major Depressive Disorder`).
+  Those descriptors have **no** trial edges: Major Depressive Disorder (D003865), Postoperative
+  Pain (D010149), Basal Cell Carcinoma (D002280), Procedural Pain (D000073818) and others. Across
+  all condition browse rows the loss is 0.38% of rows, but it is concentrated: 1,283 of 6,045
+  distinct terms match nothing (figures from the upstream build). The trial landscape report warns
+  when ClinicalTrials.gov's own ancestor terms place more trials under a condition than its explicit
+  terms reach, which is how these gaps show up (e.g. Depressive Disorder: 4,456 vs 1,935).
 - **Sponsor class is on the edge.** `Sponsor` nodes hold only a lower-cased name. ClinicalTrials.gov's
   `agency_class` (INDUSTRY, OTHER, NIH, FED, OTHER_GOV, NETWORK, INDIV, UNKNOWN, AMBIG) and
   `lead_or_collaborator` are on `SPONSORED_BY`. There is no "academic" class; universities and
@@ -46,7 +53,7 @@ Measured on the v0.2.1 files with `examples/trial_landscape.py --data-check` (fu
   sponsor, site or country figure.
 - **Sites** (`TrialSite`) are facility name + city + state + country (state 53% overall, 100% for
   US sites); no postcode or coordinates. The key is the registered spelling, so one hospital can
-  appear as several sites. `CONDUCTED_AT.status` (per-site recruitment status) is set on 15.8% of
+  appear as several sites (`examples/trial_landscape.py --merge-sites` merges spelling variants: 1,092,163 -> 940,830). `CONDUCTED_AT.status` (per-site recruitment status) is set on 15.8% of
   edges, but on 97% of edges of recruiting trials.
 - **Dates**: month-precision start/completion dates are stored as the last day of the month (38.6%
   of start dates). Use the year.

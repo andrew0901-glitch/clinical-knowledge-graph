@@ -4,6 +4,7 @@
   pip install duckdb
   python examples/trial_landscape.py --input ckg --condition "Asthma"          # name or D001249 / MESH:D001249
   python examples/trial_landscape.py --input ckg --condition D001249 --out out/asthma
+  python examples/trial_landscape.py --input ckg --condition D006333 --merge-sites   # merge facility spellings
   python examples/trial_landscape.py --input ckg --data-check                   # field completeness table only
 
 For a MeSH condition descriptor it reports the competitive trial landscape (sponsors, sponsor class,
@@ -27,7 +28,7 @@ matched as the OBJECT and the walk goes to its subjects. Each step follows the e
 The first run reads every node and edge file once (about a minute on 16+ cores) and caches the
 trial subgraph as Parquet in <input>/trial_landscape_cache; later runs take seconds.
 """
-import argparse, csv, glob, gzip, html, json, os, re, shutil, sys, time
+import argparse, csv, glob, gzip, html, json, os, re, shutil, sys, time, unicodedata
 from collections import defaultdict
 from multiprocessing import Pool
 
@@ -256,7 +257,7 @@ def data_check(con):
     def add(entity, field, n, d, note=""):
         rows.append((entity, field, n, d, round(100.0 * n / d, 2) if d else None, note))
 
-    q = lambda s: con.execute(s).fetchone()[0]
+    q = lambda s: con.execute(s).fetchall()[0][0]
     n_trials = q("SELECT count(*) FROM trials")
     n_full = q("SELECT count(*) FROM trials WHERE title IS NOT NULL")
     add("ClinicalTrial", "(node has registry record: title present)", n_full, n_trials,
@@ -300,6 +301,9 @@ def data_check(con):
     add("TrialSite", "state, sites in United States",
         q("SELECT count(*) FROM sites WHERE country='United States' AND state IS NOT NULL"),
         q("SELECT count(*) FROM sites WHERE country='United States'"))
+    keys = {site_merge_key(n, c, k) for n, c, k in con.sql("SELECT name, city, country FROM sites").fetchall()}
+    add("TrialSite", "distinct sites after --merge-sites spelling merge", len(keys), n_sites,
+        "basic merge within city and country; coverage = after / before")
     add("ClinicalTrial", "has >=1 CONDUCTED_AT site", q("SELECT count(DISTINCT trial) FROM conducted_at"), n_full)
     n_ca = q("SELECT count(*) FROM conducted_at")
     add("CONDUCTED_AT", "site-level recruitment status on edge",
@@ -397,9 +401,36 @@ def class_case(col):
            " ELSE 'Network / individual / unknown' END"
 
 
-def landscape(con, root, depth, out, top_n):
-    con.sql("CREATE OR REPLACE TEMP TABLE expansion (mesh VARCHAR, depth INTEGER)")
-    con.executemany("INSERT INTO expansion VALUES (?, ?)", list(depth.items()))
+# --merge-sites: a basic, deterministic merge of facility spellings within one city and country
+# ("Dana-Farber Cancer Institute" / "Dana Farber Cancer Institute", "M D Anderson" / "MD Anderson").
+# It does not resolve different names for the same place ("University of Texas MD Anderson ...").
+SITE_ABBREVIATIONS = {"ctr": "center", "centre": "center", "cntr": "center", "hosp": "hospital",
+                      "univ": "university", "med": "medical", "inst": "institute", "natl": "national",
+                      "dept": "department", "and": "", "the": "", "of": ""}
+SITE_SUFFIXES = {"inc", "llc", "ltd", "limited", "pc", "pa", "pllc", "llp", "corp", "corporation", "co",
+                 "company", "gmbh", "mbh", "ag", "sa", "sas", "sarl", "srl", "spa", "bv", "nv", "ab", "oy",
+                 "as", "aps", "plc", "pty", "kk", "sl", "slu"}
+
+
+def _norm(text):
+    text = unicodedata.normalize("NFKD", (text or "").lower())
+    text = "".join(ch for ch in text if not unicodedata.combining(ch)).replace("&", " and ")
+    return re.sub(r"[^a-z0-9]+", " ", text).split()
+
+
+def site_merge_key(name, city, country):
+    tokens = [SITE_ABBREVIATIONS.get(w, w) for w in _norm(name)]
+    tokens = [w for w in tokens if w]
+    while len(tokens) > 1 and tokens[-1] in SITE_SUFFIXES:
+        tokens.pop()
+    # Join runs of single letters: "m d anderson" -> "md anderson".
+    joined = re.sub(r"\b(?:[a-z] )+[a-z]\b", lambda m: m.group(0).replace(" ", ""), " ".join(tokens))
+    return f"{joined}|{' '.join(_norm(city))}|{' '.join(_norm(country))}"
+
+
+def landscape(con, root, depth, out, top_n, merge_sites=False):
+    con.execute("CREATE OR REPLACE TEMP TABLE expansion AS SELECT unnest(?::VARCHAR[]) AS mesh, unnest(?::INTEGER[]) AS depth",
+                [list(depth), list(depth.values())])
     root_id = root[0]
     con.sql(f"""CREATE OR REPLACE TEMP TABLE matched AS
         SELECT tm.trial,
@@ -459,23 +490,31 @@ def landscape(con, root, depth, out, top_n):
         SELECT start_year, lead_sponsor_class, count(*) AS trials,
                count(*) FILTER (WHERE study_type='INTERVENTIONAL') AS interventional
         FROM t WHERE start_year IS NOT NULL GROUP BY ALL ORDER BY start_year, lead_sponsor_class""")
+    # One row per site group: each TrialSite on its own, or merged by site_merge_key() with --merge-sites.
+    site_rows = con.sql("SELECT DISTINCT s.id, s.name, s.city, s.country FROM conducted_at c JOIN t ON t.id = c.trial "
+                        "JOIN sites s ON s.id = c.site").fetchall()
+    con.execute("CREATE OR REPLACE TEMP TABLE site_group AS SELECT unnest(?::VARCHAR[]) AS id, unnest(?::VARCHAR[]) AS grp",
+                [[i for i, *_ in site_rows], [site_merge_key(n, c, k) if merge_sites else i for i, n, c, k in site_rows]])
+    # Display the spelling attached to the most trial links; list every spelling that was merged.
     site_sql = f"""
-        SELECT s.name AS site, s.city, s.state, s.country,
+        SELECT mode(s.name) AS site, mode(s.city) AS city, mode(s.state) AS state, mode(s.country) AS country,
                count(DISTINCT t.id) AS trials,
                count(DISTINCT t.id) FILTER (WHERE t.overall_status='{RECRUITING}') AS recruiting_trials,
                count(DISTINCT t.id) FILTER (WHERE t.overall_status='{RECRUITING}' AND c.site_status='{RECRUITING}') AS recruiting_site_confirmed,
                count(DISTINCT t.id) FILTER (WHERE t.overall_status='NOT_YET_RECRUITING') AS not_yet_recruiting,
-               count(DISTINCT t.lead_sponsor) FILTER (WHERE t.overall_status='{RECRUITING}') AS recruiting_lead_sponsors
-        FROM conducted_at c JOIN t ON t.id = c.trial JOIN sites s ON s.id = c.site
-        GROUP BY s.id, s.name, s.city, s.state, s.country"""
+               count(DISTINCT t.lead_sponsor) FILTER (WHERE t.overall_status='{RECRUITING}') AS recruiting_lead_sponsors,
+               count(DISTINCT s.id) AS site_records,
+               string_agg(DISTINCT s.name, ' | ' ORDER BY s.name) AS name_variants
+        FROM conducted_at c JOIN t ON t.id = c.trial JOIN sites s ON s.id = c.site JOIN site_group g ON g.id = s.id
+        GROUP BY g.grp"""
     r["sites"] = save("sites", site_sql + " ORDER BY trials DESC, recruiting_trials DESC, site")
     r["sites_recruiting"] = con.sql(site_sql + " HAVING recruiting_trials > 0 ORDER BY recruiting_trials DESC, trials DESC, site "
                                     f"LIMIT {top_n}").fetchall()
     r["countries"] = save("countries", f"""
-        SELECT coalesce(s.country, '(missing)') AS country, count(DISTINCT t.id) AS trials, count(DISTINCT s.id) AS sites,
+        SELECT coalesce(s.country, '(missing)') AS country, count(DISTINCT t.id) AS trials, count(DISTINCT g.grp) AS sites,
                count(DISTINCT t.id) FILTER (WHERE t.overall_status='{RECRUITING}') AS recruiting_trials,
-               count(DISTINCT s.id) FILTER (WHERE t.overall_status='{RECRUITING}') AS sites_with_recruiting_trial
-        FROM conducted_at c JOIN t ON t.id = c.trial JOIN sites s ON s.id = c.site
+               count(DISTINCT g.grp) FILTER (WHERE t.overall_status='{RECRUITING}') AS sites_with_recruiting_trial
+        FROM conducted_at c JOIN t ON t.id = c.trial JOIN sites s ON s.id = c.site JOIN site_group g ON g.id = s.id
         GROUP BY 1 ORDER BY trials DESC, country""")
     r["results"] = save("results_publications", """
         WITH cit AS (
@@ -495,7 +534,7 @@ def landscape(con, root, depth, out, top_n):
         LEFT JOIN result_citations rc ON rc.cited = p.article LEFT JOIN cit ON cit.cited = p.article
         WHERE p.rel = 'VALIDATED_BY'
         ORDER BY cited_by_guideline_or_sr DESC, cited_in_graph DESC, t.nct_id""")
-    q = lambda s: con.execute(s).fetchone()[0]
+    q = lambda s: con.execute(s).fetchall()[0][0]
     ctgov = q(f"SELECT count(DISTINCT trial) FROM trial_mesh WHERE study_aspect='condition' AND mesh='{root_id}'")
     both = q(f"SELECT count(*) FROM (SELECT DISTINCT trial FROM trial_mesh WHERE study_aspect='condition' AND mesh='{root_id}') "
              f"JOIN t ON t.id = trial")
@@ -511,7 +550,9 @@ def landscape(con, root, depth, out, top_n):
         "trials_without_sponsor_record": q(f"SELECT count(*) FROM t WHERE lead_sponsor_class = '{NO_SPONSOR}'"),
         "recruiting_without_sponsor_record": q(f"SELECT count(*) FROM t WHERE overall_status='{RECRUITING}' "
                                               f"AND lead_sponsor_class = '{NO_SPONSOR}'"),
-        "sites": q("SELECT count(DISTINCT c.site) FROM conducted_at c JOIN t ON t.id = c.trial"),
+        "site_merge": merge_sites,
+        "sites_before_merge": len(site_rows),
+        "sites": q("SELECT count(DISTINCT grp) FROM site_group"),
         "countries": q("SELECT count(DISTINCT s.country) FROM conducted_at c JOIN t ON t.id = c.trial JOIN sites s ON s.id = c.site"),
         "trials_with_results_article": q("SELECT count(*) FROM t WHERE n_results_articles > 0"),
         "results_articles": len(r["results"][1]),
@@ -647,6 +688,29 @@ def heat_table(cells, rows_order, cols_order):
     return f"<table><thead><tr>{head}</tr></thead><tbody>{''.join(body)}</tbody></table>"
 
 
+def ancestor_gap_note(s, root):
+    """Warn when ClinicalTrials.gov's own ancestor terms place more trials under the condition than its
+    explicit terms reach: the usual cause is a narrower browse term the release failed to link to MeSH
+    (v0.2.x matched CT.gov's inverted-form names such as 'Pain, Postoperative' against natural-form
+    descriptor names, so those descriptors have no trial edges)."""
+    missed = s["crosscheck_ctgov_ancestor_terms_trials"] - s["crosscheck_ctgov_trials_also_in_our_expansion"]
+    if missed <= 0:
+        return ""
+    return (f"<p class='note'><b>Possible missing trials:</b> ClinicalTrials.gov's own ancestor terms place {missed:,} more trials "
+            f"under {E(root[2])} than this report finds through explicit condition terms. Their narrower browse term most likely "
+            f"did not link to a MeSH descriptor in this release (a known name-form mismatch; for example Major Depressive Disorder "
+            f"and Postoperative Pain have no trial edges in v0.2.x). They are not included here.</p>")
+
+
+def site_merge_note(s):
+    if s["site_merge"]:
+        return (f"Facility spellings are merged within each city and country (--merge-sites: case, punctuation and common "
+                f"suffixes): {s['sites_before_merge']:,} registered sites become {s['sites']:,}. Different names for the same place "
+                f"are not merged; sites.csv lists the spellings behind each row.")
+    return ("A site is one facility name + city + state + country as registered, so the same hospital spelled two ways counts "
+            "twice; rerun with --merge-sites to merge spellings.")
+
+
 def render_html(root, r, depth_n, closure_n, run_s, top_n, release):
     s = r["summary"]
     cls_series = list(zip(CLASS_ORDER, ["--s1", "--s2", "--s3", "--s4", "--context"]))
@@ -692,6 +756,7 @@ condition browse terms (graph edge ClinicalTrial -HAS_MESH {{study_aspect:'condi
 <p class="note"><b>Coverage gap in this release:</b> {s['trials_without_sponsor_record']:,} matching trials (the newest registrations)
 have no sponsor or site records, including {s['recruiting_without_sponsor_record']:,} of the {s['recruiting']:,} recruiting ones. They are counted
 in trial totals, phase and status, shown as "{NO_SPONSOR}" in the timeline, and missing from every sponsor, site and country figure.</p>
+{ancestor_gap_note(s, root)}
 
 <h2>Trials started per year, by lead sponsor class</h2>
 <p class="note">Start year from the registry start date (month-precision dates are stored as the last day of the month, so use years).
@@ -713,15 +778,14 @@ years outside {years[0] if years else ''}–{years[-1] if years else ''} (all in
 <div class="panel">{heat_table(phase_cells, PHASE_ORDER, STATUS_ORDER)}</div>
 
 <h2>Where the trials run: top sites</h2>
-<p class="note">Top {top_n} sites by number of matching trials; the blue part is trials recruiting now. A site is one facility name + city +
-state + country as registered, so the same hospital spelled two ways counts twice.</p>
+<p class="note">Top {top_n} sites by number of matching trials; the blue part is trials recruiting now. {site_merge_note(s)}</p>
 <div class="panel">{legend(rec)}{svg_hbars(top_sites, rec)}</div>
 
 <h2>Competing-trial density: sites with the most recruiting trials</h2>
 <p class="note">Matching trials currently recruiting at each site. The CSV adds site_confirmed (the registry's own per-site status also says
 RECRUITING) and the number of distinct lead sponsors competing there.</p>
 <div class="panel">{svg_hbars(dens, [('Recruiting trials', '--s1')])}</div>
-<details><summary>Top {top_n} sites (table; all {len(sites):,} in sites.csv)</summary>{table(sites_cols, sites[:top_n], numeric=sites_cols[4:])}</details>
+<details><summary>Top {top_n} sites (table; all {len(sites):,} in sites.csv)</summary>{table(sites_cols, sites[:top_n], numeric=sites_cols[4:10])}</details>
 
 <h2>Countries</h2>
 <div class="panel">{legend(rec)}{svg_hbars(top_countries, rec, label_w=180)}</div>
@@ -761,6 +825,9 @@ def main():
     ap.add_argument("--rebuild-cache", action="store_true")
     ap.add_argument("--workers", type=int, default=min(16, os.cpu_count() or 4))
     ap.add_argument("--top", type=int, default=25, help="rows shown in the report's ranked charts")
+    ap.add_argument("--merge-sites", action="store_true",
+                    help="merge facility spellings within a city and country (case, punctuation, common suffixes); "
+                         "reports site counts before and after")
     ap.add_argument("--data-check", action="store_true", help="write data_check.csv (field, coverage, denominator) and exit")
     a = ap.parse_args()
     if not a.condition and not a.data_check:
@@ -795,7 +862,7 @@ def main():
     depth, closure_n = expand(con, root[0])
     out = a.out or os.path.join("trial_landscape_out", root[1])
     os.makedirs(out, exist_ok=True)
-    r = landscape(con, root, depth, out, a.top)
+    r = landscape(con, root, depth, out, a.top, a.merge_sites)
     run_s = time.time() - t0
     with open(os.path.join(out, "report.html"), "w") as fh:
         fh.write(render_html(root, r, len(depth), closure_n, run_s, a.top, release))

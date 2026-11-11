@@ -93,6 +93,7 @@ Measured against the real v0.2.1 sample: conversion 8.1s + `neo4j-admin` import 
 
 ```bash
 python examples/trial_landscape.py --input ckg --condition "Heart Failure"     # or D006333 / MESH:D006333
+python examples/trial_landscape.py --input ckg --condition D006333 --merge-sites   # merge facility spellings
 python examples/trial_landscape.py --input ckg --data-check                    # field completeness table
 ```
 
@@ -101,7 +102,10 @@ separate), it writes CSVs and one self-contained `report.html`: trials by sponso
 phase and status; a start-year timeline; top sites and countries with how many matching trials are
 recruiting at each (competing-trial density for site selection); and trials with results articles
 (`VALIDATED_BY`) with how often those articles are cited in-graph by guidelines or systematic reviews.
-The first run caches the trial subgraph as Parquet (about 45 s on 16 cores); later runs take 2-3 s.
+`--merge-sites` merges facility spellings within a city and country (case, accents, punctuation,
+abbreviations such as Ctr/Centre, and company suffixes such as Inc/LLC/GmbH) and reports site counts
+before and after: 60,591 -> 52,482 sites for breast neoplasms, 1,092,163 -> 940,830 across the
+release. It does not resolve different names for the same place. The first run caches the trial subgraph as Parquet (about 45 s on 16 cores); later runs take 2-3 s.
 Example outputs for breast neoplasms, Alzheimer disease and heart failure are in
 [examples/trial_landscape_examples/](examples/trial_landscape_examples/) (the large per-trial and
 per-site CSVs are left out; rerun to regenerate them). Read the trial notes in
