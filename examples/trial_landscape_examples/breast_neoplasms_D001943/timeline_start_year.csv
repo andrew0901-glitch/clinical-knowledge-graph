@@ -1,0 +1,170 @@
+start_year,lead_sponsor_class,trials,interventional
+1971,Academic / hospital / other,1,1
+1977,Academic / hospital / other,1,0
+1979,Government,1,1
+1980,Academic / hospital / other,1,0
+1984,Government,1,1
+1987,Academic / hospital / other,3,3
+1988,Academic / hospital / other,1,1
+1989,Academic / hospital / other,1,0
+1989,Government,3,2
+1989,Network / individual / unknown,2,2
+1990,Academic / hospital / other,4,1
+1990,Government,1,0
+1990,Network / individual / unknown,3,3
+1991,Academic / hospital / other,7,5
+1991,Government,2,2
+1991,Network / individual / unknown,1,1
+1992,Academic / hospital / other,4,3
+1992,Government,1,1
+1993,Academic / hospital / other,8,8
+1993,Government,1,1
+1993,Network / individual / unknown,3,3
+1994,Academic / hospital / other,12,10
+1994,Government,6,5
+1994,Industry,1,1
+1995,Academic / hospital / other,14,11
+1995,Government,5,3
+1995,Industry,1,1
+1995,Network / individual / unknown,2,2
+1996,Academic / hospital / other,23,17
+1996,Government,8,6
+1996,Industry,6,6
+1996,Network / individual / unknown,7,7
+1996,No sponsor record in release,3,0
+1997,Academic / hospital / other,41,38
+1997,Government,2,1
+1997,Industry,4,4
+1997,Network / individual / unknown,9,7
+1997,No sponsor record in release,1,0
+1998,Academic / hospital / other,52,45
+1998,Government,7,4
+1998,Industry,9,9
+1998,Network / individual / unknown,10,9
+1998,No sponsor record in release,1,0
+1999,Academic / hospital / other,53,50
+1999,Government,17,12
+1999,Industry,5,4
+1999,Network / individual / unknown,7,7
+2000,Academic / hospital / other,80,66
+2000,Government,18,13
+2000,Industry,14,13
+2000,Network / individual / unknown,12,12
+2001,Academic / hospital / other,82,66
+2001,Government,21,18
+2001,Industry,29,28
+2001,Network / individual / unknown,13,13
+2002,Academic / hospital / other,97,86
+2002,Government,17,13
+2002,Industry,51,51
+2002,Network / individual / unknown,7,7
+2003,Academic / hospital / other,131,112
+2003,Government,23,11
+2003,Industry,35,34
+2003,Network / individual / unknown,17,17
+2004,Academic / hospital / other,169,148
+2004,Government,23,15
+2004,Industry,64,60
+2004,Network / individual / unknown,9,9
+2005,Academic / hospital / other,200,152
+2005,Government,24,21
+2005,Industry,64,59
+2005,Network / individual / unknown,16,13
+2006,Academic / hospital / other,238,190
+2006,Government,21,16
+2006,Industry,113,101
+2006,Network / individual / unknown,18,11
+2007,Academic / hospital / other,282,220
+2007,Government,21,15
+2007,Industry,106,85
+2007,Network / individual / unknown,12,11
+2008,Academic / hospital / other,311,234
+2008,Government,17,14
+2008,Industry,119,100
+2008,Network / individual / unknown,12,4
+2009,Academic / hospital / other,321,242
+2009,Government,22,16
+2009,Industry,95,81
+2009,Network / individual / unknown,9,6
+2010,Academic / hospital / other,307,219
+2010,Government,29,24
+2010,Industry,102,74
+2010,Network / individual / unknown,13,10
+2011,Academic / hospital / other,284,210
+2011,Government,35,25
+2011,Industry,95,74
+2011,Network / individual / unknown,16,8
+2011,No sponsor record in release,1,0
+2012,Academic / hospital / other,315,240
+2012,Government,20,11
+2012,Industry,93,72
+2012,Network / individual / unknown,12,9
+2013,Academic / hospital / other,322,259
+2013,Government,17,14
+2013,Industry,98,79
+2013,Network / individual / unknown,15,10
+2014,Academic / hospital / other,380,297
+2014,Government,22,12
+2014,Industry,102,83
+2014,Network / individual / unknown,5,5
+2014,No sponsor record in release,1,1
+2015,Academic / hospital / other,468,377
+2015,Government,12,10
+2015,Industry,117,97
+2015,Network / individual / unknown,3,3
+2016,Academic / hospital / other,466,382
+2016,Government,31,25
+2016,Industry,106,86
+2016,Network / individual / unknown,4,4
+2017,Academic / hospital / other,471,380
+2017,Government,21,17
+2017,Industry,121,100
+2017,Network / individual / unknown,5,4
+2018,Academic / hospital / other,427,327
+2018,Government,28,20
+2018,Industry,144,124
+2018,Network / individual / unknown,5,5
+2018,No sponsor record in release,4,2
+2019,Academic / hospital / other,549,403
+2019,Government,17,13
+2019,Industry,129,108
+2019,Network / individual / unknown,8,7
+2020,Academic / hospital / other,503,390
+2020,Government,15,12
+2020,Industry,140,120
+2020,Network / individual / unknown,8,5
+2020,No sponsor record in release,2,1
+2021,Academic / hospital / other,601,452
+2021,Government,28,23
+2021,Industry,154,116
+2021,Network / individual / unknown,5,3
+2021,No sponsor record in release,7,3
+2022,Academic / hospital / other,600,434
+2022,Government,25,17
+2022,Industry,177,147
+2022,Network / individual / unknown,3,1
+2022,No sponsor record in release,7,6
+2023,Academic / hospital / other,607,439
+2023,Government,25,22
+2023,Industry,168,143
+2023,Network / individual / unknown,4,2
+2023,No sponsor record in release,7,6
+2024,Academic / hospital / other,627,463
+2024,Government,31,28
+2024,Industry,158,124
+2024,Network / individual / unknown,5,5
+2024,No sponsor record in release,13,10
+2025,Academic / hospital / other,621,471
+2025,Government,23,20
+2025,Industry,149,115
+2025,Network / individual / unknown,6,4
+2025,No sponsor record in release,48,30
+2026,Academic / hospital / other,340,285
+2026,Government,11,7
+2026,Industry,65,57
+2026,Network / individual / unknown,1,1
+2026,No sponsor record in release,331,260
+2027,Academic / hospital / other,11,11
+2027,Industry,4,2
+2027,No sponsor record in release,10,10
+2028,Academic / hospital / other,1,0

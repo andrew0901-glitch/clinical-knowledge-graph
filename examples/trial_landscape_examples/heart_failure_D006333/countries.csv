@@ -1,0 +1,129 @@
+country,trials,sites,recruiting_trials,sites_with_recruiting_trial
+United States,1952,8333,218,1521
+Germany,498,2230,67,315
+United Kingdom,420,1000,57,240
+Canada,390,1015,53,232
+Italy,367,1989,58,265
+France,354,1711,48,250
+Spain,274,927,42,214
+China,264,850,55,311
+Netherlands,250,620,27,107
+Poland,221,954,34,185
+Denmark,190,335,30,79
+Brazil,185,634,26,186
+Belgium,158,359,22,52
+Australia,139,396,16,72
+Israel,137,264,14,39
+Sweden,136,279,26,54
+Czechia,133,502,21,114
+Austria,111,189,19,51
+Switzerland,111,163,9,16
+Taiwan,110,128,17,43
+South Korea,101,292,25,105
+Turkey (Türkiye),101,290,15,75
+Hungary,99,373,16,84
+Russia,99,475,11,12
+Japan,90,875,10,206
+Norway,84,137,11,11
+Greece,81,242,16,50
+India,65,349,12,70
+Argentina,64,522,11,111
+Portugal,61,204,11,28
+Bulgaria,54,317,12,95
+Mexico,54,248,11,76
+Singapore,52,49,5,9
+Slovakia,50,215,4,54
+Finland,48,78,10,19
+Romania,47,346,8,52
+Hong Kong,40,41,6,9
+Egypt,38,38,4,4
+Serbia,35,130,7,28
+Georgia,33,81,7,9
+Slovenia,33,47,5,8
+Lithuania,32,60,5,5
+New Zealand,32,67,5,5
+Colombia,31,146,4,29
+Latvia,30,54,0,0
+South Africa,29,155,7,37
+Chile,27,108,7,33
+Ireland,27,38,3,3
+Malaysia,27,73,9,29
+Croatia,22,59,4,11
+Thailand,22,72,5,24
+Pakistan,17,17,3,4
+Tunisia,16,30,2,6
+Ukraine,16,147,3,14
+Saudi Arabia,14,28,4,13
+Puerto Rico,13,13,2,2
+Estonia,12,17,1,1
+Indonesia,11,26,0,0
+Iran,11,12,0,0
+Kazakhstan,11,7,2,2
+Peru,11,49,4,8
+Philippines,11,35,2,19
+Guatemala,8,16,0,0
+Vietnam,8,28,5,25
+United Arab Emirates,7,10,1,1
+Lebanon,6,7,0,0
+Cyprus,5,5,0,0
+North Macedonia,5,10,1,1
+Panama,5,4,0,0
+Paraguay,5,8,0,0
+Bosnia and Herzegovina,4,8,1,1
+Jordan,4,6,0,0
+Kenya,4,3,1,1
+Malta,4,6,0,0
+Mozambique,4,5,0,0
+Nigeria,4,6,2,3
+Uganda,4,8,0,0
+Cameroon,3,5,0,0
+Venezuela,3,13,0,0
+Armenia,2,6,0,0
+Bangladesh,2,3,0,0
+Belarus,2,1,0,0
+Côte d’Ivoire,2,3,1,1
+Dominican Republic,2,5,0,0
+Ecuador,2,14,0,0
+El Salvador,2,4,0,0
+Guadeloupe,2,4,1,3
+Haiti,2,2,0,0
+Iceland,2,3,0,0
+Iraq,2,3,1,1
+Jersey,2,2,1,1
+Kuwait,2,6,0,0
+Martinique,2,2,0,0
+Moldova,2,2,0,0
+Morocco,2,4,0,0
+Serbia and Montenegro,2,9,0,0
+Sudan,2,2,0,0
+(missing),1,1,0,0
+Algeria,1,2,0,0
+Antigua and Barbuda,1,1,0,0
+Azerbaijan,1,1,0,0
+Benin,1,1,0,0
+Bolivia,1,2,0,0
+Brunei,1,1,0,0
+Burkina Faso,1,1,0,0
+Burundi,1,1,0,0
+Costa Rica,1,3,0,0
+Cuba,1,17,0,0
+Democratic Republic of the Congo,1,2,0,0
+Gabon,1,1,0,0
+Ghana,1,1,1,1
+Guinea,1,1,0,0
+Honduras,1,2,0,0
+Jamaica,1,1,0,0
+Luxembourg,1,1,0,0
+Nicaragua,1,1,0,0
+Niger,1,1,0,0
+Oman,1,1,0,0
+Qatar,1,1,0,0
+Republic of the Congo,1,1,0,0
+Reunion,1,1,0,0
+Senegal,1,3,0,0
+Sri Lanka,1,2,0,0
+Suriname,1,1,0,0
+Tanzania,1,1,1,1
+Uruguay,1,2,0,0
+Uzbekistan,1,1,0,0
+Zambia,1,1,0,0

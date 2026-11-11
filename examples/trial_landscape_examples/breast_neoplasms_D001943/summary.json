@@ -1,0 +1,39 @@
+{
+ "condition": {
+  "id": "MESH:D001943",
+  "mesh_id": "D001943",
+  "name": "Breast Neoplasms"
+ },
+ "release": "Lunas Clinical Evidence KG v0.2.1 (snapshot 2026-11-07)",
+ "descriptors_in_expansion": 9,
+ "descriptor_level_closure": 11,
+ "trials": 14321,
+ "trials_direct": 13445,
+ "trials_narrower_only": 876,
+ "recruiting": 1992,
+ "not_yet_recruiting": 645,
+ "interventional": 11198,
+ "lead_sponsors": 3040,
+ "trials_with_sites": 12611,
+ "trials_without_sponsor_record": 437,
+ "recruiting_without_sponsor_record": 163,
+ "sites": 60591,
+ "countries": 119,
+ "trials_with_results_article": 1006,
+ "results_articles": 3258,
+ "results_articles_cited_by_guideline_or_sr": 735,
+ "crosscheck_ctgov_ancestor_terms_trials": 14321,
+ "crosscheck_ctgov_trials_also_in_our_expansion": 14321,
+ "csv_rows": {
+  "trials": 14321,
+  "descriptors": 9,
+  "by_sponsor": 5560,
+  "by_sponsor_class": 5,
+  "phase_status": 82,
+  "timeline": 169,
+  "sites": 60591,
+  "countries": 120,
+  "results": 3258
+ },
+ "run_seconds": 2.43
+}

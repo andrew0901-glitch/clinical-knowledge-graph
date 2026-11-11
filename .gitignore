@@ -4,3 +4,5 @@ neo4j_import_sample/
 neo4j_data/
 *.parquet
 __pycache__/
+trial_landscape_out/
+trial_landscape_cache/

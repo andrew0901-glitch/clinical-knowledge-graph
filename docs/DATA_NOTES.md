@@ -19,6 +19,48 @@ Every edge has a Biolink `predicate` and a native `original_predicate` (for exam
 - **JEV annotations**: model-generated labels on articles (guideline candidate; clinical versus scientific review). These are predictions, separately licensed, and the only model-inferred content in the release. Unchanged from v0.1.0 -- v0.2.1 does not ship a regenerated JEV file.
 - **Identity-only Article stubs**: a ClinicalTrials.gov publication-assertion edge whose Article endpoint has no PubMed bibliographic record yet (not synced/enriched) still ships, pointed at a minimal stub Article so no edge ever references a dangling id. The stub marker is the Article property-value pair `lunasai_layer == 'ctgov_identity_only'` (not a label, not a separate node type) -- check that exact property before assuming an `Article` node has a title/abstract/MeSH indexing.
 
+## Clinical trials: conditions, sponsors and sites
+
+Measured on the v0.2.1 files with `examples/trial_landscape.py --data-check` (full table in
+[examples/trial_landscape_examples/data_check.csv](../examples/trial_landscape_examples/data_check.csv)).
+
+- **Trial conditions are edges, not properties.** `ClinicalTrial` nodes have no conditions or MeSH
+  field. The link is `(:ClinicalTrial)-[:HAS_MESH]->(:MeSHConcept)` (6,814,837 edges, counted inside
+  the manifest's `HAS_MESH` total alongside the Article edges). They carry ClinicalTrials.gov's own
+  browse terms: `study_aspect` is `condition` or `intervention`; `mesh_type` is `mesh-list` (the
+  trial's own browse term) or `mesh-ancestor` (ancestors ClinicalTrials.gov adds). For "trials of
+  condition X" use `study_aspect='condition' AND mesh_type='mesh-list'` (825,812 edges, 471,229
+  trials, 77.8% of trials with a registry record) and expand the hierarchy yourself; the
+  `mesh-ancestor` edges select the same trials. Against the ClinicalTrials.gov API on 999 random
+  trials, the `mesh-list` condition edges had 98.1% recall and 99.85% precision. The misses are
+  Supplementary Concept Records (the graph holds descriptors only) and browse terms that failed a
+  name match: the edges were built by matching CT.gov's term names to MeSH descriptor names, and
+  CT.gov uses MeSH's inverted form (`Pain, Postoperative`, `Depressive Disorder, Major`) where the
+  descriptor names here are natural form (`Postoperative Pain`, `Major Depressive Disorder`).
+  Those descriptors have **no** trial edges: Major Depressive Disorder (D003865), Postoperative
+  Pain (D010149), Basal Cell Carcinoma (D002280), Procedural Pain (D000073818) and others. Across
+  all condition browse rows the loss is 0.38% of rows, but it is concentrated: 1,283 of 6,045
+  distinct terms match nothing (figures from the upstream build). The trial landscape report warns
+  when ClinicalTrials.gov's own ancestor terms place more trials under a condition than its explicit
+  terms reach, which is how these gaps show up (e.g. Depressive Disorder: 4,456 vs 1,935).
+- **Sponsor class is on the edge.** `Sponsor` nodes hold only a lower-cased name. ClinicalTrials.gov's
+  `agency_class` (INDUSTRY, OTHER, NIH, FED, OTHER_GOV, NETWORK, INDIV, UNKNOWN, AMBIG) and
+  `lead_or_collaborator` are on `SPONSORED_BY`. There is no "academic" class; universities and
+  hospitals are OTHER.
+- **The newest 22,567 trials (NCT07563270 onward) have no `SPONSORED_BY` or `CONDUCTED_AT` edges.**
+  That includes 6,586 of the 64,497 recruiting trials and about half of the trials starting in 2026.
+  Most of them (16,181) do have condition edges, so they appear in condition counts but not in any
+  sponsor, site or country figure.
+- **Sites** (`TrialSite`) are facility name + city + state + country (state 53% overall, 100% for
+  US sites); no postcode or coordinates. The key is the registered spelling, so one hospital can
+  appear as several sites (`examples/trial_landscape.py --merge-sites` merges spelling variants: 1,092,163 -> 940,830). `CONDUCTED_AT.status` (per-site recruitment status) is set on 15.8% of
+  edges, but on 97% of edges of recruiting trials.
+- **Dates**: month-precision start/completion dates are stored as the last day of the month (38.6%
+  of start dates). Use the year.
+- **Results articles**: 67% of the 140,372 `VALIDATED_BY` articles are identity-only stubs (no title,
+  publication types or citations), so in-graph uptake by guidelines and reviews can only be measured
+  for the other third. Guideline is a rare publication type (6,350 articles).
+
 ## Edge metadata
 
 `knowledge_level` and `agent_type` are populated on some relationship types (for example MeSH indexing) and empty on others in v0.1.0. All core relationships are source-asserted or derived deterministically from source hierarchies; the empty fields are a metadata gap, not an indication of inference.

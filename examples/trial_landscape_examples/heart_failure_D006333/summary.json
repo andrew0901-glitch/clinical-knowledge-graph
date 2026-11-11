@@ -1,0 +1,39 @@
+{
+ "condition": {
+  "id": "MESH:D006333",
+  "mesh_id": "D006333",
+  "name": "Heart Failure"
+ },
+ "release": "Lunas Clinical Evidence KG v0.2.1 (snapshot 2026-11-07)",
+ "descriptors_in_expansion": 6,
+ "descriptor_level_closure": 6,
+ "trials": 5828,
+ "trials_direct": 5560,
+ "trials_narrower_only": 268,
+ "recruiting": 688,
+ "not_yet_recruiting": 247,
+ "interventional": 3932,
+ "lead_sponsors": 1853,
+ "trials_with_sites": 5071,
+ "trials_without_sponsor_record": 173,
+ "recruiting_without_sponsor_record": 47,
+ "sites": 29720,
+ "countries": 127,
+ "trials_with_results_article": 467,
+ "results_articles": 1845,
+ "results_articles_cited_by_guideline_or_sr": 329,
+ "crosscheck_ctgov_ancestor_terms_trials": 5828,
+ "crosscheck_ctgov_trials_also_in_our_expansion": 5828,
+ "csv_rows": {
+  "trials": 5828,
+  "descriptors": 6,
+  "by_sponsor": 3727,
+  "by_sponsor_class": 5,
+  "phase_status": 78,
+  "timeline": 140,
+  "sites": 29720,
+  "countries": 128,
+  "results": 1845
+ },
+ "run_seconds": 1.71
+}

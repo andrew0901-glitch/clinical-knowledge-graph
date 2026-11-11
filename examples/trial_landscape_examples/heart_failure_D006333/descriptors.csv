@@ -1,0 +1,7 @@
+mesh_id,name,depth,trials_direct_on_descriptor
+D006333,Heart Failure,0,5560
+D054143,"Heart Failure, Systolic",1,222
+D054144,"Heart Failure, Diastolic",1,195
+D059347,Cardio-Renal Syndrome,1,82
+D004489,"Edema, Cardiac",1,9
+D004418,"Dyspnea, Paroxysmal",1,7
