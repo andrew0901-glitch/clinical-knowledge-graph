@@ -12,19 +12,21 @@ re-run; see [VALIDATION_RESULTS.md](VALIDATION_RESULTS.md) for what was and wasn
 
 ## 1. Small sample subgraph (v0.2.1, measured, seeded)
 
-A ~44 MiB slice of the real v0.2.1 export, meant to load in under a minute so someone can try the
+A ~45 MiB slice of the real v0.2.1 export, meant to load in under a minute so someone can try the
 schema and example queries before committing to the full multi-GB load.
 
-**Self-consistency (hard requirement, verified):** every one of the 296,651 kept edges has both
-its endpoint nodes present among the 271,374 kept nodes. **0 dangling references.**
+**Self-consistency (hard requirement, verified):** every one of the 322,615 kept edges has both
+its endpoint nodes present among the 271,924 kept nodes. **0 dangling references.**
 
-**Build procedure (reproducible, real) — two steps:**
+**Build procedure (reproducible, real) — three steps:**
 
 ```bash
 python3 scripts/build_sample_subgraph.py \
   --data-dir ckg --manifest ckg/manifest.json \
   --out sample_out --per-type-cap 20000
 python3 scripts/seed_sample_subgraph.py \
+  --data-dir ckg --sample-dir sample_out
+python3 scripts/seed_trial_mesh_sample.py \
   --data-dir ckg --sample-dir sample_out
 ```
 
@@ -52,6 +54,13 @@ release) and adds exactly those edges/nodes -- capped per seed so the sample sta
 deduplicated against what `build_sample_subgraph.py` already kept. Net addition this pass: **853
 edges, 409 nodes** (906 wanted; 53 were already present from the per-type-cap pass).
 
+**Why a third step:** the per-type cap fills `HAS_MESH`'s 20,000 slots with Article -> MeSH edges, so
+the sample's trials had no condition links and `examples/trial_landscape.py` found 0 trials for any
+condition. `seed_trial_mesh_sample.py` adds, for the 12,714 sample trials that have a sponsor or site
+edge, their ClinicalTrial -> MeSH condition edges (`mesh_type='mesh-list'` only: 23,680 edges) and the
+`HAS_BROADER` edges above those descriptors up to their tree roots (2,284 new), plus 550 MeSHConcept
+nodes they need. Full original records, 0 dangling; about 20s on 16 cores.
+
 **Measured build:** step 1 — 284s to scan all 105,758,066 edges + 40s to resolve referenced nodes
 = 324s. Step 2 — seconds to resolve seed ids via a one-time Parquet cache (13s nodes + 58s edges to
 build the cache), then 132s to re-scan the real edge shards for the one seed edge not already
@@ -61,18 +70,19 @@ and extracts all of them in the same pass, at the same ~284s cost as step 1).
 
 | File | Size | SHA-256 |
 |---|---:|---|
-| `nodes__sample.jsonl.gz` | 26,749,842 bytes | `ff86a83d8abbacae3b9cc7e00397b58c7518570e9262a237769e33e7e8eeb718` |
-| `edges__sample.jsonl.gz` | 19,551,674 bytes | `d4b82587ac6b92e2e4f92022c3fe0eb13350028d257e4c002388ff2b28d2858b` |
-| **Combined** | **46,301,516 bytes (~44.2 MiB)** | |
+| `nodes__sample.jsonl.gz` | 26,768,729 bytes | `f5b67472953479ec17014d3d55b6202156ace1aabb4ddc9ac395e12c98cb1b4f` |
+| `edges__sample.jsonl.gz` | 20,607,023 bytes | `65a3c71b7246695356596764beac1a3b156e8f87d25384ead8d9c9f36c824788` |
+| **Combined** | **47,375,752 bytes (~45.2 MiB)** | |
 
 Per-type counts kept: AUTHORED_BY 20,103 · CITES 20,079 · CITES_BACKGROUND 20,000 · CONDUCTED_AT
-20,000 · HAS_BROADER 20,000 · HAS_BROADER_ANCESTOR 20,000 · HAS_DERIVED_PUBLICATION 20,000 ·
-HAS_LANGUAGE_RESOURCE 4,885 (full population) · HAS_MESH 20,664 · HAS_PMC_RECORD 20,000 ·
+20,000 · HAS_BROADER 22,284 · HAS_BROADER_ANCESTOR 20,000 · HAS_DERIVED_PUBLICATION 20,000 ·
+HAS_LANGUAGE_RESOURCE 4,885 (full population) · HAS_MESH 44,344 (20,664 + 23,680 trial condition edges) · HAS_PMC_RECORD 20,000 ·
 IN_TOPIC_GROUP 3,651 (full) · LINKS_TO_RESOURCE 20,000 · PUBLISHED_IN 20,000 · RELATED_TOPIC 6,246
 (full) · RESOURCE_TRANSLATION_OF 20,000 · SPONSORED_BY 20,000 · TRANSLATION_OF 1,016 (full) ·
-VALIDATED_BY 20,007. (The handful of types above 20,000 carry the seeding pass's additions: e.g.
+VALIDATED_BY 20,007. (The handful of types above 20,000 carry the seeding passes' additions: e.g.
 `AUTHORED_BY` +103 for the Deveza/Haynes author seeds, `VALIDATED_BY` +7 for the trial seed's 7
-results-article candidates.) (v0.1.0 had 16 types here: no `HAS_PMC_RECORD`/`PUBLISHED_IN`; had
+results-article candidates, `HAS_BROADER` +2,284 and `HAS_MESH` +23,680 for the trial-to-MeSH seed.)
+(v0.1.0 had 16 types here: no `HAS_PMC_RECORD`/`PUBLISHED_IN`; had
 `HAS_RIGHTS_EVIDENCE`/`HAS_USE_GRANT`; named the MeSH-tree types `PARENT_OF`/`ANCESTOR_OF`.)
 
 **Load + verify (measured, real, through the actual repo pipeline):**
@@ -84,11 +94,11 @@ USE_DOCKER=1 bash scripts/load_neo4j.sh neo4j_import_sample
 
 | Metric | Value |
 |---|---:|
-| Conversion | 7.9s |
-| `neo4j-admin database import full` | 7.916s (reported), well under a minute wall incl. Docker overhead |
-| Nodes / edges loaded | 271,374 / 296,651 (exact match) |
-| Properties loaded | 9,805,873 |
-| Peak import memory | 549.8 MiB |
+| Conversion | 8.1s (re-measured after the trial-to-MeSH seed) |
+| `neo4j-admin database import full` | 8.377s (reported), well under a minute wall incl. Docker overhead |
+| Nodes / edges loaded | 271,924 / 322,615 (exact match) |
+| Properties loaded | 9,987,419 |
+| Peak import memory | 549.9 MiB |
 | Labels present after load | 11/11, confirmed via `CALL db.labels()` |
 | Relationship types present after load | 18/18, confirmed via `CALL db.relationshipTypes()` |
 | Bad/skipped/duplicate relationships | 0 |
