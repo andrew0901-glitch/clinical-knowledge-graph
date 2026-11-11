@@ -186,11 +186,40 @@ def _cites_worker(args):
     _close(ws)
 
 
+def manifest_shards(root, kind):
+    """Basenames of the {kind} files manifest.json actually lists (minus any '{kind}__' flat-
+    naming prefix, so both download layouts compare equal), or None if root has no manifest.json
+    (e.g. a locally-built sample_out/ dir, which has no stray-file problem to guard against)."""
+    path = os.path.join(root, "manifest.json")
+    if not os.path.exists(path):
+        return None
+    with open(path) as fh:
+        manifest = json.load(fh)
+    prefix = f"{kind}__"
+    shards = set()
+    for entry in manifest.get(kind, []):
+        b = os.path.basename(entry["path"])
+        shards.add(b[len(prefix):] if b.startswith(prefix) else b)
+    return shards
+
+
 def glob_for(root, kind):
     for pat in (os.path.join(root, kind, "*.jsonl.gz"), os.path.join(root, f"{kind}__*.jsonl.gz")):
         files = sorted(glob.glob(pat))
         if files:
-            return files
+            wanted = manifest_shards(root, kind)
+            if wanted is not None:
+                prefix = f"{kind}__"
+                def shard(p):
+                    b = os.path.basename(p)
+                    return b[len(prefix):] if b.startswith(prefix) else b
+                ignored = [f for f in files if shard(f) not in wanted]
+                if ignored:
+                    print(f"ignoring {len(ignored)} {kind} file(s) not listed in manifest.json "
+                          f"(e.g. {os.path.basename(ignored[0])})", file=sys.stderr)
+                files = [f for f in files if shard(f) in wanted]
+            if files:
+                return files
     sys.exit(f"no {kind} files found under {root}")
 
 

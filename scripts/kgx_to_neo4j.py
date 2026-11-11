@@ -37,9 +37,37 @@ ARRAY_DELIM = ";"
 csv.field_size_limit(sys.maxsize)
 
 
+def manifest_shards(root, kind):
+    """Basenames of the {kind} files manifest.json actually lists (minus any '{kind}__' flat-
+    naming prefix, so both download layouts compare equal), or None if root has no manifest.json
+    (e.g. a locally-built sample_out/ dir, which has no stray-file problem to guard against)."""
+    path = os.path.join(root, "manifest.json")
+    if not os.path.exists(path):
+        return None
+    with open(path) as fh:
+        manifest = json.load(fh)
+    prefix = f"{kind}__"
+    shards = set()
+    for entry in manifest.get(kind, []):
+        b = os.path.basename(entry["path"])
+        shards.add(b[len(prefix):] if b.startswith(prefix) else b)
+    return shards
+
+
 def files(root, kind):
     f = sorted(glob.glob(os.path.join(root, kind, "*.jsonl.gz"))) + \
         sorted(glob.glob(os.path.join(root, f"{kind}__*.jsonl.gz")))
+    wanted = manifest_shards(root, kind)
+    if wanted is not None:
+        prefix = f"{kind}__"
+        def shard(p):
+            b = os.path.basename(p)
+            return b[len(prefix):] if b.startswith(prefix) else b
+        ignored = [p for p in f if shard(p) not in wanted]
+        if ignored:
+            print(f"ignoring {len(ignored)} {kind} file(s) not listed in manifest.json "
+                  f"(e.g. {os.path.basename(ignored[0])})", file=sys.stderr)
+        f = [p for p in f if shard(p) in wanted]
     if not f:
         sys.exit(f"no {kind} files under {root} (expected {kind}/*.jsonl.gz or {kind}__*.jsonl.gz)")
     return f

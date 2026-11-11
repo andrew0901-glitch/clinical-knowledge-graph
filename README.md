@@ -8,14 +8,17 @@ Documentation, loaders and examples for the **Lunas Clinical Evidence KG**, a pu
 |---|---|---|
 | Core graph v0.1.0 | Hugging Face [`lunas-health/clinical-evidence-kg`](https://huggingface.co/datasets/lunas-health/clinical-evidence-kg) (tag `clinical-v0.1.0`) · Zenodo [10.5281/zenodo.24011485](https://doi.org/10.5281/zenodo.24011485) | CC0 1.0 |
 | Core graph v0.2.0 | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.0`) · Zenodo [10.5281/zenodo.24091964](https://doi.org/10.5281/zenodo.24091964) | CC0 1.0 |
-| Core graph v0.2.1 (current) | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.1`) · Zenodo [10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692) | CC0 1.0 |
+| Core graph v0.2.1 (current) | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.2`) · Zenodo [10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692) | CC0 1.0 |
 | JEV evidence annotations (sidecar) | Zenodo [10.5281/zenodo.24012855](https://doi.org/10.5281/zenodo.24012855) · also in the Hugging Face repo | Not CC0: rights reserved by LunasAI LLC; model predictions; no model training |
 
 v0.2.1 is the current, published version. It corrects v0.2.0's dataset card metadata; the
-node/edge data is byte-identical to v0.2.0. The Zenodo concept DOI shared by every version is
-[10.5281/zenodo.24011484](https://doi.org/10.5281/zenodo.24011484) -- always resolves to the
-latest published version. The JEV sidecar is unchanged across all three releases -- none of them
-ship a regenerated JEV file, so the v0.1.0 JEV record above still applies as-is.
+node/edge data is byte-identical to v0.2.0. Cite it as v0.2.1 ([10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692)) --
+the Hugging Face tag is `clinical-v0.2.2`, a metadata-only correction to this mirror (56 leftover
+v0.1 files removed, loading config now lists only the manifest's 107 files) with identical file
+hashes to `clinical-v0.2.1`; it is not a new Zenodo release. The Zenodo concept DOI shared by
+every version is [10.5281/zenodo.24011484](https://doi.org/10.5281/zenodo.24011484) -- always
+resolves to the latest published version. The JEV sidecar is unchanged across all three releases
+-- none of them ship a regenerated JEV file, so the v0.1.0 JEV record above still applies as-is.
 
 ## What is in v0.2.1
 
@@ -35,7 +38,7 @@ v0.1.0 did not have PMC/Journal, had a single `VALIDATED_BY` type that mixed all
 ```bash
 pip install -U huggingface_hub duckdb
 hf download lunas-health/clinical-evidence-kg --repo-type dataset \
-  --revision clinical-v0.2.1 --local-dir ckg          # or clinical-v0.2.0 / clinical-v0.1.0 for an earlier release
+  --revision clinical-v0.2.2 --local-dir ckg          # or clinical-v0.2.0 / clinical-v0.1.0 for an earlier release
 ```
 
 Or download the Zenodo record; the scripts accept either layout.
