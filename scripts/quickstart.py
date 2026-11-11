@@ -6,6 +6,10 @@
   python scripts/quickstart.py --input ckg --mesh "Asthma"      # pick a MeSH descriptor by name
   python scripts/quickstart.py --input ckg --parquet            # first convert to Parquet (much faster reruns)
 
+If `manifest.json` (Hugging Face) or `zenodo_manifest.json` (Zenodo) is present under `--input`,
+only the files it actually lists are read -- anything else under nodes/edges/ is ignored and
+reported. Without either manifest (e.g. a locally-built sample), every matching file is read.
+
 Relationship types: use `original_predicate` (e.g. lunasai:vocab.CITES). Many edges carry the generic
 Biolink predicate biolink:related_to, so `predicate` alone does not distinguish them.
 
@@ -62,20 +66,36 @@ GUIDELINE_OR_SYSTEMATIC_REVIEW = ["Guideline", "Practice Guideline", "Systematic
 
 
 def manifest_shards(root, kind):
-    """Basenames of the {kind} files manifest.json actually lists (minus any '{kind}__' flat-
-    naming prefix, so both download layouts compare equal), or None if root has no manifest.json
-    (e.g. a locally-built sample_out/ dir, which has no stray-file problem to guard against)."""
-    path = os.path.join(root, "manifest.json")
-    if not os.path.exists(path):
-        return None
-    with open(path) as fh:
-        manifest = json.load(fh)
+    """Basenames of the {kind} files actually expected on disk (minus any '{kind}__' flat-
+    naming prefix, so every download layout compares equal), from whichever manifest root
+    has:
+      - manifest.json (Hugging Face layout): one row per shard file, e.g.
+        nodes/part-w00-00000.jsonl.gz.
+      - zenodo_manifest.json (Zenodo layout): Zenodo caps a record at 100 files, so many
+        original shards are gzip-member-concatenated into a handful of per-worker BUNDLE
+        files (e.g. nodes/nodes-w00.jsonl.gz) -- the files really on disk are the bundle
+        names under "bundles", never the per-shard names inside them.
+    Returns None if root has neither manifest (e.g. a locally-built sample_out/ dir, which
+    has no stray-file problem to guard against)."""
     prefix = f"{kind}__"
-    shards = set()
-    for entry in manifest.get(kind, []):
-        b = os.path.basename(entry["path"])
-        shards.add(b[len(prefix):] if b.startswith(prefix) else b)
-    return shards
+
+    def norm(path):
+        b = os.path.basename(path)
+        return b[len(prefix):] if b.startswith(prefix) else b
+
+    hf_path = os.path.join(root, "manifest.json")
+    if os.path.exists(hf_path):
+        with open(hf_path) as fh:
+            manifest = json.load(fh)
+        return {norm(entry["path"]) for entry in manifest.get(kind, [])}
+
+    zenodo_path = os.path.join(root, "zenodo_manifest.json")
+    if os.path.exists(zenodo_path):
+        with open(zenodo_path) as fh:
+            zmanifest = json.load(fh)
+        return {norm(p) for p in zmanifest.get("bundles", {}) if p.startswith(f"{kind}/")}
+
+    return None
 
 
 def files_for(root, kind):
@@ -92,7 +112,7 @@ def files_for(root, kind):
                     return b[len(prefix):] if b.startswith(prefix) else b
                 ignored = [f for f in found if shard(f) not in wanted]
                 if ignored:
-                    print(f"ignoring {len(ignored)} {kind} file(s) not listed in manifest.json "
+                    print(f"ignoring {len(ignored)} {kind} file(s) not listed in the manifest "
                           f"(e.g. {os.path.basename(ignored[0])})", file=sys.stderr)
                 found = [f for f in found if shard(f) in wanted]
             if found:
