@@ -3,7 +3,13 @@
 
 Works on either download layout:
   Hugging Face:  <dir>/nodes/*.jsonl.gz      <dir>/edges/*.jsonl.gz
-  Zenodo:        <dir>/nodes__*.jsonl.gz     <dir>/edges__*.jsonl.gz
+  Zenodo:        <dir>/nodes__*.jsonl.gz     <dir>/edges__*.jsonl.gz (fewer, larger per-worker
+                 bundle files -- Zenodo caps a record at 100 files, so many original shards are
+                 concatenated into one file per worker; see zenodo_manifest.json)
+
+If `manifest.json` (Hugging Face) or `zenodo_manifest.json` (Zenodo) is present in `--input`,
+only the files it actually lists are read -- anything else under nodes/edges/ is ignored and
+reported. Without either manifest (e.g. a locally-built sample), every matching file is read.
 
   python scripts/kgx_to_neo4j.py --input ckg --out neo4j_import
   bash scripts/load_neo4j.sh neo4j_import          # then run the bulk import
@@ -37,9 +43,53 @@ ARRAY_DELIM = ";"
 csv.field_size_limit(sys.maxsize)
 
 
+def manifest_shards(root, kind):
+    """Basenames of the {kind} files actually expected on disk (minus any '{kind}__' flat-
+    naming prefix, so every download layout compares equal), from whichever manifest root
+    has:
+      - manifest.json (Hugging Face layout): one row per shard file, e.g.
+        nodes/part-w00-00000.jsonl.gz.
+      - zenodo_manifest.json (Zenodo layout): Zenodo caps a record at 100 files, so many
+        original shards are gzip-member-concatenated into a handful of per-worker BUNDLE
+        files (e.g. nodes/nodes-w00.jsonl.gz) -- the files really on disk are the bundle
+        names under "bundles", never the per-shard names inside them.
+    Returns None if root has neither manifest (e.g. a locally-built sample_out/ dir, which
+    has no stray-file problem to guard against)."""
+    prefix = f"{kind}__"
+
+    def norm(path):
+        b = os.path.basename(path)
+        return b[len(prefix):] if b.startswith(prefix) else b
+
+    hf_path = os.path.join(root, "manifest.json")
+    if os.path.exists(hf_path):
+        with open(hf_path) as fh:
+            manifest = json.load(fh)
+        return {norm(entry["path"]) for entry in manifest.get(kind, [])}
+
+    zenodo_path = os.path.join(root, "zenodo_manifest.json")
+    if os.path.exists(zenodo_path):
+        with open(zenodo_path) as fh:
+            zmanifest = json.load(fh)
+        return {norm(p) for p in zmanifest.get("bundles", {}) if p.startswith(f"{kind}/")}
+
+    return None
+
+
 def files(root, kind):
     f = sorted(glob.glob(os.path.join(root, kind, "*.jsonl.gz"))) + \
         sorted(glob.glob(os.path.join(root, f"{kind}__*.jsonl.gz")))
+    wanted = manifest_shards(root, kind)
+    if wanted is not None:
+        prefix = f"{kind}__"
+        def shard(p):
+            b = os.path.basename(p)
+            return b[len(prefix):] if b.startswith(prefix) else b
+        ignored = [p for p in f if shard(p) not in wanted]
+        if ignored:
+            print(f"ignoring {len(ignored)} {kind} file(s) not listed in the manifest "
+                  f"(e.g. {os.path.basename(ignored[0])})", file=sys.stderr)
+        f = [p for p in f if shard(p) in wanted]
     if not f:
         sys.exit(f"no {kind} files under {root} (expected {kind}/*.jsonl.gz or {kind}__*.jsonl.gz)")
     return f

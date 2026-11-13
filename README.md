@@ -8,18 +8,21 @@ Documentation, loaders and examples for the **Lunas Clinical Evidence KG**, a pu
 |---|---|---|
 | Core graph v0.1.0 | Hugging Face [`lunas-health/clinical-evidence-kg`](https://huggingface.co/datasets/lunas-health/clinical-evidence-kg) (tag `clinical-v0.1.0`) · Zenodo [10.5281/zenodo.24011485](https://doi.org/10.5281/zenodo.24011485) | CC0 1.0 |
 | Core graph v0.2.0 | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.0`) · Zenodo [10.5281/zenodo.24091964](https://doi.org/10.5281/zenodo.24091964) | CC0 1.0 |
-| Core graph v0.2.1 (current) | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.1`) · Zenodo [10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692) | CC0 1.0 |
+| Core graph v0.2.1 (current) | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.2`) · Zenodo [10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692) | CC0 1.0 |
 | JEV evidence annotations (sidecar) | Zenodo [10.5281/zenodo.24012855](https://doi.org/10.5281/zenodo.24012855) · also in the Hugging Face repo | Not CC0: rights reserved by LunasAI LLC; model predictions; no model training |
 
 v0.2.1 is the current, published version. It corrects v0.2.0's dataset card metadata; the
-node/edge data is byte-identical to v0.2.0. The Zenodo concept DOI shared by every version is
-[10.5281/zenodo.24011484](https://doi.org/10.5281/zenodo.24011484) -- always resolves to the
-latest published version. The JEV sidecar is unchanged across all three releases -- none of them
-ship a regenerated JEV file, so the v0.1.0 JEV record above still applies as-is.
+node/edge data is byte-identical to v0.2.0. Cite it as v0.2.1 ([10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692)) --
+the Hugging Face tag is `clinical-v0.2.2`, a metadata-only correction to this mirror (56 leftover
+v0.1 files removed, loading config now lists only the manifest's 107 files) with identical file
+hashes to `clinical-v0.2.1`; it is not a new Zenodo release. The Zenodo concept DOI shared by
+every version is [10.5281/zenodo.24011484](https://doi.org/10.5281/zenodo.24011484) -- always
+resolves to the latest published version. The JEV sidecar is unchanged across all three releases
+-- none of them ship a regenerated JEV file, so the v0.1.0 JEV record above still applies as-is.
 
 ## What is in v0.2.1
 
-12,067,108 nodes and 105,758,066 edges in [KGX](https://github.com/biolink/kgx) JSON Lines, with [Biolink](https://biolink.github.io/biolink-model/) categories and predicates (identical to v0.2.0 -- see above). Six source families: PubMed (with MeSH indexing), OpenAlex (citations, authorship), MeSH (with hierarchy), ClinicalTrials.gov, MedlinePlus, and **PMC/Journal (new in v0.2.0)**. The v0.1.0 `ctgov_publications.jsonl` sidecar file no longer exists as a separate thing -- its content is now natively absorbed into three typed edges inside the main graph (`VALIDATED_BY`/`CITES_BACKGROUND`/`HAS_DERIVED_PUBLICATION`; see [docs/DATA_NOTES.md](docs/DATA_NOTES.md)). The JEV annotations sidecar still travels separately, unchanged from v0.1.0. Read [docs/DATA_NOTES.md](docs/DATA_NOTES.md) before analysing.
+12,067,108 nodes and 105,758,066 edges in [KGX](https://github.com/biolink/kgx) JSON Lines, with [Biolink](https://biolink.github.io/biolink-model/) categories and predicates (identical to v0.2.0 -- see above). Five source families: PubMed (with MeSH indexing, and -- **new in v0.2.0** -- PMC/Journal identifiers attached to the Article record, not a separate family), OpenAlex (citations, authorship), MeSH (with hierarchy), ClinicalTrials.gov, and MedlinePlus. The v0.1.0 `ctgov_publications.jsonl` sidecar file no longer exists as a separate thing -- its content is now natively absorbed into three typed edges inside the main graph (`VALIDATED_BY`/`CITES_BACKGROUND`/`HAS_DERIVED_PUBLICATION`; see [docs/DATA_NOTES.md](docs/DATA_NOTES.md)). The JEV annotations sidecar still travels separately, unchanged from v0.1.0. Read [docs/DATA_NOTES.md](docs/DATA_NOTES.md) before analysing.
 
 <details>
 <summary>What was in v0.1.0 (10,145,579 nodes / 109,661,337 edges, five source families)</summary>
@@ -35,7 +38,7 @@ v0.1.0 did not have PMC/Journal, had a single `VALIDATED_BY` type that mixed all
 ```bash
 pip install -U huggingface_hub duckdb
 hf download lunas-health/clinical-evidence-kg --repo-type dataset \
-  --revision clinical-v0.2.1 --local-dir ckg          # or clinical-v0.2.0 / clinical-v0.1.0 for an earlier release
+  --revision clinical-v0.2.2 --local-dir ckg          # or clinical-v0.2.0 / clinical-v0.1.0 for an earlier release
 ```
 
 Or download the Zenodo record; the scripts accept either layout.

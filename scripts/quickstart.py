@@ -6,6 +6,10 @@
   python scripts/quickstart.py --input ckg --mesh "Asthma"      # pick a MeSH descriptor by name
   python scripts/quickstart.py --input ckg --parquet            # first convert to Parquet (much faster reruns)
 
+If `manifest.json` (Hugging Face) or `zenodo_manifest.json` (Zenodo) is present under `--input`,
+only the files it actually lists are read -- anything else under nodes/edges/ is ignored and
+reported. Without either manifest (e.g. a locally-built sample), every matching file is read.
+
 Relationship types: use `original_predicate` (e.g. lunasai:vocab.CITES). Many edges carry the generic
 Biolink predicate biolink:related_to, so `predicate` alone does not distinguish them.
 
@@ -28,7 +32,7 @@ Directions verified against the real, fully-loaded graph (see docs/VALIDATION_RE
     (subject=Article, object=Journal). `Journal` is a first-class node type now.
   * Removed in v0.2.0: HAS_RIGHTS_EVIDENCE and HAS_USE_GRANT no longer exist.
 """
-import argparse, glob, os, sys
+import argparse, glob, json, os, sys
 
 try:
     import duckdb
@@ -61,16 +65,65 @@ CHECK_TAGS = [
 GUIDELINE_OR_SYSTEMATIC_REVIEW = ["Guideline", "Practice Guideline", "Systematic Review"]
 
 
-def glob_for(root, kind):
+def manifest_shards(root, kind):
+    """Basenames of the {kind} files actually expected on disk (minus any '{kind}__' flat-
+    naming prefix, so every download layout compares equal), from whichever manifest root
+    has:
+      - manifest.json (Hugging Face layout): one row per shard file, e.g.
+        nodes/part-w00-00000.jsonl.gz.
+      - zenodo_manifest.json (Zenodo layout): Zenodo caps a record at 100 files, so many
+        original shards are gzip-member-concatenated into a handful of per-worker BUNDLE
+        files (e.g. nodes/nodes-w00.jsonl.gz) -- the files really on disk are the bundle
+        names under "bundles", never the per-shard names inside them.
+    Returns None if root has neither manifest (e.g. a locally-built sample_out/ dir, which
+    has no stray-file problem to guard against)."""
+    prefix = f"{kind}__"
+
+    def norm(path):
+        b = os.path.basename(path)
+        return b[len(prefix):] if b.startswith(prefix) else b
+
+    hf_path = os.path.join(root, "manifest.json")
+    if os.path.exists(hf_path):
+        with open(hf_path) as fh:
+            manifest = json.load(fh)
+        return {norm(entry["path"]) for entry in manifest.get(kind, [])}
+
+    zenodo_path = os.path.join(root, "zenodo_manifest.json")
+    if os.path.exists(zenodo_path):
+        with open(zenodo_path) as fh:
+            zmanifest = json.load(fh)
+        return {norm(p) for p in zmanifest.get("bundles", {}) if p.startswith(f"{kind}/")}
+
+    return None
+
+
+def files_for(root, kind):
+    """Explicit list of {kind} files to read: every file in the folder, unless manifest.json
+    exists, in which case only the files it lists -- whatever else is in the folder is ignored."""
     for pat in (os.path.join(root, kind, "*.jsonl.gz"), os.path.join(root, f"{kind}__*.jsonl.gz")):
-        if glob.glob(pat):
-            return pat
+        found = sorted(glob.glob(pat))
+        if found:
+            wanted = manifest_shards(root, kind)
+            if wanted is not None:
+                prefix = f"{kind}__"
+                def shard(p):
+                    b = os.path.basename(p)
+                    return b[len(prefix):] if b.startswith(prefix) else b
+                ignored = [f for f in found if shard(f) not in wanted]
+                if ignored:
+                    print(f"ignoring {len(ignored)} {kind} file(s) not listed in the manifest "
+                          f"(e.g. {os.path.basename(ignored[0])})", file=sys.stderr)
+                found = [f for f in found if shard(f) in wanted]
+            if found:
+                return found
     sys.exit(f"no {kind} files found under {root}")
 
 
-def reader(pat, cols):
+def reader(file_list, cols):
     spec = "{" + ", ".join(f"'{k}': '{v}'" for k, v in cols.items()) + "}"
-    return (f"read_json('{pat}', format='newline_delimited', columns={spec}, "
+    files_sql = "[" + ", ".join("'" + f.replace("'", "''") + "'" for f in file_list) + "]"
+    return (f"read_json({files_sql}, format='newline_delimited', columns={spec}, "
             f"ignore_errors=true, maximum_object_size=104857600)")
 
 
@@ -90,7 +143,7 @@ def main():
     a = ap.parse_args()
     con = duckdb.connect()
     con.sql("SET preserve_insertion_order=false")
-    nsrc, esrc = reader(glob_for(a.input, "nodes"), NODE_COLS), reader(glob_for(a.input, "edges"), EDGE_COLS)
+    nsrc, esrc = reader(files_for(a.input, "nodes"), NODE_COLS), reader(files_for(a.input, "edges"), EDGE_COLS)
     if a.parquet:
         np_, ep = os.path.join(a.input, "nodes.parquet"), os.path.join(a.input, "edges.parquet")
         if not os.path.exists(np_):
