@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
-"""Write the --full-record input of trial_report.py from a release's ClinicalTrial node files.
+"""Write a release's ClinicalTrial full-study-record properties to one Parquet table (one row per trial).
 
   python examples/extract_full_record.py --input <release dir> --out full_record.parquet
 
 Reads only the files manifest.json lists (same rule as the loaders). Releases from the one after v0.2.x carry the
 ClinicalTrials.gov full study record on ClinicalTrial nodes (official_title, intervention_names, outcomes,
-primary_completion_date, why_stopped, design, eligibility, results_first_posted_date); with an older release the
-output has nct_id only and trial_report.py marks those fields as missing.
+primary_completion_date, why_stopped, design, eligibility, results_first_posted_date); with an older release those
+columns are empty.
 """
-import argparse, gzip, json, os, sys
+import argparse, gzip, json, os
 
 import duckdb
 
-HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, HERE)
-from trial_report import FULL_FIELDS  # noqa: E402
+# ClinicalTrial properties of the full study record, as named on release nodes.
+FULL_FIELDS = ["official_title", "enrollment_type", "primary_completion_date", "primary_completion_date_type",
+               "start_date_type", "completion_date_type", "why_stopped", "allocation", "intervention_model", "masking",
+               "primary_purpose", "results_first_posted_date", "eligibility_sex", "eligibility_minimum_age",
+               "eligibility_maximum_age", "eligibility_healthy_volunteers", "eligibility_criteria",
+               "intervention_names", "intervention_types", "primary_outcome_measures", "primary_outcome_time_frames",
+               "secondary_outcome_measures", "secondary_outcome_time_frames"]
 
 
 def node_files(root):
