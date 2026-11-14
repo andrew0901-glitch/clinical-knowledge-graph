@@ -9,7 +9,7 @@ Documentation, loaders and examples for the **Lunas Clinical Evidence KG**, a pu
 | Core graph v0.1.0 | Hugging Face [`lunas-health/clinical-evidence-kg`](https://huggingface.co/datasets/lunas-health/clinical-evidence-kg) (tag `clinical-v0.1.0`) · Zenodo [10.5281/zenodo.24011485](https://doi.org/10.5281/zenodo.24011485) | CC0 1.0 |
 | Core graph v0.2.0 | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.0`) · Zenodo [10.5281/zenodo.24091964](https://doi.org/10.5281/zenodo.24091964) | CC0 1.0 |
 | Core graph v0.2.1 (current) | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.2`) · Zenodo [10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692) | CC0 1.0 |
-| JEV evidence annotations (sidecar) | Zenodo [10.5281/zenodo.24012855](https://doi.org/10.5281/zenodo.24012855) · also in the Hugging Face repo | Not CC0: rights reserved by LunasAI LLC; model predictions; no model training |
+| JEV evidence annotations (separately licensed annotation layer) | Zenodo [10.5281/zenodo.24012855](https://doi.org/10.5281/zenodo.24012855) · also in the Hugging Face repo | Not CC0: rights-reserved under the terms of Zenodo record 10.5281/zenodo.24012855; model predictions; no model training; not part of the graph manifest |
 
 v0.2.1 is the current, published version. It corrects v0.2.0's dataset card metadata; the
 node/edge data is byte-identical to v0.2.0. Cite it as v0.2.1 ([10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692)) --
@@ -19,6 +19,12 @@ hashes to `clinical-v0.2.1`; it is not a new Zenodo release. The Zenodo concept 
 every version is [10.5281/zenodo.24011484](https://doi.org/10.5281/zenodo.24011484) -- always
 resolves to the latest published version. The JEV sidecar is unchanged across all three releases
 -- none of them ship a regenerated JEV file, so the v0.1.0 JEV record above still applies as-is.
+
+**Annotation layer.** `jev_evidence_annotations.jsonl` and `jev_manifest.json` are the separately
+licensed annotation layer. They are rights-reserved under the terms of Zenodo record
+[10.5281/zenodo.24012855](https://doi.org/10.5281/zenodo.24012855), are not covered by CC0, and are
+not part of the graph manifest: `manifest.json` lists only the 107 node and edge files, and the
+scripts in this repository read only those.
 
 ## What is in v0.2.1
 
