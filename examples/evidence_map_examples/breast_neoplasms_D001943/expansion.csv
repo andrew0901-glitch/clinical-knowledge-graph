@@ -1,0 +1,10 @@
+mesh_id,name,depth
+D001943,Breast Neoplasms,0
+D000071960,Breast Carcinoma In Situ,1
+D018567,"Breast Neoplasms, Male",1
+D018270,"Carcinoma, Ductal, Breast",1
+D018275,"Carcinoma, Lobular",1
+D061325,Hereditary Breast and Ovarian Cancer Syndrome,1
+D058922,Inflammatory Breast Neoplasms,1
+D064726,Triple Negative Breast Neoplasms,1
+D000069584,Unilateral Breast Neoplasms,1
