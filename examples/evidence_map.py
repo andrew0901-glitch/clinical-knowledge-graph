@@ -8,8 +8,9 @@
 
 For the descriptor (and, by default, every narrower descriptor) it counts the indexed Articles by study
 design, then asks which primary studies (randomized and other clinical trials) are cited by an in-graph
-guideline, systematic review or meta-analysis. Output: summary.json, design.csv, primary_studies.csv and
-citing_reviews.csv.
+guideline, systematic review or meta-analysis. Output: summary.json, design.csv, primary_studies.csv,
+citing_reviews.csv, recent_reviews.csv (guidelines and SR/MA from 2022-2026 with PMID, title and year),
+expansion.csv, a self-contained report.html and a GitHub-readable README.md.
 
 Only the files listed in manifest.json (Hugging Face) or zenodo_manifest.json (Zenodo) are read; without
 either (e.g. the sample subgraph) every nodes/edges file is read.
@@ -174,10 +175,142 @@ def evidence_map(con, root_id, expansion="full", exclude_stubs=False, major_only
         "citing_reviews": "SELECT a.pmid, a.title, a.year, a.design, a.id IN (SELECT id FROM map) AS in_map, "
                           "count(DISTINCT pc.primary_id) AS primary_studies_cited FROM pc JOIN articles a ON a.id = pc.citer "
                           "GROUP BY ALL ORDER BY primary_studies_cited DESC, a.year DESC NULLS LAST, a.pmid",
+        "recent_reviews": "SELECT design, pmid, title, year FROM map WHERE design IN ('guideline', 'sr_or_ma') "
+                          "AND year BETWEEN 2022 AND 2026 ORDER BY design, year DESC, pmid",
+        "expansion": "SELECT m.mesh_id, m.name, e.depth FROM exp e JOIN mesh m ON m.id = e.descriptor ORDER BY e.depth, m.name",
     }.items():
         cur = con.execute(sql, [DESIGNS, DESIGNS] if name == "design" else [])
         tables[name] = ([d[0] for d in cur.description], cur.fetchall())
+    assert summary["primary_cited_by_review"] + summary["primary_not_cited_by_review"] == summary["primary_studies"]
     return summary, tables
+
+
+DESIGN_LABEL = {"guideline": "Guideline", "sr_or_ma": "Systematic review or meta-analysis", "rct": "Randomized controlled trial",
+                "other_trial": "Other clinical trial", "observational": "Observational study", "other": "Other"}
+DEFINITIONS = [
+    ("Articles", "Articles indexed (HAS_MESH) to the descriptor or a narrower descriptor in the expansion{major}. The 40 MeSH "
+                 "check tags (Humans, Female, Aged, ...) are never used."),
+    ("Expansion", "{expansion}"),
+    ("Design class", "One class per Article, the first that matches in this order, from NLM publication types: Guideline "
+                     "(Guideline, Practice Guideline); Systematic review or meta-analysis (Systematic Review, Meta-Analysis, "
+                     "Network Meta-Analysis); Randomized controlled trial (Randomized Controlled Trial, incl. Veterinary); Other "
+                     "clinical trial (Clinical Trial, Clinical Trial Phase I-IV, Controlled Clinical Trial, Pragmatic Clinical Trial, "
+                     "Equivalence Trial, Adaptive Clinical Trial, Clinical Trial Veterinary); Observational study (Observational "
+                     "Study, incl. Veterinary); Other (everything else, including Clinical Trial Protocol and no types)."),
+    ("Primary studies", "Articles in the Randomized controlled trial or Other clinical trial class."),
+    ("Cited / not cited", "A primary study is cited when at least one Article anywhere in the graph whose publication types include "
+                          "Guideline, Practice Guideline, Systematic Review, Meta-Analysis or Network Meta-Analysis cites it "
+                          "(CITES edge). An Article citing itself is not counted. Only citations between Articles in the graph are "
+                          "counted, so cited counts are lower bounds: a study not cited within the graph may be cited elsewhere."),
+    ("2022-2026", "The Article's publication year (integer `year`) from 2022 to 2026 inclusive."),
+    ("Population", "{population}"),
+]
+
+
+def _defs(summary):
+    fill = dict(major=" with is_major_topic = true" if summary["indexing"] == "major_topic" else "",
+                expansion=("The descriptor plus every narrower descriptor reached by HAS_BROADER_ANCESTOR, which follows MeSH tree "
+                           "numbers (PubMed-style explode)." if summary["expansion"] == "full" else "The descriptor only."),
+                population=("Identity-only Articles (lunasai_layer ctgov_identity_only) excluded." if summary["article_population"]
+                            == "without_stubs" else "All Articles, including identity-only Articles (in this release they have "
+                            "no publication types, MeSH or CITES edges, so they do not enter MeSH-based maps)."))
+    return [(k, v.format(**fill)) for k, v in DEFINITIONS]
+
+
+def _rows(summary):
+    d = summary["by_design"]
+    return [("Articles", summary["articles"])] + [(DESIGN_LABEL[k], d[k]) for k in DESIGNS] + [
+        ("Primary studies (RCT + other clinical trial)", summary["primary_studies"]),
+        ("Primary studies cited by an in-graph guideline or review", summary["primary_cited_by_review"]),
+        ("Primary studies not cited within the graph", summary["primary_not_cited_by_review"]),
+        ("Randomized controlled trials cited", summary["rct_cited_by_review"]),
+        ("Other clinical trials cited", summary["other_trial_cited_by_review"]),
+        ("Distinct citing guidelines and reviews", summary["distinct_citing_reviews"]),
+        ("... of which in this map", summary["distinct_citing_reviews_in_map"]),
+        ("Systematic reviews or meta-analyses, 2022-2026", summary["sr_or_ma_2022_2026"]),
+        ("Guidelines, 2022-2026", summary["guideline_2022_2026"])]
+
+
+def render_markdown(summary, tables):
+    c = summary["condition"]
+    esc = lambda v: "" if v is None else (f"{v:,}" if isinstance(v, int) and not isinstance(v, bool) else str(v).replace("|", "\\|"))
+    tbl = lambda cols, rows: "\n".join(["| " + " | ".join(cols) + " |", "|" + "|".join("---" for _ in cols) + "|"]
+                                        + ["| " + " | ".join(esc(v) for v in r) + " |" for r in rows])
+    rec_cols, rec = tables["recent_reviews"]
+    link = lambda pmid: f"[{pmid}](https://pubmed.ncbi.nlm.nih.gov/{pmid}/)" if pmid else ""
+    L = [f"# Evidence map: {c['name']}", "",
+         f"MeSH {c['mesh_id']}, {summary['descriptors_in_expansion']} descriptors. Source: {summary['release']}. "
+         "Built by `examples/evidence_map.py`; `report.html` has the same content with a chart.", "",
+         tbl(["measure", "value"], _rows(summary)), "", "## Definitions", ""]
+    L += [f"- **{k}.** {v}" for k, v in _defs(summary)]
+    L += ["", "## Descriptors in the expansion", "", tbl(*tables["expansion"])]
+    for design, title in (("guideline", "Guidelines"), ("sr_or_ma", "Systematic reviews and meta-analyses")):
+        rows = [r for r in rec if r[0] == design]
+        L += ["", f"## {title}, 2022-2026 ({len(rows):,})", "",
+              tbl(["pmid", "title", "year"], [(link(r[1]), r[2], r[3]) for r in rows])]
+    L += ["", "Primary studies with their number of citing guidelines and reviews are in `primary_studies.csv`; the citing "
+          "guidelines and reviews in `citing_reviews.csv`. PubMed, MeSH: U.S. National Library of Medicine; citations: OpenAlex. "
+          "Graph files: CC0."]
+    return "\n".join(L) + "\n"
+
+
+CSS = (":root{color-scheme:light;--bg:#fcfcfb;--panel:#fff;--border:#e4e3df;--text:#0b0b0b;--text2:#52514e;--a:#2a78d6;--b:#c9c8c2}"
+       "@media (prefers-color-scheme:dark){:root{color-scheme:dark;--bg:#1a1a19;--panel:#222220;--border:#383835;--text:#f0efec;"
+       "--text2:#c3c2b7;--a:#3987e5;--b:#55544f}}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);"
+       "font:14px/1.45 system-ui,-apple-system,'Segoe UI',sans-serif}main{max-width:1040px;margin:0 auto;padding:24px 16px 64px}"
+       "h1{font-size:24px;margin:0 0 4px}h2{font-size:17px;margin:32px 0 6px}.sub,.note,dd{color:var(--text2)}"
+       ".panel{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:12px;overflow-x:auto}"
+       "table{border-collapse:collapse;width:100%;font-size:12.5px}th,td{padding:5px 8px;border-bottom:1px solid var(--border);"
+       "text-align:left;vertical-align:top}td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}a{color:var(--a)}"
+       "svg{display:block;max-width:100%;height:auto}svg text{fill:var(--text2);font-size:11px}dt{font-weight:600;margin-top:8px}"
+       "dd{margin:2px 0 0 0}.legend span{margin-right:14px;font-size:12px;color:var(--text2)}"
+       ".legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px}")
+
+
+def render_html(summary, tables):
+    import html
+    E = lambda v: html.escape("" if v is None else (f"{v:,}" if isinstance(v, int) and not isinstance(v, bool) else str(v)))
+    c, d = summary["condition"], summary["by_design"]
+    cited = {"rct": summary["rct_cited_by_review"], "other_trial": summary["other_trial_cited_by_review"]}
+    vmax = max(d.values()) or 1
+    bars, y = [], 6
+    for k in DESIGNS:
+        w = 560 * d[k] / vmax
+        cw = 560 * cited.get(k, 0) / vmax
+        bars.append(f"<text x='232' y='{y + 12}' text-anchor='end'>{E(DESIGN_LABEL[k])}</text>"
+                    f"<rect x='240' y='{y}' width='{max(w, 1):.1f}' height='16' rx='3' fill='var(--b)'><title>{E(DESIGN_LABEL[k])}: "
+                    f"{E(d[k])}</title></rect>"
+                    + (f"<rect x='240' y='{y}' width='{max(cw, 1):.1f}' height='16' rx='3' fill='var(--a)'><title>cited by an in-graph "
+                       f"guideline or review: {E(cited[k])}</title></rect>" if k in cited else "")
+                    + f"<text x='{246 + w:.1f}' y='{y + 12}'>{E(d[k])}</text>")
+        y += 24
+    svg = f"<svg viewBox='0 0 900 {y + 4}' role='img' aria-label='Articles by design class'>{''.join(bars)}</svg>"
+    row = lambda r: "<tr>" + "".join(f"<td class='{'n' if isinstance(v, int) else ''}'>{E(v)}</td>" for v in r) + "</tr>"
+    rec_cols, rec = tables["recent_reviews"]
+    lists = ""
+    for design, title in (("guideline", "Guidelines"), ("sr_or_ma", "Systematic reviews and meta-analyses")):
+        rows = [r for r in rec if r[0] == design]
+        body = "".join(f"<tr><td><a href='https://pubmed.ncbi.nlm.nih.gov/{E(r[1])}/'>{E(r[1])}</a></td><td>{E(r[2])}</td>"
+                       f"<td class='n'>{E(r[3])}</td></tr>" for r in rows)
+        lists += (f"<h2>{title}, 2022-2026 ({len(rows):,})</h2><div class='panel'><table><thead><tr><th>PMID</th><th>Title</th>"
+                  f"<th class='n'>Year</th></tr></thead><tbody>{body}</tbody></table></div>")
+    ex_cols, ex = tables["expansion"]
+    return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Evidence map: {E(c['name'])}</title><style>{CSS}</style></head><body><main>
+<h1>Evidence map: {E(c['name'])}</h1>
+<p class="sub">MeSH {E(c['mesh_id'])} · {E(summary['descriptors_in_expansion'])} descriptors · source: {E(summary['release'])}</p>
+<h2>Articles by design class</h2>
+<p class="note">Grey: Articles in the class. Blue (trial classes only): primary studies cited by at least one in-graph guideline or review.
+Cited counts are lower bounds.</p>
+<div class="panel"><div class="legend"><span><i style="background:var(--b)"></i>Articles</span><span><i style="background:var(--a)"></i>cited by an in-graph guideline or review</span></div>{svg}</div>
+<h2>Summary</h2><div class="panel"><table><tbody>{''.join(row(r) for r in _rows(summary))}</tbody></table></div>
+<h2>Definitions</h2><dl>{''.join(f"<dt>{E(k)}</dt><dd>{E(v)}</dd>" for k, v in _defs(summary))}</dl>
+<h2>Descriptors in the expansion</h2><div class="panel"><table><thead><tr>{''.join(f"<th>{E(x)}</th>" for x in ex_cols)}</tr></thead>
+<tbody>{''.join(row(r) for r in ex)}</tbody></table></div>
+{lists}
+<p class="note" style="margin-top:28px">Built by examples/evidence_map.py from the published Lunas Clinical Evidence KG graph files (CC0).
+PubMed and MeSH: U.S. National Library of Medicine; citations: OpenAlex. Full lists in the CSV files next to this report.</p>
+</main></body></html>"""
 
 
 def main():
@@ -217,6 +350,10 @@ def main():
                "indexing": "major_topic" if a.major_only else "any", "self_citations": "excluded",
                **summary, "run_seconds": round(time.time() - t0, 2)}
     json.dump(summary, open(os.path.join(out, "summary.json"), "w"), indent=1)
+    with open(os.path.join(out, "report.html"), "w") as fh:
+        fh.write(render_html(summary, tables))
+    with open(os.path.join(out, "README.md"), "w") as fh:
+        fh.write(render_markdown(summary, tables))
     print(json.dumps(summary, indent=1))
 
 
