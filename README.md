@@ -107,6 +107,14 @@ recruiting at each (competing-trial density for site selection); and trials with
 abbreviations such as Ctr/Centre, and company suffixes such as Inc/LLC/GmbH) and reports site counts
 before and after: 60,591 -> 52,482 sites for breast neoplasms, 1,092,163 -> 940,830 across the
 release. It does not resolve different names for the same place. The first run caches the trial subgraph as Parquet (about 45 s on 16 cores); later runs take 2-3 s.
+`examples/trial_report.py` builds a fuller report for any topic from the same cache, one CSV per section.
+A topic is a JSON spec of selection routes (MeSH trees, title text), an optional restriction and an optional
+subset; `examples/topics/` has two. Every term list and the count each route contributes are written out.
+Sections include active trials, industry competitors, sites (merged), countries, phase, results
+articles, terminations, and benchmarks from comparable trials in the topic (by phase and sponsor class).
+It also prints a field-coverage table. Fields the input does not carry are listed as missing, never dropped.
+With the current release that includes primary completion date, outcomes, why_stopped, design and eligibility.
+`python -m pytest tests/` runs its tests.
 Example outputs for breast neoplasms, Alzheimer disease and heart failure are in
 [examples/trial_landscape_examples/](examples/trial_landscape_examples/) (the large per-trial and
 per-site CSVs are left out; rerun to regenerate them). Read the trial notes in
