@@ -1,0 +1,32 @@
+{
+ "condition": {
+  "id": "MESH:D006333",
+  "mesh_id": "D006333",
+  "name": "Heart Failure"
+ },
+ "release": "Lunas Clinical Evidence KG v0.2.1 (snapshot 2026-11-07)",
+ "expansion": "full",
+ "article_population": "with_stubs",
+ "indexing": "major_topic",
+ "self_citations": "excluded",
+ "descriptors_in_expansion": 6,
+ "articles": 13500,
+ "by_design": {
+  "guideline": 25,
+  "sr_or_ma": 410,
+  "rct": 1653,
+  "other_trial": 329,
+  "observational": 413,
+  "other": 10670
+ },
+ "primary_studies": 1982,
+ "primary_cited_by_review": 954,
+ "primary_not_cited_by_review": 1028,
+ "rct_cited_by_review": 863,
+ "other_trial_cited_by_review": 91,
+ "distinct_citing_reviews": 1134,
+ "distinct_citing_reviews_in_map": 290,
+ "sr_or_ma_2022_2026": 162,
+ "guideline_2022_2026": 15,
+ "run_seconds": 0.31
+}

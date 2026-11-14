@@ -17,11 +17,18 @@
  "trials_with_sites": 5071,
  "trials_without_sponsor_record": 173,
  "recruiting_without_sponsor_record": 47,
+ "site_merge": false,
+ "sites_before_merge": 29720,
  "sites": 29720,
  "countries": 127,
  "trials_with_results_article": 467,
  "results_articles": 1845,
+ "results_article_rows": 1845,
  "results_articles_cited_by_guideline_or_sr": 329,
+ "results_articles_distinct": 1738,
+ "results_articles_distinct_not_identity_only": 563,
+ "results_articles_distinct_cited_by_guideline_or_sr": 305,
+ "results_articles_distinct_cited_by_guideline_or_sr_not_identity_only": 305,
  "crosscheck_ctgov_ancestor_terms_trials": 5828,
  "crosscheck_ctgov_trials_also_in_our_expansion": 5828,
  "csv_rows": {
@@ -35,5 +42,5 @@
   "countries": 128,
   "results": 1845
  },
- "run_seconds": 1.71
+ "run_seconds": 1.49
 }

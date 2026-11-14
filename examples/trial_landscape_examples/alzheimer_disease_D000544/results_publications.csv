@@ -1,0 +1,715 @@
+nct_id,trial_title,phase,lead_sponsor,pmid,article_title,year,journal,article_is_stub,cited_in_graph,cited_by_count_openalex,cited_by_guidelines,cited_by_systematic_reviews,cited_by_meta_analyses,cited_by_guideline_or_sr
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,11556941,The PHQ-9: validity of a brief depression severity measure.,2001,J Gen Intern Med,false,3790.0,44839,11,75,48,85
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,34998485,Estimation of the global prevalence of dementia in 2019 and forecasted prevalence in 2050: an analysis for the Global Burden of Disease Study 2019.,2022,Lancet Public Health,false,415.0,4882,1,23,15,24
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,7991117,The Neuropsychiatric Inventory: comprehensive assessment of psychopathology in dementia.,1994,Neurology,false,525.0,7509,3,13,8,16
+NCT05119114,Volumetric Magnetic Resonance Imaging in Dementia,(missing),assiut university,16360788,Global prevalence of dementia: a Delphi consensus study.,2005,Lancet,false,313.0,5330,0,14,14,14
+NCT00246896,Care Management for Patients With Alzheimer Disease and Their Family Caregivers,NA,agency for healthcare research and quality (ahrq),16684985,Effectiveness of collaborative care for older adults with Alzheimer disease in primary care: a randomized controlled trial.,2006,JAMA,false,67.0,788,0,12,6,12
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,10605972,Caregiving as a risk factor for mortality: the Caregiver Health Effects Study.,1999,JAMA,false,246.0,3336,1,10,1,11
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,24618967,Caregiver burden: a clinical review.,2014,JAMA,false,136.0,1912,1,11,1,11
+NCT02303158,Relationship Between Protein Biomarkers in Cerebrospinal Fluid and Alzheimer&Apos;s Disease in Patients With Depression,(missing),institut investigacio sanitaria pere virgili,24849862,Advancing research diagnostic criteria for Alzheimer's disease: the IWG-2 criteria.,2014,Lancet Neurol,false,278.0,3276,4,5,5,9
+NCT01430286,Web-based Psycho-Educational Program to Support Carers of Alzheimer's Patients,NA,assistance publique - hôpitaux de paris,25967983,A web-based psychoeducational program for informal caregivers of patients with Alzheimer's disease: a pilot randomized controlled trial.,2015,J Med Internet Res,false,22.0,211,0,9,5,9
+NCT02303158,Relationship Between Protein Biomarkers in Cerebrospinal Fluid and Alzheimer&Apos;s Disease in Patients With Depression,(missing),institut investigacio sanitaria pere virgili,23637108,Late-life depression and risk of vascular dementia and Alzheimer's disease: systematic review and meta-analysis of community-based cohort studies.,2013,Br J Psychiatry,false,73.0,1296,0,8,7,8
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,33667416,Alzheimer's disease.,2021,Lancet,false,313.0,5061,0,7,4,7
+NCT00857415,Phase III Study of the Correlation Between Florbetapir F18 PET Imaging and Amyloid Pathology in the Brain,PHASE3,avid radiopharmaceuticals,21245183,Use of florbetapir-PET for imaging beta-amyloid pathology.,2011,JAMA,false,163.0,1096,4,2,2,6
+NCT00000177,Estrogen Hormone Protocol,PHASE3,national institute on aging (nia),10697060,Estrogen replacement therapy for treatment of mild to moderate Alzheimer disease: a randomized controlled trial. Alzheimer's Disease Cooperative Study.,2000,JAMA,false,61.0,991,1,5,4,6
+NCT00177489,Coordinating Center for Caregiver Intervention Trial,NA,university of pittsburgh,17116917,"Enhancing the quality of life of dementia caregivers from different ethnic or racial groups: a randomized, controlled trial.",2006,Ann Intern Med,false,34.0,753,0,6,3,6
+NCT03548883,Examining Neuroinflammation in AlzHeimer's,(missing),adventhealth,22784036,Clinical and biomarker changes in dominantly inherited Alzheimer's disease.,2012,N Engl J Med,false,450.0,3753,0,5,7,5
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,12084879,Phases of A beta-deposition in the human brain and its relevance for the development of AD.,2002,Neurology,false,353.0,3436,0,5,3,5
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,9153155,The Neuropsychiatric Inventory: assessing psychopathology in dementia patients.,1997,Neurology,false,134.0,2030,2,3,1,5
+NCT00253201,A Study of the Safety and Effectiveness of Two Doses of Galantamine Versus Placebo in the Treatment of Patients With Alzheimer's Disease,PHASE3,"johnson & johnson pharmaceutical research & development, l.l.c.",10881250,"Galantamine in AD: A 6-month randomized, placebo-controlled trial with a 6-month extension. The Galantamine USA-1 Study Group.",2000,Neurology,false,52.0,872,1,4,3,5
+NCT00253188,A Study of the Safety and Effectiveness of Two Doses of Galantamine Versus Placebo in the Treatment of Patients With Alzheimer's Disease,PHASE3,"johnson & johnson pharmaceutical research & development, l.l.c.",11110737,Efficacy and safety of galantamine in patients with mild to moderate Alzheimer's disease: multicentre randomised controlled trial. Galantamine International-1 Study Group.,2000,BMJ,false,32.0,626,0,5,3,5
+NCT00253227,A Study of the Safety and Effectiveness of a Flexible Dose of Galantamine Versus Placebo in the Treatment of Patients With Alzheimer's Disease,PHASE3,"johnson & johnson pharmaceutical research & development, l.l.c.",11606667,"Effects of a flexible galantamine dose in Alzheimer's disease: a randomised, controlled trial.",2001,J Neurol Neurosurg Psychiatry,false,18.0,281,0,5,4,5
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,22896675,"A paravascular pathway facilitates CSF flow through the brain parenchyma and the clearance of interstitial solutes, including amyloid β.",2012,Sci Transl Med,false,556.0,5460,0,4,2,4
+NCT03136679,Discovery of Novel Biomarkers That Will Lead to the Early Detection of Alzheimer's Disease,(missing),baylor research institute,15817019,"The Montreal Cognitive Assessment, MoCA: a brief screening tool for mild cognitive impairment.",2005,J Am Geriatr Soc,false,146.0,,1,3,0,4
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,15817019,"The Montreal Cognitive Assessment, MoCA: a brief screening tool for mild cognitive impairment.",2005,J Am Geriatr Soc,false,146.0,,1,3,0,4
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,33004510,Glymphatic failure as a final common pathway to dementia.,2020,Science,false,120.0,991,0,4,3,4
+NCT00249145,A Study of the Effectiveness and Safety of Risperidone in the Treatment of Behavioral Disturbances in Patients With Dementia,PHASE3,"janssen pharmaceutica n.v., belgium",10496251,"A randomized trial of risperidone, placebo, and haloperidol for behavioral symptoms of dementia.",1999,Neurology,false,29.0,617,1,3,3,4
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,17101889,Improving caregiver well-being delays nursing home placement of patients with Alzheimer disease.,2006,Neurology,false,29.0,597,0,4,0,4
+NCT00000179,Agitation in Alzheimer's Disease,PHASE3,national institute on aging (nia),11087767,"Treatment of agitation in AD: a randomized, placebo-controlled clinical trial.",2000,Neurology,false,20.0,330,0,4,1,4
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,31564456,Alzheimer Disease: An Update on Pathobiology and Treatment Strategies.,2019,Cell,false,271.0,3099,0,3,2,3
+NCT02516046,18F-AV-1451 Autopsy Study,PHASE3,avid radiopharmaceuticals,32338734,Positron Emission Tomography Imaging With [18F]flortaucipir and Postmortem Assessment of Alzheimer Disease Neuropathologic Changes.,2020,JAMA Neurol,false,94.0,435,1,2,1,3
+NCT00261573,A Study of the Safety and Effectiveness of Galantamine Versus Placebo in the Treatment of Patients With Vascular Dementia or Mixed Dementia,PHASE3,"johnson & johnson pharmaceutical research & development, l.l.c.",11965273,Efficacy of galantamine in probable vascular dementia and Alzheimer's disease combined with cerebrovascular disease: a randomised trial.,2002,Lancet,false,53.0,761,0,3,1,3
+NCT00056225,VITAL - VITamins to Slow ALzheimer's Disease (Homocysteine Study),PHASE3,national institute on aging (nia),18854539,High-dose B vitamin supplementation and cognitive decline in Alzheimer disease: a randomized controlled trial.,2008,JAMA,false,33.0,546,0,3,3,3
+NCT03136679,Discovery of Novel Biomarkers That Will Lead to the Early Detection of Alzheimer's Disease,(missing),baylor research institute,18854539,High-dose B vitamin supplementation and cognitive decline in Alzheimer disease: a randomized controlled trial.,2008,JAMA,false,33.0,546,0,3,3,3
+NCT00898807,Citalopram for Agitation in Alzheimer's Disease,PHASE3,jhsph center for clinical trials,24549548,Effect of citalopram on agitation in Alzheimer disease: the CitAD randomized clinical trial.,2014,JAMA,false,30.0,551,0,3,1,3
+NCT01555827,Retinal Neurodegenerative Signs in Alzheimer's Diseases,NA,"university hospital, bordeaux",29596588,Incidence of and Risk Factors Associated With Age-Related Macular Degeneration: Four-Year Follow-up From the ALIENOR Study.,2018,JAMA Ophthalmol,false,23.0,94,0,3,3,3
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,26030524,Structural and functional features of central nervous system lymphatic vessels.,2015,Nature,false,411.0,4388,0,2,2,2
+NCT01565291,A Preliminary Study of 18F-AV-45 in Alzheimer's Disease and Healthy Elderly Volunteers,EARLY_PHASE1,avid radiopharmaceuticals,20501908,In vivo imaging of amyloid deposition in Alzheimer disease using the radioligand 18F-AV-45 (florbetapir [corrected] F 18).,2010,J Nucl Med,false,103.0,679,2,0,0,2
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,33271079,"Prevalence, risk factors, and management of dementia and mild cognitive impairment in adults aged 60 years or older in China: a cross-sectional study.",2020,Lancet Public Health,false,71.0,1644,0,2,2,2
+NCT00015548,CATIE-Alzheimer's Disease Trial,NA,national institute of mental health (nimh),17035647,Effectiveness of atypical antipsychotic drugs in patients with Alzheimer's disease.,2006,N Engl J Med,false,57.0,1189,0,2,2,2
+NCT00000178,Multicenter Trial of Prednisone in Alzheimer's Disease,PHASE3,national institute on aging (nia),10680787,A randomized controlled trial of prednisone in Alzheimer's disease. Alzheimer's Disease Cooperative Study.,2000,Neurology,false,43.0,458,1,1,1,2
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,21878600,Physical exercise as a preventive or disease-modifying treatment of dementia and brain aging.,2011,Mayo Clin Proc,false,43.0,877,0,2,4,2
+NCT00010803,Ginkgo Biloba Prevention Trial in Older Individuals,PHASE3,national center for complementary and integrative health (nccih),19017911,Ginkgo biloba for prevention of dementia: a randomized controlled trial.,2008,JAMA,false,37.0,653,0,2,1,2
+NCT00040378,Prevention of Alzheimer's Disease by Vitamin E and Selenium (PREADVISE),(missing),frederick schmitt,28319243,Association of Antioxidant Supplement Use and Dementia in the Prevention of Alzheimer's Disease by Vitamin E and Selenium Trial (PREADViSE).,2017,JAMA Neurol,false,27.0,285,0,2,0,2
+NCT05009524,The Interactive Physical and Cognitive Exercise System (v3) for Mild Cognitive Impairment (MCI),NA,ipaces llc,22261206,Exergaming and older adult cognition: a cluster randomized clinical trial.,2012,Am J Prev Med,false,19.0,452,0,2,0,2
+NCT00089882,Risk Evaluation and Education for Alzheimer's Disease (REVEAL) II,(missing),national institute on aging (nia),15654228,Genetic susceptibility testing versus family history-based risk assessment: Impact on perceived risk of Alzheimer disease.,2005,Genet Med,false,9.0,67,1,1,0,2
+NCT00462917,REVEAL III: Risk Evaluation and Education for Alzheimer's Disease,NA,brigham and women's hospital,28726810,A randomized controlled trial of disclosing genetic risk information for Alzheimer disease via telephone.,2018,Genet Med,false,5.0,53,0,2,1,2
+NCT07279103,Multisensory Environment-Based Occupational Therapy for Alzheimer's Patients,NA,hacettepe university,31719067,Occupational therapy for people with dementia and their family carers provided at home: a systematic review and meta-analysis.,2019,BMJ Open,false,4.0,126,0,2,1,2
+NCT00291161,Partners in Dementia Care: A Telephone Care Consultation Intervention Provided to Veterans in Partnership With Local Alzheimer's Association Chapters,NA,va office of research and development,25666216,A break-even analysis for dementia care collaboration: Partners in Dementia Care.,2015,J Gen Intern Med,false,3.0,16,0,2,1,2
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,30046111,Functional aspects of meningeal lymphatics in ageing and Alzheimer's disease.,2018,Nature,false,173.0,1364,0,1,0,1
+NCT00750282,Phase II Study of Florbetaben (BAY 94-9172) PET Imaging for Detection/Exclusion of Cerebral β-amyloid in Patients With Probable Alzheimer's Disease Compared to Healthy Volunteers,PHASE2,life molecular imaging sa,21481640,Cerebral amyloid-β PET with florbetaben (18F) in patients with Alzheimer's disease and healthy controls: a multicentre phase 2 diagnostic study.,2011,Lancet Neurol,false,103.0,584,0,1,2,1
+NCT05040217,A Clinical Trial of AAV2-BDNF Gene Therapy in Early Alzheimer's Disease and Mild Cognitive Impairment,PHASE1,mark tuszynski,19198615,Neuroprotective effects of brain-derived neurotrophic factor in rodent and primate models of Alzheimer's disease.,2009,Nat Med,false,74.0,1026,0,1,0,1
+NCT00004845,A Multicenter Trial of Rofecoxib and Naproxen in Alzheimer's Disease (NSAID Study),PHASE2/PHASE3,national institute on aging (nia),12783912,Effects of rofecoxib or naproxen vs placebo on Alzheimer disease progression: a randomized controlled trial.,2003,JAMA,false,71.0,960,0,1,3,1
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,27694257,Plasma tau in Alzheimer disease.,2016,Neurology,false,66.0,507,0,1,1,1
+NCT01775696,Central and Systemic Inflammation in Alzheimer's Disease,(missing),assistance publique - hôpitaux de paris,26984188,Early and protective microglial activation in Alzheimer's disease: a prospective study using 18F-DPA-714 PET imaging.,2016,Brain,false,62.0,536,0,1,0,1
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,26354982,Detailed comparison of amyloid PET and CSF biomarkers for identifying early Alzheimer disease.,2015,Neurology,false,47.0,388,0,1,1,1
+NCT00235716,"A Randomized, Clinical Trial of Vitamin E and Memantine in Alzheimer's Disease",PHASE3,us department of veterans affairs,24381967,Effect of vitamin E and memantine on functional decline in Alzheimer disease: the TEAM-AD VA cooperative randomized trial.,2014,JAMA,false,36.0,604,0,1,0,1
+NCT00149175,Clinical and Genetic Study of Neurodegenerative Disorders With Cognitive Impairment,(missing),"institut national de la santé et de la recherche médicale, france",17071924,"Demographic, neurological and behavioural characteristics and brain perfusion SPECT in frontal variant of frontotemporal dementia.",2006,Brain,false,34.0,181,1,0,0,1
+NCT02213458,Care Ecosystem: Navigating Patients and Families Through Stages of Care,NA,"university of california, san francisco",31566651,"Effect of Collaborative Dementia Care via Telephone and Internet on Quality of Life, Caregiver Well-being, and Health Care Use: The Care Ecosystem Randomized Clinical Trial.",2019,JAMA Intern Med,false,33.0,265,0,1,2,1
+NCT04287738,"Care Ecosystem: Navigating Patients and Families Through Stages of Care, Extension Trial",NA,"university of california, san francisco",31566651,"Effect of Collaborative Dementia Care via Telephone and Internet on Quality of Life, Caregiver Well-being, and Health Care Use: The Care Ecosystem Randomized Clinical Trial.",2019,JAMA Intern Med,false,33.0,265,0,1,2,1
+NCT02062099,PET Imaging of the Translocator Proteine Ligands (TSPO) With [18 F] DPA-714 Biomarker of NeuroInflammation in Cognitive Decline (NIDECO),PHASE1,"university hospital, tours",22252372,Using PET with 18F-AV-45 (florbetapir) to quantify brain amyloid load in a clinical environment.,2012,Eur J Nucl Med Mol Imaging,false,28.0,250,0,1,1,1
+NCT00007189,Alzheimer's Disease Anti-Inflammatory Prevention Trial (ADAPT),PHASE3,seattle institute for biomedical and clinical research,17460158,Naproxen and celecoxib do not prevent AD in early results from a randomized controlled trial.,2007,Neurology,false,27.0,350,0,1,0,1
+NCT01992380,A Study of Flortaucipir PET in Healthy Volunteers and Cognitively Impaired Subjects,PHASE1,avid radiopharmaceuticals,29284675,Test-Retest Reproducibility for the Tau PET Imaging Agent Flortaucipir F 18.,2018,J Nucl Med,false,19.0,86,0,1,0,1
+NCT00647478,System-IGF-1 Pathway and Alzheimer's Disease,(missing),assistance publique - hôpitaux de paris,23015654,Insulin-like growth factor-I and insulin-like growth factor binding protein-3 in Alzheimer's disease.,2012,J Clin Endocrinol Metab,false,15.0,73,0,1,3,1
+NCT00211159,OmegAD (Omega-3 and Alzheimer's Disease),NA,karolinska university hospital,24410954,Transfer of omega-3 fatty acids across the blood-brain barrier after dietary supplementation with a docosahexaenoic acid-rich omega-3 fatty acid preparation in patients with Alzheimer's disease: the OmegAD study.,2014,J Intern Med,false,12.0,158,0,1,0,1
+NCT00462917,REVEAL III: Risk Evaluation and Education for Alzheimer's Disease,NA,brigham and women's hospital,26810768,Disclosing Pleiotropic Effects During Genetic Risk Assessment for Alzheimer Disease: A Randomized Trial.,2016,Ann Intern Med,false,7.0,45,0,1,0,1
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,37643212,Multiancestry analysis of the HLA locus in Alzheimer's and Parkinson's diseases uncovers a shared adaptive immune response mediated by <i>HLA-DRB1*04</i> subtypes.,2023,Proc Natl Acad Sci U S A,false,6.0,48,0,1,1,1
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,32027340,Association of Multisensory Impairment With Quality of Life and Depression in English Older Adults.,2020,JAMA Otolaryngol Head Neck Surg,false,5.0,43,0,1,1,1
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,39713957,"The Alzheimer's Association clinical practice guideline for the Diagnostic Evaluation, Testing, Counseling, and Disclosure of Suspected Alzheimer's Disease and Related Disorders (DETeCD-ADRD): Executive summary of recommendations for specialty care.",2025,Alzheimers Dement,false,2.0,,1,0,0,1
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,39713939,"The Alzheimer's Association clinical practice guideline for the diagnostic evaluation, testing, counseling, and disclosure of suspected Alzheimer's disease and related disorders (DETeCD-ADRD): Validated clinical assessment instruments.",2025,Alzheimers Dement,false,1.0,,1,0,0,1
+NCT03548883,Examining Neuroinflammation in AlzHeimer's,(missing),adventhealth,21371747,Alzheimer's disease.,2011,Lancet,false,155.0,2261,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,21371747,Alzheimer's disease.,2011,Lancet,false,155.0,2261,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,25155658,Accuracy of brain amyloid detection in clinical practice using cerebrospinal fluid β-amyloid 42: a cross-validation study against amyloid positron emission tomography.,2014,JAMA Neurol,false,92.0,370,0,0,0,0
+NCT00017940,Gene Therapy for Alzheimer's Disease Clinical Trial,PHASE1,the shiley family trust,15852017,A phase 1 clinical trial of nerve growth factor gene therapy for Alzheimer disease.,2005,Nat Med,false,74.0,1040,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,28179466,Blood-based NfL: A biomarker for differential diagnosis of parkinsonian disorder.,2017,Neurology,false,60.0,478,0,0,0,0
+NCT03938870,CNS Tau Kinetics in Healthy Aging and Alzheimer's Disease,(missing),washington university school of medicine,16799555,Human amyloid-beta synthesis and clearance rates as measured in cerebrospinal fluid in vivo.,2006,Nat Med,false,54.0,588,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,27357347,18F-AV-1451 tau PET imaging correlates strongly with tau neuropathology in MAPT mutation carriers.,2016,Brain,false,44.0,172,0,0,0,0
+NCT02062099,PET Imaging of the Translocator Proteine Ligands (TSPO) With [18 F] DPA-714 Biomarker of NeuroInflammation in Cognitive Decline (NIDECO),PHASE1,"university hospital, tours",23300829,Molecular imaging of microglial activation in amyotrophic lateral sclerosis.,2012,PLoS One,false,43.0,240,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,38381674,Biomarker Changes during 20 Years Preceding Alzheimer's Disease.,2024,N Engl J Med,false,41.0,341,0,0,0,0
+NCT00870311,"Investigation of Lithium on Signal Transduction, Gene Expression and Brain Myo-Inositol Levels in Manic Patients",PHASE4,wayne state university,11072948,Lithium-induced increase in human brain grey matter.,2000,Lancet,false,33.0,652,0,0,1,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,25411441,CSF biomarkers and clinical progression of Parkinson disease.,2015,Neurology,false,33.0,235,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,20944075,Physical activity predicts gray matter volume in late adulthood: the Cardiovascular Health Study.,2010,Neurology,false,30.0,505,0,0,0,0
+NCT05899764,Epileptic Hippocampus in Alzheimer's Disease,PHASE1/PHASE2,"university of california, los angeles",34570177,Effect of Levetiracetam on Cognition in Patients With Alzheimer Disease With and Without Epileptiform Activity: A Randomized Clinical Trial.,2021,JAMA Neurol,false,28.0,258,0,0,1,0
+NCT05040217,A Clinical Trial of AAV2-BDNF Gene Therapy in Early Alzheimer's Disease and Mild Cognitive Impairment,PHASE1,mark tuszynski,26302439,Nerve Growth Factor Gene Therapy: Activation of Neuronal Responses in Alzheimer Disease.,2015,JAMA Neurol,false,25.0,281,0,0,0,0
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,22511259,Defining insulin resistance from hyperinsulinemic-euglycemic clamps.,2012,Diabetes Care,false,25.0,358,0,0,0,0
+NCT03030365,Orientation in AD Patients: PET-MR Study,(missing),assuta medical center,26283353,"Brain system for mental orientation in space, time, and person.",2015,Proc Natl Acad Sci U S A,false,24.0,304,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,27765859,Modeling Strategies for Quantification of In Vivo <sup>18</sup>F-AV-1451 Binding in Patients with Tau Pathology.,2017,J Nucl Med,false,22.0,59,0,0,0,0
+NCT07496918,"Brain Effects of Gamma Frequency Sensory Stimulation (40Hz Light, Sound and Other Devices)",PHASE2,massachusetts institute of technology,36454969,Gamma frequency sensory stimulation in mild probable Alzheimer's dementia patients: Results of feasibility and pilot studies.,2022,PLoS One,false,22.0,222,0,0,0,0
+NCT02562989,[18F]MK-6240 Positron Emission Tomography (PET) Tracer First-in-Human Validation Study (MK-6240-001),PHASE1,merck sharp & dohme llc,29880509,"Brain Imaging of Alzheimer Dementia Patients and Elderly Controls with <sup>18</sup>F-MK-6240, a PET Tracer Targeting Neurofibrillary Tangles.",2019,J Nucl Med,false,21.0,114,0,0,0,0
+NCT01095744,Influence of Age on Amyloid Load in Alzheimer's Disease and in Atypical Focal Cortical Alzheimer's Disease,(missing),"institut national de la santé et de la recherche médicale, france",21705422,Similar amyloid-β burden in posterior cortical atrophy and Alzheimer's disease.,2011,Brain,false,18.0,130,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,25162367,Apolipoprotein E genotype and the diagnostic accuracy of cerebrospinal fluid biomarkers for Alzheimer disease.,2014,JAMA Psychiatry,false,18.0,108,0,0,0,0
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,36280236,Cerebrovascular insulin receptors are defective in Alzheimer's disease.,2023,Brain,false,18.0,110,0,0,0,0
+NCT00478491,fMRI of Vulnerable Brain Regions in Persons at Risk for Alzheimer's Disease,(missing),"university of wisconsin, madison",16412236,Reduced hippocampal activation during episodic encoding in middle-aged individuals at genetic risk of Alzheimer's disease: a cross-sectional study.,2006,BMC Med,false,17.0,211,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,29053771,The cerebellum in Alzheimer's disease: evaluating its role in cognitive decline.,2018,Brain,false,17.0,363,0,0,0,0
+NCT04390646,GnRH Therapy on Cognition in Down Syndrome,PHASE2/PHASE3,nelly pitteloud,36048943,GnRH replacement rescues cognition in Down syndrome.,2022,Science,false,16.0,86,0,0,0,0
+NCT05119114,Volumetric Magnetic Resonance Imaging in Dementia,(missing),assiut university,18390347,MRI-based automated computer classification of probable AD versus normal controls.,2008,IEEE Trans Med Imaging,false,16.0,149,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,38942556,Changes in prevalence and incidence of dementia and risk factors for dementia: an analysis from cohort studies.,2024,Lancet Public Health,false,16.0,102,0,0,0,0
+NCT05427448,Validation of Blood Biomarkers for Alzheimer's Disease,NA,"university hospital, montpellier",34262030,Phosphorylated tau181 in plasma as a potential biomarker for Alzheimer's disease in adults with Down syndrome.,2021,Nat Commun,false,15.0,71,0,0,0,0
+NCT03030365,Orientation in AD Patients: PET-MR Study,(missing),assuta medical center,17785667,Spatial cognition and the human navigation network in AD and MCI.,2007,Neurology,false,13.0,251,0,0,0,0
+NCT03030365,Orientation in AD Patients: PET-MR Study,(missing),assuta medical center,14663030,Spatial disorientation in Alzheimer's disease: the remembrance of things passed.,2003,Neurology,false,13.0,200,0,0,0,0
+NCT00417482,Antipsychotic Discontinuation in Alzheimer's Disease,PHASE4,new york state psychiatric institute,23075176,Relapse risk after discontinuation of risperidone in Alzheimer's disease.,2012,N Engl J Med,false,12.0,187,0,0,1,0
+NCT01339195,Post-stroke Cognitive Impairment and Dementia,NA,"centre hospitalier universitaire, amiens",29643258,"Prevalence of Poststroke Neurocognitive Disorders Using National Institute of Neurological Disorders and Stroke-Canadian Stroke Network, VASCOG Criteria (Vascular Behavioral and Cognitive Disorders), and Optimized Criteria of Cognitive Deficit.",2018,Stroke,false,11.0,96,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,36696990,"Association between healthy lifestyle and memory decline in older adults: 10 year, population based, prospective cohort study.",2023,BMJ,false,11.0,236,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,27164711,Myo-inositol changes precede amyloid pathology and relate to APOE genotype in Alzheimer disease.,2016,Neurology,false,10.0,87,0,0,0,0
+NCT02839187,Neuro Imaging and Multimodal Alzheimer's Disease,NA,"university hospital, toulouse",24435769,Comparison between PET template-based method and MRI-based method for cortical quantification of florbetapir (AV-45) uptake in vivo.,2014,Eur J Nucl Med Mol Imaging,false,10.0,38,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,35639372,Association of Rare APOE Missense Variants V236E and R251G With Risk of Alzheimer Disease.,2022,JAMA Neurol,false,9.0,87,0,0,1,0
+NCT01334749,Observational Study on Determinants of Dementia After Stroke,(missing),ludwig-maximilians - university of munich,29042492,Validation of the Telephone Interview of Cognitive Status and Telephone Montreal Cognitive Assessment Against Detailed Cognitive Testing and Clinical Diagnosis of Mild Cognitive Impairment After Stroke.,2017,Stroke,false,9.0,122,0,0,0,0
+NCT04287738,"Care Ecosystem: Navigating Patients and Families Through Stages of Care, Extension Trial",NA,"university of california, san francisco",31282955,Association Between Caregiver Depression and Emergency Department Use Among Patients With Dementia.,2019,JAMA Neurol,false,9.0,77,0,0,0,0
+NCT05427448,Validation of Blood Biomarkers for Alzheimer's Disease,NA,"university hospital, montpellier",34103344,Use of plasma biomarkers for AT(N) classification of neurodegenerative dementias.,2021,J Neurol Neurosurg Psychiatry,false,9.0,67,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,37012068,Plasma phosphorylated tau 181 predicts amyloid status and conversion to dementia stage dependent on renal function.,2023,J Neurol Neurosurg Psychiatry,false,8.0,63,0,0,1,0
+NCT01703117,Riluzole in Mild Alzheimer's Disease,PHASE2,icahn school of medicine at mount sinai,34145880,"Riluzole, a glutamate modulator, slows cerebral glucose metabolism decline in patients with Alzheimer's disease.",2021,Brain,false,6.0,99,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,33188687,Prediction of Alzheimer's disease using multi-variants from a Chinese genome-wide association study.,2021,Brain,false,6.0,71,0,0,0,0
+NCT04287738,"Care Ecosystem: Navigating Patients and Families Through Stages of Care, Extension Trial",NA,"university of california, san francisco",28323819,"Development of an adaptive, personalized, and scalable dementia care program: Early findings from the Care Ecosystem.",2017,PLoS Med,false,6.0,54,0,0,0,0
+NCT07673263,Effects of X Box Kinect 360 in Alzheimer's Disease,NA,,26992016,Alzheimer's disease with cerebrovascular disease: current status in the Asia-Pacific region.,2016,J Intern Med,false,6.0,65,0,0,0,0
+NCT00870311,"Investigation of Lithium on Signal Transduction, Gene Expression and Brain Myo-Inositol Levels in Manic Patients",PHASE4,wayne state university,10588403,Temporal dissociation between lithium-induced changes in frontal lobe myo-inositol and clinical response in manic-depressive illness.,1999,Am J Psychiatry,false,5.0,195,0,0,0,0
+NCT01334749,Observational Study on Determinants of Dementia After Stroke,(missing),ludwig-maximilians - university of munich,27539301,Prevalence of Amyloid Positron Emission Tomographic Positivity in Poststroke Mild Cognitive Impairment.,2016,Stroke,false,5.0,43,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,23785466,Assessment of global and regional diffusion changes along white matter tracts in parkinsonian disorders by MR tractography.,2013,PLoS One,false,4.0,33,0,0,0,0
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,32990739,Association of Sensory Impairments With Cognitive Decline and Depression Among Older Adults in China.,2020,JAMA Netw Open,false,4.0,174,0,0,0,0
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,38236596,Physical Function Trajectories and Mortality in Older Adults With Multisensory Impairment.,2024,JAMA Otolaryngol Head Neck Surg,false,4.0,16,0,0,0,0
+NCT02403752,Paired Integrative Home Exercise for Seniors With Dementia and Their Caregivers (PairedPLIE),NA,"university of california, san francisco",25671576,Preventing loss of independence through exercise (PLIÉ): a pilot clinical trial in older adults with dementia.,2015,PLoS One,false,3.0,79,0,0,0,0
+NCT02621606,[11C]MK-6884 Positron Emission Tomography (PET) Tracer Validation Trial (MK-6884-001),PHASE1,merck sharp & dohme llc,35020407,The PET tracer [<sup>11</sup>C]MK-6884 quantifies M4 muscarinic receptor in rhesus monkeys and patients with Alzheimer's disease.,2022,Sci Transl Med,false,3.0,20,0,0,0,0
+NCT02839187,Neuro Imaging and Multimodal Alzheimer's Disease,NA,"university hospital, toulouse",24573658,Insight on AV-45 binding in white and grey matter from histogram analysis: a study on early Alzheimer's disease patients and healthy subjects.,2014,Eur J Nucl Med Mol Imaging,false,3.0,22,0,0,0,0
+NCT01222351,Measuring Brain Amyloid Plaque Load in Older Adults Using BAY 94-9172,NA,new york state psychiatric institute,26221954,Brain Amyloid Deposition and Longitudinal Cognitive Decline in Nondemented Older Subjects: Results from a Multi-Ethnic Population.,2015,PLoS One,false,2.0,48,0,0,0,0
+NCT01339195,Post-stroke Cognitive Impairment and Dementia,NA,"centre hospitalier universitaire, amiens",30333160,Who should undergo a comprehensive cognitive assessment after a stroke? A cognitive risk score.,2018,Neurology,false,2.0,21,0,0,0,0
+NCT01434667,Risk Evaluation and Education for Alzheimer's Disease (REVEAL) IV,NA,brigham and women's hospital,29203084,The impact of genetic counselors' use of facilitative strategies on cognitive and emotional processing of genetic risk disclosure for Alzheimer's disease.,2018,Patient Educ Couns,false,2.0,14,0,0,0,0
+NCT02213458,Care Ecosystem: Navigating Patients and Families Through Stages of Care,NA,"university of california, san francisco",37721734,Care Ecosystem Collaborative Model and Health Care Costs in Medicare Beneficiaries With Dementia: A Secondary Analysis of a Randomized Clinical Trial.,2023,JAMA Intern Med,false,2.0,26,0,0,0,0
+NCT03034746,Impact of Physical Activity on Successful Aging,NA,universita di verona,27347878,Possible Predictors of Involuntary Weight Loss in Patients with Alzheimer's Disease.,2016,PLoS One,false,2.0,34,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,26177270,APOE Effects on Default Mode Network in Chinese Cognitive Normal Elderly: Relationship with Clinical Cognitive Performance.,2015,PLoS One,false,2.0,31,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,22123780,Neurology and neurologic practice in China.,2011,Neurology,false,2.0,22,0,0,0,0
+NCT05529277,Implementing Dementia Care Management Into Routine Care in the Region Siegen-Wittgenstein,(missing),german center for neurodegenerative diseases (dzne),37612103,Implementation of dementia care management in routine care (RoutineDeCM): a study protocol for process evaluation.,2023,BMJ Open,false,2.0,4,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,36564192,Examining the Effects of Formal Education Level on the Montreal Cognitive Assessment.,2022,J Am Board Fam Med,false,2.0,29,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,27362763,Alterations of Diffusion Kurtosis and Neurite Density Measures in Deep Grey Matter and White Matter in Parkinson's Disease.,2016,PLoS One,false,1.0,50,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,38139190,Blood Neurofilament Levels Predict Cognitive Decline across the Alzheimer's Disease Continuum.,2023,Int J Mol Sci,false,1.0,23,0,0,0,0
+NCT01638949,Multi-modal Neuroimaging in Alzheimer's Disease IMAP+,NA,"university hospital, caen",37085328,Association of the Informant-Reported Memory Decline With Cognitive and Brain Deterioration Through the Alzheimer Clinical Continuum.,2023,Neurology,false,1.0,15,0,0,0,0
+NCT03403257,Brain Attack Surveillance in Corpus Christi--Cognitive (BASIC-Cognitive),(missing),university of michigan,35691843,Neighborhood SES and Cognitive Function Among Hispanic/Latinx Residents: Why Where You Live Matters.,2022,Am J Prev Med,false,1.0,6,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,37365538,Aberrant palmitoylation caused by a ZDHHC21 mutation contributes to pathophysiology of Alzheimer's disease.,2023,BMC Med,false,1.0,34,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,37365538,Aberrant palmitoylation caused by a ZDHHC21 mutation contributes to pathophysiology of Alzheimer's disease.,2023,BMC Med,false,1.0,34,0,0,0,0
+NCT04023942,Personalized Nutrition and eHealth: Lifestyle Intervention (LION) Study for Weight Loss Maintenance,NA,technical university of munich,38809148,Evaluating Sex-specific Differences in Abdominal Fat Volume and Proton Density Fat Fraction at MRI Using Automated nnU-Net-based Segmentation.,2024,Radiol Artif Intell,false,1.0,3,0,0,0,0
+NCT05817188,Medication Repurposing to Stop Cognitive Decline in Dementia,(missing),karolinska institutet,39772858,"Medications and cognitive decline in Alzheimer's disease: Cohort cluster analysis of 15,428 patients.",2025,J Alzheimers Dis,false,1.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,37428408,Consensus Paper: Cerebellum and Ageing.,2024,Cerebellum,false,1.0,,0,0,0,0
+NCT06680154,Induction and Stabilization of Gamma Oscillations With 40 Hz External Brain Stimulation,NA,the national brain mapping laboratory (nbml),40948603,Phase-synchronized 40 Hz tACS and iTBS effects on gamma oscillations.,2025,Imaging Neurosci (Camb),false,1.0,,0,0,0,0
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,37307828,Connecting the Dots: The Cerebral Lymphatic System as a Bridge Between the Central Nervous System and Peripheral System in Health and Disease.,2024,Aging Dis,false,1.0,,0,0,0,0
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,37166823,Association of Hearing Loss With Anatomical and Functional Connectivity in Patients With Mild Cognitive Impairment.,2023,JAMA Otolaryngol Head Neck Surg,false,1.0,27,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,39168498,Montreal Cognitive Assessment (MoCA) use in general practice for the early detection of cognitive impairment: a feasibility study.,2025,BJGP Open,false,1.0,10,0,0,0,0
+NCT07672171,Far-Infrared Therapy for the Effect of Alzheimer Disease Dementia,NA,,34138944,Effects of far infrared light on Alzheimer's disease-transgenic mice.,2021,PLoS One,false,1.0,12,0,0,0,0
+NCT00000173,Memory Impairment Study (Mild Cognitive Impairment Study),PHASE3,national institute on aging (nia),14732621,,,,true,0.0,,0,0,0,0
+NCT00000176,Alzheimer's Disease Prevention Trial,PHASE3,national institute on aging (nia),17195882,,,,true,0.0,,0,0,0,0
+NCT00007189,Alzheimer's Disease Anti-Inflammatory Prevention Trial (ADAPT),PHASE3,seattle institute for biomedical and clinical research,17111043,,,,true,0.0,,0,0,0,0
+NCT00009217,Treatment of Behavioral Symptoms in Alzheimer's Disease,PHASE4,new york state psychiatric institute,21845596,,,,true,0.0,,0,0,0,0
+NCT00010803,Ginkgo Biloba Prevention Trial in Older Individuals,PHASE3,national center for complementary and integrative health (nccih),20123670,,,,true,0.0,,0,0,0,0
+NCT00013182,Effect of Activity on Sleep of Cognitively-Impaired Veterans,NA,us department of veterans affairs,12382454,,,,true,0.0,,0,0,0,0
+NCT00013182,Effect of Activity on Sleep of Cognitively-Impaired Veterans,NA,us department of veterans affairs,16137280,,,,true,0.0,,0,0,0,0
+NCT00013182,Effect of Activity on Sleep of Cognitively-Impaired Veterans,NA,us department of veterans affairs,16126650,,,,true,0.0,,0,0,0,0
+NCT00013182,Effect of Activity on Sleep of Cognitively-Impaired Veterans,NA,us department of veterans affairs,11820554,,,,true,0.0,,0,0,0,0
+NCT00024531,Lipitor as a Treatment for Alzheimer's Disease,PHASE2,institute for the study of aging (isoa),15883262,,,,true,0.0,,0,0,0,0
+NCT00034567,Healthy Aging and Memory Study,(missing),national institute on aging (nia),17135812,,,,true,0.0,,0,0,0,0
+NCT00034567,Healthy Aging and Memory Study,(missing),national institute on aging (nia),17135806,,,,true,0.0,,0,0,0,0
+NCT00034567,Healthy Aging and Memory Study,(missing),national institute on aging (nia),17135805,,,,true,0.0,,0,0,0,0
+NCT00034567,Healthy Aging and Memory Study,(missing),national institute on aging (nia),17135808,,,,true,0.0,,0,0,0,0
+NCT00034567,Healthy Aging and Memory Study,(missing),national institute on aging (nia),17135810,,,,true,0.0,,0,0,0,0
+NCT00034567,Healthy Aging and Memory Study,(missing),national institute on aging (nia),17135811,,,,true,0.0,,0,0,0,0
+NCT00034567,Healthy Aging and Memory Study,(missing),national institute on aging (nia),17135809,,,,true,0.0,,0,0,0,0
+NCT00034762,Efficacy and Safety of Risperidone Compared With Placebo in the Treatment of Psychotic Symptoms in Patients With Alzheimer's Disease,PHASE3,"johnson & johnson pharmaceutical research & development, l.l.c.",16505133,,,,true,0.0,,0,0,0,0
+NCT00040378,Prevention of Alzheimer's Disease by Vitamin E and Selenium (PREADVISE),(missing),frederick schmitt,27801937,,,,true,0.0,,0,0,0,0
+NCT00040378,Prevention of Alzheimer's Disease by Vitamin E and Selenium (PREADVISE),(missing),frederick schmitt,26180776,,,,true,0.0,,0,0,0,0
+NCT00086138,Depression in Alzheimer's Disease-2,PHASE2/PHASE3,johns hopkins university,20087081,,,,true,0.0,,0,0,0,0
+NCT00089882,Risk Evaluation and Education for Alzheimer's Disease (REVEAL) II,(missing),national institute on aging (nia),16306249,,,,true,0.0,,0,0,0,0
+NCT00090402,Fish Oil and Alpha Lipoic Acid in Treating Alzheimer's Disease,PHASE1/PHASE2,oregon health and science university,24077434,,,,true,0.0,,0,0,0,0
+NCT00099567,"Metabolic Syndrome, Inflammation, and Risk of Cognitive Decline",(missing),national institute on aging (nia),15536110,"The metabolic syndrome, inflammation, and risk of cognitive decline.",2004,JAMA,false,0.0,0,0,0,0,0
+NCT00105638,Telehealth Education Program for Caregivers of Veterans With Dementia,NA,us department of veterans affairs,20507926,,,,true,0.0,,0,0,0,0
+NCT00119561,Testing the Effectiveness of Telephone Support for Dementia Caregivers,NA,us department of veterans affairs,24617278,,,,true,0.0,,0,0,0,0
+NCT00119561,Testing the Effectiveness of Telephone Support for Dementia Caregivers,NA,us department of veterans affairs,22917945,,,,true,0.0,,0,0,0,0
+NCT00149175,Clinical and Genetic Study of Neurodegenerative Disorders With Cognitive Impairment,(missing),"institut national de la santé et de la recherche médicale, france",17436289,,,,true,0.0,,0,0,0,0
+NCT00149175,Clinical and Genetic Study of Neurodegenerative Disorders With Cognitive Impairment,(missing),"institut national de la santé et de la recherche médicale, france",17318302,,,,true,0.0,,0,0,0,0
+NCT00149175,Clinical and Genetic Study of Neurodegenerative Disorders With Cognitive Impairment,(missing),"institut national de la santé et de la recherche médicale, france",17345602,,,,true,0.0,,0,0,0,0
+NCT00149175,Clinical and Genetic Study of Neurodegenerative Disorders With Cognitive Impairment,(missing),"institut national de la santé et de la recherche médicale, france",17664410,,,,true,0.0,,0,0,0,0
+NCT00161473,Alzheimer's in Long-Term Care--Treatment for Agitation,NA,university of washington,19700947,,,,true,0.0,,0,0,0,0
+NCT00164749,A Pilot Study of Curcumin and Ginkgo for Treating Alzheimer's Disease,PHASE1/PHASE2,chinese university of hong kong,18204357,,,,true,0.0,,0,0,0,0
+NCT00164749,A Pilot Study of Curcumin and Ginkgo for Treating Alzheimer's Disease,PHASE1/PHASE2,chinese university of hong kong,17951067,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,12937333,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,12937332,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,14518800,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,14518799,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,12937330,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,14518803,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,12937331,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,14518801,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,12937336,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,14518802,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,12937335,,,,true,0.0,,0,0,0,0
+NCT00178165,Coordinating Center for Enhancing ADRD Caregiving,NA,university of pittsburgh,12937334,,,,true,0.0,,0,0,0,0
+NCT00183378,Using Behavioral Programs to Treat Sleep Problems in Individuals With Alzheimer's Disease,NA,university of washington,20660515,,,,true,0.0,,0,0,0,0
+NCT00183378,Using Behavioral Programs to Treat Sleep Problems in Individuals With Alzheimer's Disease,NA,university of washington,21797835,,,,true,0.0,,0,0,0,0
+NCT00205179,Alzheimer's Disease: Potential Benefit of Isoflavones,PHASE2,"university of wisconsin, madison",19054783,,,,true,0.0,,0,0,0,0
+NCT00205179,Alzheimer's Disease: Potential Benefit of Isoflavones,PHASE2,"university of wisconsin, madison",26401779,,,,true,0.0,,0,0,0,0
+NCT00211159,OmegAD (Omega-3 and Alzheimer's Disease),NA,karolinska university hospital,24934544,,,,true,0.0,,0,0,0,0
+NCT00211159,OmegAD (Omega-3 and Alzheimer's Disease),NA,karolinska university hospital,22545106,,,,true,0.0,,0,0,0,0
+NCT00211159,OmegAD (Omega-3 and Alzheimer's Disease),NA,karolinska university hospital,17030655,,,,true,0.0,,0,0,0,0
+NCT00211159,OmegAD (Omega-3 and Alzheimer's Disease),NA,karolinska university hospital,25616438,,,,true,0.0,,0,0,0,0
+NCT00219232,An Open-label Extension to Evaluate the Efficacy and Safety of the Rivastigmine Transdermal Patch in Patients With Probable Alzheimer's Disease,PHASE3,novartis,19484917,,,,true,0.0,,0,0,0,0
+NCT00249158,A Study of the Effectiveness and Safety of Risperidone in the Treatment of Behavioral Disturbances in Patients With Dementia,PHASE3,janssen-cilag pty ltd,12633121,,,,true,0.0,,0,0,0,0
+NCT00253123,A Study of the Effectiveness and Safety of Risperidone Versus Placebo in the Treatment of Behavioral Disturbances in Patients With Dementia,PHASE3,"janssen, lp",10084637,,,,true,0.0,,0,0,0,0
+NCT00253188,A Study of the Safety and Effectiveness of Two Doses of Galantamine Versus Placebo in the Treatment of Patients With Alzheimer's Disease,PHASE3,"johnson & johnson pharmaceutical research & development, l.l.c.",15525294,,,,true,0.0,,0,0,0,0
+NCT00253201,A Study of the Safety and Effectiveness of Two Doses of Galantamine Versus Placebo in the Treatment of Patients With Alzheimer's Disease,PHASE3,"johnson & johnson pharmaceutical research & development, l.l.c.",14967774,,,,true,0.0,,0,0,0,0
+NCT00253214,Placebo-Controlled Evaluation of Galantamine in the Treatment of Alzheimer's Disease: Safety and Efficacy of a Controlled-Release Formulation,PHASE3,"johnson & johnson pharmaceutical research & development, l.l.c.",15990426,,,,true,0.0,,0,0,0,0
+NCT00254033,Apathy Associated With Alzheimer's Disease,PHASE4,sunnybrook health sciences centre,18591575,,,,true,0.0,,0,0,0,0
+NCT00291161,Partners in Dementia Care: A Telephone Care Consultation Intervention Provided to Veterans in Partnership With Local Alzheimer's Association Chapters,NA,va office of research and development,23869899,,,,true,0.0,,0,0,0,0
+NCT00291161,Partners in Dementia Care: A Telephone Care Consultation Intervention Provided to Veterans in Partnership With Local Alzheimer's Association Chapters,NA,va office of research and development,24764496,,,,true,0.0,,0,0,0,0
+NCT00294307,Enhancing Care Coordination: Hospital to Home for Cognitively Impaired Older Adults and Their Caregivers,(missing),university of pennsylvania,24969152,,,,true,0.0,,0,0,0,0
+NCT00294307,Enhancing Care Coordination: Hospital to Home for Cognitively Impaired Older Adults and Their Caregivers,(missing),university of pennsylvania,30203668,,,,true,0.0,,0,0,0,0
+NCT00294307,Enhancing Care Coordination: Hospital to Home for Cognitively Impaired Older Adults and Their Caregivers,(missing),university of pennsylvania,27146416,,,,true,0.0,,0,0,0,0
+NCT00294307,Enhancing Care Coordination: Hospital to Home for Cognitively Impaired Older Adults and Their Caregivers,(missing),university of pennsylvania,21908805,,,,true,0.0,,0,0,0,0
+NCT00303277,Do HMG CoA Reductase Inhibitors Affect Abeta Levels?,PHASE4,seattle institute for biomedical and clinical research,17183151,,,,true,0.0,,0,0,0,0
+NCT00321971,Prevention of Depression in Spouses of People With Cognitive Impairment,NA,university of pittsburgh,24119856,,,,true,0.0,,0,0,0,0
+NCT00362284,Comprehensive Support for Alzheimer's Disease Caregivers,NA,university of minnesota,23339050,,,,true,0.0,,0,0,0,0
+NCT00362284,Comprehensive Support for Alzheimer's Disease Caregivers,NA,university of minnesota,30009268,,,,true,0.0,,0,0,0,0
+NCT00362284,Comprehensive Support for Alzheimer's Disease Caregivers,NA,university of minnesota,26238226,,,,true,0.0,,0,0,0,0
+NCT00362284,Comprehensive Support for Alzheimer's Disease Caregivers,NA,university of minnesota,25628299,,,,true,0.0,,0,0,0,0
+NCT00388544,Enhancing Quality of Life for Nursing Home Residents,PHASE2,penn state university,21649633,,,,true,0.0,,0,0,0,0
+NCT00401167,Memantine for Agitation and Aggression in Severe Alzheimer's Disease,PHASE4,sunnybrook health sciences centre,21476613,,,,true,0.0,,0,0,0,0
+NCT00416078,Online Caregiver Psychoeducation and Support for Alzheimer's,PHASE2/PHASE3,us department of veterans affairs,22662739,,,,true,0.0,,0,0,0,0
+NCT00420420,MK0249 for the Symptomatic Treatment of Alzheimer's Disease (MK0249-011),PHASE2,merck sharp & dohme llc,22272611,,,,true,0.0,,0,0,0,0
+NCT00453544,Enhancing Consent for Alzheimer's Research,NA,"university of california, san diego",28154452,,,,true,0.0,,0,0,0,0
+NCT00453544,Enhancing Consent for Alzheimer's Research,NA,"university of california, san diego",29182458,,,,true,0.0,,0,0,0,0
+NCT00459355,Home Safety Clinical Trial for Alzheimer's Disease,PHASE1,us department of veterans affairs,24195007,,,,true,0.0,,0,0,0,0
+NCT00459355,Home Safety Clinical Trial for Alzheimer's Disease,PHASE1,us department of veterans affairs,20679141,,,,true,0.0,,0,0,0,0
+NCT00462917,REVEAL III: Risk Evaluation and Education for Alzheimer's Disease,NA,brigham and women's hospital,25634646,,,,true,0.0,,0,0,0,0
+NCT00462917,REVEAL III: Risk Evaluation and Education for Alzheimer's Disease,NA,brigham and women's hospital,25642295,,,,true,0.0,,0,0,0,0
+NCT00478491,fMRI of Vulnerable Brain Regions in Persons at Risk for Alzheimer's Disease,(missing),"university of wisconsin, madison",16738250,,,,true,0.0,,0,0,0,0
+NCT00478491,fMRI of Vulnerable Brain Regions in Persons at Risk for Alzheimer's Disease,(missing),"university of wisconsin, madison",16321166,,,,true,0.0,,0,0,0,0
+NCT00478491,fMRI of Vulnerable Brain Regions in Persons at Risk for Alzheimer's Disease,(missing),"university of wisconsin, madison",17445294,,,,true,0.0,,0,0,0,0
+NCT00478491,fMRI of Vulnerable Brain Regions in Persons at Risk for Alzheimer's Disease,(missing),"university of wisconsin, madison",16102979,,,,true,0.0,,0,0,0,0
+NCT00480870,The Effect of Anticholinesterase Drugs on Sleep in Alzheimer's Disease Patients,PHASE4,associacao fundo de incentivo a psicofarmcologia,16494088,,,,true,0.0,,0,0,0,0
+NCT00488007,"Clinical Trial on Alzheimer Disease, Presbycusis and Hearing Aids",NA,hospices civils de lyon,28269769,,,,true,0.0,,0,0,0,0
+NCT00488007,"Clinical Trial on Alzheimer Disease, Presbycusis and Hearing Aids",NA,hospices civils de lyon,28387664,,,,true,0.0,,0,0,0,0
+NCT00495820,Methylphenidate for Apathy in Alzheimer's Dementia: A Controlled Study,PHASE4,va office of research and development,20220576,,,,true,0.0,,0,0,0,0
+NCT00620191,Metformin in Amnestic Mild Cognitive Impairment,PHASE2,columbia university,26890736,,,,true,0.0,,0,0,0,0
+NCT00624026,Memantine - Communication Study,PHASE3,merz pharmaceuticals gmbh,21471647,,,,true,0.0,,0,0,0,0
+NCT00646269,Efficacy Assessment of Three Non Pharmacological Therapies in Alzheimer's Disease,PHASE3,"university hospital, bordeaux",24011983,,,,true,0.0,,0,0,0,0
+NCT00646269,Efficacy Assessment of Three Non Pharmacological Therapies in Alzheimer's Disease,PHASE3,"university hospital, bordeaux",26572551,,,,true,0.0,,0,0,0,0
+NCT00647478,System-IGF-1 Pathway and Alzheimer's Disease,(missing),assistance publique - hôpitaux de paris,25384548,,,,true,0.0,,0,0,0,0
+NCT00714571,Behavioral and Neuroimaging Changes After Cognitive Rehab in Traumatic Brain Injuries (TBI) and Mild Cognitive Impairment (MCI),PHASE1,va office of research and development,22409311,,,,true,0.0,,0,0,0,0
+NCT00751907,Cerebral and Peripheral Perfusion Pilot Study,PHASE2,"university of wisconsin, madison",22175654,,,,true,0.0,,0,0,0,0
+NCT00804271,Memantine and Validation of a New Alzheimer's Disease Scale,PHASE3,merz pharmaceuticals gmbh,21914212,,,,true,0.0,,0,0,0,0
+NCT00804271,Memantine and Validation of a New Alzheimer's Disease Scale,PHASE3,merz pharmaceuticals gmbh,22492589,,,,true,0.0,,0,0,0,0
+NCT00831298,Assessment of Sleep Disturbance in Alzheimer Disease,NA,centre hospitalier universitaire de nice,31267124,,,,true,0.0,,0,0,0,0
+NCT00857649,Efficacy and Safety of Memantine in Moderate to Severe Alzheimer's Disease,PHASE3,h. lundbeck a/s,23472619,,,,true,0.0,,0,0,0,0
+NCT00862940,A Clinical Study Evaluating the Effects of Memantine on Brain Atrophy in Patients With Alzheimer's Disease,PHASE4,h. lundbeck a/s,22269160,,,,true,0.0,,0,0,0,0
+NCT00870311,"Investigation of Lithium on Signal Transduction, Gene Expression and Brain Myo-Inositol Levels in Manic Patients",PHASE4,wayne state university,10511011,,,,true,0.0,,0,0,0,0
+NCT00870311,"Investigation of Lithium on Signal Transduction, Gene Expression and Brain Myo-Inositol Levels in Manic Patients",PHASE4,wayne state university,10913502,,,,true,0.0,,0,0,0,0
+NCT00880555,"Semantic Memory, Financial Capacity, and Brain Perfusion in Mild Cognitive Impairment (MCI) (CASL)",(missing),va office of research and development,24556551,,,,true,0.0,,0,0,0,0
+NCT00880555,"Semantic Memory, Financial Capacity, and Brain Perfusion in Mild Cognitive Impairment (MCI) (CASL)",(missing),va office of research and development,24384308,,,,true,0.0,,0,0,0,0
+NCT00940589,Efficacy of Circadin® 2 mg in Patients With Mild to Moderate Alzheimer Disease Treated With AChE Inhibitor,PHASE2,neurim pharmaceuticals ltd.,24971004,,,,true,0.0,,0,0,0,0
+NCT00976118,Activity of Masitinib (AB1010) in Mild to Moderate Alzheimer's Disease,PHASE2,ab science,21504563,,,,true,0.0,,0,0,0,0
+NCT01000038,"Wii-fit for Activity, Balance and Gait in Assisted Living",NA,university of nebraska,22745909,,,,true,0.0,,0,0,0,0
+NCT01095744,Influence of Age on Amyloid Load in Alzheimer's Disease and in Atypical Focal Cortical Alzheimer's Disease,(missing),"institut national de la santé et de la recherche médicale, france",22710357,,,,true,0.0,,0,0,0,0
+NCT01095744,Influence of Age on Amyloid Load in Alzheimer's Disease and in Atypical Focal Cortical Alzheimer's Disease,(missing),"institut national de la santé et de la recherche médicale, france",22099855,,,,true,0.0,,0,0,0,0
+NCT01123018,Screening for Memory Studies,(missing),john wesson ashford jr,38638807,Episodic memory assessment: effects of sex and age on performance and response time during a continuous recognition task.,2024,Front Hum Neurosci,false,0.0,,0,0,0,0
+NCT01168245,TMS Stimulation and Cognitive Training in Alzheimer Patients,PHASE1,neuronix ltd,23076723,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,26878815,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,27241045,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,26756745,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,27900460,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,26120319,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,27042676,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,28061383,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,27579672,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,27709757,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,26856756,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,25044107,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,23911592,,,,true,0.0,,0,0,0,0
+NCT01208675,The Swedish BioFINDER Study,(missing),skane university hospital,26836192,,,,true,0.0,,0,0,0,0
+NCT01264614,Effects of Strengthening Exercise on the Brain for Early Dementia and Normative Older Adults,NA,"union college, new york",22136405,,,,true,0.0,,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,36066633,,,,true,0.0,,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,30820047,,,,true,0.0,,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,37654065,,,,true,0.0,,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,29458036,,,,true,0.0,,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,35379992,,,,true,0.0,,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,36774628,,,,true,0.0,,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,30837862,,,,true,0.0,,0,0,0,0
+NCT01315639,New Biomarker for Alzheimer's Disease Diagnostic,NA,assistance publique - hôpitaux de paris,35187794,,,,true,0.0,,0,0,0,0
+NCT01330160,Study of Factors Influencing Post-stroke Dementia,(missing),"university hospital, lille",29301969,,,,true,0.0,,0,0,0,0
+NCT01334749,Observational Study on Determinants of Dementia After Stroke,(missing),ludwig-maximilians - university of munich,38456438,High-Sensitivity Cardiac Troponin T and Cognitive Function Over 12 Months After Stroke-Results of the DEMDAS Study.,2024,J Am Heart Assoc,false,0.0,,0,0,0,0
+NCT01334749,Observational Study on Determinants of Dementia After Stroke,(missing),ludwig-maximilians - university of munich,35876563,Cerebral small vessel disease burden and cognitive and functional outcomes after stroke: A multicenter prospective cohort study.,2023,Alzheimers Dement,false,0.0,,0,0,0,0
+NCT01339130,Assessment of Social-emotional Functioning in Neurological Diseases,NA,"centre hospitalier universitaire, amiens",23527646,,,,true,0.0,,0,0,0,0
+NCT01339130,Assessment of Social-emotional Functioning in Neurological Diseases,NA,"centre hospitalier universitaire, amiens",23930667,,,,true,0.0,,0,0,0,0
+NCT01339195,Post-stroke Cognitive Impairment and Dementia,NA,"centre hospitalier universitaire, amiens",23999023,,,,true,0.0,,0,0,0,0
+NCT01339195,Post-stroke Cognitive Impairment and Dementia,NA,"centre hospitalier universitaire, amiens",22583525,,,,true,0.0,,0,0,0,0
+NCT01374438,"3-month Study of MSDC-0160 Effects on Brain Glucose Utilization, Cognition & Safety in Subjects With Alzheimer's Disease",PHASE2,metabolic solutions development company,24931567,,,,true,0.0,,0,0,0,0
+NCT01430286,Web-based Psycho-Educational Program to Support Carers of Alzheimer's Patients,NA,assistance publique - hôpitaux de paris,25263541,,,,true,0.0,,0,0,0,0
+NCT01430286,Web-based Psycho-Educational Program to Support Carers of Alzheimer's Patients,NA,assistance publique - hôpitaux de paris,24317497,,,,true,0.0,,0,0,0,0
+NCT01434667,Risk Evaluation and Education for Alzheimer's Disease (REVEAL) IV,NA,brigham and women's hospital,28012682,Disclosing genetic risk of Alzheimer's disease to cognitively impaired patients and visit companions: Findings from the REVEAL Study.,2017,Patient Educ Couns,false,0.0,28,0,0,0,0
+NCT01476228,EEG Objectification in Neuropsychiatry,NA,hadassah medical organization,21554495,,,,true,0.0,,0,0,0,0
+NCT01476228,EEG Objectification in Neuropsychiatry,NA,hadassah medical organization,20402743,,,,true,0.0,,0,0,0,0
+NCT01481961,Study of Repetitive Transcranial Magnetic Stimulation (rTMS) as add-on Treatment for Early Alzheimer's Disease,NA,"pierre vandel, md phd",22037125,,,,true,0.0,,0,0,0,0
+NCT01554202,Multi-modal Neuroimaging in Alzheimer's Disease,NA,"university hospital, caen",20600996,,,,true,0.0,,0,0,0,0
+NCT01554202,Multi-modal Neuroimaging in Alzheimer's Disease,NA,"university hospital, caen",20331499,,,,true,0.0,,0,0,0,0
+NCT01565434,Erythrocyte Complement Receptor 1 and Alzheimer Disease,NA,chu de reims,30044434,Inherited and Acquired Decrease in Complement Receptor 1 (CR1) Density on Red Blood Cells Associated with High Levels of Soluble CR1 in Alzheimer's Disease.,2018,Int J Mol Sci,false,0.0,27,0,0,0,0
+NCT01571427,Conversations as a Means to Delay the Onset of Alzheimer's Disease,EARLY_PHASE1,oregon health and science university,26203461,,,,true,0.0,,0,0,0,0
+NCT01571427,Conversations as a Means to Delay the Onset of Alzheimer's Disease,EARLY_PHASE1,oregon health and science university,31112605,,,,true,0.0,,0,0,0,0
+NCT01582919,Neuroimaging Markers of Alzheimer Disease: a Longitudinal Population Study,NA,"university hospital, bordeaux",27539327,,,,true,0.0,,0,0,0,0
+NCT01582919,Neuroimaging Markers of Alzheimer Disease: a Longitudinal Population Study,NA,"university hospital, bordeaux",32922282,,,,true,0.0,,0,0,0,0
+NCT01676935,This is a Safety and Tolerability Study Evaluating a New Treatment for Subjects With Mild to Moderate Alzheimer's Disease,PHASE2,"abbvie (prior sponsor, abbott)",27756421,,,,true,0.0,,0,0,0,0
+NCT01690195,Safety and Tolerability Study Evaluating a New Treatment for Subjects With Mild to Moderate Alzheimer's Disease,PHASE2,"abbvie (prior sponsor, abbott)",26967214,,,,true,0.0,,0,0,0,0
+NCT01696019,Randomized Trial of Exercise and Social Interaction in a Community-Based Sample of Non-Demented Chinese Elders,NA,university of south florida,22451320,,,,true,0.0,,0,0,0,0
+NCT01775696,Central and Systemic Inflammation in Alzheimer's Disease,(missing),assistance publique - hôpitaux de paris,26256787,,,,true,0.0,,0,0,0,0
+NCT01775696,Central and Systemic Inflammation in Alzheimer's Disease,(missing),assistance publique - hôpitaux de paris,26151923,,,,true,0.0,,0,0,0,0
+NCT01796314,Impact of Therapeutic Educational Programme on the Alzheimer's Disease Affected Patient's Quality of Life,NA,"university hospital, toulouse",34511121,,,,true,0.0,,0,0,0,0
+NCT01802554,Reducing CVD Risk in Caregivers: A Brief Behavioral Activation Intervention,NA,"university of california, san diego",23916631,,,,true,0.0,,0,0,0,0
+NCT01852110,Efficacy and Safety of MK-7622 as Adjunct Therapy in Participants With Alzheimer's Disease (MK-7622-012),PHASE2,merck sharp & dohme llc,29955661,,,,true,0.0,,0,0,0,0
+NCT01953705,n-3 PUFA for Vascular Cognitive Aging,PHASE2,oregon health and science university,30934894,,,,true,0.0,,0,0,0,0
+NCT01958437,Enhancing Spatial Navigation Using Non-Invasive Brain Stimulation,NA,va office of research and development,25647757,,,,true,0.0,,0,0,0,0
+NCT02022943,Alzheimer's Prevention Registry: A Program to Accelerate Enrollment Into Studies,(missing),banner health,32920626,,,,true,0.0,,0,0,0,0
+NCT02035982,Discontinuation of Cholinesterase Inhibitors for the Treatment of Severe Alzheimer's Disease,PHASE3,sunnybrook health sciences centre,26482056,,,,true,0.0,,0,0,0,0
+NCT02062099,PET Imaging of the Translocator Proteine Ligands (TSPO) With [18 F] DPA-714 Biomarker of NeuroInflammation in Cognitive Decline (NIDECO),PHASE1,"university hospital, tours",22172392,,,,true,0.0,,0,0,0,0
+NCT02062099,PET Imaging of the Translocator Proteine Ligands (TSPO) With [18 F] DPA-714 Biomarker of NeuroInflammation in Cognitive Decline (NIDECO),PHASE1,"university hospital, tours",23152610,,,,true,0.0,,0,0,0,0
+NCT02062099,PET Imaging of the Translocator Proteine Ligands (TSPO) With [18 F] DPA-714 Biomarker of NeuroInflammation in Cognitive Decline (NIDECO),PHASE1,"university hospital, tours",22986776,,,,true,0.0,,0,0,0,0
+NCT02213458,Care Ecosystem: Navigating Patients and Families Through Stages of Care,NA,"university of california, san francisco",36331050,,,,true,0.0,,0,0,0,0
+NCT02220738,"Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of ABT-957 in Subjects With Mild-to-Moderate Alzheimer's Disease on Stable Doses of Acetylcholinesterase Inhibitors",PHASE1,abbvie,30052328,,,,true,0.0,,0,0,0,0
+NCT02292238,Benfotiamine in Alzheimer's Disease: A Pilot Study,PHASE2,burke medical research institute,33074237,,,,true,0.0,,0,0,0,0
+NCT02303158,Relationship Between Protein Biomarkers in Cerebrospinal Fluid and Alzheimer&Apos;s Disease in Patients With Depression,(missing),institut investigacio sanitaria pere virgili,23574921,,,,true,0.0,,0,0,0,0
+NCT02303158,Relationship Between Protein Biomarkers in Cerebrospinal Fluid and Alzheimer&Apos;s Disease in Patients With Depression,(missing),institut investigacio sanitaria pere virgili,23791538,,,,true,0.0,,0,0,0,0
+NCT02303158,Relationship Between Protein Biomarkers in Cerebrospinal Fluid and Alzheimer&Apos;s Disease in Patients With Depression,(missing),institut investigacio sanitaria pere virgili,24374487,,,,true,0.0,,0,0,0,0
+NCT02303158,Relationship Between Protein Biomarkers in Cerebrospinal Fluid and Alzheimer&Apos;s Disease in Patients With Depression,(missing),institut investigacio sanitaria pere virgili,23209065,,,,true,0.0,,0,0,0,0
+NCT02303158,Relationship Between Protein Biomarkers in Cerebrospinal Fluid and Alzheimer&Apos;s Disease in Patients With Depression,(missing),institut investigacio sanitaria pere virgili,22815126,,,,true,0.0,,0,0,0,0
+NCT02303158,Relationship Between Protein Biomarkers in Cerebrospinal Fluid and Alzheimer&Apos;s Disease in Patients With Depression,(missing),institut investigacio sanitaria pere virgili,23395197,,,,true,0.0,,0,0,0,0
+NCT02303158,Relationship Between Protein Biomarkers in Cerebrospinal Fluid and Alzheimer&Apos;s Disease in Patients With Depression,(missing),institut investigacio sanitaria pere virgili,23567400,,,,true,0.0,,0,0,0,0
+NCT02351882,Safety and Efficacy of Nabilone in Alzheimer's Disease,PHASE2/PHASE3,sunnybrook health sciences centre,31182351,,,,true,0.0,,0,0,0,0
+NCT02351882,Safety and Efficacy of Nabilone in Alzheimer's Disease,PHASE2/PHASE3,sunnybrook health sciences centre,31547752,,,,true,0.0,,0,0,0,0
+NCT02351882,Safety and Efficacy of Nabilone in Alzheimer's Disease,PHASE2/PHASE3,sunnybrook health sciences centre,31322567,,,,true,0.0,,0,0,0,0
+NCT02365051,Translation of COPE for Publicly-Funded Home Care Clients and Their Families,NA,uconn health,27394383,,,,true,0.0,,0,0,0,0
+NCT02365051,Translation of COPE for Publicly-Funded Home Care Clients and Their Families,NA,uconn health,35581164,Implementing the Care of Persons With Dementia in Their Environments (COPE) Intervention in Community-Based Programs: Acceptability and Perceived Benefit From Care Managers' and Interventionists' Perspectives.,2023,Gerontologist,false,0.0,,0,0,0,0
+NCT02365051,Translation of COPE for Publicly-Funded Home Care Clients and Their Families,NA,uconn health,35047708,,,,true,0.0,,0,0,0,0
+NCT02365051,Translation of COPE for Publicly-Funded Home Care Clients and Their Families,NA,uconn health,33367114,,,,true,0.0,,0,0,0,0
+NCT02384993,aeRobic Exercise and Cognitive Health,NA,"university of wisconsin, madison",31970062,,,,true,0.0,,0,0,0,0
+NCT02403752,Paired Integrative Home Exercise for Seniors With Dementia and Their Caregivers (PairedPLIE),NA,"university of california, san francisco",25022459,,,,true,0.0,,0,0,0,0
+NCT02414282,"F 18 T807 Tau PET Imaging of Progressive Posterior Cortical Dysfunction (IND 123119, Protocol E)",(missing),"tammie l. s. benzinger, md, phd",28394771,,,,true,0.0,,0,0,0,0
+NCT02444078,Effects of Exercise on Functional Ability in People With Dementia in Nursing Homes:a Cluster Randomised Controlled Trial,NA,"university hospital, toulouse",26883281,,,,true,0.0,,0,0,0,0
+NCT02444078,Effects of Exercise on Functional Ability in People With Dementia in Nursing Homes:a Cluster Randomised Controlled Trial,NA,"university hospital, toulouse",28542742,,,,true,0.0,,0,0,0,0
+NCT02453763,In Vivo Imaging of Therapeutic Electric Current Flow,(missing),university of florida,23087654,,,,true,0.0,,0,0,0,0
+NCT02492529,Knowing and Remembering: Cognitive and Neural Influences of Familiarity on Recognition Memory in Early Alzheimer's Disease,NA,rennes university hospital,34837869,,,,true,0.0,,0,0,0,0
+NCT02564692,GeneMatch: A Program of the Alzheimer's Prevention Registry to Match Individuals to Studies Based on Apolipoprotein E (APOE) Genotype,(missing),banner health,30772251,,,,true,0.0,,0,0,0,0
+NCT02573740,"Safety, Tolerability and the Effects on Cerebrospinal Fluid Spectrin Breakdown Product-145 Levels of ABT-957 in Subjects With Mild Alzheimer's Disease and Mild Cognitive Impairment",PHASE1,abbvie,30052328,,,,true,0.0,,0,0,0,0
+NCT02580305,SUVN-502 With Donepezil and Memantine for the Treatment of Moderate Alzheimer's Disease- Phase 2a Study,PHASE2,suven life sciences limited,35908254,,,,true,0.0,,0,0,0,0
+NCT02580305,SUVN-502 With Donepezil and Memantine for the Treatment of Moderate Alzheimer's Disease- Phase 2a Study,PHASE2,suven life sciences limited,35662833,,,,true,0.0,,0,0,0,0
+NCT02580305,SUVN-502 With Donepezil and Memantine for the Treatment of Moderate Alzheimer's Disease- Phase 2a Study,PHASE2,suven life sciences limited,36168659,,,,true,0.0,,0,0,0,0
+NCT02626572,Efficacy and Safety of 3 Doses of S47445 Versus Placebo in Patients With Alzheimer's Disease at Mild to Moderate Stages With Depressive Symptoms,PHASE2,institut de recherches internationales servier,31297437,,,,true,0.0,,0,0,0,0
+NCT02638519,HP Xenon-129 fMRI of Healthy Volunteers and Participants With Alzheimer's Disease,EARLY_PHASE1,thunder bay regional health research institute,34272774,,,,true,0.0,,0,0,0,0
+NCT02638519,HP Xenon-129 fMRI of Healthy Volunteers and Participants With Alzheimer's Disease,EARLY_PHASE1,thunder bay regional health research institute,32854196,,,,true,0.0,,0,0,0,0
+NCT02638519,HP Xenon-129 fMRI of Healthy Volunteers and Participants With Alzheimer's Disease,EARLY_PHASE1,thunder bay regional health research institute,34254356,,,,true,0.0,,0,0,0,0
+NCT02638519,HP Xenon-129 fMRI of Healthy Volunteers and Participants With Alzheimer's Disease,EARLY_PHASE1,thunder bay regional health research institute,29882765,,,,true,0.0,,0,0,0,0
+NCT02638519,HP Xenon-129 fMRI of Healthy Volunteers and Participants With Alzheimer's Disease,EARLY_PHASE1,thunder bay regional health research institute,35253919,,,,true,0.0,,0,0,0,0
+NCT02654574,"Comparison of Two Modes of Administration of the IADL Questionnaire, Assessing the Level of Functional Autonomy of Patients to Carry Out the Tasks of Daily Living: Randomized Controlled Trial Among Patients of a Memory Clinic",NA,hospices civils de lyon,32169093,,,,true,0.0,,0,0,0,0
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,20922346,,,,true,0.0,,0,0,0,0
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,15126224,,,,true,0.0,,0,0,0,0
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,12752841,,,,true,0.0,,0,0,0,0
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,3337862,,,,true,0.0,,0,0,0,0
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,16019288,,,,true,0.0,,0,0,0,0
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,9561983,,,,true,0.0,,0,0,0,0
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,18606052,,,,true,0.0,,0,0,0,0
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,18978250,,,,true,0.0,,0,0,0,0
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,21205379,,,,true,0.0,,0,0,0,0
+NCT02685787,Early Counseling and Support for Alzheimer's Disease Caregivers,NA,azienda sanitaria locale n.1 dell'umbria,22303473,,,,true,0.0,,0,0,0,0
+NCT02697721,Powerful Tools for Caregivers of Dementia Patients,NA,florida state university,31866419,,,,true,0.0,,0,0,0,0
+NCT02839187,Neuro Imaging and Multimodal Alzheimer's Disease,NA,"university hospital, toulouse",23731789,,,,true,0.0,,0,0,0,0
+NCT02843529,Evaluation of a Computerized Complex Instrumental Activities of Daily Living Marker (NMI),NA,altoida,32832589,,,,true,0.0,,0,0,0,0
+NCT02849639,The INCREASE Study - Delaying the Onset of Alzheimer's Symptomatic Expression,EARLY_PHASE1,daniela moga,31888732,,,,true,0.0,,0,0,0,0
+NCT02849639,The INCREASE Study - Delaying the Onset of Alzheimer's Symptomatic Expression,EARLY_PHASE1,daniela moga,36281668,,,,true,0.0,,0,0,0,0
+NCT02941289,"Visuospatial Attention, Eye Movements and Instrumental Activities of Daily Living (IADLs) in Alzheimer's Disease",NA,centre hospitalier universitaire de nice,35797174,,,,true,0.0,,0,0,0,0
+NCT03030365,Orientation in AD Patients: PET-MR Study,(missing),assuta medical center,19912333,,,,true,0.0,,0,0,0,0
+NCT03030365,Orientation in AD Patients: PET-MR Study,(missing),assuta medical center,21514250,,,,true,0.0,,0,0,0,0
+NCT03030365,Orientation in AD Patients: PET-MR Study,(missing),assuta medical center,19162077,,,,true,0.0,,0,0,0,0
+NCT03030365,Orientation in AD Patients: PET-MR Study,(missing),assuta medical center,7140264,,,,true,0.0,,0,0,0,0
+NCT03030365,Orientation in AD Patients: PET-MR Study,(missing),assuta medical center,26494756,,,,true,0.0,,0,0,0,0
+NCT03030365,Orientation in AD Patients: PET-MR Study,(missing),assuta medical center,21514249,,,,true,0.0,,0,0,0,0
+NCT03030365,Orientation in AD Patients: PET-MR Study,(missing),assuta medical center,16120771,,,,true,0.0,,0,0,0,0
+NCT03033875,"Testing Tele-Savvy, an On-line Psychoeducation Program for Dementia Family Caregivers",NA,emory university,33640979,,,,true,0.0,,0,0,0,0
+NCT03034746,Impact of Physical Activity on Successful Aging,NA,universita di verona,27802234,,,,true,0.0,,0,0,0,0
+NCT03034746,Impact of Physical Activity on Successful Aging,NA,universita di verona,20209421,,,,true,0.0,,0,0,0,0
+NCT03034746,Impact of Physical Activity on Successful Aging,NA,universita di verona,27540967,,,,true,0.0,,0,0,0,0
+NCT03034746,Impact of Physical Activity on Successful Aging,NA,universita di verona,21852281,,,,true,0.0,,0,0,0,0
+NCT03034746,Impact of Physical Activity on Successful Aging,NA,universita di verona,24219216,,,,true,0.0,,0,0,0,0
+NCT03034746,Impact of Physical Activity on Successful Aging,NA,universita di verona,22984089,,,,true,0.0,,0,0,0,0
+NCT03069391,The Interactive Physical and Cognitive Exercise System,NA,"union college, new york",30200183,,,,true,0.0,,0,0,0,0
+NCT03069391,The Interactive Physical and Cognitive Exercise System,NA,"union college, new york",30233154,,,,true,0.0,,0,0,0,0
+NCT03119961,Blood Brain Barrier Opening in Alzheimer' Disease,PHASE1/PHASE2,assistance publique - hôpitaux de paris,35260178,,,,true,0.0,,0,0,0,0
+NCT03129269,Cognitive Function and Prevalence of Amyloid Marker in Frail Older Adults,NA,"university hospital, toulouse",37879623,Associations Between Blood Nutritional Biomarkers and Cerebral Amyloid-β: Insights From the COGFRAIL Cohort Study.,2024,J Gerontol A Biol Sci Med Sci,false,0.0,,0,0,0,0
+NCT03129269,Cognitive Function and Prevalence of Amyloid Marker in Frail Older Adults,NA,"university hospital, toulouse",33575706,,,,true,0.0,,0,0,0,0
+NCT03129269,Cognitive Function and Prevalence of Amyloid Marker in Frail Older Adults,NA,"university hospital, toulouse",37119508,Cross-sectional associations of dietary intake with hearing and vision capacities and potential mediation effect of inflammation in older adults: the COGFRAIL study.,2023,Aging Clin Exp Res,false,0.0,,0,0,0,0
+NCT03136679,Discovery of Novel Biomarkers That Will Lead to the Early Detection of Alzheimer's Disease,(missing),baylor research institute,7069156,,,,true,0.0,,0,0,0,0
+NCT03136692,Analysis of De-identified Data From Commercially-available App Lose It!,(missing),johns hopkins bloomberg school of public health,29661750,,,,true,0.0,,0,0,0,0
+NCT03175874,Autophagy and Pathological Aging,NA,centre hospitalier universitaire de nice,38430550,Autophagy markers are decreased in bone of osteoporotic patients: a monocentric comparative study.,2024,Eur J Endocrinol,false,0.0,,0,0,0,0
+NCT03250741,Effects of Dopaminergic Therapy in Patients With Alzheimer's Disease,PHASE2,i.r.c.c.s. fondazione santa lucia,24859851,,,,true,0.0,,0,0,0,0
+NCT03250741,Effects of Dopaminergic Therapy in Patients With Alzheimer's Disease,PHASE2,i.r.c.c.s. fondazione santa lucia,25309431,,,,true,0.0,,0,0,0,0
+NCT03403257,Brain Attack Surveillance in Corpus Christi--Cognitive (BASIC-Cognitive),(missing),university of michigan,34096422,,,,true,0.0,,0,0,0,0
+NCT03403257,Brain Attack Surveillance in Corpus Christi--Cognitive (BASIC-Cognitive),(missing),university of michigan,35959679,Differential Impact of Stroke on Cognitive Impairment in Mexican Americans and Non-Hispanic White Americans.,2022,Stroke,false,0.0,8,0,0,0,0
+NCT03403257,Brain Attack Surveillance in Corpus Christi--Cognitive (BASIC-Cognitive),(missing),university of michigan,35574862,,,,true,0.0,,0,0,0,0
+NCT03403257,Brain Attack Surveillance in Corpus Christi--Cognitive (BASIC-Cognitive),(missing),university of michigan,31771059,,,,true,0.0,,0,0,0,0
+NCT03403257,Brain Attack Surveillance in Corpus Christi--Cognitive (BASIC-Cognitive),(missing),university of michigan,35068465,,,,true,0.0,,0,0,0,0
+NCT03403257,Brain Attack Surveillance in Corpus Christi--Cognitive (BASIC-Cognitive),(missing),university of michigan,34291678,,,,true,0.0,,0,0,0,0
+NCT03403257,Brain Attack Surveillance in Corpus Christi--Cognitive (BASIC-Cognitive),(missing),university of michigan,33963535,,,,true,0.0,,0,0,0,0
+NCT03447613,Retinal Nerve Fiber Layer Thickness and Cerebrospinal Fluid Aβ/Tau,(missing),shanghai 10th people's hospital,3736630,,,,true,0.0,,0,0,0,0
+NCT03447613,Retinal Nerve Fiber Layer Thickness and Cerebrospinal Fluid Aβ/Tau,(missing),shanghai 10th people's hospital,24011928,,,,true,0.0,,0,0,0,0
+NCT03447613,Retinal Nerve Fiber Layer Thickness and Cerebrospinal Fluid Aβ/Tau,(missing),shanghai 10th people's hospital,23165340,,,,true,0.0,,0,0,0,0
+NCT03461276,Safety and Immunogenicity of Repeated Doses of ABvac40 in Patients With a-MCI or Vm-AD,PHASE2,araclon biotech s.l.,41058018,"Safety, tolerability, immunogenicity, and efficacy of ABvac40 active immunotherapy against Aβ40 in patients with mild cognitive impairment or very mild Alzheimer's disease: A randomized, double-blind, placebo-controlled phase 2 study.",2025,Alzheimers Dement,false,0.0,,0,0,0,0
+NCT03503669,Reducing Risk for Alzheimer's Disease in High-Risk Women Through Yogic Meditation Training,NA,"university of california, los angeles",35275541,,,,true,0.0,,0,0,0,0
+NCT03533257,Study to Assess the Safety and Biological Activity of AMX0035 for the Treatment of Alzheimer's Disease,PHASE2,amylyx pharmaceuticals inc.,39131742,Biological effects of sodium phenylbutyrate and taurursodiol in Alzheimer's disease.,2024,Alzheimers Dement (N Y),false,0.0,,0,0,0,0
+NCT03548883,Examining Neuroinflammation in AlzHeimer's,(missing),adventhealth,23688931,,,,true,0.0,,0,0,0,0
+NCT03548883,Examining Neuroinflammation in AlzHeimer's,(missing),adventhealth,24909964,,,,true,0.0,,0,0,0,0
+NCT03554226,Agitation and Aggressivity in Alzheimer's Disease Patients: A Cohort Study,NA,"university hospital, toulouse",33569568,,,,true,0.0,,0,0,0,0
+NCT03565809,Quality of the Management of Diabetes in Elderly People With Dementia in France,(missing),"university hospital, toulouse",29396187,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,29521814,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,21514247,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,24556708,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,3760436,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,28321176,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,19330149,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,28441057,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,8274108,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,28742468,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,20585440,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,12856953,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,28699353,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,28110218,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,28741984,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,27103883,,,,true,0.0,,0,0,0,0
+NCT03597360,Low Dose Ionizing Radiation Using CT Scans as a Potential Therapy for Alzheimer's Dementia: A Pilot Study,NA,baycrest,18648556,,,,true,0.0,,0,0,0,0
+NCT03634033,Implementation of CAPABLE in the Michigan Medicaid Waiver,NA,grand valley state university,35585762,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,23871765,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,24418053,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,31422798,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,28759966,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,20930266,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,27163822,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,30958370,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,31914229,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,27345927,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,33835157,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,25690662,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,22922216,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,28289381,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,36565128,A 19-Year-Old Adolescent with Probable Alzheimer's Disease.,2023,J Alzheimers Dis,false,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,32881347,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,27079712,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,22398564,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,22503901,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,26256457,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,22340708,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,31929167,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,23172761,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,22503900,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,20880607,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,19347838,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,31865187,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,22228824,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,22930700,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,21118724,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,32776690,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,23872925,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,29747584,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,31235344,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,36850008,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,23103091,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,19891819,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,31937364,,,,true,0.0,,0,0,0,0
+NCT03653156,China Cognition and Aging Study,(missing),capital medical university,29433981,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,32881347,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,29614663,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,31914229,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,30958370,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,28269784,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,29614686,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,21929538,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,26256457,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,27838006,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,16916581,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,26402764,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,27079718,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,31235344,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,36850008,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,31235249,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,15851849,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,18445230,,,,true,0.0,,0,0,0,0
+NCT03657732,The Chinese Familial Alzheimer's Network,(missing),capital medical university,31937364,,,,true,0.0,,0,0,0,0
+NCT03665909,A Proactive Health Monitoring Intervention for Dementia Caregivers,NA,university of minnesota,34922475,,,,true,0.0,,0,0,0,0
+NCT03665909,A Proactive Health Monitoring Intervention for Dementia Caregivers,NA,university of minnesota,29982413,,,,true,0.0,,0,0,0,0
+NCT03667924,Utilizing Senior Companions to Enhance Dementia Care,NA,university of minnesota,34036120,,,,true,0.0,,0,0,0,0
+NCT03706885,Efavirenz for Patients With Alzheimer's Disease,PHASE1,case western reserve university,36581878,,,,true,0.0,,0,0,0,0
+NCT03741543,Learning and Coping With Early Stage Dementia,NA,helse stavanger hf,39070007,Health Promotion in Early-Stage Dementia: A Focused Ethnographic Study of a 12-Week Group-Based Educational Intervention.,2024,SAGE Open Nurs,false,0.0,,0,0,0,0
+NCT03741543,Learning and Coping With Early Stage Dementia,NA,helse stavanger hf,33064358,,,,true,0.0,,0,0,0,0
+NCT03748706,PTI-125 for Mild-to-moderate Alzheimer's Disease Patients,PHASE2,pain therapeutics,32920628,,,,true,0.0,,0,0,0,0
+NCT03855735,"TeamBaby - Safe, Digitally Supported Communication in Obstetrics and Gynecology",NA,jacobs university bremen ggmbh,33822086,,,,true,0.0,,0,0,0,0
+NCT03855735,"TeamBaby - Safe, Digitally Supported Communication in Obstetrics and Gynecology",NA,jacobs university bremen ggmbh,33807819,,,,true,0.0,,0,0,0,0
+NCT03855735,"TeamBaby - Safe, Digitally Supported Communication in Obstetrics and Gynecology",NA,jacobs university bremen ggmbh,35162509,,,,true,0.0,,0,0,0,0
+NCT03855735,"TeamBaby - Safe, Digitally Supported Communication in Obstetrics and Gynecology",NA,jacobs university bremen ggmbh,33494448,,,,true,0.0,,0,0,0,0
+NCT03855735,"TeamBaby - Safe, Digitally Supported Communication in Obstetrics and Gynecology",NA,jacobs university bremen ggmbh,33016518,,,,true,0.0,,0,0,0,0
+NCT03855735,"TeamBaby - Safe, Digitally Supported Communication in Obstetrics and Gynecology",NA,jacobs university bremen ggmbh,35250715,,,,true,0.0,,0,0,0,0
+NCT03855735,"TeamBaby - Safe, Digitally Supported Communication in Obstetrics and Gynecology",NA,jacobs university bremen ggmbh,35052261,,,,true,0.0,,0,0,0,0
+NCT03860857,"Biomarker Exploration in Aging, Cognition and Neurodegeneration",PHASE3,"university of california, irvine",37035460,Differential involvement of hippocampal subfields in the relationship between Alzheimer's pathology and memory interference in older adults.,2023,Alzheimers Dement (Amst),false,0.0,,0,0,0,0
+NCT03860857,"Biomarker Exploration in Aging, Cognition and Neurodegeneration",PHASE3,"university of california, irvine",31748377,,,,true,0.0,,0,0,0,0
+NCT03860857,"Biomarker Exploration in Aging, Cognition and Neurodegeneration",PHASE3,"university of california, irvine",36302636,,,,true,0.0,,0,0,0,0
+NCT03860857,"Biomarker Exploration in Aging, Cognition and Neurodegeneration",PHASE3,"university of california, irvine",34604910,,,,true,0.0,,0,0,0,0
+NCT03860857,"Biomarker Exploration in Aging, Cognition and Neurodegeneration",PHASE3,"university of california, irvine",32875052,,,,true,0.0,,0,0,0,0
+NCT03875638,Treating Hyperexcitability in AD With Levetiracetam,PHASE2,beth israel deaconess medical center,41313764,Neurophysiological signatures of default mode network dysfunction and cognitive decline in Alzheimer's disease.,2025,Sci Adv,false,0.0,2,0,0,0,0
+NCT03875638,Treating Hyperexcitability in AD With Levetiracetam,PHASE2,beth israel deaconess medical center,41574278,Evaluating Alzheimer's disease with the TMS-EEG perturbation complexity index.,2026,Neurosci Conscious,false,0.0,,0,0,0,0
+NCT03927040,Transcranial Electromagnetic Treatment Against Alzheimer's Disease,NA,"neuroem therapeutics, inc.",21514369,,,,true,0.0,,0,0,0,0
+NCT03927040,Transcranial Electromagnetic Treatment Against Alzheimer's Disease,NA,"neuroem therapeutics, inc.",22558216,,,,true,0.0,,0,0,0,0
+NCT03927040,Transcranial Electromagnetic Treatment Against Alzheimer's Disease,NA,"neuroem therapeutics, inc.",22810103,,,,true,0.0,,0,0,0,0
+NCT03927040,Transcranial Electromagnetic Treatment Against Alzheimer's Disease,NA,"neuroem therapeutics, inc.",27258417,,,,true,0.0,,0,0,0,0
+NCT03927040,Transcranial Electromagnetic Treatment Against Alzheimer's Disease,NA,"neuroem therapeutics, inc.",20061638,,,,true,0.0,,0,0,0,0
+NCT03932812,Building a Bridge (BAB) Between Clinical and Community Care,NA,sato ashida,38859822,Using Clustering Methods to Map the Experience Profiles of Dementia Caregivers.,2024,Innov Aging,false,0.0,,0,0,0,0
+NCT03943264,A Biomarker-directed Study of XPro1595 in Patients With Alzheimer's,PHASE1,"inmune bio, inc.",19320056,,,,true,0.0,,0,0,0,0
+NCT03943264,A Biomarker-directed Study of XPro1595 in Patients With Alzheimer's,PHASE1,"inmune bio, inc.",22666474,,,,true,0.0,,0,0,0,0
+NCT03943264,A Biomarker-directed Study of XPro1595 in Patients With Alzheimer's,PHASE1,"inmune bio, inc.",28237313,,,,true,0.0,,0,0,0,0
+NCT03943264,A Biomarker-directed Study of XPro1595 in Patients With Alzheimer's,PHASE1,"inmune bio, inc.",27552480,,,,true,0.0,,0,0,0,0
+NCT04023942,Personalized Nutrition and eHealth: Lifestyle Intervention (LION) Study for Weight Loss Maintenance,NA,technical university of munich,38850172,Association Between the Postprandial Response to an Oral Glucose Tolerance Test and Anthropometric Changes After an 8-Week Low-Calorie Formula Diet - Results From the Lifestyle Intervention (LION) Study.,2024,Mol Nutr Food Res,false,0.0,,0,0,0,0
+NCT04023942,Personalized Nutrition and eHealth: Lifestyle Intervention (LION) Study for Weight Loss Maintenance,NA,technical university of munich,38926461,Impact of baseline adipose tissue characteristics on change in adipose tissue volume during a low calorie diet in people with obesity-results from the LION study.,2024,Int J Obes (Lond),false,0.0,1,0,0,0,0
+NCT04023942,Personalized Nutrition and eHealth: Lifestyle Intervention (LION) Study for Weight Loss Maintenance,NA,technical university of munich,33240920,,,,true,0.0,,0,0,0,0
+NCT04146545,CommunityRx-Dementia,NA,university of chicago,39315491,Caring for dementia caregivers: How well does social risk screening reflect unmet needs?,2025,J Am Geriatr Soc,false,0.0,,0,0,0,0
+NCT04157712,Multiple Ascending Dose Study of ALZ-801,PHASE1,alzheon inc.,29063518,,,,true,0.0,,0,0,0,0
+NCT04179721,Reducing Behavioral and Psychological Symptoms of Dementia: Hospital Caregivers (Aim 2),NA,northwell health,30098015,,,,true,0.0,,0,0,0,0
+NCT04287738,"Care Ecosystem: Navigating Patients and Families Through Stages of Care, Extension Trial",NA,"university of california, san francisco",31175026,,,,true,0.0,,0,0,0,0
+NCT04287738,"Care Ecosystem: Navigating Patients and Families Through Stages of Care, Extension Trial",NA,"university of california, san francisco",31044411,,,,true,0.0,,0,0,0,0
+NCT04287738,"Care Ecosystem: Navigating Patients and Families Through Stages of Care, Extension Trial",NA,"university of california, san francisco",31322558,,,,true,0.0,,0,0,0,0
+NCT04287738,"Care Ecosystem: Navigating Patients and Families Through Stages of Care, Extension Trial",NA,"university of california, san francisco",30497302,,,,true,0.0,,0,0,0,0
+NCT04287738,"Care Ecosystem: Navigating Patients and Families Through Stages of Care, Extension Trial",NA,"university of california, san francisco",31317539,,,,true,0.0,,0,0,0,0
+NCT04289389,Prevalence and Level of Diagnosis of Dementia in a Population-based Sample in the County of Trøndelag,(missing),norwegian centre for ageing and health,33427745,,,,true,0.0,,0,0,0,0
+NCT04308512,Care Coordination System for People With Dementia,NA,"bijan najafi, phd",36096091,,,,true,0.0,,0,0,0,0
+NCT04337255,Mediterranean-DASH Intervention for Neurodegenerative Delay (MIND) Diet in Stroke Patients Patients,NA,rush university medical center,31686099,,,,true,0.0,,0,0,0,0
+NCT04337255,Mediterranean-DASH Intervention for Neurodegenerative Delay (MIND) Diet in Stroke Patients Patients,NA,rush university medical center,41052713,A framework for monitoring intervention fidelity: The NOURISH trial.,2025,Contemp Clin Trials,false,0.0,,0,0,0,0
+NCT04353947,Induction and Recognition of Emotions,(missing),university of valencia,30475089,,,,true,0.0,,0,0,0,0
+NCT04353947,Induction and Recognition of Emotions,(missing),university of valencia,23060825,,,,true,0.0,,0,0,0,0
+NCT04353947,Induction and Recognition of Emotions,(missing),university of valencia,30018584,,,,true,0.0,,0,0,0,0
+NCT04353947,Induction and Recognition of Emotions,(missing),university of valencia,28063663,,,,true,0.0,,0,0,0,0
+NCT04353947,Induction and Recognition of Emotions,(missing),university of valencia,21977692,,,,true,0.0,,0,0,0,0
+NCT04353947,Induction and Recognition of Emotions,(missing),university of valencia,22767079,,,,true,0.0,,0,0,0,0
+NCT04413877,Implementation of the Integrated Care of Older People App and ICOPE Monitor in Primary Care (ICOPE),(missing),university of liege,31275941,,,,true,0.0,,0,0,0,0
+NCT04413877,Implementation of the Integrated Care of Older People App and ICOPE Monitor in Primary Care (ICOPE),(missing),university of liege,29741197,,,,true,0.0,,0,0,0,0
+NCT04413877,Implementation of the Integrated Care of Older People App and ICOPE Monitor in Primary Care (ICOPE),(missing),university of liege,33575702,,,,true,0.0,,0,0,0,0
+NCT04413877,Implementation of the Integrated Care of Older People App and ICOPE Monitor in Primary Care (ICOPE),(missing),university of liege,32236394,,,,true,0.0,,0,0,0,0
+NCT04413877,Implementation of the Integrated Care of Older People App and ICOPE Monitor in Primary Care (ICOPE),(missing),university of liege,29408961,,,,true,0.0,,0,0,0,0
+NCT04440020,Management of Dementia With Olive Oil Leaves - GOLDEN,NA,aristotle university of thessaloniki,27472878,,,,true,0.0,,0,0,0,0
+NCT04440020,Management of Dementia With Olive Oil Leaves - GOLDEN,NA,aristotle university of thessaloniki,31802059,,,,true,0.0,,0,0,0,0
+NCT04481568,Reducing Behavioral and Psychological Symptoms of Dementia: Family Caregivers (Aim 1),NA,northwell health,30098015,,,,true,0.0,,0,0,0,0
+NCT04560088,Mindfulness to Reduce Loneliness in Older Caregivers,NA,university of rochester,40435371,A pilot randomized mobile health mindfulness intervention for older adult caregivers of family members with Alzheimer's disease and related dementias.,2025,Aging Ment Health,false,0.0,,0,0,0,0
+NCT04575337,Study on Biomarkers for Early Diagnosis of Alzheimer's Disease,(missing),capital medical university,35109911,,,,true,0.0,,0,0,0,0
+NCT04575337,Study on Biomarkers for Early Diagnosis of Alzheimer's Disease,(missing),capital medical university,36003963,,,,true,0.0,,0,0,0,0
+NCT04575337,Study on Biomarkers for Early Diagnosis of Alzheimer's Disease,(missing),capital medical university,36155508,,,,true,0.0,,0,0,0,0
+NCT04584138,Autobiographical Memory,(missing),nantes university hospital,31915538,,,,true,0.0,,0,0,0,0
+NCT04585347,Single Dose Study of ALZ-801 Prototype Tablets,PHASE1,alzheon inc.,29063518,,,,true,0.0,,0,0,0,0
+NCT04621448,Moving Together: An Online Group Movement Program for People Living With Memory Loss and Caregivers,NA,"university of california, san francisco",38698931,"Livestream, group movement program for people living with cognitive impairment and care partners: A randomized clinical trial.",2024,Alzheimers Dement (N Y),false,0.0,,0,0,0,0
+NCT04783350,Home-based Brain Stimulation for Memory,NA,hebrew seniorlife,24345389,,,,true,0.0,,0,0,0,0
+NCT04783350,Home-based Brain Stimulation for Memory,NA,hebrew seniorlife,31739167,,,,true,0.0,,0,0,0,0
+NCT04783350,Home-based Brain Stimulation for Memory,NA,hebrew seniorlife,30720478,,,,true,0.0,,0,0,0,0
+NCT04783350,Home-based Brain Stimulation for Memory,NA,hebrew seniorlife,30902640,,,,true,0.0,,0,0,0,0
+NCT04783350,Home-based Brain Stimulation for Memory,NA,hebrew seniorlife,28709880,,,,true,0.0,,0,0,0,0
+NCT04785053,Memory Functions in Mild Alzheimer's Disease,NA,hebrew seniorlife,24345389,,,,true,0.0,,0,0,0,0
+NCT04785053,Memory Functions in Mild Alzheimer's Disease,NA,hebrew seniorlife,32265551,,,,true,0.0,,0,0,0,0
+NCT04785053,Memory Functions in Mild Alzheimer's Disease,NA,hebrew seniorlife,30902640,,,,true,0.0,,0,0,0,0
+NCT04785053,Memory Functions in Mild Alzheimer's Disease,NA,hebrew seniorlife,31277878,,,,true,0.0,,0,0,0,0
+NCT04840173,Beyond Listening: A Music-based Intervention,NA,mjhs institute for innovation in palliative care,24175165,,,,true,0.0,,0,0,0,0
+NCT04840173,Beyond Listening: A Music-based Intervention,NA,mjhs institute for innovation in palliative care,12040306,,,,true,0.0,,0,0,0,0
+NCT04840173,Beyond Listening: A Music-based Intervention,NA,mjhs institute for innovation in palliative care,11001602,,,,true,0.0,,0,0,0,0
+NCT04840173,Beyond Listening: A Music-based Intervention,NA,mjhs institute for innovation in palliative care,26519453,,,,true,0.0,,0,0,0,0
+NCT04840173,Beyond Listening: A Music-based Intervention,NA,mjhs institute for innovation in palliative care,7203086,,,,true,0.0,,0,0,0,0
+NCT04840173,Beyond Listening: A Music-based Intervention,NA,mjhs institute for innovation in palliative care,24009169,,,,true,0.0,,0,0,0,0
+NCT04902703,Phase II Trial to Evaluate Safety and Efficacy of GM-CSF/Sargramostim in Alzheimer's Disease,PHASE2,"university of colorado, denver",33778150,,,,true,0.0,,0,0,0,0
+NCT05009524,The Interactive Physical and Cognitive Exercise System (v3) for Mild Cognitive Impairment (MCI),NA,ipaces llc,30200183,,,,true,0.0,,0,0,0,0
+NCT05009524,The Interactive Physical and Cognitive Exercise System (v3) for Mild Cognitive Impairment (MCI),NA,ipaces llc,29780318,,,,true,0.0,,0,0,0,0
+NCT05009524,The Interactive Physical and Cognitive Exercise System (v3) for Mild Cognitive Impairment (MCI),NA,ipaces llc,27337738,,,,true,0.0,,0,0,0,0
+NCT05009524,The Interactive Physical and Cognitive Exercise System (v3) for Mild Cognitive Impairment (MCI),NA,ipaces llc,30233154,,,,true,0.0,,0,0,0,0
+NCT05012410,WeCareAdvisor Study for Caregivers of People Living With Dementia,NA,drexel university,29747583,,,,true,0.0,,0,0,0,0
+NCT05012410,WeCareAdvisor Study for Caregivers of People Living With Dementia,NA,drexel university,28800895,,,,true,0.0,,0,0,0,0
+NCT05040217,A Clinical Trial of AAV2-BDNF Gene Therapy in Early Alzheimer's Disease and Mild Cognitive Impairment,PHASE1,mark tuszynski,21358740,,,,true,0.0,,0,0,0,0
+NCT05040217,A Clinical Trial of AAV2-BDNF Gene Therapy in Early Alzheimer's Disease and Mild Cognitive Impairment,PHASE1,mark tuszynski,24068826,,,,true,0.0,,0,0,0,0
+NCT05060848,Plasma Hydrogen Sulfide as a Biomarker for Alzheimer's Disease and Related Dementias,(missing),louisiana state university health sciences center shreveport,33710769,,,,true,0.0,,0,0,0,0
+NCT05094271,Is Obstructive Sleep Apnea Important in the Development of Alzheimer's Disease?,PHASE1,"university of california, san diego",40135690,"Subjective daytime sleepiness, not sleep quality or hypoxia, predicts sleep-dependent memory consolidation in a cohort of older adults.",2025,J Clin Sleep Med,false,0.0,,0,0,0,0
+NCT05119114,Volumetric Magnetic Resonance Imaging in Dementia,(missing),assiut university,19277975,,,,true,0.0,,0,0,0,0
+NCT05119114,Volumetric Magnetic Resonance Imaging in Dementia,(missing),assiut university,28317647,,,,true,0.0,,0,0,0,0
+NCT05183516,Tdap and Biomarkers of Alzheimer's Disease,PHASE1/PHASE2,"mindful diagnostics and therapeutics, llc",33933117,,,,true,0.0,,0,0,0,0
+NCT05427448,Validation of Blood Biomarkers for Alzheimer's Disease,NA,"university hospital, montpellier",35169889,,,,true,0.0,,0,0,0,0
+NCT05462977,Rhythmically Entrained Exercise in Community-Dwelling Older Adults,NA,"university of north carolina, greensboro",37671396,,,,true,0.0,,0,0,0,0
+NCT05477056,Quality Improvement PrecivityAD Clinician Survey (QUIP I),(missing),c2n diagnostics,37550958,,,,true,0.0,,0,0,0,0
+NCT05478031,A Phase 2a Study to Investigate REM0046127 in Mild to Moderate Alzheimer's Disease,PHASE2,remynd,40937833,,,,true,0.0,,0,0,0,0
+NCT05529277,Implementing Dementia Care Management Into Routine Care in the Region Siegen-Wittgenstein,(missing),german center for neurodegenerative diseases (dzne),38836294,"Adapting Dementia Care Management to a Regional German Context: Assessment of Changes in Acceptability, Appropriateness, and Feasibility.",2024,J Appl Gerontol,false,0.0,,0,0,0,0
+NCT05529277,Implementing Dementia Care Management Into Routine Care in the Region Siegen-Wittgenstein,(missing),german center for neurodegenerative diseases (dzne),35564877,,,,true,0.0,,0,0,0,0
+NCT05703490,An Innovative Platform for Objective Monitoring of Instrumental Activities of Daily Living,(missing),"bijan najafi, phd",36146095,,,,true,0.0,,0,0,0,0
+NCT05741060,Effect of Equol Supplementation on Arterial Stiffness and Cognition in Healthy Volunteers,PHASE2,akira sekikawa,40838083,ACE trial design: Equol targeting estrogen receptor-β in vascular and cognitive aging.,2025,Alzheimers Dement (N Y),false,0.0,,0,0,0,0
+NCT05754021,A Practical Platform for In-Home Remote Monitoring of Cognitive Frailty,(missing),baylor college of medicine,36642072,Dual-Task Upper Extremity Motor Performance Measured by Video Processing as Cognitive-Motor Markers for Older Adults.,2023,Gerontology,false,0.0,,0,0,0,0
+NCT05803122,Validation of the I-UDS Neuropsychological Battery,(missing),"irccs national neurological institute ""c. mondino"" foundation",35982477,,,,true,0.0,,0,0,0,0
+NCT05817188,Medication Repurposing to Stop Cognitive Decline in Dementia,(missing),karolinska institutet,39994788,Antidepressant use and cognitive decline in patients with dementia: a national cohort study.,2025,BMC Med,false,0.0,29,0,0,0,0
+NCT05817188,Medication Repurposing to Stop Cognitive Decline in Dementia,(missing),karolinska institutet,38115091,,,,true,0.0,,0,0,0,0
+NCT05827276,Life Story Questionnaire and Physical Therapy Participation,NA,texas tech university health sciences center,30017005,,,,true,0.0,,0,0,0,0
+NCT05827276,Life Story Questionnaire and Physical Therapy Participation,NA,texas tech university health sciences center,28405256,,,,true,0.0,,0,0,0,0
+NCT05886114,"A Multi-domain Lifestyle Intervention Among Aged Community-residents in Zhejiang, China",NA,zhejiang university,35935417,,,,true,0.0,,0,0,0,0
+NCT05893524,Uppsala-Dalarna Dementia and Gait Project,(missing),dalarna university,32727472,,,,true,0.0,,0,0,0,0
+NCT05893524,Uppsala-Dalarna Dementia and Gait Project,(missing),dalarna university,33153203,,,,true,0.0,,0,0,0,0
+NCT05905822,"DIetary plAnt Extracts, Colonic MicrObes, and Apoe geNetics Interactions stuDy",(missing),university of east anglia,30958695,,,,true,0.0,,0,0,0,0
+NCT06019117,Effectiveness of Probiotic K10 in Managing Health Outcomes in Parkinson and Alzheimer Disease,NA,deivis de oliveira guimaraes,25453395,,,,true,0.0,,0,0,0,0
+NCT06019117,Effectiveness of Probiotic K10 in Managing Health Outcomes in Parkinson and Alzheimer Disease,NA,deivis de oliveira guimaraes,24247053,,,,true,0.0,,0,0,0,0
+NCT06019117,Effectiveness of Probiotic K10 in Managing Health Outcomes in Parkinson and Alzheimer Disease,NA,deivis de oliveira guimaraes,11403877,,,,true,0.0,,0,0,0,0
+NCT06025877,Quality Improvement and Clinical Utility PrecivityAD2(TM) Clinician Survey,(missing),c2n diagnostics,39857051,,,,true,0.0,,0,0,0,0
+NCT06234930,"The Feasibility, Safety and Tolerability of VR-based Audiovisual Stimulation",NA,"clarity health technologies, inc",42790402,,,,true,0.0,,0,0,0,0
+NCT06234930,"The Feasibility, Safety and Tolerability of VR-based Audiovisual Stimulation",NA,"clarity health technologies, inc",40764732,,,,true,0.0,,0,0,0,0
+NCT06320639,DRIVing Simulator and People With NeuroCognitive Disorders,(missing),university gustave eiffel,35923824,,,,true,0.0,,0,0,0,0
+NCT06354933,Neurological Soft Signs in Neurodegenerative Dementias,(missing),university of milano bicocca,40567948,Neurological soft signs in neurodegenerative dementias: Results of the DemeNSS study.,2025,PCN Rep,false,0.0,,0,0,0,0
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,33284428,,,,true,0.0,,0,0,0,0
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,37610594,Glucose metabolism in posterior cingulate cortex has supplementary value to predict the progression of cognitively unimpaired to dementia due to Alzheimer's disease: an exploratory study of <sup>18</sup>F-FDG-PET.,2024,Geroscience,false,0.0,,0,0,0,0
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,24354019,,,,true,0.0,,0,0,0,0
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,25342129,,,,true,0.0,,0,0,0,0
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,23968694,,,,true,0.0,,0,0,0,0
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,37962393,Hippocampal Perfusion Affects Motor and Cognitive Functions in Parkinson Disease: An Early Phase <sup>18</sup> F-FP-CIT Positron Emission Tomography Study.,2024,Ann Neurol,false,0.0,3,0,0,0,0
+NCT06424652,Effect of Physiologic Insulin Administration on Cognition,NA,pennington biomedical research center,38073629,,,,true,0.0,,0,0,0,0
+NCT06536322,Evaluation of the Use of a Novel Oral Health Screening Instrument by Caregivers in Nursing Homes,NA,ku leuven,38746809,Nursing home residents' perspectives on oral health: An in-depth interview study.,2024,Int J Nurs Stud Adv,false,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,32085951,,,,true,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,28271072,,,,true,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,12671209,,,,true,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,3337862,,,,true,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,1202204,,,,true,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,30925610,,,,true,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,28689566,,,,true,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,12021425,,,,true,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,35510973,,,,true,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,27393566,,,,true,0.0,,0,0,0,0
+NCT06631742,Exergaming Revolution in Dementia,NA,eastern switzerland university of applied sciences,32662311,,,,true,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,38101590,A meta-analysis of non-invasive brain stimulation (NIBS) effects on cerebellar-associated cognitive processes.,2024,Neurosci Biobehav Rev,false,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,38954796,,,,true,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,32081466,,,,true,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,33397496,,,,true,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,35667396,,,,true,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,39062547,Targeting Microglia in Alzheimer's Disease: Pathogenesis and Potential Therapeutic Strategies.,2024,Biomolecules,false,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,24990924,,,,true,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,34062299,Dentate Nucleus: Connectivity-Based Anatomic Parcellation Based on Superior Cerebellar Peduncle Projections.,2021,World Neurosurg,false,0.0,0,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,37875627,,,,true,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,29623859,,,,true,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,30630042,,,,true,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,22487856,,,,true,0.0,,0,0,0,0
+NCT06669182,Advantage of Cerebellar Transcranial Magnetic Stimulation in Alzheimer's Diseases （ACT-AD）,NA,xijing hospital,30276522,,,,true,0.0,,0,0,0,0
+NCT06704971,Assessing Cognitive Decline at Home,(missing),stanford university,41987876,Designing AI-Enabled Video Monitoring Clinician Dashboard for Neuropsychiatric Symptoms: A Survey of User Needs.,2026,Am J Geriatr Psychiatry Open Sci Educ Pract,false,0.0,,0,0,0,0
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,35359624,,,,true,0.0,,0,0,0,0
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,39107995,Impaired glymphatic function as a biomarker for subjective cognitive decline: An exploratory dual cohort study.,2024,Alzheimers Dement,false,0.0,,0,0,0,0
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,38501315,,,,true,0.0,,0,0,0,0
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,26077718,,,,true,0.0,,0,0,0,0
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,25102344,,,,true,0.0,,0,0,0,0
+NCT06852352,An Exploratory Study to Confirm Efficacy of Modified Deep Cervical Lymphovenous Anastomosis (LVA) in Alzheimer's Disease/ Parkinson's Disease,NA,zhejiang provincial people's hospital,36978127,Immunohistochemical visualization of lymphatic vessels in human dura mater: methodological perspectives.,2023,Fluids Barriers CNS,false,0.0,,0,0,0,0
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,33739427,,,,true,0.0,,0,0,0,0
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,24482154,,,,true,0.0,,0,0,0,0
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,23338615,,,,true,0.0,,0,0,0,0
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,22371929,,,,true,0.0,,0,0,0,0
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,38935395,,,,true,0.0,,0,0,0,0
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,26415766,,,,true,0.0,,0,0,0,0
+NCT06991816,The Brain&Senses Study,(missing),university of campania luigi vanvitelli,38512278,Hearing Loss and Associated 7-Year Cognitive Outcomes Among Hispanic and Latino Adults.,2024,JAMA Otolaryngol Head Neck Surg,false,0.0,14,0,0,0,0
+NCT06993207,HOme-based Brain Monitoring With a GARment-EEG to Study Cognitive Decline in the Aging Population,(missing),bitbrain,8159266,,,,true,0.0,,0,0,0,0
+NCT07041450,Screening for Anti-amyloid Treatment Eligibility Using Digital Cognition and Blood-based Biomarkers,(missing),moca clinic and institute,38558263,,,,true,0.0,,0,0,0,0
+NCT07222449,"Wearables-and Blood-based Biomarkers-incorporated Modernisation of Circadian Rhythm Disruption Management in People Living With Alzheimer's Dementia: A Stepwise Study From Digital Inclusivity, Digital Therapy, to Digital Phenotyping and Biomarker Exploration",NA,china medical university hospital,39706483,,,,true,0.0,,0,0,0,0
+NCT07222449,"Wearables-and Blood-based Biomarkers-incorporated Modernisation of Circadian Rhythm Disruption Management in People Living With Alzheimer's Dementia: A Stepwise Study From Digital Inclusivity, Digital Therapy, to Digital Phenotyping and Biomarker Exploration",NA,china medical university hospital,38497216,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,29311898,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,19767111,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,17908844,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,25511390,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,20107219,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,18487845,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,25426144,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,26513593,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,25712639,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,2229342,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,16930302,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,12563281,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,18800007,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,15978238,,,,true,0.0,,0,0,0,0
+NCT07233512,EFFECT OF PERIODONTAL TREATMENT ON ALZHEIMER DISEASE-ASSOCIATED OUTCOMES,NA,centre hospitalier universitaire de liege,33469718,,,,true,0.0,,0,0,0,0
+NCT07249918,Feasibility of Wearables in Dementia Care in Rural Taiwan,NA,china medical university hospital,35470491,,,,true,0.0,,0,0,0,0
+NCT07249918,Feasibility of Wearables in Dementia Care in Rural Taiwan,NA,china medical university hospital,38497216,,,,true,0.0,,0,0,0,0
+NCT07279103,Multisensory Environment-Based Occupational Therapy for Alzheimer's Patients,NA,hacettepe university,30155306,,,,true,0.0,,0,0,0,0
+NCT07279103,Multisensory Environment-Based Occupational Therapy for Alzheimer's Patients,NA,hacettepe university,11317951,,,,true,0.0,,0,0,0,0
+NCT07279103,Multisensory Environment-Based Occupational Therapy for Alzheimer's Patients,NA,hacettepe university,12919265,,,,true,0.0,,0,0,0,0
+NCT07514520,"Decision-making, Ethical Consent, and Interactive Dialogue in Ongoing Neurocognitive Decline - DECISION",(missing),ludwig-maximilians - university of munich,36585622,,,,true,0.0,,0,0,0,0
+NCT07514520,"Decision-making, Ethical Consent, and Interactive Dialogue in Ongoing Neurocognitive Decline - DECISION",(missing),ludwig-maximilians - university of munich,26861463,,,,true,0.0,,0,0,0,0
+NCT07514520,"Decision-making, Ethical Consent, and Interactive Dialogue in Ongoing Neurocognitive Decline - DECISION",(missing),ludwig-maximilians - university of munich,28154452,,,,true,0.0,,0,0,0,0
+NCT07514520,"Decision-making, Ethical Consent, and Interactive Dialogue in Ongoing Neurocognitive Decline - DECISION",(missing),ludwig-maximilians - university of munich,33583459,,,,true,0.0,,0,0,0,0
+NCT07514520,"Decision-making, Ethical Consent, and Interactive Dialogue in Ongoing Neurocognitive Decline - DECISION",(missing),ludwig-maximilians - university of munich,18316457,,,,true,0.0,,0,0,0,0
+NCT07514520,"Decision-making, Ethical Consent, and Interactive Dialogue in Ongoing Neurocognitive Decline - DECISION",(missing),ludwig-maximilians - university of munich,38547903,[MacCAT-T between Claim and Practice - Challenges of Assessing Capacity for Consent in Dementia].,2024,Fortschr Neurol Psychiatr,false,0.0,,0,0,0,0
+NCT07514520,"Decision-making, Ethical Consent, and Interactive Dialogue in Ongoing Neurocognitive Decline - DECISION",(missing),ludwig-maximilians - university of munich,7217472,,,,true,0.0,,0,0,0,0
+NCT07514520,"Decision-making, Ethical Consent, and Interactive Dialogue in Ongoing Neurocognitive Decline - DECISION",(missing),ludwig-maximilians - university of munich,38679358,Signature of Altered Retinal Microstructures and Electrophysiology in Schizophrenia Spectrum Disorders Is Associated With Disease Severity and Polygenic Risk.,2024,Biol Psychiatry,false,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,39096926,,,,true,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,38414877,Meta-analysis of Montreal cognitive assessment diagnostic accuracy in amnestic mild cognitive impairment.,2024,Front Psychol,false,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,36448676,,,,true,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,40129129,Validating the Telephone Montreal Cognitive Assessment Scale-Hindi as a Remote Screening Tool for Mild Cognitive Impairment.,2025,Cogn Behav Neurol,false,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,3338459,,,,true,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,36755377,"Ecological validity in neurocognitive assessment: Systematized review, content analysis, and proposal of an instrument.",2025,Appl Neuropsychol Adult,false,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,41440544,Montreal Cognitive Assessment (MoCA) Norms for Older Patients with a Depressive Disorder.,2025,Med Sci (Basel),false,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,40917768,Cognitive screening and education: assessing the Montreal Cognitive Assessment's validity in older Ugandan populations.,2025,Acad Ment Health Well Being,false,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,31063176,,,,true,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,40001837,Dementia and Mild Cognitive Impairment Identification in Illiterate and Low-Educated People: Systematic Review About the Use of Brief Cognitive Screening Tools.,2025,Behav Sci (Basel),false,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,29424560,,,,true,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,33858238,,,,true,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,34612169,,,,true,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,30607981,,,,true,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,38144923,,,,true,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,27369684,,,,true,0.0,,0,0,0,0
+NCT07630688,Validation and Reliability of the Turkish Version of the Montreal Cognitive Assessment-Basic (MoCA-B) in Individuals With Low Educational Level,(missing),,30174426,,,,true,0.0,,0,0,0,0
+NCT07672171,Far-Infrared Therapy for the Effect of Alzheimer Disease Dementia,NA,,25722734,,,,true,0.0,,0,0,0,0
+NCT07672171,Far-Infrared Therapy for the Effect of Alzheimer Disease Dementia,NA,,35669462,,,,true,0.0,,0,0,0,0
+NCT07672171,Far-Infrared Therapy for the Effect of Alzheimer Disease Dementia,NA,,23833705,,,,true,0.0,,0,0,0,0
+NCT07672171,Far-Infrared Therapy for the Effect of Alzheimer Disease Dementia,NA,,35701825,,,,true,0.0,,0,0,0,0
+NCT07672171,Far-Infrared Therapy for the Effect of Alzheimer Disease Dementia,NA,,22894755,,,,true,0.0,,0,0,0,0
+NCT07672171,Far-Infrared Therapy for the Effect of Alzheimer Disease Dementia,NA,,33717134,,,,true,0.0,,0,0,0,0
+NCT07673263,Effects of X Box Kinect 360 in Alzheimer's Disease,NA,,34526034,,,,true,0.0,,0,0,0,0
+NCT07673263,Effects of X Box Kinect 360 in Alzheimer's Disease,NA,,14511167,,,,true,0.0,,0,0,0,0
+NCT07673263,Effects of X Box Kinect 360 in Alzheimer's Disease,NA,,33586858,,,,true,0.0,,0,0,0,0
+NCT07673263,Effects of X Box Kinect 360 in Alzheimer's Disease,NA,,36817126,Advances in Alzheimer's disease's pharmacological treatment.,2023,Front Pharmacol,false,0.0,,0,0,0,0
+NCT07673263,Effects of X Box Kinect 360 in Alzheimer's Disease,NA,,30239213,,,,true,0.0,,0,0,0,0
+NCT07673263,Effects of X Box Kinect 360 in Alzheimer's Disease,NA,,34511499,,,,true,0.0,,0,0,0,0
+NCT07673263,Effects of X Box Kinect 360 in Alzheimer's Disease,NA,,36918389,,,,true,0.0,,0,0,0,0
+NCT07673263,Effects of X Box Kinect 360 in Alzheimer's Disease,NA,,33292729,,,,true,0.0,,0,0,0,0
+NCT07673263,Effects of X Box Kinect 360 in Alzheimer's Disease,NA,,25621384,,,,true,0.0,,0,0,0,0

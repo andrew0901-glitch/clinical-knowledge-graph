@@ -1,0 +1,32 @@
+{
+ "condition": {
+  "id": "MESH:D000544",
+  "mesh_id": "D000544",
+  "name": "Alzheimer Disease"
+ },
+ "release": "Lunas Clinical Evidence KG v0.2.1 (snapshot 2026-11-07)",
+ "expansion": "full",
+ "article_population": "with_stubs",
+ "indexing": "major_topic",
+ "self_citations": "excluded",
+ "descriptors_in_expansion": 1,
+ "articles": 11925,
+ "by_design": {
+  "guideline": 5,
+  "sr_or_ma": 240,
+  "rct": 340,
+  "other_trial": 176,
+  "observational": 128,
+  "other": 11036
+ },
+ "primary_studies": 516,
+ "primary_cited_by_review": 226,
+ "primary_not_cited_by_review": 290,
+ "rct_cited_by_review": 182,
+ "other_trial_cited_by_review": 44,
+ "distinct_citing_reviews": 244,
+ "distinct_citing_reviews_in_map": 77,
+ "sr_or_ma_2022_2026": 107,
+ "guideline_2022_2026": 2,
+ "run_seconds": 0.29
+}

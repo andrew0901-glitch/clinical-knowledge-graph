@@ -1,0 +1,32 @@
+{
+ "condition": {
+  "id": "MESH:D001943",
+  "mesh_id": "D001943",
+  "name": "Breast Neoplasms"
+ },
+ "release": "Lunas Clinical Evidence KG v0.2.1 (snapshot 2026-11-07)",
+ "expansion": "full",
+ "article_population": "with_stubs",
+ "indexing": "major_topic",
+ "self_citations": "excluded",
+ "descriptors_in_expansion": 9,
+ "articles": 47004,
+ "by_design": {
+  "guideline": 180,
+  "sr_or_ma": 1101,
+  "rct": 3031,
+  "other_trial": 1823,
+  "observational": 370,
+  "other": 40499
+ },
+ "primary_studies": 4854,
+ "primary_cited_by_review": 2297,
+ "primary_not_cited_by_review": 2557,
+ "rct_cited_by_review": 1706,
+ "other_trial_cited_by_review": 591,
+ "distinct_citing_reviews": 1874,
+ "distinct_citing_reviews_in_map": 750,
+ "sr_or_ma_2022_2026": 397,
+ "guideline_2022_2026": 46,
+ "run_seconds": 0.35
+}
