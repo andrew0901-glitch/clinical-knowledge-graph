@@ -9,7 +9,7 @@ Documentation, loaders and examples for the **Lunas Clinical Evidence KG**, a pu
 | Core graph v0.1.0 | Hugging Face [`lunas-health/clinical-evidence-kg`](https://huggingface.co/datasets/lunas-health/clinical-evidence-kg) (tag `clinical-v0.1.0`) · Zenodo [10.5281/zenodo.24011485](https://doi.org/10.5281/zenodo.24011485) | CC0 1.0 |
 | Core graph v0.2.0 | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.0`) · Zenodo [10.5281/zenodo.24091964](https://doi.org/10.5281/zenodo.24091964) | CC0 1.0 |
 | Core graph v0.2.1 (current) | Hugging Face `lunas-health/clinical-evidence-kg` (tag `clinical-v0.2.2`) · Zenodo [10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692) | CC0 1.0 |
-| JEV evidence annotations (sidecar) | Zenodo [10.5281/zenodo.24012855](https://doi.org/10.5281/zenodo.24012855) · also in the Hugging Face repo | Not CC0: rights reserved by LunasAI LLC; model predictions; no model training |
+| JEV evidence annotations (separately licensed annotation layer) | Zenodo [10.5281/zenodo.24012855](https://doi.org/10.5281/zenodo.24012855) · also in the Hugging Face repo | Not CC0: rights-reserved under the terms of Zenodo record 10.5281/zenodo.24012855; model predictions; no model training; not part of the graph manifest |
 
 v0.2.1 is the current, published version. It corrects v0.2.0's dataset card metadata; the
 node/edge data is byte-identical to v0.2.0. Cite it as v0.2.1 ([10.5281/zenodo.24108692](https://doi.org/10.5281/zenodo.24108692)) --
@@ -19,6 +19,12 @@ hashes to `clinical-v0.2.1`; it is not a new Zenodo release. The Zenodo concept 
 every version is [10.5281/zenodo.24011484](https://doi.org/10.5281/zenodo.24011484) -- always
 resolves to the latest published version. The JEV sidecar is unchanged across all three releases
 -- none of them ship a regenerated JEV file, so the v0.1.0 JEV record above still applies as-is.
+
+**Annotation layer.** `jev_evidence_annotations.jsonl` and `jev_manifest.json` are the separately
+licensed annotation layer. They are rights-reserved under the terms of Zenodo record
+[10.5281/zenodo.24012855](https://doi.org/10.5281/zenodo.24012855), are not covered by CC0, and are
+not part of the graph manifest: `manifest.json` lists only the 107 node and edge files, and the
+scripts in this repository read only those.
 
 ## What is in v0.2.1
 
@@ -111,6 +117,39 @@ Example outputs for breast neoplasms, Alzheimer disease and heart failure are in
 [examples/trial_landscape_examples/](examples/trial_landscape_examples/) (the large per-trial and
 per-site CSVs are left out; rerun to regenerate them). Read the trial notes in
 [docs/DATA_NOTES.md](docs/DATA_NOTES.md#clinical-trials-conditions-sponsors-and-sites) first.
+
+### 6. Evidence map for a condition
+
+```bash
+python examples/evidence_map.py --input ckg --condition "Heart Failure"          # or D006333 / MESH:D006333
+python examples/evidence_map.py --input ckg --condition D001943 --exclude-stubs   # drop identity-only Article stubs
+python examples/evidence_map.py --input ckg --condition D012516 --expansion none --major-only
+```
+
+For a MeSH descriptor (by default expanded to every narrower descriptor via `HAS_BROADER_ANCESTOR`;
+the 40 MeSH check tags such as Humans or Female are never used) it counts the indexed Articles by
+study design, assigned once each in the order guideline > systematic review or meta-analysis >
+randomized controlled trial > other clinical trial > observational > other, from NLM publication
+types. It then reports which primary studies (randomized and other clinical trials) are cited by an
+in-graph guideline, systematic review or meta-analysis, how many distinct reviews cite them, and how
+many reviews and guidelines were published 2022-2026. CITES edges from an Article to itself are
+dropped. Output: `summary.json`, `design.csv`, `primary_studies.csv` (each primary study with its
+number of citing reviews) and `citing_reviews.csv`. Like the trial landscape tool it reads only the
+files listed in `manifest.json` / `zenodo_manifest.json` and caches what it needs as Parquet (about a
+minute on 16 cores the first time, seconds afterwards). The full definitions are in the script's
+docstring.
+
+On the v0.2.1 release, breast neoplasms (D001943, 9 descriptors) gives 53,369 Articles, of which
+5,201 are primary studies; 2,469 of them are cited by at least one of 2,058 in-graph reviews or
+guidelines. Identity-only stubs carry no publication types, MeSH or CITES edges in v0.2.x, so
+`--exclude-stubs` does not change MeSH-based maps.
+
+Tests (run against the bundled sample subgraph, plus a small hand-built graph for the citation rules):
+
+```bash
+pip install duckdb pytest
+pytest tests/test_evidence_map.py
+```
 
 ### Neo4j database dump
 
