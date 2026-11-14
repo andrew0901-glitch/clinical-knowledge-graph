@@ -9,9 +9,8 @@
 
 For a MeSH condition descriptor it reports the competitive trial landscape (sponsors, sponsor class,
 phase, status, start-year timeline), where the trials run (sites and countries, with how many matching
-trials are recruiting at each -- the competing-trial density a site-selection team cares about), and
-which trials have published results (VALIDATED_BY) and how often those results papers are cited
-in-graph by guidelines or systematic reviews. Output: CSVs plus one self-contained report.html.
+trials are recruiting at each), and which trials have results articles (VALIDATED_BY) and whether
+those articles are cited within the graph by a guideline or systematic review (self-citations excluded). Output: CSVs plus one self-contained report.html.
 
 If `manifest.json` (Hugging Face) or `zenodo_manifest.json` (Zenodo) is present under `--input`,
 only the files it actually lists are read -- anything else under nodes/edges/ is ignored and
@@ -571,7 +570,7 @@ def landscape(con, root, depth, out, top_n, merge_sites=False):
                    count(*) FILTER (WHERE a.is_systematic_review) AS cited_by_systematic_reviews,
                    count(*) FILTER (WHERE a.is_meta_analysis) AS cited_by_meta_analyses,
                    count(*) FILTER (WHERE a.is_guideline OR a.is_systematic_review) AS cited_by_guideline_or_sr
-            FROM result_citers c JOIN articles a ON a.id = c.citer GROUP BY c.cited)
+            FROM result_citers c JOIN articles a ON a.id = c.citer WHERE c.citer <> c.cited GROUP BY c.cited)
         SELECT t.nct_id, t.title AS trial_title, t.phase, t.lead_sponsor, a.pmid, a.title AS article_title, a.year, a.journal,
                (a.layer = 'ctgov_identity_only') AS article_is_stub,
                coalesce(rc.n_cites, 0) AS cited_in_graph, a.cited_by_count AS cited_by_count_openalex,
@@ -604,8 +603,22 @@ def landscape(con, root, depth, out, top_n, merge_sites=False):
         "sites": q("SELECT count(DISTINCT grp) FROM site_group"),
         "countries": q("SELECT count(DISTINCT s.country) FROM conducted_at c JOIN t ON t.id = c.trial JOIN sites s ON s.id = c.site"),
         "trials_with_results_article": q("SELECT count(*) FROM t WHERE n_results_articles > 0"),
-        "results_articles": len(r["results"][1]),
+        "results_articles": len(r["results"][1]),            # trial-article VALIDATED_BY rows (kept for continuity)
+        "results_article_rows": len(r["results"][1]),
         "results_articles_cited_by_guideline_or_sr": sum(1 for row in r["results"][1] if row[-1] > 0),
+        "results_articles_distinct": q("SELECT count(DISTINCT p.article) FROM trial_pubs p JOIN t ON t.id = p.trial "
+                                       "WHERE p.rel = 'VALIDATED_BY'"),
+        "results_articles_distinct_not_identity_only": q(
+            "SELECT count(DISTINCT p.article) FROM trial_pubs p JOIN t ON t.id = p.trial JOIN articles a ON a.id = p.article "
+            "WHERE p.rel = 'VALIDATED_BY' AND a.layer <> 'ctgov_identity_only'"),
+        "results_articles_distinct_cited_by_guideline_or_sr": q(
+            "SELECT count(DISTINCT p.article) FROM trial_pubs p JOIN t ON t.id = p.trial JOIN result_citers c ON c.cited = p.article "
+            "JOIN articles g ON g.id = c.citer WHERE p.rel = 'VALIDATED_BY' AND c.citer <> c.cited "
+            "AND (g.is_guideline OR g.is_systematic_review)"),
+        "results_articles_distinct_cited_by_guideline_or_sr_not_identity_only": q(
+            "SELECT count(DISTINCT p.article) FROM trial_pubs p JOIN t ON t.id = p.trial JOIN result_citers c ON c.cited = p.article "
+            "JOIN articles g ON g.id = c.citer JOIN articles a ON a.id = p.article WHERE p.rel = 'VALIDATED_BY' "
+            "AND c.citer <> c.cited AND (g.is_guideline OR g.is_systematic_review) AND a.layer <> 'ctgov_identity_only'"),
         "crosscheck_ctgov_ancestor_terms_trials": ctgov,
         "crosscheck_ctgov_trials_also_in_our_expansion": both,
     }
@@ -745,7 +758,7 @@ def ancestor_gap_note(s, root):
     missed = s["crosscheck_ctgov_ancestor_terms_trials"] - s["crosscheck_ctgov_trials_also_in_our_expansion"]
     if missed <= 0:
         return ""
-    return (f"<p class='note'><b>Possible missing trials:</b> ClinicalTrials.gov's own ancestor terms place {missed:,} more trials "
+    return (f"<p class='note'><b>Trials outside this report:</b> ClinicalTrials.gov's own ancestor terms place {missed:,} more trials "
             f"under {E(root[2])} than this report finds through explicit condition terms. Their narrower browse term most likely "
             f"did not link to a MeSH descriptor in this release (a known name-form mismatch; for example Major Depressive Disorder "
             f"and Postoperative Pain have no trial edges in v0.2.x). They are not included here.</p>")
@@ -802,7 +815,7 @@ def render_html(root, r, depth_n, closure_n, run_s, top_n, release):
 condition browse terms (graph edge ClinicalTrial -HAS_MESH {{study_aspect:'condition', mesh_type:'mesh-list'}}-> MeSHConcept).
 "Recruiting" is the trial's overall status in the registry snapshot, not a live feed. Hover any bar for exact values.</p>
 <div class="tiles">{''.join(f"<div class='tile'><b>{v:,}</b><span>{E(k)}</span></div>" for k, v in tiles)}</div>
-<p class="note"><b>Coverage gap in this release:</b> {s['trials_without_sponsor_record']:,} matching trials (the newest registrations)
+<p class="note"><b>Records not in this release:</b> {s['trials_without_sponsor_record']:,} matching trials (the newest registrations)
 have no sponsor or site records, including {s['recruiting_without_sponsor_record']:,} of the {s['recruiting']:,} recruiting ones. They are counted
 in trial totals, phase and status, shown as "{NO_SPONSOR}" in the timeline, and missing from every sponsor, site and country figure.</p>
 {ancestor_gap_note(s, root)}
@@ -830,9 +843,9 @@ years outside {years[0] if years else ''}–{years[-1] if years else ''} (all in
 <p class="note">Top {top_n} sites by number of matching trials; the blue part is trials recruiting now. {site_merge_note(s)}</p>
 <div class="panel">{legend(rec)}{svg_hbars(top_sites, rec)}</div>
 
-<h2>Competing-trial density: sites with the most recruiting trials</h2>
+<h2>Sites with the most recruiting trials</h2>
 <p class="note">Matching trials currently recruiting at each site. The CSV adds site_confirmed (the registry's own per-site status also says
-RECRUITING) and the number of distinct lead sponsors competing there.</p>
+RECRUITING) and the number of distinct lead sponsors with recruiting trials there.</p>
 <div class="panel">{svg_hbars(dens, [('Recruiting trials', '--s1')])}</div>
 <details><summary>Top {top_n} sites (table; all {len(sites):,} in sites.csv)</summary>{table(sites_cols, sites[:top_n], numeric=sites_cols[4:10])}</details>
 
@@ -840,11 +853,17 @@ RECRUITING) and the number of distinct lead sponsors competing there.</p>
 <div class="panel">{legend(rec)}{svg_hbars(top_countries, rec, label_w=180)}</div>
 <details><summary>All {len(countries):,} countries (table)</summary>{table(ccols, countries, numeric=ccols[1:])}</details>
 
-<h2>Published results and their uptake</h2>
+<h2>Results articles and citations within the graph</h2>
 <p class="note">{s['trials_with_results_article']:,} of {s['trials']:,} matching trials have at least one results article (VALIDATED_BY, the
-RESULT role: Article -> ClinicalTrial). {s['results_articles']:,} results-article links; {s['results_articles_cited_by_guideline_or_sr']:,} of them are
-cited in-graph by at least one guideline or systematic review (NLM publication types Guideline / Practice Guideline / Systematic Review;
-in-graph CITES only, so citations from papers outside the graph are not counted). Top 25 below; all in results_publications.csv.</p>
+RESULT role: Article -> ClinicalTrial). That is {s['results_articles']:,} trial-article links to {s['results_articles_distinct']:,} distinct
+Articles, of which {s['results_articles_distinct_not_identity_only']:,} have a PubMed record (the rest are identity-only Articles,
+lunasai_layer ctgov_identity_only, which carry a PMID but no bibliographic data).</p>
+<p class="note"><b>Cited by a guideline or SR</b> means at least one Article in the graph whose NLM publication types include Guideline,
+Practice Guideline or Systematic Review cites the results article (CITES edge; an Article citing itself is not counted; Meta-Analysis
+alone does not qualify). {s['results_articles_distinct_cited_by_guideline_or_sr']:,} distinct results Articles
+({s['results_articles_distinct_cited_by_guideline_or_sr_not_identity_only']:,} with a PubMed record; {s['results_articles_cited_by_guideline_or_sr']:,}
+trial-article links) meet this. Only citations between Articles in the graph are counted, so these are lower bounds; an article not cited
+within the graph may be cited elsewhere. Top 25 below; all in results_publications.csv.</p>
 <div class="panel">{table(['nct_id', 'pmid', 'article_title', 'year', 'cited_in_graph', 'cited_by_guidelines', 'cited_by_systematic_reviews', 'cited_by_meta_analyses'],
                          [[row[0], row[4], row[5], row[6], row[9], row[11], row[12], row[13]] for row in res], numeric=('year', 'cited_in_graph', 'cited_by_guidelines', 'cited_by_systematic_reviews', 'cited_by_meta_analyses'), limit=25, link_nct=True)}</div>
 
@@ -863,6 +882,78 @@ trials under {E(root[2])}; {s['crosscheck_ctgov_trials_also_in_our_expansion']:,
 originate from ClinicalTrials.gov; MeSH from the U.S. National Library of Medicine.</p>
 </main></body></html>"""]
     return "".join(parts)
+
+
+def md_table(cols, rows, limit=None):
+    esc = lambda v: ("" if v is None else (f"{v:,}" if isinstance(v, int) and not isinstance(v, bool) else str(v))).replace("|", "\\|").replace("\n", " ")
+    out = ["| " + " | ".join(cols) + " |", "|" + "|".join("---" for _ in cols) + "|"]
+    out += ["| " + " | ".join(esc(v) for v in row) + " |" for row in rows[:limit]]
+    return "\n".join(out)
+
+
+def render_markdown(root, r, depth_n, closure_n, top_n, release):
+    """GitHub-readable version of report.html: same numbers and notes, tables instead of charts."""
+    s = r["summary"]
+    scols, srows = r["by_sponsor"]
+    res_cols, res = r["results"]
+    sites_cols, sites = r["sites"]
+    ccols, countries = r["countries"]
+    dcols, drows = r["descriptors"]
+    phase = {}
+    for p_, st, n in r["phase_status"][1]:
+        phase.setdefault(p_, {})[st] = n
+    statuses = [x for x in STATUS_ORDER if any(x in v for v in phase.values())]
+    phase_rows = [[p_] + [phase[p_].get(x, 0) for x in statuses] for p_ in PHASE_ORDER if p_ in phase]
+    keys = [("matching trials", "trials"), ("direct on the descriptor", "trials_direct"),
+            ("via narrower descriptors only", "trials_narrower_only"), ("recruiting (registry status)", "recruiting"),
+            ("not yet recruiting", "not_yet_recruiting"), ("interventional", "interventional"),
+            ("lead sponsors", "lead_sponsors"), ("trials with sites", "trials_with_sites"), ("sites", "sites"),
+            ("countries", "countries"), ("trials with a results article", "trials_with_results_article"),
+            ("results trial-article links (rows)", "results_article_rows"),
+            ("distinct results Articles", "results_articles_distinct"),
+            ("distinct results Articles with a PubMed record", "results_articles_distinct_not_identity_only"),
+            ("distinct results Articles cited by a guideline or SR", "results_articles_distinct_cited_by_guideline_or_sr"),
+            ("... of which with a PubMed record", "results_articles_distinct_cited_by_guideline_or_sr_not_identity_only"),
+            ("results trial-article links cited by a guideline or SR", "results_articles_cited_by_guideline_or_sr")]
+    L = [f"# Clinical trial landscape: {root[2]}", "",
+         f"MeSH {root[1]} and {depth_n - 1:,} narrower descriptors. Source: {release}. Built by `examples/trial_landscape.py`; "
+         "the same content with charts is in `report.html` (download and open it in a browser).", "",
+         "A trial matches when ClinicalTrials.gov lists the descriptor, or one of its narrower descriptors, among the trial's "
+         "condition browse terms (`ClinicalTrial -HAS_MESH {study_aspect:'condition', mesh_type:'mesh-list'}-> MeSHConcept`). "
+         "Status is the registry status at the snapshot date.", "",
+         md_table(["measure", "value"], [[k, s[v]] for k, v in keys]), "",
+         f"**Records not in this release:** {s['trials_without_sponsor_record']:,} matching trials (the newest registrations) have no "
+         f"sponsor or site records, including {s['recruiting_without_sponsor_record']:,} recruiting ones. They are counted in trial "
+         "totals, phase and status, and are missing from sponsor, site and country figures.", "",
+         "## Results articles and citations within the graph", "",
+         "A results article is an Article linked to the trial with the RESULT role (`VALIDATED_BY`, Article -> ClinicalTrial). "
+         "Identity-only Articles (`lunasai_layer` = `ctgov_identity_only`) carry a PMID but no bibliographic data.", "",
+         "**Cited by a guideline or SR** means at least one Article in the graph whose NLM publication types include Guideline, "
+         "Practice Guideline or Systematic Review cites the results article (CITES edge; an Article citing itself is not counted; "
+         "Meta-Analysis alone does not qualify). Only citations between Articles in the graph are counted, so cited counts are "
+         "lower bounds; an article not cited within the graph may be cited elsewhere.", "",
+         f"Top 25 of {len(res):,} trial-article links (all in `results_publications.csv`):", "",
+         md_table(["nct_id", "pmid", "article_title", "year", "identity_only", "cited_in_graph", "cited_by_guidelines",
+                   "cited_by_systematic_reviews"], [[x[0], x[4], x[5], x[6], x[8], x[9], x[11], x[12]] for x in res], 25), "",
+         "## Lead sponsor class", "", md_table(["sponsor_class", "trials", "recruiting"], r["by_sponsor_class"][1]), "",
+         "ClinicalTrials.gov has no academic class: universities and hospitals are filed as OTHER.", "",
+         f"## Lead sponsors (top {top_n} by trials led; all in `by_sponsor.csv`)", "",
+         md_table(scols, [x for x in srows if x[3] > 0], top_n), "",
+         "## Phase by overall status", "", md_table(["phase"] + statuses, phase_rows), "",
+         "NA means phase not applicable; (missing) is mostly observational studies.", "",
+         f"## Sites (top {top_n} by matching trials; all {len(sites):,} in `sites.csv`)", "",
+         "A site is one facility name + city + state + country as registered; spellings are not merged.", "",
+         md_table(sites_cols[:9], [x[:9] for x in sites], top_n), "",
+         f"## Countries (top {top_n}; all {len(countries):,} in `countries.csv`)", "", md_table(ccols, countries, top_n), "",
+         "## Condition expansion", "",
+         f"{depth_n:,} descriptors: the query plus everything below it in its own MeSH tree branches (a walk that ignored tree "
+         f"numbers would reach {closure_n:,}). ClinicalTrials.gov's own ancestor terms put "
+         f"{s['crosscheck_ctgov_ancestor_terms_trials']:,} trials under {root[2]}; "
+         f"{s['crosscheck_ctgov_trials_also_in_our_expansion']:,} of them are in this report.", "", md_table(dcols, drows), "",
+         f"All {s['trials']:,} matching trials are in `trials.csv`; start-year counts by lead sponsor class in "
+         "`timeline_start_year.csv`.", "",
+         "Trial data originate from ClinicalTrials.gov; MeSH from the U.S. National Library of Medicine. Graph files: CC0."]
+    return "\n".join(L) + "\n"
 
 
 def main():
@@ -915,6 +1006,8 @@ def main():
     run_s = time.time() - t0
     with open(os.path.join(out, "report.html"), "w") as fh:
         fh.write(render_html(root, r, len(depth), closure_n, run_s, a.top, release))
+    with open(os.path.join(out, "README.md"), "w") as fh:
+        fh.write(render_markdown(root, r, len(depth), closure_n, a.top, release))
     summary = {"condition": {"id": root[0], "mesh_id": root[1], "name": root[2]}, "release": release,
                "descriptors_in_expansion": len(depth), "descriptor_level_closure": closure_n,
                **r["summary"], "csv_rows": {k: len(v[1]) for k, v in r.items() if isinstance(v, tuple)},

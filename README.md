@@ -107,7 +107,7 @@ python examples/trial_landscape.py --input ckg --data-check                    #
 For a MeSH condition descriptor (expanded down its own MeSH tree branches, with direct matches kept
 separate), it writes CSVs and one self-contained `report.html`: trials by sponsor, sponsor class,
 phase and status; a start-year timeline; top sites and countries with how many matching trials are
-recruiting at each (competing-trial density for site selection); and trials with results articles
+recruiting at each; and trials with results articles
 (`VALIDATED_BY`) with how often those articles are cited in-graph by guidelines or systematic reviews.
 `--merge-sites` merges facility spellings within a city and country (case, accents, punctuation,
 abbreviations such as Ctr/Centre, and company suffixes such as Inc/LLC/GmbH) and reports site counts
@@ -142,7 +142,8 @@ types. It then reports which primary studies (randomized and other clinical tria
 in-graph guideline, systematic review or meta-analysis, how many distinct reviews cite them, and how
 many reviews and guidelines were published 2022-2026. CITES edges from an Article to itself are
 dropped. Output: `summary.json`, `design.csv`, `primary_studies.csv` (each primary study with its
-number of citing reviews) and `citing_reviews.csv`. Like the trial landscape tool it reads only the
+number of citing reviews), `citing_reviews.csv`, `recent_reviews.csv` (guidelines and SR/MA from 2022-2026),
+`expansion.csv`, a self-contained `report.html` and a GitHub-readable `README.md`. Like the trial landscape tool it reads only the
 files listed in `manifest.json` / `zenodo_manifest.json` and caches what it needs as Parquet (about a
 minute on 16 cores the first time, seconds afterwards). The full definitions are in the script's
 docstring.

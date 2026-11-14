@@ -148,8 +148,12 @@ def test_cli(tmp_path, busiest):
                    check=True, stdout=subprocess.DEVNULL)
     s = json.loads((out / "summary.json").read_text())
     assert s["self_citations"] == "excluded" and s["article_population"] == "with_stubs"
-    for f in ("design.csv", "primary_studies.csv", "citing_reviews.csv"):
+    for f in ("design.csv", "primary_studies.csv", "citing_reviews.csv", "recent_reviews.csv", "expansion.csv",
+              "report.html", "README.md"):
         assert (out / f).exists()
+    html = (out / "report.html").read_text()
+    assert "<script" not in html.lower() and "lower bounds" in html and "not cited within the graph" in html
+    assert "not cited within the graph" in (out / "README.md").read_text()
 
 
 def _write(path, rows):
