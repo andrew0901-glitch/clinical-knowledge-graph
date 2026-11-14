@@ -112,6 +112,39 @@ Example outputs for breast neoplasms, Alzheimer disease and heart failure are in
 per-site CSVs are left out; rerun to regenerate them). Read the trial notes in
 [docs/DATA_NOTES.md](docs/DATA_NOTES.md#clinical-trials-conditions-sponsors-and-sites) first.
 
+### 6. Evidence map for a condition
+
+```bash
+python examples/evidence_map.py --input ckg --condition "Heart Failure"          # or D006333 / MESH:D006333
+python examples/evidence_map.py --input ckg --condition D001943 --exclude-stubs   # drop identity-only Article stubs
+python examples/evidence_map.py --input ckg --condition D012516 --expansion none --major-only
+```
+
+For a MeSH descriptor (by default expanded to every narrower descriptor via `HAS_BROADER_ANCESTOR`;
+the 40 MeSH check tags such as Humans or Female are never used) it counts the indexed Articles by
+study design, assigned once each in the order guideline > systematic review or meta-analysis >
+randomized controlled trial > other clinical trial > observational > other, from NLM publication
+types. It then reports which primary studies (randomized and other clinical trials) are cited by an
+in-graph guideline, systematic review or meta-analysis, how many distinct reviews cite them, and how
+many reviews and guidelines were published 2022-2026. CITES edges from an Article to itself are
+dropped. Output: `summary.json`, `design.csv`, `primary_studies.csv` (each primary study with its
+number of citing reviews) and `citing_reviews.csv`. Like the trial landscape tool it reads only the
+files listed in `manifest.json` / `zenodo_manifest.json` and caches what it needs as Parquet (about a
+minute on 16 cores the first time, seconds afterwards). The full definitions are in the script's
+docstring.
+
+On the v0.2.1 release, breast neoplasms (D001943, 9 descriptors) gives 53,369 Articles, of which
+5,201 are primary studies; 2,469 of them are cited by at least one of 2,058 in-graph reviews or
+guidelines. Identity-only stubs carry no publication types, MeSH or CITES edges in v0.2.x, so
+`--exclude-stubs` does not change MeSH-based maps.
+
+Tests (run against the bundled sample subgraph, plus a small hand-built graph for the citation rules):
+
+```bash
+pip install duckdb pytest
+pytest tests/test_evidence_map.py
+```
+
 ### Neo4j database dump
 
 A `neo4j-admin database dump` was taken of both the full graph and the sample for sizing purposes only (not distributed from this repo -- see [docs/DISTRIBUTION_ARTIFACTS.md](docs/DISTRIBUTION_ARTIFACTS.md) for the measured sizes and a Hugging Face / Zenodo hosting feasibility assessment). A pre-built dump may be published separately in a later release.

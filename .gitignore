@@ -6,3 +6,5 @@ neo4j_data/
 __pycache__/
 trial_landscape_out/
 trial_landscape_cache/
+evidence_map_out/
+evidence_map_cache/
