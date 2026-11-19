@@ -1,0 +1,7 @@
+articles,edges,edges_with_publication_type,population,protocol_articles,protocol_edges,role
+539317,736649,216211,with_stubs,487,536,BACKGROUND
+179610,202205,58150,with_stubs,3810,3854,DERIVED
+140372,156167,50672,with_stubs,157,162,RESULT
+146132,228957,216211,without_stubs,487,536,BACKGROUND
+55313,59557,58150,without_stubs,3810,3854,DERIVED
+45865,52878,50672,without_stubs,157,162,RESULT

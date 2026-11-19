@@ -1,0 +1,5 @@
+population,indexing,articles_with_ewing_branch,articles_without_ewing_branch,articles_only_through_ewing,articles_indexed_to_ewing_branch,articles_direct_on_osteosarcoma,pct_only_through_ewing
+with_stubs,any,4668,3590,1078,1312,3559,23.09
+without_stubs,any,4668,3590,1078,1312,3559,23.09
+with_stubs,major,3706,2764,942,1045,2734,25.42
+without_stubs,major,3706,2764,942,1045,2734,25.42

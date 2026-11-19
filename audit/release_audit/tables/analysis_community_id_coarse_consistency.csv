@@ -1,0 +1,3 @@
+groups_with_conflicting_sizes,groups_with_stored_size_less_than_observed,largest_observed_group,nonnegative_groups,population
+0,0,162346,4436,without_stubs
+0,0,162346,4436,with_stubs

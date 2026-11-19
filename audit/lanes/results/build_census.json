@@ -1,0 +1,38 @@
+{
+  "check_tags_resolved": 40,
+  "cites_self_links_removed": 24044,
+  "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+  "edges": {
+    "CITES": 31922142,
+    "CITES_BACKGROUND": 736649,
+    "HAS_BROADER": 42519,
+    "HAS_BROADER_ANCESTOR": 185654,
+    "HAS_DERIVED_PUBLICATION": 202205,
+    "HAS_MESH": 42720732,
+    "TRANSLATION_OF": 1016,
+    "VALIDATED_BY": 156167
+  },
+  "expected_stubs": 578177,
+  "manifest_count_agreement": {
+    "Article": true,
+    "CITES": true,
+    "CITES_BACKGROUND": true,
+    "ClinicalTrial": true,
+    "HAS_BROADER": true,
+    "HAS_BROADER_ANCESTOR": true,
+    "HAS_DERIVED_PUBLICATION": true,
+    "HAS_MESH": true,
+    "MeSHConcept": true,
+    "MedlinePlus": true,
+    "TRANSLATION_OF": true,
+    "VALIDATED_BY": true
+  },
+  "nodes": {
+    "Article": 3724062,
+    "ClinicalTrial": 606580,
+    "MeSHConcept": 31110,
+    "MedlinePlus": 2033
+  },
+  "seconds": 63.8,
+  "stubs": 578177
+}

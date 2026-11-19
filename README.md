@@ -160,6 +160,10 @@ pip install duckdb pytest
 pytest tests/test_evidence_map.py
 ```
 
+### 7. Audit materials
+
+[audit/](audit/README.md) holds the audit scripts, the exact SQL, the result tables, the reproducibility manifests and the audit write-ups for this release, all computed from the public release files. Its README maps each headline number of the preprint to the file and query that produces it, lists the SHA-256 of every input file, and gives a one-command rerun from scratch (`audit/scripts/run_lanes.sh`). What was left out or redacted, and why, is in [audit/EXCLUDED.md](audit/EXCLUDED.md).
+
 ### Neo4j database dump
 
 A `neo4j-admin database dump` was taken of both the full graph and the sample for sizing purposes only (not distributed from this repo -- see [docs/DISTRIBUTION_ARTIFACTS.md](docs/DISTRIBUTION_ARTIFACTS.md) for the measured sizes and a Hugging Face / Zenodo hosting feasibility assessment). A pre-built dump may be published separately in a later release.

@@ -1,0 +1,7 @@
+{
+  "population": {
+    "denominator": "Complete v02 topic population; strict shared descriptor bridge plus separately labeled trial source-ancestor sensitivity. v0.1 has no canonical identity-only layer.",
+    "parameters": [],
+    "sql": "WITH cov AS (SELECT x.topic,x.mode,p.population,bool_or(coalesce(c.gr,false) AND EXISTS(SELECT 1 FROM trial_mesh t WHERE t.object=x.descriptor)) same_bridge,bool_or(coalesce(c.gr_major,false) AND EXISTS(SELECT 1 FROM trial_mesh t WHERE t.object=x.descriptor)) same_major_bridge,bool_or(EXISTS(SELECT 1 FROM trial_qualified t WHERE t.study_aspect='condition' AND t.object=x.descriptor)) source_ancestor_trial,bool_or(coalesce(c.gr,false) AND EXISTS(SELECT 1 FROM trial_qualified t WHERE t.study_aspect='condition' AND t.object=x.descriptor)) source_ancestor_same_bridge FROM tx x CROSS JOIN (VALUES ('with_stubs'),('without_stubs')) p(population) LEFT JOIN tc c ON c.descriptor=x.descriptor AND c.population=p.population GROUP BY 1,2,3) SELECT population,mode,(SELECT count(*) FROM nodes WHERE label='MedlinePlus') topics,count(*) FILTER(WHERE same_bridge) topics_with_same_descriptor_guide_trial_bridge,count(*) FILTER(WHERE same_major_bridge) topics_with_same_major_descriptor_bridge,count(*) FILTER(WHERE source_ancestor_trial) topics_reaching_source_condition_ancestor_or_list_trial,count(*) FILTER(WHERE source_ancestor_same_bridge) topics_with_guide_and_source_ancestor_trial_same_bridge FROM cov GROUP BY 1,2 ORDER BY 1,2"
+  }
+}

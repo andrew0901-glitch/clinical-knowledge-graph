@@ -1,0 +1,15 @@
+area,kind,name,query_descriptor,seed,seed_id
+neurology,article,Epilepsy,MESH:D004827,article1,PMID:18711110
+neurology,article,"Sleep Apnea, Obstructive",MESH:D020181,article1,PMID:18711110
+neurology,article,Continuous Positive Airway Pressure,MESH:D045422,article1,PMID:18711110
+respiratory,article,Asthma,MESH:D001249,article2,PMID:9006232
+respiratory,article,Hispanic or Latino,MESH:D006630,article2,PMID:9006232
+respiratory,article,"Health Knowledge, Attitudes, Practice",MESH:D007722,article2,PMID:9006232
+respiratory,article,Patient Education as Topic,MESH:D010353,article2,PMID:9006232
+cardiovascular,article,Hypertension,MESH:D006973,article3,PMID:16585662
+cardiovascular,article,Life Style,MESH:D008019,article3,PMID:16585662
+cardiovascular,article,Health Behavior,MESH:D015438,article3,PMID:16585662
+neurology,topic,Epilepsy,MESH:D004827,topic1,lunasai:medlineplus_topic.244
+respiratory,topic,Asthma,MESH:D001249,topic2,lunasai:medlineplus_topic.1507
+cardiovascular,topic,Hypertension,MESH:D006973,topic3,lunasai:medlineplus_topic.34
+cardiovascular,topic,Prehypertension,MESH:D058246,topic3,lunasai:medlineplus_topic.34

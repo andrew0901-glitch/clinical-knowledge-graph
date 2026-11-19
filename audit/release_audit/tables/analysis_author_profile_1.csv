@@ -1,0 +1,11 @@
+articles,authorship_witness,descriptor,mesh_witness,name
+18,urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0,MESH:D009682,urn:uuid:cb604e14-6345-5090-8d7f-05b6e2b4bb09,Magnetic Resonance Spectroscopy
+12,urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0,MESH:D001921,urn:uuid:0731bd27-7e5f-5c35-8737-2315ad68e1fa,Brain
+10,urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0,MESH:D005680,urn:uuid:620a3537-1664-5514-832f-53965272b2c6,gamma-Aminobutyric Acid
+8,urn:uuid:588d0d3f-4a56-518b-8931-e94522de3fe0,MESH:D013997,urn:uuid:5ec146df-f1e6-5b8f-813a-83489e887c05,Time Factors
+7,urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0,MESH:D000927,urn:uuid:dc1b4060-2062-56b1-a411-8bb58ad283f9,Anticonvulsants
+5,urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0,MESH:D004827,urn:uuid:ddd312ca-35c3-59c8-96f2-3bfb9f5e3890,Epilepsy
+4,urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0,MESH:D002336,urn:uuid:086c5741-0382-5749-9e63-d71abf41750d,Carnosine
+4,urn:uuid:f6bc6519-8d7b-5e36-9a75-40f37d73ff81,MESH:D007773,urn:uuid:30d91582-a42c-5cc4-8bb0-977586eda424,Lactates
+4,urn:uuid:07a837ef-6140-5013-afbd-fc33a2381f0f,MESH:D008279,urn:uuid:26c1c0c6-4f76-5f95-ba13-32c95f7edb5b,Magnetic Resonance Imaging
+4,urn:uuid:b1c67061-42e5-5cdc-95e5-0ba5cb0754ae,MESH:D009778,urn:uuid:f9466ae5-2a84-522b-9726-3e08935d4eff,Occipital Lobe

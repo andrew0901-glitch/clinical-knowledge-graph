@@ -1,0 +1,30 @@
+{
+  "identity_only_articles": {
+    "note": "Article nodes; identity-only = lunasai_layer 'ctgov_identity_only' (build.py column stub)",
+    "parameters": [],
+    "sql": "\n        SELECT count(*) AS articles, count(*) FILTER (WHERE stub) AS identity_only,\n               count(*) FILTER (WHERE NOT stub) AS without_stubs FROM article"
+  },
+  "medlineplus_english_full_expansion": {
+    "note": "rows mode='full', topic_set='english' of tables/lane2_topic_table_english.csv (SQL: lane2_medlineplus_queries.json); identical with and without stubs",
+    "parameters": [],
+    "sql": null
+  },
+  "paper_check": {
+    "note": "computed value vs the number printed in the preprint",
+    "parameters": [],
+    "sql": null
+  },
+  "totals": {
+    "note": "independent row count over the manifest-listed node and edge files",
+    "parameters": "<node files>, <edge files>",
+    "sql": [
+      "SELECT count(*) FROM read_json(?, format='newline_delimited', columns={'id': 'VARCHAR'})",
+      "SELECT count(*) FROM read_json(?, format='newline_delimited', columns={'id': 'VARCHAR'})"
+    ]
+  },
+  "trial_results_chain": {
+    "note": "Native VALIDATED_BY (RESULT role) Article->ClinicalTrial links; guideline/SR citers, CITES self-links removed; stubs removed as results Articles and as citers in the without_stubs population.",
+    "parameters": [],
+    "sql": "\n        WITH links AS (SELECT subject AS article, object AS trial FROM e WHERE type = 'VALIDATED_BY'),\n        hit AS (SELECT DISTINCT ci.cited AS article, p.population\n                FROM cites ci JOIN article g ON g.id = ci.citer CROSS JOIN populations p\n                WHERE list_has_any(g.pub_types, ['Guideline', 'Practice Guideline', 'Systematic Review'])\n                  AND (NOT p.exclude_stubs OR NOT g.stub))\n        SELECT p.population,\n               (SELECT count(*) FROM nodes WHERE label = 'ClinicalTrial') AS trials,\n               count(DISTINCT l.trial) AS trials_with_results,\n               count(DISTINCT l.article) AS result_articles,\n               count(DISTINCT l.article) FILTER (WHERE h.article IS NOT NULL) AS result_articles_cited_by_guideline_or_sr,\n               count(DISTINCT l.trial) FILTER (WHERE h.article IS NOT NULL) AS trials_with_results_cited_by_guideline_or_sr\n        FROM links l JOIN article a ON a.id = l.article CROSS JOIN populations p\n        LEFT JOIN hit h ON h.article = l.article AND h.population = p.population\n        WHERE NOT p.exclude_stubs OR NOT a.stub\n        GROUP BY p.population ORDER BY p.population DESC"
+  }
+}

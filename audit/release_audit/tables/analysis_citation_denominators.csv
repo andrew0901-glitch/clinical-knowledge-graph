@@ -1,0 +1,3 @@
+articles,articles_cited_in_corpus,citation_edge_rows,distinct_nonself_citing_pairs,population,self_link_rows
+3724062,2409164,31922142,31898098,with_stubs,24044
+3145885,2409164,31922142,31898098,without_stubs,24044

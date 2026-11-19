@@ -1,0 +1,23 @@
+seed,mode,article,query_descriptor,branch,branch_name
+article1,full,PMID:15111660,MESH:D004827,MESH:D004828,"Epilepsies, Partial"
+article1,full,PMID:15111660,MESH:D004827,MESH:D004829,"Epilepsy, Generalized"
+article1,one,PMID:15111660,MESH:D004827,MESH:D004828,"Epilepsies, Partial"
+article1,one,PMID:15111660,MESH:D004827,MESH:D004829,"Epilepsy, Generalized"
+article3,full,PMID:19389060,MESH:D015438,MESH:D000074822,Treatment Adherence and Compliance
+article3,full,PMID:21455122,MESH:D015438,MESH:D000074822,Treatment Adherence and Compliance
+article3,full,PMID:25537780,MESH:D015438,MESH:D000074822,Treatment Adherence and Compliance
+article3,full,PMID:27903559,MESH:D008019,MESH:D000070497,Healthy Lifestyle
+article3,full,PMID:27903559,MESH:D015438,MESH:D000074822,Treatment Adherence and Compliance
+article3,full,PMID:28697259,MESH:D008019,MESH:D000070497,Healthy Lifestyle
+article3,full,PMID:34732063,MESH:D008019,MESH:D000070497,Healthy Lifestyle
+article3,one,PMID:34732063,MESH:D008019,MESH:D000070497,Healthy Lifestyle
+topic1,full,PMID:1393499,MESH:D004827,MESH:D000073376,Epileptic Syndromes
+topic1,full,PMID:1393499,MESH:D004827,MESH:D004828,"Epilepsies, Partial"
+topic3,full,PMID:22727352,MESH:D006973,MESH:D046110,"Hypertension, Pregnancy-Induced"
+topic3,full,PMID:23608649,MESH:D006973,MESH:D059466,White Coat Hypertension
+topic3,full,PMID:33157064,MESH:D006973,MESH:D046110,"Hypertension, Pregnancy-Induced"
+topic3,full,PMID:35351534,MESH:D006973,MESH:D059466,White Coat Hypertension
+topic3,one,PMID:22727352,MESH:D006973,MESH:D046110,"Hypertension, Pregnancy-Induced"
+topic3,one,PMID:23608649,MESH:D006973,MESH:D059466,White Coat Hypertension
+topic3,one,PMID:33157064,MESH:D006973,MESH:D046110,"Hypertension, Pregnancy-Induced"
+topic3,one,PMID:35351534,MESH:D006973,MESH:D059466,White Coat Hypertension

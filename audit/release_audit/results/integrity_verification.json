@@ -1,0 +1,39 @@
+{
+  "code_commit": "a9abc9fa24632dd66531cebe8665ae8813147193",
+  "duplicate_edge_ids": 0,
+  "duplicate_node_ids": 0,
+  "edges": 105758066,
+  "endpoint_occurrences": 211516132,
+  "method": "Independent GNU sort/uniq ID census and comm set difference against all node IDs; primary SQL counts/distinct/hash joins not reused as proof.",
+  "missing_endpoint_ids": 0,
+  "nodes": 12067108,
+  "passed": true,
+  "sort_options": [
+    "LC_ALL=C",
+    "-S 2G",
+    "--parallel=4"
+  ],
+  "sql": {
+    "edge_ids": {
+      "parameters": [
+        "<CLINICAL_KG_WORK>/integrity_sort/edge_ids.txt"
+      ],
+      "records": 105758066,
+      "sql": "COPY (SELECT id FROM e) TO ? (FORMAT CSV, HEADER false)"
+    },
+    "endpoints": {
+      "parameters": [
+        "<CLINICAL_KG_WORK>/integrity_sort/endpoints.txt"
+      ],
+      "records": 211516132,
+      "sql": "COPY (SELECT subject id FROM e UNION ALL SELECT object FROM e) TO ? (FORMAT CSV, HEADER false)"
+    },
+    "node_ids": {
+      "parameters": [
+        "<CLINICAL_KG_WORK>/integrity_sort/node_ids.txt"
+      ],
+      "records": 12067108,
+      "sql": "COPY (SELECT id FROM nodes) TO ? (FORMAT CSV, HEADER false)"
+    }
+  }
+}

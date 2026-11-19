@@ -1,0 +1,412 @@
+[
+ {
+  "item": "scripts/baseline.py",
+  "kind": "excluded script",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files (reads the v0.1 cache)"
+ },
+ {
+  "item": "scripts/compare.py",
+  "kind": "excluded script",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "scripts/record_diff.py",
+  "kind": "excluded script",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "scripts/reconcile.py",
+  "kind": "excluded script",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files (reads v0.1 ctgov_publications.jsonl)"
+ },
+ {
+  "item": "scripts/verify_reconciliation.py",
+  "kind": "excluded script",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "scripts/verify_corrections.py",
+  "kind": "excluded script",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "scripts/source_provenance.py",
+  "kind": "excluded script",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files (attaches the pre-correction DB)"
+ },
+ {
+  "item": "scripts/report.py",
+  "kind": "excluded script",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files and depends on the pre-correction build (never released); not computable from the public files (renders the v0.1/pre-correction comparison documents)"
+ },
+ {
+  "item": "scripts/manifest.py",
+  "kind": "excluded script",
+  "reason": "built from private caches; replaced by audit/manifests/ (rebuilt from the published files)"
+ },
+ {
+  "item": "scripts/freeze_copy.py",
+  "kind": "excluded script",
+  "reason": "private machine paths / local-only copy step"
+ },
+ {
+  "item": "scripts/fetch_published.py",
+  "kind": "excluded script",
+  "reason": "replaced by audit/scripts/fetch_release.py (private mirror path)"
+ },
+ {
+  "item": "scripts/common.py",
+  "kind": "edited script",
+  "reason": "private cache/prior-audit paths replaced by the single CLINICAL_KG_DATA path; pre-correction and v0.1 constants removed"
+ },
+ {
+  "item": "scripts/verify_inputs.py",
+  "kind": "edited script",
+  "reason": "rewritten for the public data layout (graph files; optional files only if present); no private paths; no check against a v0.2.0-only receipt"
+ },
+ {
+  "item": "scripts/seed_data.py",
+  "kind": "new file",
+  "reason": "constants (40 check tags, 6 seed node ids) vendored from the earlier audit tree so prepare.py needs nothing outside the release"
+ },
+ {
+  "item": "scripts/prepare.py",
+  "kind": "edited script",
+  "reason": "input root -> CLINICAL_KG_DATA; check-tag list and seeds read from vendored seed_data.py instead of the earlier audit tree"
+ },
+ {
+  "item": "scripts/scan.py, scripts/extra_checks.py",
+  "kind": "edited script",
+  "reason": "input root -> CLINICAL_KG_DATA (was a path stored in a result file)"
+ },
+ {
+  "item": "scripts/strict_chains.py",
+  "kind": "edited script",
+  "reason": "v0.1 control block removed (needs the v0.1 databases); v0.2 computation and its independent Python re-score unchanged"
+ },
+ {
+  "item": "scripts/topic_sensitivity.py",
+  "kind": "edited script",
+  "reason": "v0.1 run removed (needs the v0.1 database); v0.2 run and its independent re-score unchanged"
+ },
+ {
+  "item": "results/comparison_summary.json",
+  "kind": "excluded result",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "results/copy_receipt.json",
+  "kind": "excluded result",
+  "reason": "private machine paths / local-only copy step"
+ },
+ {
+  "item": "results/correction_canonical_mismatches.json",
+  "kind": "excluded result",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "results/correction_source_mismatches.json",
+  "kind": "excluded result",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files (the 38 collapsed pairs)"
+ },
+ {
+  "item": "results/correction_verification.json",
+  "kind": "excluded result",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "results/freeze_verification.json",
+  "kind": "excluded result",
+  "reason": "private machine paths / local-only copy step (frozen local copy check)"
+ },
+ {
+  "item": "results/reconciliation.json",
+  "kind": "excluded result",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "results/reconciliation_preparation_queries.json",
+  "kind": "excluded result",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files and private paths"
+ },
+ {
+  "item": "results/reconciliation_queries.json",
+  "kind": "excluded result",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "results/reconciliation_verification.json",
+  "kind": "excluded result",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "results/record_changes.json",
+  "kind": "excluded result",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "results/record_diff.json",
+  "kind": "excluded result",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "results/source_README.md",
+  "kind": "excluded result",
+  "reason": "copy of the v0.2.0 dataset card (already public in the release); omitted, it names the pending licensing decision on the separately governed annotation layer"
+ },
+ {
+  "item": "results/source_provenance.json",
+  "kind": "excluded result",
+  "reason": "mixed: contains the pre-correction half; published half republished as source_provenance_published.json"
+ },
+ {
+  "item": "results/source_provenance_queries.json",
+  "kind": "excluded result",
+  "reason": "mixed: pre-correction half removed; published half republished"
+ },
+ {
+  "item": "results/strict_chains_v01.json",
+  "kind": "excluded result",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "results/strict_chains_v01_queries.json",
+  "kind": "excluded result",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "results/table_comparison_notes.json",
+  "kind": "excluded result",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "results/topic_sensitivity_v01.json",
+  "kind": "excluded result",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "results/topic_sensitivity_v01_queries.json",
+  "kind": "excluded result",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "results/v01_controls.json",
+  "kind": "excluded result",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "results/v01_controls_queries.json",
+  "kind": "excluded result",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "results/source_provenance_published*.json",
+  "kind": "redacted copy",
+  "reason": "'precorrection' half removed; 'published' half kept (computed from the release)"
+ },
+ {
+  "item": "results/source_provenance_verification.json",
+  "kind": "excluded result",
+  "reason": "verification of the mixed pre-correction/published computation"
+ },
+ {
+  "item": "tables/analytics_states.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/changes_headline_metrics.csv",
+  "kind": "excluded table",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "tables/changes_ranking_identity.csv",
+  "kind": "excluded table",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "tables/changes_table_cells.csv",
+  "kind": "excluded table",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "tables/defects_pmc_mapping_comparison.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/metadata_field_comparison.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/node_family_comparison.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/ranking_candidate_comparison.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/ranking_metric_comparison.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/reconciliation_by_role.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/reconciliation_legacy_overlap.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/reconciliation_new_multiplicity.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/reconciliation_old_multiplicity.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/reconciliation_pair_unions.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/reconciliation_role_changes_examples.csv",
+  "kind": "excluded table",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "tables/reconciliation_source_merging.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/relationship_comparison.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/source_provenance_precorrection.csv",
+  "kind": "excluded table",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "tables/strict_chains_v01_v01.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/topic_bridge_sensitivity_comparison.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/topic_sensitivity_v01_population.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/v01_controls_topic_population_downward.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/zenodo_record_files.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "tables/zenodo_record_owners.csv",
+  "kind": "excluded table",
+  "reason": "compares with release v0.1.0 / an earlier audit tree; not computed from the 107 v0.2.1 files"
+ },
+ {
+  "item": "figures/ranking_candidates.png",
+  "kind": "excluded figure",
+  "reason": "plots a v0.1 series next to v0.2"
+ },
+ {
+  "item": "figures/ranking_candidates.svg",
+  "kind": "excluded figure",
+  "reason": "plots a v0.1 series next to v0.2"
+ },
+ {
+  "item": "figures/trial_connectivity.png",
+  "kind": "excluded figure",
+  "reason": "plots a v0.1 series next to v0.2"
+ },
+ {
+  "item": "figures/trial_connectivity.svg",
+  "kind": "excluded figure",
+  "reason": "plots a v0.1 series next to v0.2"
+ },
+ {
+  "item": "results/extra_queries.json, results/headline_verification.json, results/input_verification.json, results/integrity_verification.json, results/preparation_queries.json, results/raw_census.json, results/with_stubs/execution.json, results/with_stubs/ranking_variants_verification.json, results/without_stubs/execution.json, results/without_stubs/ranking_variants_verification.json",
+  "kind": "scrubbed (paths only)",
+  "reason": "machine-specific data/cache paths replaced by <CLINICAL_KG_DATA> / <CLINICAL_KG_WORK> placeholders; no values changed"
+ },
+ {
+  "item": "results/strict_chains_verification.json, results/topic_sensitivity_verification.json",
+  "kind": "edited result (text only)",
+  "reason": "'method' sentence no longer mentions the removed v0.1 controls; verdicts unchanged"
+ },
+ {
+  "item": "docs/PAPER_HEADLINES.md",
+  "kind": "redacted copy",
+  "reason": "v0.1.0-comparison columns/rows/sections, pre-correction passages and the 38-pair source-loss finding removed; scope note added"
+ },
+ {
+  "item": "docs/DATA_ISSUES.md",
+  "kind": "redacted copy",
+  "reason": "v0.1.0-comparison columns/rows/sections, pre-correction passages and the 38-pair source-loss finding removed; scope note added"
+ },
+ {
+  "item": "docs/METADATA_CHECKS.md",
+  "kind": "redacted copy",
+  "reason": "v0.1.0-comparison columns/rows/sections, pre-correction passages and the 38-pair source-loss finding removed; scope note added"
+ },
+ {
+  "item": "docs/TRAVERSALS_ADDENDUM.md",
+  "kind": "redacted copy",
+  "reason": "v0.1.0-comparison columns/rows/sections, pre-correction passages and the 38-pair source-loss finding removed; scope note added"
+ },
+ {
+  "item": "CHANGES_SINCE_PRECORRECTION.md",
+  "kind": "excluded document",
+  "reason": "depends on the pre-correction build (never released); not computable from the public files"
+ },
+ {
+  "item": "PAPER_HEADLINES.pdf",
+  "kind": "excluded document",
+  "reason": "rendered from the comparison script; contains the pre-correction sentences"
+ },
+ {
+  "item": "PUBLICATION_READINESS.md",
+  "kind": "excluded document",
+  "reason": "internal readiness assessment for the authors, not requested audit material; cites the pre-correction comparison"
+ },
+ {
+  "item": "SUMMARY.md",
+  "kind": "excluded document",
+  "reason": "replaced by audit/README.md"
+ },
+ {
+  "item": "RUNBOOK.md",
+  "kind": "excluded document",
+  "reason": "replaced by audit/RUNBOOK.md (original has private paths and the pre-correction run)"
+ },
+ {
+  "item": "REPRODUCIBILITY_MANIFEST.json",
+  "kind": "excluded document",
+  "reason": "redacted copy rebuilt as audit/manifests/REPRODUCIBILITY_MANIFEST.public.json"
+ }
+]

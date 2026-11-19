@@ -1,0 +1,7 @@
+mode,population,reaching_both,reaching_condition_trial,reaching_guideline_or_review,reaching_major_both,reaching_major_guideline_or_review,topics
+full,with_stubs,1496,1498,2021,1496,2019,2033
+none,with_stubs,1438,1440,2021,1438,2017,2033
+one,with_stubs,1478,1480,2021,1478,2019,2033
+full,without_stubs,1496,1498,2021,1496,2019,2033
+none,without_stubs,1438,1440,2021,1438,2017,2033
+one,without_stubs,1478,1480,2021,1478,2019,2033

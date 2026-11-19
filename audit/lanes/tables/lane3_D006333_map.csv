@@ -1,0 +1,5 @@
+condition,indexing,population,descriptors,articles,guideline,sr_or_ma,rct,other_trial,observational,other,primary_studies,primary_cited_by_review,primary_not_cited_by_review,rct_cited_by_review,other_trial_cited_by_review,distinct_citing_reviews,distinct_citing_reviews_in_map,sr_or_ma_2022_2026,guideline_2022_2026,articles_without_year
+D006333,any,with_stubs,6,16709,29,496,1886,401,501,13396,2287,1122,1165,1002,120,1477,342,178,15,0
+D006333,any,without_stubs,6,16709,29,496,1886,401,501,13396,2287,1122,1165,1002,120,1477,342,178,15,0
+D006333,major,with_stubs,6,13500,25,410,1653,329,413,10670,1982,954,1028,863,91,1134,290,162,15,0
+D006333,major,without_stubs,6,13500,25,410,1653,329,413,10670,1982,954,1028,863,91,1134,290,162,15,0

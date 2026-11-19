@@ -1,0 +1,15 @@
+any_pmc_route,articles,pmc_link,pmcid,population,traversal
+1172507,2790093,1172507,1153794,with_stubs,author_indexed_articles
+1172507,2790093,1172507,1153794,without_stubs,author_indexed_articles
+46107,539317,46107,45940,with_stubs,background_publications
+46093,146132,46093,45940,without_stubs,background_publications
+1038861,2546024,1038861,1030251,with_stubs,citation_shared_neighbors
+1038861,2546024,1038861,1030251,without_stubs,citation_shared_neighbors
+1139,6350,1139,1107,with_stubs,journal_guidelines
+1139,6350,1139,1107,without_stubs,journal_guidelines
+7282,23467,7282,7254,with_stubs,results_cited_by_guideline_systematic
+7282,23467,7282,7254,without_stubs,results_cited_by_guideline_systematic
+18818,140372,18818,14428,with_stubs,results_publications
+17594,45865,17594,14428,without_stubs,results_publications
+88126,263927,88126,86120,with_stubs,topic_guidelines_reviews
+88126,263927,88126,86120,without_stubs,topic_guidelines_reviews

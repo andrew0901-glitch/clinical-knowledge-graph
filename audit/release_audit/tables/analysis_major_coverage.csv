@@ -1,0 +1,5 @@
+edge_major,edges,population
+False,25474424,with_stubs
+True,10428762,with_stubs
+False,25474424,without_stubs
+True,10428762,without_stubs

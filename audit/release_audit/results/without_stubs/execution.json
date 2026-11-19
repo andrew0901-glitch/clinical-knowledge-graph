@@ -1,0 +1,8 @@
+{
+  "code_commit": "21d8455b40b1c876e45cc208eda021e711d021c3",
+  "invocation": [
+    "audit/release_audit/scripts/rank.py"
+  ],
+  "population": "without_stubs",
+  "source_manifest_sha256": "d8db915388aaa8dbb363909c76221d9928ba39479f445095349887c2bfc3a129"
+}

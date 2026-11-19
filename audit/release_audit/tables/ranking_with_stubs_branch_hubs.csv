@@ -1,0 +1,61 @@
+branch,hierarchy_only_incidence,k,list_size,mode,name,query_descriptor,seed,top_list_incidence,variant
+MESH:D004828,1,20,12,full,"Epilepsies, Partial",MESH:D004827,article1,1,count
+MESH:D004829,1,20,12,full,"Epilepsy, Generalized",MESH:D004827,article1,1,count
+MESH:D004828,1,100,12,full,"Epilepsies, Partial",MESH:D004827,article1,1,count
+MESH:D004829,1,100,12,full,"Epilepsy, Generalized",MESH:D004827,article1,1,count
+MESH:D004828,1,20,12,full,"Epilepsies, Partial",MESH:D004827,article1,1,current
+MESH:D004829,1,20,12,full,"Epilepsy, Generalized",MESH:D004827,article1,1,current
+MESH:D004828,1,100,12,full,"Epilepsies, Partial",MESH:D004827,article1,1,current
+MESH:D004829,1,100,12,full,"Epilepsy, Generalized",MESH:D004827,article1,1,current
+MESH:D004828,1,20,12,full,"Epilepsies, Partial",MESH:D004827,article1,1,idf
+MESH:D004829,1,20,12,full,"Epilepsy, Generalized",MESH:D004827,article1,1,idf
+MESH:D004828,1,100,12,full,"Epilepsies, Partial",MESH:D004827,article1,1,idf
+MESH:D004829,1,100,12,full,"Epilepsy, Generalized",MESH:D004827,article1,1,idf
+MESH:D004828,1,20,12,one,"Epilepsies, Partial",MESH:D004827,article1,1,count
+MESH:D004829,1,20,12,one,"Epilepsy, Generalized",MESH:D004827,article1,1,count
+MESH:D004828,1,100,12,one,"Epilepsies, Partial",MESH:D004827,article1,1,count
+MESH:D004829,1,100,12,one,"Epilepsy, Generalized",MESH:D004827,article1,1,count
+MESH:D004828,1,20,12,one,"Epilepsies, Partial",MESH:D004827,article1,1,current
+MESH:D004829,1,20,12,one,"Epilepsy, Generalized",MESH:D004827,article1,1,current
+MESH:D004828,1,100,12,one,"Epilepsies, Partial",MESH:D004827,article1,1,current
+MESH:D004829,1,100,12,one,"Epilepsy, Generalized",MESH:D004827,article1,1,current
+MESH:D004828,1,20,12,one,"Epilepsies, Partial",MESH:D004827,article1,1,idf
+MESH:D004829,1,20,12,one,"Epilepsy, Generalized",MESH:D004827,article1,1,idf
+MESH:D004828,1,100,12,one,"Epilepsies, Partial",MESH:D004827,article1,1,idf
+MESH:D004829,1,100,12,one,"Epilepsy, Generalized",MESH:D004827,article1,1,idf
+MESH:D000070497,0,20,20,full,Healthy Lifestyle,MESH:D008019,article3,2,count
+MESH:D000074822,0,20,20,full,Treatment Adherence and Compliance,MESH:D015438,article3,1,count
+MESH:D000074822,2,100,36,full,Treatment Adherence and Compliance,MESH:D015438,article3,4,count
+MESH:D000070497,1,100,36,full,Healthy Lifestyle,MESH:D008019,article3,3,count
+MESH:D000070497,0,20,20,full,Healthy Lifestyle,MESH:D008019,article3,2,current
+MESH:D000074822,0,20,20,full,Treatment Adherence and Compliance,MESH:D015438,article3,1,current
+MESH:D000074822,2,100,36,full,Treatment Adherence and Compliance,MESH:D015438,article3,4,current
+MESH:D000070497,1,100,36,full,Healthy Lifestyle,MESH:D008019,article3,3,current
+MESH:D000070497,0,20,20,full,Healthy Lifestyle,MESH:D008019,article3,2,idf
+MESH:D000074822,0,20,20,full,Treatment Adherence and Compliance,MESH:D015438,article3,2,idf
+MESH:D000074822,2,100,36,full,Treatment Adherence and Compliance,MESH:D015438,article3,4,idf
+MESH:D000070497,1,100,36,full,Healthy Lifestyle,MESH:D008019,article3,3,idf
+MESH:D000070497,0,20,20,one,Healthy Lifestyle,MESH:D008019,article3,1,count
+MESH:D000070497,0,100,34,one,Healthy Lifestyle,MESH:D008019,article3,1,count
+MESH:D000070497,0,20,20,one,Healthy Lifestyle,MESH:D008019,article3,1,current
+MESH:D000070497,0,100,34,one,Healthy Lifestyle,MESH:D008019,article3,1,current
+MESH:D000070497,0,20,20,one,Healthy Lifestyle,MESH:D008019,article3,1,idf
+MESH:D000070497,0,100,34,one,Healthy Lifestyle,MESH:D008019,article3,1,idf
+MESH:D000073376,0,100,100,full,Epileptic Syndromes,MESH:D004827,topic1,1,count
+MESH:D004828,0,100,100,full,"Epilepsies, Partial",MESH:D004827,topic1,1,count
+MESH:D000073376,0,100,100,full,Epileptic Syndromes,MESH:D004827,topic1,1,current
+MESH:D004828,0,100,100,full,"Epilepsies, Partial",MESH:D004827,topic1,1,current
+MESH:D000073376,0,100,100,full,Epileptic Syndromes,MESH:D004827,topic1,1,idf
+MESH:D004828,0,100,100,full,"Epilepsies, Partial",MESH:D004827,topic1,1,idf
+MESH:D046110,0,100,100,full,"Hypertension, Pregnancy-Induced",MESH:D006973,topic3,2,count
+MESH:D059466,0,100,100,full,White Coat Hypertension,MESH:D006973,topic3,2,count
+MESH:D046110,0,100,100,full,"Hypertension, Pregnancy-Induced",MESH:D006973,topic3,2,current
+MESH:D059466,0,100,100,full,White Coat Hypertension,MESH:D006973,topic3,2,current
+MESH:D046110,0,100,100,full,"Hypertension, Pregnancy-Induced",MESH:D006973,topic3,2,idf
+MESH:D059466,0,100,100,full,White Coat Hypertension,MESH:D006973,topic3,2,idf
+MESH:D046110,0,100,100,one,"Hypertension, Pregnancy-Induced",MESH:D006973,topic3,2,count
+MESH:D059466,0,100,100,one,White Coat Hypertension,MESH:D006973,topic3,2,count
+MESH:D046110,0,100,100,one,"Hypertension, Pregnancy-Induced",MESH:D006973,topic3,2,current
+MESH:D059466,0,100,100,one,White Coat Hypertension,MESH:D006973,topic3,2,current
+MESH:D046110,0,100,100,one,"Hypertension, Pregnancy-Induced",MESH:D006973,topic3,2,idf
+MESH:D059466,0,100,100,one,White Coat Hypertension,MESH:D006973,topic3,2,idf

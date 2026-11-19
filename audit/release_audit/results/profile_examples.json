@@ -1,0 +1,512 @@
+{
+  "author_1": [
+    {
+      "articles": 18,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D009682",
+      "mesh_witness": "urn:uuid:cb604e14-6345-5090-8d7f-05b6e2b4bb09",
+      "name": "Magnetic Resonance Spectroscopy",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 12,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D001921",
+      "mesh_witness": "urn:uuid:0731bd27-7e5f-5c35-8737-2315ad68e1fa",
+      "name": "Brain",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 10,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D005680",
+      "mesh_witness": "urn:uuid:620a3537-1664-5514-832f-53965272b2c6",
+      "name": "gamma-Aminobutyric Acid",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 8,
+      "authorship_witness": "urn:uuid:588d0d3f-4a56-518b-8931-e94522de3fe0",
+      "descriptor": "MESH:D013997",
+      "mesh_witness": "urn:uuid:5ec146df-f1e6-5b8f-813a-83489e887c05",
+      "name": "Time Factors",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 7,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D000927",
+      "mesh_witness": "urn:uuid:dc1b4060-2062-56b1-a411-8bb58ad283f9",
+      "name": "Anticonvulsants",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 5,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D004827",
+      "mesh_witness": "urn:uuid:ddd312ca-35c3-59c8-96f2-3bfb9f5e3890",
+      "name": "Epilepsy",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D002336",
+      "mesh_witness": "urn:uuid:086c5741-0382-5749-9e63-d71abf41750d",
+      "name": "Carnosine",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:f6bc6519-8d7b-5e36-9a75-40f37d73ff81",
+      "descriptor": "MESH:D007773",
+      "mesh_witness": "urn:uuid:30d91582-a42c-5cc4-8bb0-977586eda424",
+      "name": "Lactates",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:07a837ef-6140-5013-afbd-fc33a2381f0f",
+      "descriptor": "MESH:D008279",
+      "mesh_witness": "urn:uuid:26c1c0c6-4f76-5f95-ba13-32c95f7edb5b",
+      "name": "Magnetic Resonance Imaging",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:b1c67061-42e5-5cdc-95e5-0ba5cb0754ae",
+      "descriptor": "MESH:D009778",
+      "mesh_witness": "urn:uuid:f9466ae5-2a84-522b-9726-3e08935d4eff",
+      "name": "Occipital Lobe",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 18,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D009682",
+      "mesh_witness": "urn:uuid:cb604e14-6345-5090-8d7f-05b6e2b4bb09",
+      "name": "Magnetic Resonance Spectroscopy",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 12,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D001921",
+      "mesh_witness": "urn:uuid:0731bd27-7e5f-5c35-8737-2315ad68e1fa",
+      "name": "Brain",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 10,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D005680",
+      "mesh_witness": "urn:uuid:620a3537-1664-5514-832f-53965272b2c6",
+      "name": "gamma-Aminobutyric Acid",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 8,
+      "authorship_witness": "urn:uuid:588d0d3f-4a56-518b-8931-e94522de3fe0",
+      "descriptor": "MESH:D013997",
+      "mesh_witness": "urn:uuid:5ec146df-f1e6-5b8f-813a-83489e887c05",
+      "name": "Time Factors",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 7,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D000927",
+      "mesh_witness": "urn:uuid:dc1b4060-2062-56b1-a411-8bb58ad283f9",
+      "name": "Anticonvulsants",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 5,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D004827",
+      "mesh_witness": "urn:uuid:ddd312ca-35c3-59c8-96f2-3bfb9f5e3890",
+      "name": "Epilepsy",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D002336",
+      "mesh_witness": "urn:uuid:086c5741-0382-5749-9e63-d71abf41750d",
+      "name": "Carnosine",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:f6bc6519-8d7b-5e36-9a75-40f37d73ff81",
+      "descriptor": "MESH:D007773",
+      "mesh_witness": "urn:uuid:30d91582-a42c-5cc4-8bb0-977586eda424",
+      "name": "Lactates",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:07a837ef-6140-5013-afbd-fc33a2381f0f",
+      "descriptor": "MESH:D008279",
+      "mesh_witness": "urn:uuid:26c1c0c6-4f76-5f95-ba13-32c95f7edb5b",
+      "name": "Magnetic Resonance Imaging",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:b1c67061-42e5-5cdc-95e5-0ba5cb0754ae",
+      "descriptor": "MESH:D009778",
+      "mesh_witness": "urn:uuid:f9466ae5-2a84-522b-9726-3e08935d4eff",
+      "name": "Occipital Lobe",
+      "population": "without_stubs"
+    }
+  ],
+  "author_2": [
+    {
+      "articles": 92,
+      "authorship_witness": "urn:uuid:a7780163-b7f3-544a-bb07-4aa57aa8f539",
+      "descriptor": "MESH:D001249",
+      "mesh_witness": "urn:uuid:ff2933d5-66db-5ea2-8655-1d876f81dce9",
+      "name": "Asthma",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 46,
+      "authorship_witness": "urn:uuid:3229a724-362f-5ecf-b164-2f77ac97054f",
+      "descriptor": "MESH:D018592",
+      "mesh_witness": "urn:uuid:1bd003d0-c218-5ef6-abd0-9cfed18f4396",
+      "name": "Cross-Over Studies",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 42,
+      "authorship_witness": "urn:uuid:3229a724-362f-5ecf-b164-2f77ac97054f",
+      "descriptor": "MESH:D004311",
+      "mesh_witness": "urn:uuid:45f481cf-07bb-5f2d-9815-3b79e688352a",
+      "name": "Double-Blind Method",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 40,
+      "authorship_witness": "urn:uuid:9aa378cd-dbc7-5da7-9599-7c3f59308d55",
+      "descriptor": "MESH:D000280",
+      "mesh_witness": "urn:uuid:9fa97d2b-a216-541d-aa59-0722d1c73e61",
+      "name": "Administration, Inhalation",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 28,
+      "authorship_witness": "urn:uuid:fe6e8172-8b41-5116-ae51-b71cbcae67f2",
+      "descriptor": "MESH:D004305",
+      "mesh_witness": "urn:uuid:7bed38d8-9109-5d87-ab90-72df5108e58c",
+      "name": "Dose-Response Relationship, Drug",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 27,
+      "authorship_witness": "urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc",
+      "descriptor": "MESH:D001993",
+      "mesh_witness": "urn:uuid:44c599ac-918e-5333-b01f-cce3a74c74c3",
+      "name": "Bronchodilator Agents",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 27,
+      "authorship_witness": "urn:uuid:a7780163-b7f3-544a-bb07-4aa57aa8f539",
+      "descriptor": "MESH:D018927",
+      "mesh_witness": "urn:uuid:0bc564ce-f78b-53b6-b655-e27f2089b0f7",
+      "name": "Anti-Asthmatic Agents",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 26,
+      "authorship_witness": "urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc",
+      "descriptor": "MESH:D000420",
+      "mesh_witness": "urn:uuid:9412e046-2500-5fdc-977e-18313dc2193b",
+      "name": "Albuterol",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 24,
+      "authorship_witness": "urn:uuid:3ba3d0ed-f66b-5258-9d0e-56146d2b39c9",
+      "descriptor": "MESH:D000893",
+      "mesh_witness": "urn:uuid:ace5a88e-c929-52c1-ba1a-8b31e28967ea",
+      "name": "Anti-Inflammatory Agents",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 24,
+      "authorship_witness": "urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc",
+      "descriptor": "MESH:D005541",
+      "mesh_witness": "urn:uuid:4844a700-9f36-5f83-b36c-8c64de591f4c",
+      "name": "Forced Expiratory Volume",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 92,
+      "authorship_witness": "urn:uuid:a7780163-b7f3-544a-bb07-4aa57aa8f539",
+      "descriptor": "MESH:D001249",
+      "mesh_witness": "urn:uuid:ff2933d5-66db-5ea2-8655-1d876f81dce9",
+      "name": "Asthma",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 46,
+      "authorship_witness": "urn:uuid:3229a724-362f-5ecf-b164-2f77ac97054f",
+      "descriptor": "MESH:D018592",
+      "mesh_witness": "urn:uuid:1bd003d0-c218-5ef6-abd0-9cfed18f4396",
+      "name": "Cross-Over Studies",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 42,
+      "authorship_witness": "urn:uuid:3229a724-362f-5ecf-b164-2f77ac97054f",
+      "descriptor": "MESH:D004311",
+      "mesh_witness": "urn:uuid:45f481cf-07bb-5f2d-9815-3b79e688352a",
+      "name": "Double-Blind Method",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 40,
+      "authorship_witness": "urn:uuid:9aa378cd-dbc7-5da7-9599-7c3f59308d55",
+      "descriptor": "MESH:D000280",
+      "mesh_witness": "urn:uuid:9fa97d2b-a216-541d-aa59-0722d1c73e61",
+      "name": "Administration, Inhalation",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 28,
+      "authorship_witness": "urn:uuid:fe6e8172-8b41-5116-ae51-b71cbcae67f2",
+      "descriptor": "MESH:D004305",
+      "mesh_witness": "urn:uuid:7bed38d8-9109-5d87-ab90-72df5108e58c",
+      "name": "Dose-Response Relationship, Drug",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 27,
+      "authorship_witness": "urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc",
+      "descriptor": "MESH:D001993",
+      "mesh_witness": "urn:uuid:44c599ac-918e-5333-b01f-cce3a74c74c3",
+      "name": "Bronchodilator Agents",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 27,
+      "authorship_witness": "urn:uuid:a7780163-b7f3-544a-bb07-4aa57aa8f539",
+      "descriptor": "MESH:D018927",
+      "mesh_witness": "urn:uuid:0bc564ce-f78b-53b6-b655-e27f2089b0f7",
+      "name": "Anti-Asthmatic Agents",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 26,
+      "authorship_witness": "urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc",
+      "descriptor": "MESH:D000420",
+      "mesh_witness": "urn:uuid:9412e046-2500-5fdc-977e-18313dc2193b",
+      "name": "Albuterol",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 24,
+      "authorship_witness": "urn:uuid:3ba3d0ed-f66b-5258-9d0e-56146d2b39c9",
+      "descriptor": "MESH:D000893",
+      "mesh_witness": "urn:uuid:ace5a88e-c929-52c1-ba1a-8b31e28967ea",
+      "name": "Anti-Inflammatory Agents",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 24,
+      "authorship_witness": "urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc",
+      "descriptor": "MESH:D005541",
+      "mesh_witness": "urn:uuid:4844a700-9f36-5f83-b36c-8c64de591f4c",
+      "name": "Forced Expiratory Volume",
+      "population": "without_stubs"
+    }
+  ],
+  "author_3": [
+    {
+      "articles": 22,
+      "authorship_witness": "urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a",
+      "descriptor": "MESH:D011471",
+      "mesh_witness": "urn:uuid:1f5b0a12-fcad-5b85-ab3a-f2426de9f5cd",
+      "name": "Prostatic Neoplasms",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 15,
+      "authorship_witness": "urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a",
+      "descriptor": "MESH:D001918",
+      "mesh_witness": "urn:uuid:dbdd5c2a-30d6-51e1-9127-c45f5dff715e",
+      "name": "Brachytherapy",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 14,
+      "authorship_witness": "urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a",
+      "descriptor": "MESH:D011468",
+      "mesh_witness": "urn:uuid:511e9d29-80d2-5384-9244-05d9a85db1c6",
+      "name": "Prostatectomy",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 12,
+      "authorship_witness": "urn:uuid:4d369a66-2694-5bf2-a6a3-468476bb9885",
+      "descriptor": "MESH:D016896",
+      "mesh_witness": "urn:uuid:aec6f52a-dda0-50ed-9f0d-e4a148cf564e",
+      "name": "Treatment Outcome",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 12,
+      "authorship_witness": "urn:uuid:4d369a66-2694-5bf2-a6a3-468476bb9885",
+      "descriptor": "MESH:D017430",
+      "mesh_witness": "urn:uuid:42fba771-ac9c-5050-9ce3-980230d4c343",
+      "name": "Prostate-Specific Antigen",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 11,
+      "authorship_witness": "urn:uuid:a6d75899-b6a9-50b3-a6bf-5e7408d4e213",
+      "descriptor": "MESH:D005500",
+      "mesh_witness": "urn:uuid:74dc2edf-dd2b-5c4e-a224-2d43ca9b3c7b",
+      "name": "Follow-Up Studies",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 9,
+      "authorship_witness": "urn:uuid:719e708c-e24b-5c1a-b51f-98c8368330a2",
+      "descriptor": "MESH:D011470",
+      "mesh_witness": "urn:uuid:5cf07406-d736-5375-9c81-304bb7f8d6b6",
+      "name": "Prostatic Hyperplasia",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 8,
+      "authorship_witness": "urn:uuid:d4786034-3966-57dd-b090-2f59c0509709",
+      "descriptor": "MESH:D012189",
+      "mesh_witness": "urn:uuid:c15fa947-4958-50e3-ba20-afd785ba19d0",
+      "name": "Retrospective Studies",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 8,
+      "authorship_witness": "urn:uuid:cb792d1c-edab-59b2-8ac7-07057d658a56",
+      "descriptor": "MESH:D013997",
+      "mesh_witness": "urn:uuid:d794b9d0-f0fb-5382-ad63-1cdfff788c90",
+      "name": "Time Factors",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 7,
+      "authorship_witness": "urn:uuid:877738cb-9b56-5c40-a464-a421ccf16315",
+      "descriptor": "MESH:D001749",
+      "mesh_witness": "urn:uuid:9d71943a-1b91-54fd-b77c-b7e1771f097d",
+      "name": "Urinary Bladder Neoplasms",
+      "population": "with_stubs"
+    },
+    {
+      "articles": 22,
+      "authorship_witness": "urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a",
+      "descriptor": "MESH:D011471",
+      "mesh_witness": "urn:uuid:1f5b0a12-fcad-5b85-ab3a-f2426de9f5cd",
+      "name": "Prostatic Neoplasms",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 15,
+      "authorship_witness": "urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a",
+      "descriptor": "MESH:D001918",
+      "mesh_witness": "urn:uuid:dbdd5c2a-30d6-51e1-9127-c45f5dff715e",
+      "name": "Brachytherapy",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 14,
+      "authorship_witness": "urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a",
+      "descriptor": "MESH:D011468",
+      "mesh_witness": "urn:uuid:511e9d29-80d2-5384-9244-05d9a85db1c6",
+      "name": "Prostatectomy",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 12,
+      "authorship_witness": "urn:uuid:4d369a66-2694-5bf2-a6a3-468476bb9885",
+      "descriptor": "MESH:D016896",
+      "mesh_witness": "urn:uuid:aec6f52a-dda0-50ed-9f0d-e4a148cf564e",
+      "name": "Treatment Outcome",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 12,
+      "authorship_witness": "urn:uuid:4d369a66-2694-5bf2-a6a3-468476bb9885",
+      "descriptor": "MESH:D017430",
+      "mesh_witness": "urn:uuid:42fba771-ac9c-5050-9ce3-980230d4c343",
+      "name": "Prostate-Specific Antigen",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 11,
+      "authorship_witness": "urn:uuid:a6d75899-b6a9-50b3-a6bf-5e7408d4e213",
+      "descriptor": "MESH:D005500",
+      "mesh_witness": "urn:uuid:74dc2edf-dd2b-5c4e-a224-2d43ca9b3c7b",
+      "name": "Follow-Up Studies",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 9,
+      "authorship_witness": "urn:uuid:719e708c-e24b-5c1a-b51f-98c8368330a2",
+      "descriptor": "MESH:D011470",
+      "mesh_witness": "urn:uuid:5cf07406-d736-5375-9c81-304bb7f8d6b6",
+      "name": "Prostatic Hyperplasia",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 8,
+      "authorship_witness": "urn:uuid:d4786034-3966-57dd-b090-2f59c0509709",
+      "descriptor": "MESH:D012189",
+      "mesh_witness": "urn:uuid:c15fa947-4958-50e3-ba20-afd785ba19d0",
+      "name": "Retrospective Studies",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 8,
+      "authorship_witness": "urn:uuid:cb792d1c-edab-59b2-8ac7-07057d658a56",
+      "descriptor": "MESH:D013997",
+      "mesh_witness": "urn:uuid:d794b9d0-f0fb-5382-ad63-1cdfff788c90",
+      "name": "Time Factors",
+      "population": "without_stubs"
+    },
+    {
+      "articles": 7,
+      "authorship_witness": "urn:uuid:877738cb-9b56-5c40-a464-a421ccf16315",
+      "descriptor": "MESH:D001749",
+      "mesh_witness": "urn:uuid:9d71943a-1b91-54fd-b77c-b7e1771f097d",
+      "name": "Urinary Bladder Neoplasms",
+      "population": "without_stubs"
+    }
+  ],
+  "citation_1": [
+    {
+      "id": "PMID:15111659",
+      "stub": false,
+      "with_stubs_citations": 46,
+      "without_stubs_citations": 46
+    }
+  ],
+  "citation_2": [
+    {
+      "id": "PMID:2398608",
+      "stub": false,
+      "with_stubs_citations": 102,
+      "without_stubs_citations": 102
+    }
+  ],
+  "citation_3": [
+    {
+      "id": "PMID:12748199",
+      "stub": false,
+      "with_stubs_citations": 2680,
+      "without_stubs_citations": 2680
+    }
+  ]
+}

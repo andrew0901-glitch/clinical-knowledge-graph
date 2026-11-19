@@ -1,0 +1,44 @@
+{
+  "author_1": {
+    "denominator": "Purposive neurology Author lunasai:openalex_author.A5018643148; distinct corpus Articles per non-check descriptor, induced Article populations, not person-level expertise.",
+    "parameters": [
+      "lunasai:openalex_author.A5018643148"
+    ],
+    "sql": "SELECT p.population,m.descriptor,n.name,count(DISTINCT au.subject) articles,arg_min(au.id,au.subject||m.edge_id) authorship_witness,arg_min(m.edge_id,au.subject||m.edge_id) mesh_witness FROM authorship au JOIN am m ON m.article=au.subject JOIN article a ON a.id=au.subject JOIN nodes n ON n.id=m.descriptor CROSS JOIN populations p WHERE au.object=? AND NOT m.check_tag AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1,2,3 QUALIFY row_number() OVER(PARTITION BY p.population ORDER BY articles DESC,m.descriptor)<=10 ORDER BY p.population,articles DESC,m.descriptor"
+  },
+  "author_2": {
+    "denominator": "Purposive respiratory Author lunasai:openalex_author.A5054519215; distinct corpus Articles per non-check descriptor, induced Article populations, not person-level expertise.",
+    "parameters": [
+      "lunasai:openalex_author.A5054519215"
+    ],
+    "sql": "SELECT p.population,m.descriptor,n.name,count(DISTINCT au.subject) articles,arg_min(au.id,au.subject||m.edge_id) authorship_witness,arg_min(m.edge_id,au.subject||m.edge_id) mesh_witness FROM authorship au JOIN am m ON m.article=au.subject JOIN article a ON a.id=au.subject JOIN nodes n ON n.id=m.descriptor CROSS JOIN populations p WHERE au.object=? AND NOT m.check_tag AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1,2,3 QUALIFY row_number() OVER(PARTITION BY p.population ORDER BY articles DESC,m.descriptor)<=10 ORDER BY p.population,articles DESC,m.descriptor"
+  },
+  "author_3": {
+    "denominator": "Purposive cardiovascular Author lunasai:openalex_author.A5051725638; distinct corpus Articles per non-check descriptor, induced Article populations, not person-level expertise.",
+    "parameters": [
+      "lunasai:openalex_author.A5051725638"
+    ],
+    "sql": "SELECT p.population,m.descriptor,n.name,count(DISTINCT au.subject) articles,arg_min(au.id,au.subject||m.edge_id) authorship_witness,arg_min(m.edge_id,au.subject||m.edge_id) mesh_witness FROM authorship au JOIN am m ON m.article=au.subject JOIN article a ON a.id=au.subject JOIN nodes n ON n.id=m.descriptor CROSS JOIN populations p WHERE au.object=? AND NOT m.check_tag AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1,2,3 QUALIFY row_number() OVER(PARTITION BY p.population ORDER BY articles DESC,m.descriptor)<=10 ORDER BY p.population,articles DESC,m.descriptor"
+  },
+  "citation_1": {
+    "denominator": "Citation value of the exact neurology example neighbor in both induced populations; NULL means excluded stub, not zero citations.",
+    "parameters": [
+      "PMID:15111659"
+    ],
+    "sql": "SELECT a.id,a.stub,coalesce(i.in_corpus_citations,0) with_stubs_citations,CASE WHEN a.stub THEN NULL ELSE coalesce(j.in_corpus_citations,0) END without_stubs_citations FROM article a LEFT JOIN incoming i ON i.article=a.id LEFT JOIN incoming_nonstub j ON j.article=a.id WHERE a.id=?"
+  },
+  "citation_2": {
+    "denominator": "Citation value of the exact respiratory example neighbor in both induced populations; NULL means excluded stub, not zero citations.",
+    "parameters": [
+      "PMID:2398608"
+    ],
+    "sql": "SELECT a.id,a.stub,coalesce(i.in_corpus_citations,0) with_stubs_citations,CASE WHEN a.stub THEN NULL ELSE coalesce(j.in_corpus_citations,0) END without_stubs_citations FROM article a LEFT JOIN incoming i ON i.article=a.id LEFT JOIN incoming_nonstub j ON j.article=a.id WHERE a.id=?"
+  },
+  "citation_3": {
+    "denominator": "Citation value of the exact cardiovascular example neighbor in both induced populations; NULL means excluded stub, not zero citations.",
+    "parameters": [
+      "PMID:12748199"
+    ],
+    "sql": "SELECT a.id,a.stub,coalesce(i.in_corpus_citations,0) with_stubs_citations,CASE WHEN a.stub THEN NULL ELSE coalesce(j.in_corpus_citations,0) END without_stubs_citations FROM article a LEFT JOIN incoming i ON i.article=a.id LEFT JOIN incoming_nonstub j ON j.article=a.id WHERE a.id=?"
+  }
+}

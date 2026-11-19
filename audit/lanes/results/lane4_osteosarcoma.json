@@ -1,0 +1,126 @@
+{
+  "articles": [
+    {
+      "articles_direct_on_osteosarcoma": 3559,
+      "articles_indexed_to_ewing_branch": 1312,
+      "articles_only_through_ewing": 1078,
+      "articles_with_ewing_branch": 4668,
+      "articles_without_ewing_branch": 3590,
+      "indexing": "any",
+      "pct_only_through_ewing": 23.09,
+      "population": "with_stubs"
+    },
+    {
+      "articles_direct_on_osteosarcoma": 3559,
+      "articles_indexed_to_ewing_branch": 1312,
+      "articles_only_through_ewing": 1078,
+      "articles_with_ewing_branch": 4668,
+      "articles_without_ewing_branch": 3590,
+      "indexing": "any",
+      "pct_only_through_ewing": 23.09,
+      "population": "without_stubs"
+    },
+    {
+      "articles_direct_on_osteosarcoma": 2734,
+      "articles_indexed_to_ewing_branch": 1045,
+      "articles_only_through_ewing": 942,
+      "articles_with_ewing_branch": 3706,
+      "articles_without_ewing_branch": 2764,
+      "indexing": "major",
+      "pct_only_through_ewing": 25.42,
+      "population": "with_stubs"
+    },
+    {
+      "articles_direct_on_osteosarcoma": 2734,
+      "articles_indexed_to_ewing_branch": 1045,
+      "articles_only_through_ewing": 942,
+      "articles_with_ewing_branch": 3706,
+      "articles_without_ewing_branch": 2764,
+      "indexing": "major",
+      "pct_only_through_ewing": 25.42,
+      "population": "without_stubs"
+    }
+  ],
+  "branches": [
+    {
+      "articles_only_through_branch": 1078,
+      "articles_with_stubs": 1312,
+      "articles_without_stubs": 1312,
+      "branch": "Sarcoma, Ewing",
+      "branch_mesh_id": "D012512",
+      "descriptors": 1,
+      "trials": 244,
+      "trials_only_through_branch": 130
+    },
+    {
+      "articles_only_through_branch": 30,
+      "articles_with_stubs": 38,
+      "articles_without_stubs": 38,
+      "branch": "Osteosarcoma, Juxtacortical",
+      "branch_mesh_id": "D018217",
+      "descriptors": 1,
+      "trials": 2,
+      "trials_only_through_branch": 1
+    }
+  ],
+  "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+  "expansion": [
+    {
+      "branches": null,
+      "depth": 0,
+      "descriptor": "MESH:D012516",
+      "ewing_branch": false,
+      "mesh_id": "D012516",
+      "name": "Osteosarcoma",
+      "tree_numbers": [
+        "C04.557.450.565.575.650",
+        "C04.557.450.795.620"
+      ]
+    },
+    {
+      "branches": [
+        "MESH:D018217"
+      ],
+      "depth": 1,
+      "descriptor": "MESH:D018217",
+      "ewing_branch": false,
+      "mesh_id": "D018217",
+      "name": "Osteosarcoma, Juxtacortical",
+      "tree_numbers": [
+        "C04.557.450.565.575.650.655",
+        "C04.557.450.795.620.655"
+      ]
+    },
+    {
+      "branches": [
+        "MESH:D012512"
+      ],
+      "depth": 1,
+      "descriptor": "MESH:D012512",
+      "ewing_branch": true,
+      "mesh_id": "D012512",
+      "name": "Sarcoma, Ewing",
+      "tree_numbers": [
+        "C04.557.450.565.575.650.800",
+        "C04.557.450.795.620.800"
+      ]
+    }
+  ],
+  "root_only": [
+    {
+      "articles_on_root_descriptor": 3559,
+      "trials_on_root_descriptor": 467,
+      "trials_only_on_root": 352
+    }
+  ],
+  "trials": [
+    {
+      "pct_only_through_ewing": 21.74,
+      "trials_direct_on_osteosarcoma": 467,
+      "trials_full_expansion": 598,
+      "trials_matching_ewing_branch": 244,
+      "trials_only_through_ewing": 130,
+      "trials_without_ewing_branch": 468
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+descriptor,mesh_id,name,depth,in_tree_precise
+MESH:D006333,D006333,Heart Failure,0,True
+MESH:D059347,D059347,Cardio-Renal Syndrome,1,True
+MESH:D004418,D004418,"Dyspnea, Paroxysmal",1,True
+MESH:D004489,D004489,"Edema, Cardiac",1,True
+MESH:D054144,D054144,"Heart Failure, Diastolic",1,True
+MESH:D054143,D054143,"Heart Failure, Systolic",1,True

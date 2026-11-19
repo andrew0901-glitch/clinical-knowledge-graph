@@ -1,0 +1,28 @@
+{
+  "branches": [
+    {
+      "name": "main",
+      "ref": "refs/heads/main",
+      "targetCommit": "552fe25b5e379b252714a09cd37d6ec41171b128"
+    }
+  ],
+  "converts": [
+    {
+      "name": "parquet",
+      "ref": "refs/convert/parquet",
+      "targetCommit": "dc73da2e80b16f27e7bde8ad1d24dd539ba292f8"
+    }
+  ],
+  "tags": [
+    {
+      "name": "clinical-v0.2.0",
+      "ref": "refs/tags/clinical-v0.2.0",
+      "targetCommit": "76af01bf51483264b95bece5ffef0999521d21cd"
+    },
+    {
+      "name": "clinical-v0.1.0",
+      "ref": "refs/tags/clinical-v0.1.0",
+      "targetCommit": "a732cb3e7aa0fd89945e755bc861725931c430ec"
+    }
+  ]
+}

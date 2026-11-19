@@ -1,0 +1,9 @@
+item,computed,paper,match
+nodes,12067108,12067108,True
+edges,105758066,105758066,True
+identity_only_articles,578177,578177,True
+trials_with_results_without_stubs,22793,22793,True
+results_articles_cited_by_guideline_or_sr (with stubs),23460,23460,True
+results_articles_cited_by_guideline_or_sr (without stubs),23460,23460,True
+english_topics,1017,1017,True
+english_topics_both_same_descriptor_full,743,743,True

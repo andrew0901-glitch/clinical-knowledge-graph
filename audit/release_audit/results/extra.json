@@ -1,0 +1,49 @@
+{
+  "qualifiers_and_orcid": [
+    {
+      "author": false,
+      "author_ids_with_orcid_on_edge": 0,
+      "edges": 3543161,
+      "match_method": "exact_name_mesh_hierarchy",
+      "mesh_type": "mesh-ancestor",
+      "source_table": "medical_coding.kg_edge_studies_mesh",
+      "study_aspect": "condition"
+    },
+    {
+      "author": false,
+      "author_ids_with_orcid_on_edge": 0,
+      "edges": 825812,
+      "match_method": "exact_name_mesh_hierarchy",
+      "mesh_type": "mesh-list",
+      "source_table": "medical_coding.kg_edge_studies_mesh",
+      "study_aspect": "condition"
+    },
+    {
+      "author": false,
+      "author_ids_with_orcid_on_edge": 0,
+      "edges": 2085674,
+      "match_method": "exact_name_mesh_hierarchy",
+      "mesh_type": "mesh-ancestor",
+      "source_table": "medical_coding.kg_edge_studies_mesh",
+      "study_aspect": "intervention"
+    },
+    {
+      "author": false,
+      "author_ids_with_orcid_on_edge": 0,
+      "edges": 360190,
+      "match_method": "exact_name_mesh_hierarchy",
+      "mesh_type": "mesh-list",
+      "source_table": "medical_coding.kg_edge_studies_mesh",
+      "study_aspect": "intervention"
+    },
+    {
+      "author": true,
+      "author_ids_with_orcid_on_edge": 2644104,
+      "edges": 21135411,
+      "match_method": null,
+      "mesh_type": null,
+      "source_table": null,
+      "study_aspect": null
+    }
+  ]
+}

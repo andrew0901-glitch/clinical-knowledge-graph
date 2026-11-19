@@ -1,0 +1,541 @@
+article,deeper_matches,direct_idf,direct_matches,in_corpus_citations,mode,narrow_idf,narrow_matches,one_matches,pub_types,publication_priority,rank,seed,variant
+PMID:12601090,0,7.406138992642,1,91,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S."", 'Systematic Review']",1,14,topic1,count
+PMID:15111659,0,7.406138992642,1,46,full,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,84,topic1,count
+PMID:28438841,0,7.406138992642,1,46,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,85,topic1,count
+PMID:19398681,0,7.406138992642,1,36,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,156,topic1,count
+PMID:1574171,0,7.406138992642,1,21,full,0.0,0,0,"['Consensus Statement', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,406,topic1,count
+PMID:19398682,0,7.406138992642,1,21,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,416,topic1,count
+PMID:19398680,0,7.406138992642,1,20,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,442,topic1,count
+PMID:15111920,0,7.406138992642,1,17,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,542,topic1,count
+PMID:28077494,0,7.406138992642,1,12,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,876,topic1,count
+PMID:38748979,0,7.406138992642,1,8,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1344,topic1,count
+PMID:34873018,0,7.406138992642,1,6,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,1694,topic1,count
+PMID:22218281,0,7.406138992642,1,5,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural', ""Research Support, Non-U.S. Gov't"", 'Review']",1,1810,topic1,count
+PMID:38306606,0,7.406138992642,1,4,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2201,topic1,count
+PMID:32370973,0,7.406138992642,1,3,full,0.0,0,0,"['Practice Guideline', 'Journal Article']",1,2454,topic1,count
+PMID:38393374,0,7.406138992642,1,2,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2984,topic1,count
+PMID:23042803,0,7.406138992642,1,1,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3178,topic1,count
+PMID:39699677,0,7.406138992642,1,0,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,4312,topic1,count
+PMID:15111660,0,0.0,0,30,full,10.204948860378,1,1,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,4893,topic1,count
+PMID:12525711,0,0.0,0,24,full,11.875447029574,1,1,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,5006,topic1,count
+PMID:22689735,1,0.0,0,12,full,10.457259304678,1,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,5539,topic1,count
+PMID:12601090,0,7.406138992642,1,91,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S."", 'Systematic Review']",1,14,topic1,current
+PMID:15111659,0,7.406138992642,1,46,full,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,84,topic1,current
+PMID:28438841,0,7.406138992642,1,46,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,85,topic1,current
+PMID:19398681,0,7.406138992642,1,36,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,156,topic1,current
+PMID:1574171,0,7.406138992642,1,21,full,0.0,0,0,"['Consensus Statement', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,406,topic1,current
+PMID:19398682,0,7.406138992642,1,21,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,416,topic1,current
+PMID:19398680,0,7.406138992642,1,20,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,442,topic1,current
+PMID:15111920,0,7.406138992642,1,17,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,542,topic1,current
+PMID:28077494,0,7.406138992642,1,12,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,876,topic1,current
+PMID:38748979,0,7.406138992642,1,8,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1344,topic1,current
+PMID:34873018,0,7.406138992642,1,6,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,1694,topic1,current
+PMID:22218281,0,7.406138992642,1,5,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural', ""Research Support, Non-U.S. Gov't"", 'Review']",1,1810,topic1,current
+PMID:38306606,0,7.406138992642,1,4,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2201,topic1,current
+PMID:32370973,0,7.406138992642,1,3,full,0.0,0,0,"['Practice Guideline', 'Journal Article']",1,2454,topic1,current
+PMID:38393374,0,7.406138992642,1,2,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2984,topic1,current
+PMID:23042803,0,7.406138992642,1,1,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3178,topic1,current
+PMID:39699677,0,7.406138992642,1,0,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,4312,topic1,current
+PMID:15111660,0,0.0,0,30,full,10.204948860378,1,1,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,4774,topic1,current
+PMID:12525711,0,0.0,0,24,full,11.875447029574,1,1,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,4814,topic1,current
+PMID:29898971,0,0.0,0,8,full,11.068640530541,1,1,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,5129,topic1,current
+PMID:12601090,0,7.406138992642,1,91,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S."", 'Systematic Review']",1,14,topic1,idf
+PMID:15111659,0,7.406138992642,1,46,full,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,84,topic1,idf
+PMID:28438841,0,7.406138992642,1,46,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,85,topic1,idf
+PMID:19398681,0,7.406138992642,1,36,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,156,topic1,idf
+PMID:1574171,0,7.406138992642,1,21,full,0.0,0,0,"['Consensus Statement', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,406,topic1,idf
+PMID:19398682,0,7.406138992642,1,21,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,416,topic1,idf
+PMID:19398680,0,7.406138992642,1,20,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,442,topic1,idf
+PMID:15111920,0,7.406138992642,1,17,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,542,topic1,idf
+PMID:28077494,0,7.406138992642,1,12,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,876,topic1,idf
+PMID:38748979,0,7.406138992642,1,8,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1344,topic1,idf
+PMID:34873018,0,7.406138992642,1,6,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,1694,topic1,idf
+PMID:22218281,0,7.406138992642,1,5,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural', ""Research Support, Non-U.S. Gov't"", 'Review']",1,1810,topic1,idf
+PMID:38306606,0,7.406138992642,1,4,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2201,topic1,idf
+PMID:32370973,0,7.406138992642,1,3,full,0.0,0,0,"['Practice Guideline', 'Journal Article']",1,2454,topic1,idf
+PMID:38393374,0,7.406138992642,1,2,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2984,topic1,idf
+PMID:23042803,0,7.406138992642,1,1,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3178,topic1,idf
+PMID:39699677,0,7.406138992642,1,0,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,4312,topic1,idf
+PMID:29898974,0,0.0,0,0,full,12.497135246152,1,1,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,4800,topic1,idf
+PMID:12525711,0,0.0,0,24,full,11.875447029574,1,1,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,5133,topic1,idf
+PMID:29898971,0,0.0,0,8,full,11.068640530541,1,1,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,5399,topic1,idf
+PMID:12601090,0,7.406138992642,1,91,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S."", 'Systematic Review']",1,14,topic1,count
+PMID:15111659,0,7.406138992642,1,46,none,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,84,topic1,count
+PMID:28438841,0,7.406138992642,1,46,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,85,topic1,count
+PMID:19398681,0,7.406138992642,1,36,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,156,topic1,count
+PMID:1574171,0,7.406138992642,1,21,none,0.0,0,0,"['Consensus Statement', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,406,topic1,count
+PMID:19398682,0,7.406138992642,1,21,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,416,topic1,count
+PMID:19398680,0,7.406138992642,1,20,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,442,topic1,count
+PMID:15111920,0,7.406138992642,1,17,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,542,topic1,count
+PMID:28077494,0,7.406138992642,1,12,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,876,topic1,count
+PMID:38748979,0,7.406138992642,1,8,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1344,topic1,count
+PMID:34873018,0,7.406138992642,1,6,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,1694,topic1,count
+PMID:22218281,0,7.406138992642,1,5,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural', ""Research Support, Non-U.S. Gov't"", 'Review']",1,1810,topic1,count
+PMID:38306606,0,7.406138992642,1,4,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2201,topic1,count
+PMID:32370973,0,7.406138992642,1,3,none,0.0,0,0,"['Practice Guideline', 'Journal Article']",1,2454,topic1,count
+PMID:38393374,0,7.406138992642,1,2,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2984,topic1,count
+PMID:23042803,0,7.406138992642,1,1,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3178,topic1,count
+PMID:39699677,0,7.406138992642,1,0,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,4312,topic1,count
+PMID:15758038,0,7.406138992642,1,128,none,0.0,0,0,"['Journal Article', 'Meta-Analysis', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",2,3,topic1,count
+PMID:27986877,0,7.406138992642,1,123,none,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Systematic Review']",2,4,topic1,count
+PMID:21893672,0,7.406138992642,1,42,none,0.0,0,0,"['Comparative Study', 'Journal Article', 'Meta-Analysis', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",2,105,topic1,count
+PMID:12601090,0,7.406138992642,1,91,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S."", 'Systematic Review']",1,14,topic1,current
+PMID:15111659,0,7.406138992642,1,46,none,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,84,topic1,current
+PMID:28438841,0,7.406138992642,1,46,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,85,topic1,current
+PMID:19398681,0,7.406138992642,1,36,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,156,topic1,current
+PMID:1574171,0,7.406138992642,1,21,none,0.0,0,0,"['Consensus Statement', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,406,topic1,current
+PMID:19398682,0,7.406138992642,1,21,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,416,topic1,current
+PMID:19398680,0,7.406138992642,1,20,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,442,topic1,current
+PMID:15111920,0,7.406138992642,1,17,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,542,topic1,current
+PMID:28077494,0,7.406138992642,1,12,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,876,topic1,current
+PMID:38748979,0,7.406138992642,1,8,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1344,topic1,current
+PMID:34873018,0,7.406138992642,1,6,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,1694,topic1,current
+PMID:22218281,0,7.406138992642,1,5,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural', ""Research Support, Non-U.S. Gov't"", 'Review']",1,1810,topic1,current
+PMID:38306606,0,7.406138992642,1,4,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2201,topic1,current
+PMID:32370973,0,7.406138992642,1,3,none,0.0,0,0,"['Practice Guideline', 'Journal Article']",1,2454,topic1,current
+PMID:38393374,0,7.406138992642,1,2,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2984,topic1,current
+PMID:23042803,0,7.406138992642,1,1,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3178,topic1,current
+PMID:39699677,0,7.406138992642,1,0,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,4312,topic1,current
+PMID:15758038,0,7.406138992642,1,128,none,0.0,0,0,"['Journal Article', 'Meta-Analysis', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",2,3,topic1,current
+PMID:27986877,0,7.406138992642,1,123,none,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Systematic Review']",2,4,topic1,current
+PMID:21893672,0,7.406138992642,1,42,none,0.0,0,0,"['Comparative Study', 'Journal Article', 'Meta-Analysis', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",2,105,topic1,current
+PMID:12601090,0,7.406138992642,1,91,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S."", 'Systematic Review']",1,14,topic1,idf
+PMID:15111659,0,7.406138992642,1,46,none,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,84,topic1,idf
+PMID:28438841,0,7.406138992642,1,46,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,85,topic1,idf
+PMID:19398681,0,7.406138992642,1,36,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,156,topic1,idf
+PMID:1574171,0,7.406138992642,1,21,none,0.0,0,0,"['Consensus Statement', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,406,topic1,idf
+PMID:19398682,0,7.406138992642,1,21,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,416,topic1,idf
+PMID:19398680,0,7.406138992642,1,20,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,442,topic1,idf
+PMID:15111920,0,7.406138992642,1,17,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,542,topic1,idf
+PMID:28077494,0,7.406138992642,1,12,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,876,topic1,idf
+PMID:38748979,0,7.406138992642,1,8,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1344,topic1,idf
+PMID:34873018,0,7.406138992642,1,6,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,1694,topic1,idf
+PMID:22218281,0,7.406138992642,1,5,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural', ""Research Support, Non-U.S. Gov't"", 'Review']",1,1810,topic1,idf
+PMID:38306606,0,7.406138992642,1,4,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2201,topic1,idf
+PMID:32370973,0,7.406138992642,1,3,none,0.0,0,0,"['Practice Guideline', 'Journal Article']",1,2454,topic1,idf
+PMID:38393374,0,7.406138992642,1,2,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2984,topic1,idf
+PMID:23042803,0,7.406138992642,1,1,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3178,topic1,idf
+PMID:39699677,0,7.406138992642,1,0,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,4312,topic1,idf
+PMID:15758038,0,7.406138992642,1,128,none,0.0,0,0,"['Journal Article', 'Meta-Analysis', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",2,3,topic1,idf
+PMID:27986877,0,7.406138992642,1,123,none,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Systematic Review']",2,4,topic1,idf
+PMID:21893672,0,7.406138992642,1,42,none,0.0,0,0,"['Comparative Study', 'Journal Article', 'Meta-Analysis', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",2,105,topic1,idf
+PMID:12601090,0,7.406138992642,1,91,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S."", 'Systematic Review']",1,14,topic1,count
+PMID:15111659,0,7.406138992642,1,46,one,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,84,topic1,count
+PMID:28438841,0,7.406138992642,1,46,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,85,topic1,count
+PMID:19398681,0,7.406138992642,1,36,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,156,topic1,count
+PMID:1574171,0,7.406138992642,1,21,one,0.0,0,0,"['Consensus Statement', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,406,topic1,count
+PMID:19398682,0,7.406138992642,1,21,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,416,topic1,count
+PMID:19398680,0,7.406138992642,1,20,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,442,topic1,count
+PMID:15111920,0,7.406138992642,1,17,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,542,topic1,count
+PMID:28077494,0,7.406138992642,1,12,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,876,topic1,count
+PMID:38748979,0,7.406138992642,1,8,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1344,topic1,count
+PMID:34873018,0,7.406138992642,1,6,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,1694,topic1,count
+PMID:22218281,0,7.406138992642,1,5,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural', ""Research Support, Non-U.S. Gov't"", 'Review']",1,1810,topic1,count
+PMID:38306606,0,7.406138992642,1,4,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2201,topic1,count
+PMID:32370973,0,7.406138992642,1,3,one,0.0,0,0,"['Practice Guideline', 'Journal Article']",1,2454,topic1,count
+PMID:38393374,0,7.406138992642,1,2,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2984,topic1,count
+PMID:23042803,0,7.406138992642,1,1,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3178,topic1,count
+PMID:39699677,0,7.406138992642,1,0,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,4312,topic1,count
+PMID:15111660,0,0.0,0,30,one,10.204948860378,1,1,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,4774,topic1,count
+PMID:12525711,0,0.0,0,24,one,11.875447029574,1,1,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,4814,topic1,count
+PMID:29898971,0,0.0,0,8,one,10.204948860378,1,1,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,5129,topic1,count
+PMID:12601090,0,7.406138992642,1,91,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S."", 'Systematic Review']",1,14,topic1,current
+PMID:15111659,0,7.406138992642,1,46,one,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,84,topic1,current
+PMID:28438841,0,7.406138992642,1,46,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,85,topic1,current
+PMID:19398681,0,7.406138992642,1,36,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,156,topic1,current
+PMID:1574171,0,7.406138992642,1,21,one,0.0,0,0,"['Consensus Statement', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,406,topic1,current
+PMID:19398682,0,7.406138992642,1,21,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,416,topic1,current
+PMID:19398680,0,7.406138992642,1,20,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,442,topic1,current
+PMID:15111920,0,7.406138992642,1,17,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,542,topic1,current
+PMID:28077494,0,7.406138992642,1,12,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,876,topic1,current
+PMID:38748979,0,7.406138992642,1,8,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1344,topic1,current
+PMID:34873018,0,7.406138992642,1,6,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,1694,topic1,current
+PMID:22218281,0,7.406138992642,1,5,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural', ""Research Support, Non-U.S. Gov't"", 'Review']",1,1810,topic1,current
+PMID:38306606,0,7.406138992642,1,4,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2201,topic1,current
+PMID:32370973,0,7.406138992642,1,3,one,0.0,0,0,"['Practice Guideline', 'Journal Article']",1,2454,topic1,current
+PMID:38393374,0,7.406138992642,1,2,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2984,topic1,current
+PMID:23042803,0,7.406138992642,1,1,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3178,topic1,current
+PMID:39699677,0,7.406138992642,1,0,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,4312,topic1,current
+PMID:15111660,0,0.0,0,30,one,10.204948860378,1,1,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,4774,topic1,current
+PMID:12525711,0,0.0,0,24,one,11.875447029574,1,1,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,4814,topic1,current
+PMID:29898971,0,0.0,0,8,one,10.204948860378,1,1,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,5129,topic1,current
+PMID:12601090,0,7.406138992642,1,91,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S."", 'Systematic Review']",1,14,topic1,idf
+PMID:15111659,0,7.406138992642,1,46,one,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,84,topic1,idf
+PMID:28438841,0,7.406138992642,1,46,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,85,topic1,idf
+PMID:19398681,0,7.406138992642,1,36,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,156,topic1,idf
+PMID:1574171,0,7.406138992642,1,21,one,0.0,0,0,"['Consensus Statement', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,406,topic1,idf
+PMID:19398682,0,7.406138992642,1,21,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,416,topic1,idf
+PMID:19398680,0,7.406138992642,1,20,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Review']",1,442,topic1,idf
+PMID:15111920,0,7.406138992642,1,17,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,542,topic1,idf
+PMID:28077494,0,7.406138992642,1,12,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,876,topic1,idf
+PMID:38748979,0,7.406138992642,1,8,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1344,topic1,idf
+PMID:34873018,0,7.406138992642,1,6,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,1694,topic1,idf
+PMID:22218281,0,7.406138992642,1,5,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural', ""Research Support, Non-U.S. Gov't"", 'Review']",1,1810,topic1,idf
+PMID:38306606,0,7.406138992642,1,4,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2201,topic1,idf
+PMID:32370973,0,7.406138992642,1,3,one,0.0,0,0,"['Practice Guideline', 'Journal Article']",1,2454,topic1,idf
+PMID:38393374,0,7.406138992642,1,2,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,2984,topic1,idf
+PMID:23042803,0,7.406138992642,1,1,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3178,topic1,idf
+PMID:39699677,0,7.406138992642,1,0,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,4312,topic1,idf
+PMID:12525711,0,0.0,0,24,one,11.875447029574,1,1,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,4881,topic1,idf
+PMID:15111660,0,0.0,0,30,one,10.204948860378,1,1,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,4935,topic1,idf
+PMID:29898971,0,0.0,0,8,one,10.204948860378,1,1,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,5005,topic1,idf
+PMID:19535666,0,6.179348320569,1,354,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,9,topic2,count
+PMID:21885636,0,6.179348320569,1,287,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,24,topic2,count
+PMID:20816182,0,6.179348320569,1,191,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,53,topic2,count
+PMID:17983880,0,6.179348320569,1,175,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,63,topic2,count
+PMID:28602936,0,6.179348320569,1,120,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,120,topic2,count
+PMID:34536239,0,6.179348320569,1,111,full,0.0,0,0,"['Journal Article', ""Research Support, Non-U.S. Gov't"", 'Practice Guideline']",1,149,topic2,count
+PMID:31095767,0,6.179348320569,1,43,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,912,topic2,count
+PMID:33250376,0,6.179348320569,1,36,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,1204,topic2,count
+PMID:17996286,0,6.179348320569,1,33,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,1368,topic2,count
+PMID:18238988,0,6.179348320569,1,18,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3157,topic2,count
+PMID:23452010,0,6.179348320569,1,7,full,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,7249,topic2,count
+PMID:9925086,0,6.179348320569,1,7,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,7583,topic2,count
+PMID:28328094,0,6.179348320569,1,6,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,8015,topic2,count
+PMID:2218976,0,6.179348320569,1,5,full,0.0,0,0,"['Guideline', 'Journal Article']",1,8639,topic2,count
+PMID:29367203,0,6.179348320569,1,5,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,8812,topic2,count
+PMID:9949336,0,6.179348320569,1,3,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,11168,topic2,count
+PMID:11972488,0,6.179348320569,1,2,full,0.0,0,0,"['Guideline', 'Journal Article']",1,11266,topic2,count
+PMID:38408152,0,6.179348320569,1,2,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12145,topic2,count
+PMID:40018799,0,6.179348320569,1,2,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12180,topic2,count
+PMID:41324154,0,6.179348320569,1,1,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,13603,topic2,count
+PMID:19535666,0,6.179348320569,1,354,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,9,topic2,current
+PMID:21885636,0,6.179348320569,1,287,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,24,topic2,current
+PMID:20816182,0,6.179348320569,1,191,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,53,topic2,current
+PMID:17983880,0,6.179348320569,1,175,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,63,topic2,current
+PMID:28602936,0,6.179348320569,1,120,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,120,topic2,current
+PMID:34536239,0,6.179348320569,1,111,full,0.0,0,0,"['Journal Article', ""Research Support, Non-U.S. Gov't"", 'Practice Guideline']",1,149,topic2,current
+PMID:31095767,0,6.179348320569,1,43,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,912,topic2,current
+PMID:33250376,0,6.179348320569,1,36,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,1204,topic2,current
+PMID:17996286,0,6.179348320569,1,33,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,1368,topic2,current
+PMID:18238988,0,6.179348320569,1,18,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3157,topic2,current
+PMID:23452010,0,6.179348320569,1,7,full,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,7249,topic2,current
+PMID:9925086,0,6.179348320569,1,7,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,7583,topic2,current
+PMID:28328094,0,6.179348320569,1,6,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,8015,topic2,current
+PMID:2218976,0,6.179348320569,1,5,full,0.0,0,0,"['Guideline', 'Journal Article']",1,8639,topic2,current
+PMID:29367203,0,6.179348320569,1,5,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,8812,topic2,current
+PMID:9949336,0,6.179348320569,1,3,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,11168,topic2,current
+PMID:11972488,0,6.179348320569,1,2,full,0.0,0,0,"['Guideline', 'Journal Article']",1,11266,topic2,current
+PMID:38408152,0,6.179348320569,1,2,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12145,topic2,current
+PMID:40018799,0,6.179348320569,1,2,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12180,topic2,current
+PMID:41324154,0,6.179348320569,1,1,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,13603,topic2,current
+PMID:19535666,0,6.179348320569,1,354,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,9,topic2,idf
+PMID:21885636,0,6.179348320569,1,287,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,24,topic2,idf
+PMID:20816182,0,6.179348320569,1,191,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,53,topic2,idf
+PMID:17983880,0,6.179348320569,1,175,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,63,topic2,idf
+PMID:28602936,0,6.179348320569,1,120,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,120,topic2,idf
+PMID:34536239,0,6.179348320569,1,111,full,0.0,0,0,"['Journal Article', ""Research Support, Non-U.S. Gov't"", 'Practice Guideline']",1,149,topic2,idf
+PMID:31095767,0,6.179348320569,1,43,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,912,topic2,idf
+PMID:33250376,0,6.179348320569,1,36,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,1204,topic2,idf
+PMID:17996286,0,6.179348320569,1,33,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,1368,topic2,idf
+PMID:18238988,0,6.179348320569,1,18,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3157,topic2,idf
+PMID:23452010,0,6.179348320569,1,7,full,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,7249,topic2,idf
+PMID:9925086,0,6.179348320569,1,7,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,7583,topic2,idf
+PMID:28328094,0,6.179348320569,1,6,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,8015,topic2,idf
+PMID:2218976,0,6.179348320569,1,5,full,0.0,0,0,"['Guideline', 'Journal Article']",1,8639,topic2,idf
+PMID:29367203,0,6.179348320569,1,5,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,8812,topic2,idf
+PMID:9949336,0,6.179348320569,1,3,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,11168,topic2,idf
+PMID:11972488,0,6.179348320569,1,2,full,0.0,0,0,"['Guideline', 'Journal Article']",1,11266,topic2,idf
+PMID:38408152,0,6.179348320569,1,2,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12145,topic2,idf
+PMID:40018799,0,6.179348320569,1,2,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12180,topic2,idf
+PMID:41324154,0,6.179348320569,1,1,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,13603,topic2,idf
+PMID:19535666,0,6.179348320569,1,354,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,9,topic2,count
+PMID:21885636,0,6.179348320569,1,287,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,24,topic2,count
+PMID:20816182,0,6.179348320569,1,191,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,53,topic2,count
+PMID:17983880,0,6.179348320569,1,175,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,63,topic2,count
+PMID:28602936,0,6.179348320569,1,120,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,120,topic2,count
+PMID:34536239,0,6.179348320569,1,111,none,0.0,0,0,"['Journal Article', ""Research Support, Non-U.S. Gov't"", 'Practice Guideline']",1,149,topic2,count
+PMID:31095767,0,6.179348320569,1,43,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,912,topic2,count
+PMID:33250376,0,6.179348320569,1,36,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,1204,topic2,count
+PMID:17996286,0,6.179348320569,1,33,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,1368,topic2,count
+PMID:18238988,0,6.179348320569,1,18,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3157,topic2,count
+PMID:23452010,0,6.179348320569,1,7,none,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,7249,topic2,count
+PMID:9925086,0,6.179348320569,1,7,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,7583,topic2,count
+PMID:28328094,0,6.179348320569,1,6,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,8015,topic2,count
+PMID:2218976,0,6.179348320569,1,5,none,0.0,0,0,"['Guideline', 'Journal Article']",1,8639,topic2,count
+PMID:29367203,0,6.179348320569,1,5,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,8812,topic2,count
+PMID:9949336,0,6.179348320569,1,3,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,11168,topic2,count
+PMID:11972488,0,6.179348320569,1,2,none,0.0,0,0,"['Guideline', 'Journal Article']",1,11266,topic2,count
+PMID:38408152,0,6.179348320569,1,2,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12145,topic2,count
+PMID:40018799,0,6.179348320569,1,2,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12180,topic2,count
+PMID:41324154,0,6.179348320569,1,1,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,13603,topic2,count
+PMID:19535666,0,6.179348320569,1,354,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,9,topic2,current
+PMID:21885636,0,6.179348320569,1,287,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,24,topic2,current
+PMID:20816182,0,6.179348320569,1,191,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,53,topic2,current
+PMID:17983880,0,6.179348320569,1,175,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,63,topic2,current
+PMID:28602936,0,6.179348320569,1,120,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,120,topic2,current
+PMID:34536239,0,6.179348320569,1,111,none,0.0,0,0,"['Journal Article', ""Research Support, Non-U.S. Gov't"", 'Practice Guideline']",1,149,topic2,current
+PMID:31095767,0,6.179348320569,1,43,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,912,topic2,current
+PMID:33250376,0,6.179348320569,1,36,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,1204,topic2,current
+PMID:17996286,0,6.179348320569,1,33,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,1368,topic2,current
+PMID:18238988,0,6.179348320569,1,18,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3157,topic2,current
+PMID:23452010,0,6.179348320569,1,7,none,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,7249,topic2,current
+PMID:9925086,0,6.179348320569,1,7,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,7583,topic2,current
+PMID:28328094,0,6.179348320569,1,6,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,8015,topic2,current
+PMID:2218976,0,6.179348320569,1,5,none,0.0,0,0,"['Guideline', 'Journal Article']",1,8639,topic2,current
+PMID:29367203,0,6.179348320569,1,5,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,8812,topic2,current
+PMID:9949336,0,6.179348320569,1,3,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,11168,topic2,current
+PMID:11972488,0,6.179348320569,1,2,none,0.0,0,0,"['Guideline', 'Journal Article']",1,11266,topic2,current
+PMID:38408152,0,6.179348320569,1,2,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12145,topic2,current
+PMID:40018799,0,6.179348320569,1,2,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12180,topic2,current
+PMID:41324154,0,6.179348320569,1,1,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,13603,topic2,current
+PMID:19535666,0,6.179348320569,1,354,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,9,topic2,idf
+PMID:21885636,0,6.179348320569,1,287,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,24,topic2,idf
+PMID:20816182,0,6.179348320569,1,191,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,53,topic2,idf
+PMID:17983880,0,6.179348320569,1,175,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,63,topic2,idf
+PMID:28602936,0,6.179348320569,1,120,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,120,topic2,idf
+PMID:34536239,0,6.179348320569,1,111,none,0.0,0,0,"['Journal Article', ""Research Support, Non-U.S. Gov't"", 'Practice Guideline']",1,149,topic2,idf
+PMID:31095767,0,6.179348320569,1,43,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,912,topic2,idf
+PMID:33250376,0,6.179348320569,1,36,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,1204,topic2,idf
+PMID:17996286,0,6.179348320569,1,33,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,1368,topic2,idf
+PMID:18238988,0,6.179348320569,1,18,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3157,topic2,idf
+PMID:23452010,0,6.179348320569,1,7,none,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,7249,topic2,idf
+PMID:9925086,0,6.179348320569,1,7,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,7583,topic2,idf
+PMID:28328094,0,6.179348320569,1,6,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,8015,topic2,idf
+PMID:2218976,0,6.179348320569,1,5,none,0.0,0,0,"['Guideline', 'Journal Article']",1,8639,topic2,idf
+PMID:29367203,0,6.179348320569,1,5,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,8812,topic2,idf
+PMID:9949336,0,6.179348320569,1,3,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,11168,topic2,idf
+PMID:11972488,0,6.179348320569,1,2,none,0.0,0,0,"['Guideline', 'Journal Article']",1,11266,topic2,idf
+PMID:38408152,0,6.179348320569,1,2,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12145,topic2,idf
+PMID:40018799,0,6.179348320569,1,2,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12180,topic2,idf
+PMID:41324154,0,6.179348320569,1,1,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,13603,topic2,idf
+PMID:19535666,0,6.179348320569,1,354,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,9,topic2,count
+PMID:21885636,0,6.179348320569,1,287,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,24,topic2,count
+PMID:20816182,0,6.179348320569,1,191,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,53,topic2,count
+PMID:17983880,0,6.179348320569,1,175,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,63,topic2,count
+PMID:28602936,0,6.179348320569,1,120,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,120,topic2,count
+PMID:34536239,0,6.179348320569,1,111,one,0.0,0,0,"['Journal Article', ""Research Support, Non-U.S. Gov't"", 'Practice Guideline']",1,149,topic2,count
+PMID:31095767,0,6.179348320569,1,43,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,912,topic2,count
+PMID:33250376,0,6.179348320569,1,36,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,1204,topic2,count
+PMID:17996286,0,6.179348320569,1,33,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,1368,topic2,count
+PMID:18238988,0,6.179348320569,1,18,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3157,topic2,count
+PMID:23452010,0,6.179348320569,1,7,one,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,7249,topic2,count
+PMID:9925086,0,6.179348320569,1,7,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,7583,topic2,count
+PMID:28328094,0,6.179348320569,1,6,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,8015,topic2,count
+PMID:2218976,0,6.179348320569,1,5,one,0.0,0,0,"['Guideline', 'Journal Article']",1,8639,topic2,count
+PMID:29367203,0,6.179348320569,1,5,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,8812,topic2,count
+PMID:9949336,0,6.179348320569,1,3,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,11168,topic2,count
+PMID:11972488,0,6.179348320569,1,2,one,0.0,0,0,"['Guideline', 'Journal Article']",1,11266,topic2,count
+PMID:38408152,0,6.179348320569,1,2,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12145,topic2,count
+PMID:40018799,0,6.179348320569,1,2,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12180,topic2,count
+PMID:41324154,0,6.179348320569,1,1,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,13603,topic2,count
+PMID:19535666,0,6.179348320569,1,354,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,9,topic2,current
+PMID:21885636,0,6.179348320569,1,287,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,24,topic2,current
+PMID:20816182,0,6.179348320569,1,191,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,53,topic2,current
+PMID:17983880,0,6.179348320569,1,175,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,63,topic2,current
+PMID:28602936,0,6.179348320569,1,120,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,120,topic2,current
+PMID:34536239,0,6.179348320569,1,111,one,0.0,0,0,"['Journal Article', ""Research Support, Non-U.S. Gov't"", 'Practice Guideline']",1,149,topic2,current
+PMID:31095767,0,6.179348320569,1,43,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,912,topic2,current
+PMID:33250376,0,6.179348320569,1,36,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,1204,topic2,current
+PMID:17996286,0,6.179348320569,1,33,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,1368,topic2,current
+PMID:18238988,0,6.179348320569,1,18,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3157,topic2,current
+PMID:23452010,0,6.179348320569,1,7,one,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,7249,topic2,current
+PMID:9925086,0,6.179348320569,1,7,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,7583,topic2,current
+PMID:28328094,0,6.179348320569,1,6,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,8015,topic2,current
+PMID:2218976,0,6.179348320569,1,5,one,0.0,0,0,"['Guideline', 'Journal Article']",1,8639,topic2,current
+PMID:29367203,0,6.179348320569,1,5,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,8812,topic2,current
+PMID:9949336,0,6.179348320569,1,3,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,11168,topic2,current
+PMID:11972488,0,6.179348320569,1,2,one,0.0,0,0,"['Guideline', 'Journal Article']",1,11266,topic2,current
+PMID:38408152,0,6.179348320569,1,2,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12145,topic2,current
+PMID:40018799,0,6.179348320569,1,2,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12180,topic2,current
+PMID:41324154,0,6.179348320569,1,1,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,13603,topic2,current
+PMID:19535666,0,6.179348320569,1,354,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,9,topic2,idf
+PMID:21885636,0,6.179348320569,1,287,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,24,topic2,idf
+PMID:20816182,0,6.179348320569,1,191,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,53,topic2,idf
+PMID:17983880,0,6.179348320569,1,175,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,63,topic2,idf
+PMID:28602936,0,6.179348320569,1,120,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,120,topic2,idf
+PMID:34536239,0,6.179348320569,1,111,one,0.0,0,0,"['Journal Article', ""Research Support, Non-U.S. Gov't"", 'Practice Guideline']",1,149,topic2,idf
+PMID:31095767,0,6.179348320569,1,43,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't""]",1,912,topic2,idf
+PMID:33250376,0,6.179348320569,1,36,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,1204,topic2,idf
+PMID:17996286,0,6.179348320569,1,33,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,1368,topic2,idf
+PMID:18238988,0,6.179348320569,1,18,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,3157,topic2,idf
+PMID:23452010,0,6.179348320569,1,7,one,0.0,0,0,"['Journal Article', 'Meta-Analysis', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", 'Systematic Review']",1,7249,topic2,idf
+PMID:9925086,0,6.179348320569,1,7,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', 'Review']",1,7583,topic2,idf
+PMID:28328094,0,6.179348320569,1,6,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Review']",1,8015,topic2,idf
+PMID:2218976,0,6.179348320569,1,5,one,0.0,0,0,"['Guideline', 'Journal Article']",1,8639,topic2,idf
+PMID:29367203,0,6.179348320569,1,5,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,8812,topic2,idf
+PMID:9949336,0,6.179348320569,1,3,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,11168,topic2,idf
+PMID:11972488,0,6.179348320569,1,2,one,0.0,0,0,"['Guideline', 'Journal Article']",1,11266,topic2,idf
+PMID:38408152,0,6.179348320569,1,2,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12145,topic2,idf
+PMID:40018799,0,6.179348320569,1,2,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,12180,topic2,idf
+PMID:41324154,0,6.179348320569,1,1,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,13603,topic2,idf
+PMID:12748199,0,6.091735813852,1,2680,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,75,topic3,count
+PMID:14656957,0,6.091735813852,1,1317,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,77,topic3,count
+PMID:24352797,0,6.091735813852,1,836,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural']",1,79,topic3,count
+PMID:10920346,0,6.091735813852,1,399,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,94,topic3,count
+PMID:28827377,0,6.091735813852,1,345,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,104,topic3,count
+PMID:15611362,0,6.091735813852,1,229,full,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline']",1,127,topic3,count
+PMID:18574054,0,6.091735813852,1,218,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,132,topic3,count
+PMID:17478736,0,6.091735813852,1,154,full,0.0,0,0,"['Guideline', 'Journal Article']",1,177,topic3,count
+PMID:18391085,0,6.091735813852,1,137,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,197,topic3,count
+PMID:30354828,0,6.091735813852,1,133,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,205,topic3,count
+PMID:30575676,0,6.091735813852,1,112,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,251,topic3,count
+PMID:16434724,0,6.091735813852,1,109,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,262,topic3,count
+PMID:12623940,0,6.091735813852,1,104,full,0.0,0,0,"['Guideline', 'Journal Article', 'Review']",1,282,topic3,count
+PMID:26458123,0,6.091735813852,1,87,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,340,topic3,count
+PMID:18497370,0,6.091735813852,1,65,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,488,topic3,count
+PMID:28135725,0,6.091735813852,1,56,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,608,topic3,count
+PMID:8490481,0,6.091735813852,1,56,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,610,topic3,count
+PMID:17938297,0,6.091735813852,1,50,full,0.0,0,0,"['Guideline', 'Journal Article']",1,711,topic3,count
+PMID:29357392,0,6.091735813852,1,29,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1581,topic3,count
+PMID:34775787,0,6.091735813852,1,29,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S.""]",1,1587,topic3,count
+PMID:12748199,0,6.091735813852,1,2680,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,75,topic3,current
+PMID:14656957,0,6.091735813852,1,1317,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,77,topic3,current
+PMID:24352797,0,6.091735813852,1,836,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural']",1,79,topic3,current
+PMID:10920346,0,6.091735813852,1,399,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,94,topic3,current
+PMID:28827377,0,6.091735813852,1,345,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,104,topic3,current
+PMID:15611362,0,6.091735813852,1,229,full,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline']",1,127,topic3,current
+PMID:18574054,0,6.091735813852,1,218,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,132,topic3,current
+PMID:17478736,0,6.091735813852,1,154,full,0.0,0,0,"['Guideline', 'Journal Article']",1,177,topic3,current
+PMID:18391085,0,6.091735813852,1,137,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,197,topic3,current
+PMID:30354828,0,6.091735813852,1,133,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,205,topic3,current
+PMID:30575676,0,6.091735813852,1,112,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,251,topic3,current
+PMID:16434724,0,6.091735813852,1,109,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,262,topic3,current
+PMID:12623940,0,6.091735813852,1,104,full,0.0,0,0,"['Guideline', 'Journal Article', 'Review']",1,282,topic3,current
+PMID:26458123,0,6.091735813852,1,87,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,340,topic3,current
+PMID:18497370,0,6.091735813852,1,65,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,488,topic3,current
+PMID:28135725,0,6.091735813852,1,56,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,608,topic3,current
+PMID:8490481,0,6.091735813852,1,56,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,610,topic3,current
+PMID:17938297,0,6.091735813852,1,50,full,0.0,0,0,"['Guideline', 'Journal Article']",1,711,topic3,current
+PMID:29357392,0,6.091735813852,1,29,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1581,topic3,current
+PMID:34775787,0,6.091735813852,1,29,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S.""]",1,1587,topic3,current
+PMID:12748199,0,6.091735813852,1,2680,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,129,topic3,idf
+PMID:14656957,0,6.091735813852,1,1317,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,131,topic3,idf
+PMID:24352797,0,6.091735813852,1,836,full,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural']",1,133,topic3,idf
+PMID:10920346,0,6.091735813852,1,399,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,148,topic3,idf
+PMID:28827377,0,6.091735813852,1,345,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,158,topic3,idf
+PMID:15611362,0,6.091735813852,1,229,full,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline']",1,181,topic3,idf
+PMID:18574054,0,6.091735813852,1,218,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,186,topic3,idf
+PMID:17478736,0,6.091735813852,1,154,full,0.0,0,0,"['Guideline', 'Journal Article']",1,231,topic3,idf
+PMID:18391085,0,6.091735813852,1,137,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,251,topic3,idf
+PMID:30354828,0,6.091735813852,1,133,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,259,topic3,idf
+PMID:30575676,0,6.091735813852,1,112,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,305,topic3,idf
+PMID:16434724,0,6.091735813852,1,109,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,316,topic3,idf
+PMID:12623940,0,6.091735813852,1,104,full,0.0,0,0,"['Guideline', 'Journal Article', 'Review']",1,336,topic3,idf
+PMID:26458123,0,6.091735813852,1,87,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,394,topic3,idf
+PMID:18497370,0,6.091735813852,1,65,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,542,topic3,idf
+PMID:28135725,0,6.091735813852,1,56,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,662,topic3,idf
+PMID:8490481,0,6.091735813852,1,56,full,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,664,topic3,idf
+PMID:17938297,0,6.091735813852,1,50,full,0.0,0,0,"['Guideline', 'Journal Article']",1,765,topic3,idf
+PMID:29357392,0,6.091735813852,1,29,full,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1634,topic3,idf
+PMID:34775787,0,6.091735813852,1,29,full,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S.""]",1,1640,topic3,idf
+PMID:12748199,0,6.091735813852,1,2680,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,72,topic3,count
+PMID:14656957,0,6.091735813852,1,1317,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,74,topic3,count
+PMID:24352797,0,6.091735813852,1,836,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural']",1,76,topic3,count
+PMID:10920346,0,6.091735813852,1,399,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,91,topic3,count
+PMID:28827377,0,6.091735813852,1,345,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,101,topic3,count
+PMID:15611362,0,6.091735813852,1,229,none,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline']",1,124,topic3,count
+PMID:18574054,0,6.091735813852,1,218,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,129,topic3,count
+PMID:17478736,0,6.091735813852,1,154,none,0.0,0,0,"['Guideline', 'Journal Article']",1,174,topic3,count
+PMID:18391085,0,6.091735813852,1,137,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,194,topic3,count
+PMID:30354828,0,6.091735813852,1,133,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,202,topic3,count
+PMID:30575676,0,6.091735813852,1,112,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,248,topic3,count
+PMID:16434724,0,6.091735813852,1,109,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,259,topic3,count
+PMID:12623940,0,6.091735813852,1,104,none,0.0,0,0,"['Guideline', 'Journal Article', 'Review']",1,279,topic3,count
+PMID:26458123,0,6.091735813852,1,87,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,337,topic3,count
+PMID:18497370,0,6.091735813852,1,65,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,485,topic3,count
+PMID:28135725,0,6.091735813852,1,56,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,605,topic3,count
+PMID:8490481,0,6.091735813852,1,56,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,607,topic3,count
+PMID:17938297,0,6.091735813852,1,50,none,0.0,0,0,"['Guideline', 'Journal Article']",1,708,topic3,count
+PMID:29357392,0,6.091735813852,1,29,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1578,topic3,count
+PMID:34775787,0,6.091735813852,1,29,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S.""]",1,1584,topic3,count
+PMID:12748199,0,6.091735813852,1,2680,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,72,topic3,current
+PMID:14656957,0,6.091735813852,1,1317,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,74,topic3,current
+PMID:24352797,0,6.091735813852,1,836,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural']",1,76,topic3,current
+PMID:10920346,0,6.091735813852,1,399,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,91,topic3,current
+PMID:28827377,0,6.091735813852,1,345,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,101,topic3,current
+PMID:15611362,0,6.091735813852,1,229,none,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline']",1,124,topic3,current
+PMID:18574054,0,6.091735813852,1,218,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,129,topic3,current
+PMID:17478736,0,6.091735813852,1,154,none,0.0,0,0,"['Guideline', 'Journal Article']",1,174,topic3,current
+PMID:18391085,0,6.091735813852,1,137,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,194,topic3,current
+PMID:30354828,0,6.091735813852,1,133,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,202,topic3,current
+PMID:30575676,0,6.091735813852,1,112,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,248,topic3,current
+PMID:16434724,0,6.091735813852,1,109,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,259,topic3,current
+PMID:12623940,0,6.091735813852,1,104,none,0.0,0,0,"['Guideline', 'Journal Article', 'Review']",1,279,topic3,current
+PMID:26458123,0,6.091735813852,1,87,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,337,topic3,current
+PMID:18497370,0,6.091735813852,1,65,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,485,topic3,current
+PMID:28135725,0,6.091735813852,1,56,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,605,topic3,current
+PMID:8490481,0,6.091735813852,1,56,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,607,topic3,current
+PMID:17938297,0,6.091735813852,1,50,none,0.0,0,0,"['Guideline', 'Journal Article']",1,708,topic3,current
+PMID:29357392,0,6.091735813852,1,29,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1578,topic3,current
+PMID:34775787,0,6.091735813852,1,29,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S.""]",1,1584,topic3,current
+PMID:12748199,0,6.091735813852,1,2680,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,129,topic3,idf
+PMID:14656957,0,6.091735813852,1,1317,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,131,topic3,idf
+PMID:24352797,0,6.091735813852,1,836,none,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural']",1,133,topic3,idf
+PMID:10920346,0,6.091735813852,1,399,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,148,topic3,idf
+PMID:28827377,0,6.091735813852,1,345,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,158,topic3,idf
+PMID:15611362,0,6.091735813852,1,229,none,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline']",1,181,topic3,idf
+PMID:18574054,0,6.091735813852,1,218,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,186,topic3,idf
+PMID:17478736,0,6.091735813852,1,154,none,0.0,0,0,"['Guideline', 'Journal Article']",1,231,topic3,idf
+PMID:18391085,0,6.091735813852,1,137,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,251,topic3,idf
+PMID:30354828,0,6.091735813852,1,133,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,259,topic3,idf
+PMID:30575676,0,6.091735813852,1,112,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,305,topic3,idf
+PMID:16434724,0,6.091735813852,1,109,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,316,topic3,idf
+PMID:12623940,0,6.091735813852,1,104,none,0.0,0,0,"['Guideline', 'Journal Article', 'Review']",1,336,topic3,idf
+PMID:26458123,0,6.091735813852,1,87,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,394,topic3,idf
+PMID:18497370,0,6.091735813852,1,65,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,542,topic3,idf
+PMID:28135725,0,6.091735813852,1,56,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,662,topic3,idf
+PMID:8490481,0,6.091735813852,1,56,none,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,664,topic3,idf
+PMID:17938297,0,6.091735813852,1,50,none,0.0,0,0,"['Guideline', 'Journal Article']",1,765,topic3,idf
+PMID:29357392,0,6.091735813852,1,29,none,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1634,topic3,idf
+PMID:34775787,0,6.091735813852,1,29,none,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S.""]",1,1640,topic3,idf
+PMID:12748199,0,6.091735813852,1,2680,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,75,topic3,count
+PMID:14656957,0,6.091735813852,1,1317,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,77,topic3,count
+PMID:24352797,0,6.091735813852,1,836,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural']",1,79,topic3,count
+PMID:10920346,0,6.091735813852,1,399,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,94,topic3,count
+PMID:28827377,0,6.091735813852,1,345,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,104,topic3,count
+PMID:15611362,0,6.091735813852,1,229,one,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline']",1,127,topic3,count
+PMID:18574054,0,6.091735813852,1,218,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,132,topic3,count
+PMID:17478736,0,6.091735813852,1,154,one,0.0,0,0,"['Guideline', 'Journal Article']",1,177,topic3,count
+PMID:18391085,0,6.091735813852,1,137,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,197,topic3,count
+PMID:30354828,0,6.091735813852,1,133,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,205,topic3,count
+PMID:30575676,0,6.091735813852,1,112,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,251,topic3,count
+PMID:16434724,0,6.091735813852,1,109,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,262,topic3,count
+PMID:12623940,0,6.091735813852,1,104,one,0.0,0,0,"['Guideline', 'Journal Article', 'Review']",1,282,topic3,count
+PMID:26458123,0,6.091735813852,1,87,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,340,topic3,count
+PMID:18497370,0,6.091735813852,1,65,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,488,topic3,count
+PMID:28135725,0,6.091735813852,1,56,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,608,topic3,count
+PMID:8490481,0,6.091735813852,1,56,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,610,topic3,count
+PMID:17938297,0,6.091735813852,1,50,one,0.0,0,0,"['Guideline', 'Journal Article']",1,711,topic3,count
+PMID:29357392,0,6.091735813852,1,29,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1581,topic3,count
+PMID:34775787,0,6.091735813852,1,29,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S.""]",1,1587,topic3,count
+PMID:12748199,0,6.091735813852,1,2680,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,75,topic3,current
+PMID:14656957,0,6.091735813852,1,1317,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,77,topic3,current
+PMID:24352797,0,6.091735813852,1,836,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural']",1,79,topic3,current
+PMID:10920346,0,6.091735813852,1,399,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,94,topic3,current
+PMID:28827377,0,6.091735813852,1,345,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,104,topic3,current
+PMID:15611362,0,6.091735813852,1,229,one,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline']",1,127,topic3,current
+PMID:18574054,0,6.091735813852,1,218,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,132,topic3,current
+PMID:17478736,0,6.091735813852,1,154,one,0.0,0,0,"['Guideline', 'Journal Article']",1,177,topic3,current
+PMID:18391085,0,6.091735813852,1,137,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,197,topic3,current
+PMID:30354828,0,6.091735813852,1,133,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,205,topic3,current
+PMID:30575676,0,6.091735813852,1,112,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,251,topic3,current
+PMID:16434724,0,6.091735813852,1,109,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,262,topic3,current
+PMID:12623940,0,6.091735813852,1,104,one,0.0,0,0,"['Guideline', 'Journal Article', 'Review']",1,282,topic3,current
+PMID:26458123,0,6.091735813852,1,87,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,340,topic3,current
+PMID:18497370,0,6.091735813852,1,65,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,488,topic3,current
+PMID:28135725,0,6.091735813852,1,56,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,608,topic3,current
+PMID:8490481,0,6.091735813852,1,56,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,610,topic3,current
+PMID:17938297,0,6.091735813852,1,50,one,0.0,0,0,"['Guideline', 'Journal Article']",1,711,topic3,current
+PMID:29357392,0,6.091735813852,1,29,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1581,topic3,current
+PMID:34775787,0,6.091735813852,1,29,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S.""]",1,1587,topic3,current
+PMID:12748199,0,6.091735813852,1,2680,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,129,topic3,idf
+PMID:14656957,0,6.091735813852,1,1317,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,131,topic3,idf
+PMID:24352797,0,6.091735813852,1,836,one,0.0,0,0,"['Journal Article', 'Practice Guideline', 'Research Support, N.I.H., Extramural']",1,133,topic3,idf
+PMID:10920346,0,6.091735813852,1,399,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,148,topic3,idf
+PMID:28827377,0,6.091735813852,1,345,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,158,topic3,idf
+PMID:15611362,0,6.091735813852,1,229,one,0.0,0,0,"['Comparative Study', 'Guideline', 'Journal Article', 'Practice Guideline']",1,181,topic3,idf
+PMID:18574054,0,6.091735813852,1,218,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,186,topic3,idf
+PMID:17478736,0,6.091735813852,1,154,one,0.0,0,0,"['Guideline', 'Journal Article']",1,231,topic3,idf
+PMID:18391085,0,6.091735813852,1,137,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,251,topic3,idf
+PMID:30354828,0,6.091735813852,1,133,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,259,topic3,idf
+PMID:30575676,0,6.091735813852,1,112,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,305,topic3,idf
+PMID:16434724,0,6.091735813852,1,109,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,316,topic3,idf
+PMID:12623940,0,6.091735813852,1,104,one,0.0,0,0,"['Guideline', 'Journal Article', 'Review']",1,336,topic3,idf
+PMID:26458123,0,6.091735813852,1,87,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, U.S. Gov't, P.H.S.""]",1,394,topic3,idf
+PMID:18497370,0,6.091735813852,1,65,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,542,topic3,idf
+PMID:28135725,0,6.091735813852,1,56,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,662,topic3,idf
+PMID:8490481,0,6.091735813852,1,56,one,0.0,0,0,"['Guideline', 'Journal Article', 'Practice Guideline']",1,664,topic3,idf
+PMID:17938297,0,6.091735813852,1,50,one,0.0,0,0,"['Guideline', 'Journal Article']",1,765,topic3,idf
+PMID:29357392,0,6.091735813852,1,29,one,0.0,0,0,"['Journal Article', 'Practice Guideline']",1,1634,topic3,idf
+PMID:34775787,0,6.091735813852,1,29,one,0.0,0,0,"['Journal Article', 'Practice Guideline', ""Research Support, Non-U.S. Gov't"", ""Research Support, U.S. Gov't, P.H.S.""]",1,1640,topic3,idf

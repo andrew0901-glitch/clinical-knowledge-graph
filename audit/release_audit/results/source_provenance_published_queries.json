@@ -1,0 +1,7 @@
+{
+  "published": {
+    "denominator": "Complete published native trial-reference edges; alternate array nonempty is not automatically a second distinct source.",
+    "parameters": [],
+    "sql": "SELECT type,count(*) edges,count(*) FILTER(WHERE array_length(also_asserted_by_source_system)>0) nonempty_alternate_array,count(*) FILTER(WHERE array_length(also_asserted_by_source_system)=0) empty_alternate_array,count(*) FILTER(WHERE array_length(list_distinct(list_concat(coalesce(also_asserted_by_source_system,[]::VARCHAR[]),CASE WHEN source_system IS NULL THEN []::VARCHAR[] ELSE [source_system] END)))>1) distinct_multi_source_edges,count(*) FILTER(WHERE list_contains(also_asserted_by_source_system,source_system)) primary_repeated_in_alternate_array FROM e WHERE type IN ('VALIDATED_BY','CITES_BACKGROUND','HAS_DERIVED_PUBLICATION') GROUP BY 1 ORDER BY 1"
+  }
+}

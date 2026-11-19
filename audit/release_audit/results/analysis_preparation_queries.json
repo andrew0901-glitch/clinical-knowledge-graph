@@ -1,0 +1,26 @@
+[
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE cited_guideline AS SELECT DISTINCT cc.object article,p.population FROM base.c cc JOIN article a ON a.id=cc.subject CROSS JOIN populations p WHERE (a.guideline OR a.systematic_review) AND (NOT p.exclude_stubs OR NOT a.stub)"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE annotation_capability AS SELECT m.descriptor,p.population,bool_or(a.gr) gr,bool_or(a.gr AND m.edge_major) gr_major FROM am m JOIN article a ON a.id=m.article CROSS JOIN populations p WHERE NOT p.exclude_stubs OR NOT a.stub GROUP BY 1,2"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE citation_shared AS SELECT cc.subject,cc.object,list_has_any(s.source_terms,t.indexed_terms) forward,list_has_any(t.source_terms,s.indexed_terms) reverse FROM base.c cc JOIN profiles s ON s.article=cc.subject JOIN profiles t ON t.article=cc.object WHERE cc.subject<>cc.object AND (list_has_any(s.source_terms,t.indexed_terms) OR list_has_any(t.source_terms,s.indexed_terms))"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE citation_reach AS SELECT subject seed,object neighbor FROM citation_shared WHERE forward UNION SELECT object,subject FROM citation_shared WHERE reverse"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE traversal_articles AS WITH raw AS (SELECT DISTINCT p.population,'results_publications' traversal,l.article FROM result_links l CROSS JOIN populations p WHERE l.type='VALIDATED_BY' UNION SELECT DISTINCT g.population,'results_cited_by_guideline_systematic',l.article FROM result_links l JOIN cited_guideline g ON g.article=l.article WHERE l.type='VALIDATED_BY' UNION SELECT DISTINCT p.population,'background_publications',l.article FROM result_links l CROSS JOIN populations p WHERE l.type='CITES_BACKGROUND' UNION SELECT DISTINCT p.population,'topic_guidelines_reviews',m.article FROM (SELECT DISTINCT matched_descriptor FROM topic_expansion WHERE mode='full') x JOIN am m ON m.descriptor=x.matched_descriptor JOIN article a ON a.id=m.article CROSS JOIN populations p WHERE a.gr UNION SELECT DISTINCT p.population,'citation_shared_neighbors',x.neighbor FROM citation_reach x JOIN article a ON a.id=x.seed CROSS JOIN populations p WHERE NOT p.exclude_stubs OR NOT a.stub UNION SELECT DISTINCT p.population,'author_indexed_articles',article FROM profiles CROSS JOIN populations p WHERE EXISTS(SELECT 1 FROM authorship au WHERE au.subject=profiles.article) UNION SELECT DISTINCT p.population,'journal_guidelines',a.id FROM e JOIN article a ON a.id=e.subject CROSS JOIN populations p WHERE e.type='PUBLISHED_IN' AND a.guideline) SELECT DISTINCT raw.* FROM raw JOIN article a ON a.id=raw.article JOIN populations p ON p.population=raw.population WHERE NOT p.exclude_stubs OR NOT a.stub"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE incoming_nonstub AS SELECT cc.object article,count(DISTINCT cc.subject) in_corpus_citations FROM base.c cc JOIN article a ON a.id=cc.subject JOIN article b ON b.id=cc.object WHERE NOT a.stub AND NOT b.stub AND cc.subject<>cc.object GROUP BY cc.object"
+  }
+]

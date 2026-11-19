@@ -1,0 +1,27 @@
+{
+  "checks": [
+    "complete query/expanded descriptor maps and fan-out",
+    "candidate and top-list intersections across modes",
+    "all six complete query sets",
+    "Python distinct-pair DF and document census",
+    "Python math.log IDF for all matching descriptors",
+    "all exact top-100 orders",
+    "all top-100 count and IDF scores",
+    "all subtree-only and multi-branch attributions",
+    "top-20 overlap against current",
+    "all top-20/top-100 share denominators",
+    "complete top-five branch and descriptor hub lists, including zero cases"
+  ],
+  "code_commit": "21d8455b40b1c876e45cc208eda021e711d021c3",
+  "distinct_major_article_descriptor_pairs": 10420431,
+  "documents": 2854567,
+  "invocation": [
+    "audit/release_audit/scripts/rank_verify.py"
+  ],
+  "list_and_hub_cases": 108,
+  "method": "Independent Python sets, counters and dictionary scoring; SQL only reads source rows. No SQL aggregation/window/IDF results used to score or classify.",
+  "passed": true,
+  "population": "with_stubs",
+  "ranking_cases": 54,
+  "script_sha256": "5622d8fe20506bec6ac5b2cd87197a816eae15770cfabd7ce84c5412eb3e7d0c"
+}

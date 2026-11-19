@@ -1,0 +1,47 @@
+{
+  "languages": {
+    "note": "MedlinePlus nodes.",
+    "parameters": [],
+    "sql": "SELECT language, count(*) AS topics FROM topic GROUP BY 1 ORDER BY 1"
+  },
+  "mapping_agreement": {
+    "note": "Every TRANSLATION_OF pair; HAS_MESH descriptor sets incl. check tags.",
+    "parameters": [],
+    "sql": "SELECT count(*) AS pairs,\n            count(*) FILTER (WHERE es_d = en_d) AS identical_descriptor_sets,\n            count(*) FILTER (WHERE es_m = en_m) AS identical_descriptor_and_major_flags,\n            count(*) FILTER (WHERE es_d <> en_d) AS differing_descriptor_sets,\n            count(*) FILTER (WHERE len(es_d) = 0) AS spanish_unmapped,\n            count(*) FILTER (WHERE len(en_d) = 0) AS english_unmapped,\n            count(*) FILTER (WHERE es_d <> en_d AND list_has_all(en_d, es_d)) AS spanish_strict_subset,\n            count(*) FILTER (WHERE es_d <> en_d AND list_has_all(es_d, en_d)) AS spanish_strict_superset\n        FROM pair_cmp"
+  },
+  "mapping_differences": {
+    "note": "Pairs whose sets or major flags differ.",
+    "parameters": [],
+    "sql": "SELECT p.es, s.name AS es_name, p.en, n.name AS en_name,\n            list_filter(es_d, lambda d: NOT list_contains(en_d, d)) AS only_spanish,\n            list_filter(en_d, lambda d: NOT list_contains(es_d, d)) AS only_english\n        FROM pair_cmp p JOIN topic s ON s.id = p.es JOIN topic n ON n.id = p.en\n        WHERE es_d <> en_d OR es_m <> en_m ORDER BY p.en"
+  },
+  "per_topic_csv": {
+    "note": "One row per topic x population x mode (2,033 x 2 x 3).",
+    "parameters": [],
+    "sql": "COPY per_topic joined to topic and TRANSLATION_OF partner -> tables/lane2_per_topic.csv"
+  },
+  "table_all_topics": {
+    "note": "All 2,033 topics (English + Spanish), for reconciliation with analysis_topic_population.",
+    "parameters": [],
+    "sql": "SELECT population, mode, 'all' AS topic_set, count(*) AS topics,\n               count(*) FILTER (WHERE gr) AS reaching_guideline_or_review,\n               count(*) FILTER (WHERE trial) AS reaching_condition_trial,\n               count(*) FILTER (WHERE both_same) AS reaching_both_same_descriptor,\n               count(*) FILTER (WHERE gr AND trial) AS reaching_both_any_descriptor,\n               count(*) FILTER (WHERE gr_major) AS reaching_major_guideline_or_review,\n               count(*) FILTER (WHERE both_major_same) AS reaching_major_both_same_descriptor\n        FROM per_topic  GROUP BY population, mode ORDER BY population, list_position(['none', 'one', 'full'], mode)"
+  },
+  "table_english_only": {
+    "note": "English MedlinePlus topics only (language=en). Paper topic-table rows.",
+    "parameters": [],
+    "sql": "SELECT population, mode, 'english' AS topic_set, count(*) AS topics,\n               count(*) FILTER (WHERE gr) AS reaching_guideline_or_review,\n               count(*) FILTER (WHERE trial) AS reaching_condition_trial,\n               count(*) FILTER (WHERE both_same) AS reaching_both_same_descriptor,\n               count(*) FILTER (WHERE gr AND trial) AS reaching_both_any_descriptor,\n               count(*) FILTER (WHERE gr_major) AS reaching_major_guideline_or_review,\n               count(*) FILTER (WHERE both_major_same) AS reaching_major_both_same_descriptor\n        FROM per_topic WHERE language = 'en' GROUP BY population, mode ORDER BY population, list_position(['none', 'one', 'full'], mode)"
+  },
+  "table_spanish_only": {
+    "note": "Spanish topics only.",
+    "parameters": [],
+    "sql": "SELECT population, mode, 'spanish' AS topic_set, count(*) AS topics,\n               count(*) FILTER (WHERE gr) AS reaching_guideline_or_review,\n               count(*) FILTER (WHERE trial) AS reaching_condition_trial,\n               count(*) FILTER (WHERE both_same) AS reaching_both_same_descriptor,\n               count(*) FILTER (WHERE gr AND trial) AS reaching_both_any_descriptor,\n               count(*) FILTER (WHERE gr_major) AS reaching_major_guideline_or_review,\n               count(*) FILTER (WHERE both_major_same) AS reaching_major_both_same_descriptor\n        FROM per_topic WHERE language = 'es' GROUP BY population, mode ORDER BY population, list_position(['none', 'one', 'full'], mode)"
+  },
+  "translation_direction": {
+    "note": "All TRANSLATION_OF edges.",
+    "parameters": [],
+    "sql": "SELECT s.language AS subject_language, o.language AS object_language, count(*) AS edges,\n            count(DISTINCT e.subject) AS subjects, count(DISTINCT e.object) AS objects\n        FROM e JOIN topic s ON s.id = e.subject JOIN topic o ON o.id = e.object WHERE e.type = 'TRANSLATION_OF' GROUP BY 1, 2"
+  },
+  "unpaired": {
+    "note": "Topics with no TRANSLATION_OF edge in either direction.",
+    "parameters": [],
+    "sql": "SELECT t.language, count(*) AS topics_without_translation_edge FROM topic t\n        WHERE NOT EXISTS (SELECT 1 FROM e WHERE e.type='TRANSLATION_OF' AND (e.subject = t.id OR e.object = t.id))\n        GROUP BY 1"
+  }
+}

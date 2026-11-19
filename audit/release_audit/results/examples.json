@@ -1,0 +1,973 @@
+[
+  {
+    "area": "neurology",
+    "nodes": [
+      {
+        "doi": "10.1001/jama.2016.19635",
+        "id": "PMID:28118460",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/28118460/",
+        "label": "Article",
+        "name": "Screening for Obstructive Sleep Apnea in Adults: Evidence Report and Systematic Review for the US Preventive Services Task Force.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "clinicaltrials:NCT00047463",
+        "iri": "https://clinicaltrials.gov/study/NCT00047463",
+        "label": "ClinicalTrial",
+        "name": "Effects of Treating Obstructive Sleep Apnea in Epilepsy",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": "10.1212/01.wnl.0000323927.13250.54",
+        "id": "PMID:18711110",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/18711110/",
+        "label": "Article",
+        "name": "Treating obstructive sleep apnea in adults with epilepsy: a randomized pilot trial.",
+        "pmcid": "2676992",
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D004827",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D004827",
+        "label": "MeSHConcept",
+        "name": "Epilepsy",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "citation_edge": "urn:uuid:a3c277ef-9752-5e84-ae6f-2f10c93d696b",
+        "citing_article": "PMID:28118460",
+        "citing_types": [
+          "Journal Article",
+          "Meta-Analysis",
+          "Research Support, N.I.H., Extramural",
+          "Systematic Review"
+        ],
+        "descriptor": "MESH:D004827",
+        "mesh_edge": "urn:uuid:f0a36e6f-cd6f-5d1f-b442-71cb081baae9",
+        "publication_edge": "urn:uuid:b4ba48b4-824c-5bc7-95b6-418dc1371ae8",
+        "result_article": "PMID:18711110",
+        "trial": "clinicaltrials:NCT00047463"
+      }
+    ],
+    "traversal": "results"
+  },
+  {
+    "area": "neurology",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "MESH:D004827",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D004827",
+        "label": "MeSHConcept",
+        "name": "Epilepsy",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "clinicaltrials:NCT00001912",
+        "iri": "https://clinicaltrials.gov/study/NCT00001912",
+        "label": "ClinicalTrial",
+        "name": "Brain Tissue Swelling and Seizure Activity in Inactive Cysticercosis",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:7673957",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/7673957/",
+        "label": "Article",
+        "name": "Clinicoradiological and pathological correlations in patients with solitary cysticercus granuloma and epilepsy: focus on presence of the parasite and oedema formation.",
+        "pmcid": "486031",
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "article": "PMID:7673957",
+        "descriptor": "MESH:D004827",
+        "mesh_edge": "urn:uuid:003fe32d-fc13-5a88-ac10-ecf9b7147c8b",
+        "name": "Clinicoradiological and pathological correlations in patients with solitary cysticercus granuloma and epilepsy: focus on presence of the parasite and oedema formation.",
+        "pmcid": "486031",
+        "publication_edge": "urn:uuid:158348a6-3ac5-5288-b135-33147dce02f4",
+        "trial": "clinicaltrials:NCT00001912"
+      }
+    ],
+    "traversal": "background"
+  },
+  {
+    "area": "neurology",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "clinicaltrials:NCT00001149",
+        "iri": "https://clinicaltrials.gov/study/NCT00001149",
+        "label": "ClinicalTrial",
+        "name": "Monitoring Patients With Uncontrolled Epilepsy",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "lunasai:medlineplus_topic.1888",
+        "iri": "https://medlineplus.gov/spanish/epilepsy.html",
+        "label": "MedlinePlus",
+        "name": "Epilepsia",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:12601090",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/12601090/",
+        "label": "Article",
+        "name": "Practice parameter: temporal lobe and localized neocortical resections for epilepsy: report of the Quality Standards Subcommittee of the American Academy of Neurology, in association with the American Epilepsy Society and the American Association of Neurological Surgeons.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D004827",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D004827",
+        "label": "MeSHConcept",
+        "name": "Epilepsy",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "article": "PMID:12601090",
+        "article_mesh_edge": "urn:uuid:429ca553-3dc4-5b31-9744-3439fdbff69f",
+        "distance": 0,
+        "hierarchy_edge": null,
+        "matched_descriptor": "MESH:D004827",
+        "mesh_type": "mesh-list",
+        "pub_types": [
+          "Guideline",
+          "Journal Article",
+          "Practice Guideline",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Systematic Review"
+        ],
+        "query_descriptor": "MESH:D004827",
+        "study_aspect": "condition",
+        "topic": "lunasai:medlineplus_topic.1888",
+        "trial": "clinicaltrials:NCT00001149",
+        "trial_mesh_edge": "urn:uuid:b042fcb5-6df9-5914-a4a2-e2c7e28bc039"
+      }
+    ],
+    "traversal": "topic"
+  },
+  {
+    "area": "neurology",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "PMID:15111659",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/15111659/",
+        "label": "Article",
+        "name": "Efficacy and tolerability of the new antiepileptic drugs I: treatment of new onset epilepsy [RETIRED]: report of the Therapeutics and Technology Assessment Subcommittee and Quality Standards Subcommittee of the American Academy of Neurology and the American Epilepsy Society.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": "10.1212/01.wnl.0000323927.13250.54",
+        "id": "PMID:18711110",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/18711110/",
+        "label": "Article",
+        "name": "Treating obstructive sleep apnea in adults with epilepsy: a randomized pilot trial.",
+        "pmcid": "2676992",
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D004827",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D004827",
+        "label": "MeSHConcept",
+        "name": "Epilepsy",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "citation_edge": "urn:uuid:8cc2621e-f18b-50a5-ab47-52f9c1fde250",
+        "cited_article": "PMID:15111659",
+        "citing_article": "PMID:18711110",
+        "descriptor": "MESH:D004827",
+        "in_corpus_citations": 46,
+        "neighbor": "PMID:15111659",
+        "neighbor_mesh_edge": "urn:uuid:b0222046-9c10-5256-92cb-8aaf40ad957a",
+        "seed_article": "PMID:18711110",
+        "seed_mesh_edge": "urn:uuid:f0a36e6f-cd6f-5d1f-b442-71cb081baae9"
+      }
+    ],
+    "traversal": "article"
+  },
+  {
+    "area": "neurology",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "PMID:10025774",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/10025774/",
+        "label": "Article",
+        "name": "Topiramate increases brain GABA, homocarnosine, and pyrrolidinone in patients with epilepsy.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D004827",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D004827",
+        "label": "MeSHConcept",
+        "name": "Epilepsy",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "lunasai:openalex_author.A5018643148",
+        "iri": null,
+        "label": "Author",
+        "name": "Ognen A. C. Petroff",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "article": "PMID:10025774",
+        "author": "lunasai:openalex_author.A5018643148",
+        "authorship_edge": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+        "descriptor": "MESH:D004827",
+        "identity_flags": [],
+        "match_status": "matched",
+        "mesh_edge": "urn:uuid:ddd312ca-35c3-59c8-96f2-3bfb9f5e3890"
+      }
+    ],
+    "traversal": "author"
+  },
+  {
+    "area": "neurology",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "MESH:D004827",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D004827",
+        "label": "MeSHConcept",
+        "name": "Epilepsy",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:12601090",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/12601090/",
+        "label": "Article",
+        "name": "Practice parameter: temporal lobe and localized neocortical resections for epilepsy: report of the Quality Standards Subcommittee of the American Academy of Neurology, in association with the American Epilepsy Society and the American Association of Neurological Surgeons.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "nlm:401060",
+        "iri": "https://www.ncbi.nlm.nih.gov/nlmcatalog/401060",
+        "label": "Journal",
+        "name": "Neurology",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "descriptor": "MESH:D004827",
+        "guideline": "PMID:12601090",
+        "journal": "nlm:401060",
+        "journal_edge": "urn:uuid:00b81f9d-ab09-5c4d-a05c-e7b5fb4695b5",
+        "journal_name": "Neurology",
+        "mesh_edge": "urn:uuid:429ca553-3dc4-5b31-9744-3439fdbff69f",
+        "pub_types": [
+          "Guideline",
+          "Journal Article",
+          "Practice Guideline",
+          "Research Support, Non-U.S. Gov't",
+          "Research Support, U.S. Gov't, P.H.S.",
+          "Systematic Review"
+        ]
+      }
+    ],
+    "traversal": "journal"
+  },
+  {
+    "area": "respiratory",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "clinicaltrials:NCT00005711",
+        "iri": "https://clinicaltrials.gov/study/NCT00005711",
+        "label": "ClinicalTrial",
+        "name": "Intervention for Hispanic Children With Asthma",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": "10.1136/bmjopen-2022-064521",
+        "id": "PMID:35998970",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/35998970/",
+        "label": "Article",
+        "name": "Approaches to improving symptom appraisal: a systematic literature review.",
+        "pmcid": "9403152",
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:9006232",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/9006232/",
+        "label": "Article",
+        "name": "Implementation of individualized patient education for Hispanic children with asthma.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D001249",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D001249",
+        "label": "MeSHConcept",
+        "name": "Asthma",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "citation_edge": "urn:uuid:aabb8cd3-69bc-59b8-8db1-8522a0034bae",
+        "citing_article": "PMID:35998970",
+        "citing_types": [
+          "Journal Article",
+          "Systematic Review",
+          "Research Support, Non-U.S. Gov't"
+        ],
+        "descriptor": "MESH:D001249",
+        "mesh_edge": "urn:uuid:d5ff1c68-6598-58c9-a3e2-fb6bf8422bf4",
+        "publication_edge": "urn:uuid:a1c371f6-19b9-5458-b028-297af84d2596",
+        "result_article": "PMID:9006232",
+        "trial": "clinicaltrials:NCT00005711"
+      }
+    ],
+    "traversal": "results"
+  },
+  {
+    "area": "respiratory",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "MESH:D001249",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D001249",
+        "label": "MeSHConcept",
+        "name": "Asthma",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "clinicaltrials:NCT00000575",
+        "iri": "https://clinicaltrials.gov/study/NCT00000575",
+        "label": "ClinicalTrial",
+        "name": "Childhood Asthma Management Program (CAMP) Phases I (Trial), II (CAMPCS), III (CAMPCS/2), and IV (CAMPCS/3)",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:10069869",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/10069869/",
+        "label": "Article",
+        "name": "Relationships between duration of asthma and asthma severity among children in the Childhood Asthma Management Program (CAMP).",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "article": "PMID:10069869",
+        "descriptor": "MESH:D001249",
+        "mesh_edge": "urn:uuid:c5a1a506-c55d-56f5-8963-52d1feabbf96",
+        "name": "Relationships between duration of asthma and asthma severity among children in the Childhood Asthma Management Program (CAMP).",
+        "pmcid": null,
+        "publication_edge": "urn:uuid:61cbba6d-7337-5bf9-84ac-bc03c85f3def",
+        "trial": "clinicaltrials:NCT00000575"
+      }
+    ],
+    "traversal": "background"
+  },
+  {
+    "area": "respiratory",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "PMID:11972488",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/11972488/",
+        "label": "Article",
+        "name": "Asthma and allergies at school--a Swedish national position paper.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "lunasai:medlineplus_topic.1507",
+        "iri": "https://medlineplus.gov/asthmainchildren.html",
+        "label": "MedlinePlus",
+        "name": "Asthma in Children",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "clinicaltrials:NCT00000575",
+        "iri": "https://clinicaltrials.gov/study/NCT00000575",
+        "label": "ClinicalTrial",
+        "name": "Childhood Asthma Management Program (CAMP) Phases I (Trial), II (CAMPCS), III (CAMPCS/2), and IV (CAMPCS/3)",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D001249",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D001249",
+        "label": "MeSHConcept",
+        "name": "Asthma",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "article": "PMID:11972488",
+        "article_mesh_edge": "urn:uuid:c656d515-109a-5173-9cc7-5f1487f5a29c",
+        "distance": 0,
+        "hierarchy_edge": null,
+        "matched_descriptor": "MESH:D001249",
+        "mesh_type": "mesh-list",
+        "pub_types": [
+          "Guideline",
+          "Journal Article"
+        ],
+        "query_descriptor": "MESH:D001249",
+        "study_aspect": "condition",
+        "topic": "lunasai:medlineplus_topic.1507",
+        "trial": "clinicaltrials:NCT00000575",
+        "trial_mesh_edge": "urn:uuid:0781844a-466c-52ba-b922-3e910f071611"
+      }
+    ],
+    "traversal": "topic"
+  },
+  {
+    "area": "respiratory",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "MESH:D001249",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D001249",
+        "label": "MeSHConcept",
+        "name": "Asthma",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:2398608",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/2398608/",
+        "label": "Article",
+        "name": "Changing patterns of asthma hospitalization among children: 1979 to 1987.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:9006232",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/9006232/",
+        "label": "Article",
+        "name": "Implementation of individualized patient education for Hispanic children with asthma.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "citation_edge": "urn:uuid:4514cec2-dde9-5333-818f-379b4f784e67",
+        "cited_article": "PMID:2398608",
+        "citing_article": "PMID:9006232",
+        "descriptor": "MESH:D001249",
+        "in_corpus_citations": 102,
+        "neighbor": "PMID:2398608",
+        "neighbor_mesh_edge": "urn:uuid:0aa12c95-b295-5f05-8121-aa275cec4d51",
+        "seed_article": "PMID:9006232",
+        "seed_mesh_edge": "urn:uuid:d5ff1c68-6598-58c9-a3e2-fb6bf8422bf4"
+      }
+    ],
+    "traversal": "article"
+  },
+  {
+    "area": "respiratory",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "lunasai:openalex_author.A5054519215",
+        "iri": null,
+        "label": "Author",
+        "name": "Brian Jonathon Lipworth",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:10023966",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/10023966/",
+        "label": "Article",
+        "name": "Leukotriene-receptor antagonists.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D001249",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D001249",
+        "label": "MeSHConcept",
+        "name": "Asthma",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "article": "PMID:10023966",
+        "author": "lunasai:openalex_author.A5054519215",
+        "authorship_edge": "urn:uuid:a7780163-b7f3-544a-bb07-4aa57aa8f539",
+        "descriptor": "MESH:D001249",
+        "identity_flags": [],
+        "match_status": "matched",
+        "mesh_edge": "urn:uuid:ff2933d5-66db-5ea2-8655-1d876f81dce9"
+      }
+    ],
+    "traversal": "author"
+  },
+  {
+    "area": "respiratory",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "nlm:7804028",
+        "iri": "https://www.ncbi.nlm.nih.gov/nlmcatalog/7804028",
+        "label": "Journal",
+        "name": "Allergy",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D001249",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D001249",
+        "label": "MeSHConcept",
+        "name": "Asthma",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:11972488",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/11972488/",
+        "label": "Article",
+        "name": "Asthma and allergies at school--a Swedish national position paper.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "descriptor": "MESH:D001249",
+        "guideline": "PMID:11972488",
+        "journal": "nlm:7804028",
+        "journal_edge": "urn:uuid:8297662d-3891-5a0a-82ed-d602d75a7a35",
+        "journal_name": "Allergy",
+        "mesh_edge": "urn:uuid:c656d515-109a-5173-9cc7-5f1487f5a29c",
+        "pub_types": [
+          "Guideline",
+          "Journal Article"
+        ]
+      }
+    ],
+    "traversal": "journal"
+  },
+  {
+    "area": "cardiovascular",
+    "nodes": [
+      {
+        "doi": "10.7326/M14-1796",
+        "id": "PMID:25155419",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/25155419/",
+        "label": "Article",
+        "name": "Behavioral counseling to promote a healthful diet and physical activity for cardiovascular disease prevention in adults with cardiovascular risk factors: U.S. Preventive Services Task Force Recommendation Statement.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "clinicaltrials:NCT00000616",
+        "iri": "https://clinicaltrials.gov/study/NCT00000616",
+        "label": "ClinicalTrial",
+        "name": "PREMIER: Lifestyle Interventions for Blood Pressure Control",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:16585662",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/16585662/",
+        "label": "Article",
+        "name": "Effects of comprehensive lifestyle modification on diet, weight, physical fitness, and blood pressure control: 18-month results of a randomized trial.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D006973",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D006973",
+        "label": "MeSHConcept",
+        "name": "Hypertension",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "citation_edge": "urn:uuid:137bdfa7-6fda-5355-bef7-c370a9a8772d",
+        "citing_article": "PMID:25155419",
+        "citing_types": [
+          "Journal Article",
+          "Practice Guideline",
+          "Research Support, U.S. Gov't, P.H.S."
+        ],
+        "descriptor": "MESH:D006973",
+        "mesh_edge": "urn:uuid:4288c589-5b69-5ffd-9e74-92fa1144a542",
+        "publication_edge": "urn:uuid:821fff14-8d8a-5a4a-a1e2-7a2725e2cf07",
+        "result_article": "PMID:16585662",
+        "trial": "clinicaltrials:NCT00000616"
+      }
+    ],
+    "traversal": "results"
+  },
+  {
+    "area": "cardiovascular",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "MESH:D006973",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D006973",
+        "label": "MeSHConcept",
+        "name": "Hypertension",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "clinicaltrials:NCT00000479",
+        "iri": "https://clinicaltrials.gov/study/NCT00000479",
+        "label": "ClinicalTrial",
+        "name": "Women's Health Study (WHS): A Randomized Trial of Low-dose Aspirin and Vitamin E in the Primary Prevention of Cardiovascular Disease and Cancer",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:11799087",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/11799087/",
+        "label": "Article",
+        "name": "Development of predictive models for long-term cardiovascular risk associated with systolic and diastolic blood pressure.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "article": "PMID:11799087",
+        "descriptor": "MESH:D006973",
+        "mesh_edge": "urn:uuid:e5eef0d5-b3c6-53bb-994b-95a610a4e72d",
+        "name": "Development of predictive models for long-term cardiovascular risk associated with systolic and diastolic blood pressure.",
+        "pmcid": null,
+        "publication_edge": "urn:uuid:06abe0c9-c26a-5ddb-8472-01f4a79a7fdb",
+        "trial": "clinicaltrials:NCT00000479"
+      }
+    ],
+    "traversal": "background"
+  },
+  {
+    "area": "cardiovascular",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "clinicaltrials:NCT00000421",
+        "iri": "https://clinicaltrials.gov/study/NCT00000421",
+        "label": "ClinicalTrial",
+        "name": "Serologically Active, Clinically Stable Systemic Lupus Erythematosus",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "lunasai:medlineplus_topic.1955",
+        "iri": "https://medlineplus.gov/spanish/highbloodpressure.html",
+        "label": "MedlinePlus",
+        "name": "Presi\u00f3n arterial alta",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D006973",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D006973",
+        "label": "MeSHConcept",
+        "name": "Hypertension",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:10920346",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/10920346/",
+        "label": "Article",
+        "name": "Report of the National High Blood Pressure Education Program Working Group on High Blood Pressure in Pregnancy.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "article": "PMID:10920346",
+        "article_mesh_edge": "urn:uuid:f37a8995-41eb-5521-8adb-72217de77b1c",
+        "distance": 0,
+        "hierarchy_edge": null,
+        "matched_descriptor": "MESH:D006973",
+        "mesh_type": "mesh-list",
+        "pub_types": [
+          "Guideline",
+          "Journal Article",
+          "Practice Guideline"
+        ],
+        "query_descriptor": "MESH:D006973",
+        "study_aspect": "condition",
+        "topic": "lunasai:medlineplus_topic.1955",
+        "trial": "clinicaltrials:NCT00000421",
+        "trial_mesh_edge": "urn:uuid:84ba5b01-dc7c-5b7a-82e3-c4e0441f0c9c"
+      }
+    ],
+    "traversal": "topic"
+  },
+  {
+    "area": "cardiovascular",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "PMID:12748199",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/12748199/",
+        "label": "Article",
+        "name": "The Seventh Report of the Joint National Committee on Prevention, Detection, Evaluation, and Treatment of High Blood Pressure: the JNC 7 report.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "MESH:D006973",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D006973",
+        "label": "MeSHConcept",
+        "name": "Hypertension",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:16585662",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/16585662/",
+        "label": "Article",
+        "name": "Effects of comprehensive lifestyle modification on diet, weight, physical fitness, and blood pressure control: 18-month results of a randomized trial.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "citation_edge": "urn:uuid:e7fd2ec4-2692-5fda-89f9-8c0538cd63a6",
+        "cited_article": "PMID:12748199",
+        "citing_article": "PMID:16585662",
+        "descriptor": "MESH:D006973",
+        "in_corpus_citations": 2680,
+        "neighbor": "PMID:12748199",
+        "neighbor_mesh_edge": "urn:uuid:6e147f29-4285-59e6-994f-7f7c0fe35002",
+        "seed_article": "PMID:16585662",
+        "seed_mesh_edge": "urn:uuid:4288c589-5b69-5ffd-9e74-92fa1144a542"
+      }
+    ],
+    "traversal": "article"
+  },
+  {
+    "area": "cardiovascular",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "MESH:D006973",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D006973",
+        "label": "MeSHConcept",
+        "name": "Hypertension",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:10022680",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/10022680/",
+        "label": "Article",
+        "name": "Successful outcomes in pheochromocytoma surgery in the modern era.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "lunasai:openalex_author.A5051725638",
+        "iri": null,
+        "label": "Author",
+        "name": "JAMES C. ULCHAKER",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "article": "PMID:10022680",
+        "author": "lunasai:openalex_author.A5051725638",
+        "authorship_edge": "urn:uuid:ebacb8b2-4460-5f0a-9133-4dffa5ad2185",
+        "descriptor": "MESH:D006973",
+        "identity_flags": [],
+        "match_status": "matched",
+        "mesh_edge": "urn:uuid:c2362d0f-ee3e-5c2b-bbab-891a77a17e66"
+      }
+    ],
+    "traversal": "author"
+  },
+  {
+    "area": "cardiovascular",
+    "nodes": [
+      {
+        "doi": null,
+        "id": "MESH:D006973",
+        "iri": "https://meshb.nlm.nih.gov/record/ui?ui=D006973",
+        "label": "MeSHConcept",
+        "name": "Hypertension",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "nlm:370476",
+        "iri": "https://www.ncbi.nlm.nih.gov/nlmcatalog/370476",
+        "label": "Journal",
+        "name": "American Journal of Obstetrics and Gynecology",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      },
+      {
+        "doi": null,
+        "id": "PMID:10920346",
+        "iri": "https://pubmed.ncbi.nlm.nih.gov/10920346/",
+        "label": "Article",
+        "name": "Report of the National High Blood Pressure Education Program Working Group on High Blood Pressure in Pregnancy.",
+        "pmcid": null,
+        "stub": false,
+        "url": null
+      }
+    ],
+    "rows": [
+      {
+        "descriptor": "MESH:D006973",
+        "guideline": "PMID:10920346",
+        "journal": "nlm:370476",
+        "journal_edge": "urn:uuid:b798f746-fdf5-574f-930d-363e1266d5c5",
+        "journal_name": "American Journal of Obstetrics and Gynecology",
+        "mesh_edge": "urn:uuid:f37a8995-41eb-5521-8adb-72217de77b1c",
+        "pub_types": [
+          "Guideline",
+          "Journal Article",
+          "Practice Guideline"
+        ]
+      }
+    ],
+    "traversal": "journal"
+  }
+]

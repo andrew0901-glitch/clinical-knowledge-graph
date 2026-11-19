@@ -1,0 +1,7 @@
+population,mode,topic_set,topics,reaching_guideline_or_review,reaching_condition_trial,reaching_both_same_descriptor,reaching_both_any_descriptor,reaching_major_guideline_or_review,reaching_major_both_same_descriptor
+with_stubs,none,english,1017,1011,720,719,719,1009,719
+with_stubs,one,english,1017,1011,740,734,739,1010,734
+with_stubs,full,english,1017,1011,749,743,748,1010,743
+without_stubs,none,english,1017,1011,720,719,719,1009,719
+without_stubs,one,english,1017,1011,740,734,739,1010,734
+without_stubs,full,english,1017,1011,749,743,748,1010,743

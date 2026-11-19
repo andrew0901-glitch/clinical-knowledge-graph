@@ -1,0 +1,236 @@
+{
+  "duplicate_role_examples": [],
+  "duplicate_role_pairs": [],
+  "journal_identity": [
+    {
+      "identity_tier": "fallback_abbreviation",
+      "journals": 2358,
+      "with_source_url": 0
+    },
+    {
+      "identity_tier": "nlm_unique_id",
+      "journals": 376,
+      "with_source_url": 376
+    }
+  ],
+  "journal_name_collisions": [
+    {
+      "journal_nodes_in_shared_abbreviations": null,
+      "shared_abbreviations": 0
+    }
+  ],
+  "pmc_id_disagreement": [
+    {
+      "comparable_links": 1299544,
+      "differing_pmcid": 0,
+      "population": "with_stubs"
+    },
+    {
+      "comparable_links": 1299544,
+      "differing_pmcid": 0,
+      "population": "without_stubs"
+    }
+  ],
+  "pmc_mapping_comparison": [
+    {
+      "articles_with_pmcid": 1299544,
+      "lacking_pmc_link": 0,
+      "population": "without_stubs"
+    },
+    {
+      "articles_with_pmcid": 1299544,
+      "lacking_pmc_link": 0,
+      "population": "with_stubs"
+    }
+  ],
+  "pmc_multiple_pubmed_ids": [
+    {
+      "maximum_articles": 2,
+      "pmc_records_with_multiple_article_endpoints": 13
+    }
+  ],
+  "provenance_by_type": [
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 21135411,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "AUTHORED_BY"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 31922142,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "CITES"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 736649,
+      "edges": 736649,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "CITES_BACKGROUND"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 3153344,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 2500000,
+      "release_provenance_id": 0,
+      "type": "CONDUCTED_AT"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 42519,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 41714,
+      "type": "HAS_BROADER"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 185654,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "HAS_BROADER_ANCESTOR"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 202205,
+      "edges": 202205,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "HAS_DERIVED_PUBLICATION"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 4885,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "HAS_LANGUAGE_RESOURCE"
+    },
+    {
+      "agent_type_not_provided": 28906404,
+      "direct_source_url": 0,
+      "edges": 42720732,
+      "knowledge_level_not_provided": 2709,
+      "primary_source": 7000000,
+      "release_provenance_id": 0,
+      "type": "HAS_MESH"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 1334074,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 1334074,
+      "release_provenance_id": 0,
+      "type": "HAS_PMC_RECORD"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 3651,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "IN_TOPIC_GROUP"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 51747,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "LINKS_TO_RESOURCE"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 3147895,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 3147895,
+      "release_provenance_id": 0,
+      "type": "PUBLISHED_IN"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 6246,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "RELATED_TOPIC"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 22573,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "RESOURCE_TRANSLATION_OF"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 931156,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "SPONSORED_BY"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 0,
+      "edges": 1016,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "TRANSLATION_OF"
+    },
+    {
+      "agent_type_not_provided": 0,
+      "direct_source_url": 156001,
+      "edges": 156167,
+      "knowledge_level_not_provided": 0,
+      "primary_source": 0,
+      "release_provenance_id": 0,
+      "type": "VALIDATED_BY"
+    }
+  ],
+  "self_citation_chain_sensitivity": [
+    {
+      "population": "with_stubs",
+      "result_articles_with_guideline_self_cite": 40
+    },
+    {
+      "population": "without_stubs",
+      "result_articles_with_guideline_self_cite": 40
+    }
+  ],
+  "stub_metadata": [
+    {
+      "doi": 0,
+      "major_lists": 0,
+      "pmcid": 0,
+      "publication_types": 0,
+      "stubs": 578177,
+      "titles": 0
+    }
+  ]
+}

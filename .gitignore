@@ -8,3 +8,6 @@ trial_landscape_out/
 trial_landscape_cache/
 evidence_map_out/
 evidence_map_cache/
+data/
+.work/
+*.audit_work/

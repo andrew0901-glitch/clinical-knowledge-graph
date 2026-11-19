@@ -1,0 +1,34 @@
+{
+  "pmc_v02": [
+    {
+      "any_pmc_route": 7277,
+      "articles": 23460,
+      "pmcid": 7251,
+      "population": "with_stubs"
+    },
+    {
+      "any_pmc_route": 7277,
+      "articles": 23460,
+      "pmcid": 7251,
+      "population": "without_stubs"
+    }
+  ],
+  "v02": [
+    {
+      "population": "with_stubs",
+      "result_articles": 140372,
+      "result_articles_cited_by_guideline_or_systematic_review": 23460,
+      "trials": 606580,
+      "trials_with_results": 42075,
+      "trials_with_results_cited_by_guideline_or_systematic_review": 13721
+    },
+    {
+      "population": "without_stubs",
+      "result_articles": 45865,
+      "result_articles_cited_by_guideline_or_systematic_review": 23460,
+      "trials": 606580,
+      "trials_with_results": 22793,
+      "trials_with_results_cited_by_guideline_or_systematic_review": 13721
+    }
+  ]
+}

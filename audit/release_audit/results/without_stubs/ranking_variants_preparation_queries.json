@@ -1,0 +1,62 @@
+[
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE eligible AS SELECT DISTINCT article,descriptor FROM am WHERE edge_major IS TRUE AND NOT check_tag AND NOT EXISTS(SELECT 1 FROM stop WHERE id=descriptor)"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE qterms AS SELECT DISTINCT s.key seed,t.object query_descriptor FROM seeds s JOIN tm t ON t.subject=s.id WHERE s.kind='topic' AND NOT EXISTS(SELECT 1 FROM stop WHERE id=t.object) UNION SELECT DISTINCT s.key,a.descriptor FROM seeds s JOIN am a ON a.article=s.id WHERE s.kind='article' AND a.edge_major IS TRUE AND NOT a.check_tag AND NOT EXISTS(SELECT 1 FROM stop WHERE id=a.descriptor)"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE idf AS SELECT descriptor,count(DISTINCT article) df,ln(((SELECT count(DISTINCT article) FROM eligible)+1.0)/(count(DISTINCT article)+1.0))+1.0 idf FROM eligible GROUP BY descriptor"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE expansion AS WITH raw AS (SELECT q.*,m.mode,q.query_descriptor matched_descriptor,0 distance,NULL::VARCHAR hierarchy_edge,-1 priority FROM qterms q CROSS JOIN modes m UNION ALL SELECT q.*,m.mode,h.child,h.depth,h.edge_id,h.priority FROM qterms q JOIN hierarchy h ON h.parent=q.query_descriptor CROSS JOIN modes m WHERE (m.level=2 OR (m.level=1 AND h.priority=0))) SELECT * EXCLUDE(priority) FROM raw WHERE NOT EXISTS(SELECT 1 FROM stop WHERE id=matched_descriptor) QUALIFY row_number() OVER(PARTITION BY seed,mode,query_descriptor,matched_descriptor ORDER BY distance,priority,hierarchy_edge)=1"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE neighbors AS SELECT s.key seed,c.object article FROM seeds s JOIN base.c c ON c.subject=s.id WHERE s.kind='article' UNION SELECT s.key,c.subject FROM seeds s JOIN base.c c ON c.object=s.id WHERE s.kind='article'"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE hits AS SELECT e.*,a.article,d.df,d.idf FROM expansion e JOIN eligible a ON a.descriptor=e.matched_descriptor JOIN idf d ON d.descriptor=e.matched_descriptor JOIN seeds s ON s.key=e.seed WHERE s.kind='topic' OR (a.article<>s.id AND EXISTS(SELECT 1 FROM neighbors n WHERE n.seed=e.seed AND n.article=a.article))"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE closest AS SELECT * FROM hits QUALIFY row_number() OVER(PARTITION BY seed,mode,article,query_descriptor ORDER BY distance,matched_descriptor)=1"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE idf_choice AS SELECT * FROM hits QUALIFY row_number() OVER(PARTITION BY seed,mode,article,query_descriptor ORDER BY (distance=0) DESC,idf DESC,distance,matched_descriptor)=1"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE idf_scores AS SELECT seed,mode,article,sum(idf) FILTER(WHERE distance=0) direct_idf,sum(idf) FILTER(WHERE distance>0) narrow_idf FROM idf_choice GROUP BY 1,2,3"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE scores AS SELECT c.seed,c.mode,c.article,count(*) FILTER(WHERE distance=0) direct_matches,count(*) FILTER(WHERE distance=1) one_matches,count(*) FILTER(WHERE distance>1) deeper_matches,count(*) FILTER(WHERE distance>0) narrow_matches,round(coalesce(d.direct_idf,0),12) direct_idf,round(coalesce(d.narrow_idf,0),12) narrow_idf,coalesce(i.in_corpus_citations,0) in_corpus_citations FROM closest c JOIN idf_scores d USING(seed,mode,article) LEFT JOIN incoming i ON i.article=c.article GROUP BY c.seed,c.mode,c.article,d.direct_idf,d.narrow_idf,i.in_corpus_citations"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE branches AS SELECT DISTINCT e.seed,e.mode,e.query_descriptor,e.matched_descriptor,b.child branch FROM expansion e JOIN hierarchy b ON b.parent=e.query_descriptor AND b.priority=0 WHERE e.distance>0 AND NOT EXISTS(SELECT 1 FROM stop WHERE id=b.child) AND (e.matched_descriptor=b.child OR EXISTS(SELECT 1 FROM hierarchy z WHERE z.child=e.matched_descriptor AND z.parent=b.child))"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE branch_hits AS SELECT DISTINCT h.seed,h.mode,h.article,h.query_descriptor,b.branch FROM hits h JOIN branches b USING(seed,mode,query_descriptor,matched_descriptor) WHERE h.distance>0"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE attribution AS WITH stats AS (SELECT s.seed,s.mode,s.article,count(DISTINCT h.query_descriptor||' > '||b.branch) branches,count(DISTINCT h.query_descriptor||' > '||h.matched_descriptor) FILTER(WHERE h.distance>0 AND b.branch IS NULL) unresolved FROM scores s JOIN hits h USING(seed,mode,article) LEFT JOIN branches b USING(seed,mode,query_descriptor,matched_descriptor) GROUP BY 1,2,3) SELECT s.*,t.branches,t.unresolved,(s.direct_matches=0 AND t.branches=1 AND t.unresolved=0) single_subtree_only FROM scores s JOIN stats t USING(seed,mode,article)"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE rankings AS SELECT *, 'current' variant,row_number() OVER(PARTITION BY seed,mode ORDER BY direct_matches DESC,one_matches DESC,deeper_matches DESC,in_corpus_citations DESC,article) rank FROM scores UNION ALL SELECT *, 'count' variant,row_number() OVER(PARTITION BY seed,mode ORDER BY direct_matches DESC,narrow_matches DESC,in_corpus_citations DESC,article) rank FROM scores UNION ALL SELECT *, 'idf' variant,row_number() OVER(PARTITION BY seed,mode ORDER BY direct_idf DESC,narrow_idf DESC,in_corpus_citations DESC,article) rank FROM scores"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE TEMP TABLE tops AS SELECT r.*,k.k FROM rankings r CROSS JOIN (VALUES (20),(100)) k(k) WHERE r.rank<=k.k"
+  }
+]
