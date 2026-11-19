@@ -75,9 +75,7 @@ What was run for this deposit, on the public files fetched from Hugging Face (ta
   content hold for v0.2.1. Statements about the release metadata files (dataset card, citation file, exporter commit) describe v0.2.0. The
   lanes were run on v0.2.1 itself.
 - **Comparisons with earlier builds are not included.** The original audit also compared v0.2.0 with release v0.1.0 and with an unreleased
-  pre-correction build. Those need other files and cannot be reproduced from here; see [`EXCLUDED.md`](EXCLUDED.md). One consequence: the
-  finding that 38 merged BACKGROUND/DERIVED role-pairs lost a prior `aact` source label is not in this deposit, because it is a difference
-  between the unreleased build and the release.
+  pre-correction build. Those need other files and cannot be reproduced from here; see [`EXCLUDED.md`](EXCLUDED.md). The finding that 38 merged BACKGROUND/DERIVED role-pairs lost a prior `aact` source label is an example: the 38 merged edges themselves are published: [`release_audit/results/provenance_38_lost_aact_label.csv`](release_audit/results/provenance_38_lost_aact_label.csv) (edge id, subject, object, predicate, `source_system` as released, and the lost label `aact`; 10 BACKGROUND, 28 DERIVED, 0 RESULT). The list is public and checkable against the release: every id is an edge of the v0.2.1 files, with the stated endpoints and source labels. But deriving it required comparing the release with an unreleased internal build, so it cannot be recomputed from the release alone.
 - **Counts are censuses, examples are purposive.** The 18 path examples and 6 ranking queries are illustrations, not relevance judgments or
   benchmarks. Citations, RESULT/BACKGROUND/DERIVED roles and shared descriptors are not evidence of trial success, guideline endorsement or
   clinical quality; the "cited by a guideline or SR" counts are lower bounds (only citations inside the graph).

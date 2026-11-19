@@ -76,3 +76,11 @@ def test_excluded_material_is_not_present():
     names = {p.name for p in AUDIT.rglob('*') if p.is_file()}
     assert not any(n.startswith('jev_') for n in names)
     assert not (names & {'CHANGES_SINCE_PRECORRECTION.md', 'publish_v023.py', 'copy_receipt.json', 'correction_source_mismatches.json'})
+
+
+def test_lost_aact_label_list():
+    rows = list(csv.DictReader(open(AUDIT / 'release_audit/results/provenance_38_lost_aact_label.csv')))
+    assert len(rows) == 38 and len({r['edge_id'] for r in rows}) == 38
+    from collections import Counter
+    assert Counter(r['original_predicate'].rsplit('.', 1)[-1] for r in rows) == {'CITES_BACKGROUND': 10, 'HAS_DERIVED_PUBLICATION': 28}
+    assert {r['lost_source_label'] for r in rows} == {'aact'} and {r['source_system'] for r in rows} == {'ctgov_api'}
