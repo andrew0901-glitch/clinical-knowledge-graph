@@ -1,0 +1,421 @@
+{
+  "A_D000544_major_map": [
+    {
+      "articles": 11925,
+      "articles_without_year": 0,
+      "condition": "D000544",
+      "distinct_citing_reviews": 244,
+      "guideline": 5,
+      "guideline_2022_2026": 2,
+      "max_year": 2026,
+      "min_year": 1990,
+      "observational": 128,
+      "other": 11036,
+      "other_trial": 176,
+      "population": "with_stubs",
+      "primary_cited": 226,
+      "primary_not_cited": 290,
+      "primary_studies": 516,
+      "rct": 340,
+      "rct_cited": 182,
+      "sr_or_ma": 240,
+      "sr_or_ma_2022_2026": 107
+    },
+    {
+      "articles": 11925,
+      "articles_without_year": 0,
+      "condition": "D000544",
+      "distinct_citing_reviews": 244,
+      "guideline": 5,
+      "guideline_2022_2026": 2,
+      "max_year": 2026,
+      "min_year": 1990,
+      "observational": 128,
+      "other": 11036,
+      "other_trial": 176,
+      "population": "without_stubs",
+      "primary_cited": 226,
+      "primary_not_cited": 290,
+      "primary_studies": 516,
+      "rct": 340,
+      "rct_cited": 182,
+      "sr_or_ma": 240,
+      "sr_or_ma_2022_2026": 107
+    }
+  ],
+  "A_D001943_major_map": [
+    {
+      "articles": 47004,
+      "articles_without_year": 0,
+      "condition": "D001943",
+      "distinct_citing_reviews": 1874,
+      "guideline": 180,
+      "guideline_2022_2026": 46,
+      "max_year": 2026,
+      "min_year": 1990,
+      "observational": 370,
+      "other": 40499,
+      "other_trial": 1823,
+      "population": "with_stubs",
+      "primary_cited": 2297,
+      "primary_not_cited": 2557,
+      "primary_studies": 4854,
+      "rct": 3031,
+      "rct_cited": 1706,
+      "sr_or_ma": 1101,
+      "sr_or_ma_2022_2026": 397
+    },
+    {
+      "articles": 47004,
+      "articles_without_year": 0,
+      "condition": "D001943",
+      "distinct_citing_reviews": 1874,
+      "guideline": 180,
+      "guideline_2022_2026": 46,
+      "max_year": 2026,
+      "min_year": 1990,
+      "observational": 370,
+      "other": 40499,
+      "other_trial": 1823,
+      "population": "without_stubs",
+      "primary_cited": 2297,
+      "primary_not_cited": 2557,
+      "primary_studies": 4854,
+      "rct": 3031,
+      "rct_cited": 1706,
+      "sr_or_ma": 1101,
+      "sr_or_ma_2022_2026": 397
+    }
+  ],
+  "A_D006333_major_map": [
+    {
+      "articles": 13500,
+      "articles_without_year": 0,
+      "condition": "D006333",
+      "distinct_citing_reviews": 1134,
+      "guideline": 25,
+      "guideline_2022_2026": 15,
+      "max_year": 2026,
+      "min_year": 1990,
+      "observational": 413,
+      "other": 10670,
+      "other_trial": 329,
+      "population": "with_stubs",
+      "primary_cited": 954,
+      "primary_not_cited": 1028,
+      "primary_studies": 1982,
+      "rct": 1653,
+      "rct_cited": 863,
+      "sr_or_ma": 410,
+      "sr_or_ma_2022_2026": 162
+    },
+    {
+      "articles": 13500,
+      "articles_without_year": 0,
+      "condition": "D006333",
+      "distinct_citing_reviews": 1134,
+      "guideline": 25,
+      "guideline_2022_2026": 15,
+      "max_year": 2026,
+      "min_year": 1990,
+      "observational": 413,
+      "other": 10670,
+      "other_trial": 329,
+      "population": "without_stubs",
+      "primary_cited": 954,
+      "primary_not_cited": 1028,
+      "primary_studies": 1982,
+      "rct": 1653,
+      "rct_cited": 863,
+      "sr_or_ma": 410,
+      "sr_or_ma_2022_2026": 162
+    }
+  ],
+  "B_D000544_results_articles": [
+    {
+      "cited_gsr_distinct_with_stubs_nonself": 65,
+      "cited_gsr_distinct_with_stubs_tool_rule": 65,
+      "cited_gsr_distinct_without_stubs_nonself": 65,
+      "cited_gsr_distinct_without_stubs_tool_rule": 65,
+      "cited_gsr_rows_tool_rule": 68,
+      "distinct_results_articles_with_stubs": 692,
+      "distinct_results_articles_without_stubs": 188,
+      "distinct_stub_results_articles": 504,
+      "results_article_rows": 714,
+      "trials": 3853,
+      "trials_with_results_article_with_stubs": 244,
+      "trials_with_results_article_without_stubs": 106
+    }
+  ],
+  "B_D001943_results_articles": [
+    {
+      "cited_gsr_distinct_with_stubs_nonself": 646,
+      "cited_gsr_distinct_with_stubs_tool_rule": 646,
+      "cited_gsr_distinct_without_stubs_nonself": 646,
+      "cited_gsr_distinct_without_stubs_tool_rule": 646,
+      "cited_gsr_rows_tool_rule": 735,
+      "distinct_results_articles_with_stubs": 3087,
+      "distinct_results_articles_without_stubs": 1211,
+      "distinct_stub_results_articles": 1876,
+      "results_article_rows": 3258,
+      "trials": 14321,
+      "trials_with_results_article_with_stubs": 1006,
+      "trials_with_results_article_without_stubs": 553
+    }
+  ],
+  "B_D006333_results_articles": [
+    {
+      "cited_gsr_distinct_with_stubs_nonself": 305,
+      "cited_gsr_distinct_with_stubs_tool_rule": 305,
+      "cited_gsr_distinct_without_stubs_nonself": 305,
+      "cited_gsr_distinct_without_stubs_tool_rule": 305,
+      "cited_gsr_rows_tool_rule": 329,
+      "distinct_results_articles_with_stubs": 1738,
+      "distinct_results_articles_without_stubs": 563,
+      "distinct_stub_results_articles": 1175,
+      "results_article_rows": 1845,
+      "trials": 5828,
+      "trials_with_results_article_with_stubs": 467,
+      "trials_with_results_article_without_stubs": 251
+    }
+  ],
+  "C_clinicaltrial_properties": {
+    "keys": [
+      {
+        "fill_rate_all": 100.0,
+        "fill_rate_registry_records": 100.16,
+        "filled": 606580,
+        "key": "category",
+        "present": 606580
+      },
+      {
+        "fill_rate_all": 100.0,
+        "fill_rate_registry_records": 100.16,
+        "filled": 606580,
+        "key": "id",
+        "present": 606580
+      },
+      {
+        "fill_rate_all": 100.0,
+        "fill_rate_registry_records": 100.16,
+        "filled": 606580,
+        "key": "iri",
+        "present": 606580
+      },
+      {
+        "fill_rate_all": 100.0,
+        "fill_rate_registry_records": 100.16,
+        "filled": 606580,
+        "key": "lunasai_labels",
+        "present": 606580
+      },
+      {
+        "fill_rate_all": 100.0,
+        "fill_rate_registry_records": 100.16,
+        "filled": 606580,
+        "key": "lunasai_layer",
+        "present": 606580
+      },
+      {
+        "fill_rate_all": 100.0,
+        "fill_rate_registry_records": 100.16,
+        "filled": 606580,
+        "key": "nct_id",
+        "present": 606580
+      },
+      {
+        "fill_rate_all": 100.0,
+        "fill_rate_registry_records": 100.16,
+        "filled": 606580,
+        "key": "url_source",
+        "present": 606580
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605610,
+        "key": "completion_date_kind",
+        "present": 605610
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605610,
+        "key": "completion_date_origin",
+        "present": 605610
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605610,
+        "key": "name",
+        "present": 606580
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605610,
+        "key": "overall_status",
+        "present": 605610
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605610,
+        "key": "start_date_kind",
+        "present": 605610
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605610,
+        "key": "start_date_origin",
+        "present": 605610
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605610,
+        "key": "valid_start_date_basis",
+        "present": 605610
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605605,
+        "key": "last_update_posted_date",
+        "present": 605605
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605605,
+        "key": "last_update_posted_date_kind",
+        "present": 605605
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605605,
+        "key": "last_update_posted_date_origin",
+        "present": 605605
+      },
+      {
+        "fill_rate_all": 99.84,
+        "fill_rate_registry_records": 100.0,
+        "filled": 605605,
+        "key": "valid_start_date",
+        "present": 605605
+      },
+      {
+        "fill_rate_all": 99.68,
+        "fill_rate_registry_records": 99.84,
+        "filled": 604630,
+        "key": "study_type",
+        "present": 604630
+      },
+      {
+        "fill_rate_all": 98.96,
+        "fill_rate_registry_records": 99.11,
+        "filled": 600249,
+        "key": "start_date",
+        "present": 600249
+      },
+      {
+        "fill_rate_all": 98.66,
+        "fill_rate_registry_records": 98.82,
+        "filled": 598477,
+        "key": "enrollment",
+        "present": 598477
+      },
+      {
+        "fill_rate_all": 97.09,
+        "fill_rate_registry_records": 97.24,
+        "filled": 588903,
+        "key": "completion_date",
+        "present": 588903
+      },
+      {
+        "fill_rate_all": 76.17,
+        "fill_rate_registry_records": 76.29,
+        "filled": 462034,
+        "key": "phase",
+        "present": 462034
+      },
+      {
+        "fill_rate_all": 0.0,
+        "fill_rate_registry_records": 0.0,
+        "filled": 18,
+        "key": "invalid_reason",
+        "present": 18
+      },
+      {
+        "fill_rate_all": 0.0,
+        "fill_rate_registry_records": 0.0,
+        "filled": 18,
+        "key": "valid_end_date",
+        "present": 18
+      },
+      {
+        "fill_rate_all": 0.0,
+        "fill_rate_registry_records": 0.0,
+        "filled": 0,
+        "key": "provenance_id",
+        "present": 606580
+      }
+    ],
+    "registry_records_with_title": 605610,
+    "trial_nodes": 606580
+  },
+  "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+  "rules": {
+    "citing_set": "any in-graph Article whose pub_types include Guideline, Practice Guideline, Systematic Review, Meta-Analysis or Network Meta-Analysis; not restricted to the condition; CITES self-links removed",
+    "design_order": [
+      "guideline",
+      "sr_or_ma",
+      "rct",
+      "other_trial",
+      "observational",
+      "other"
+    ],
+    "guideline": [
+      "Guideline",
+      "Practice Guideline"
+    ],
+    "observational": [
+      "Observational Study",
+      "Observational Study, Veterinary"
+    ],
+    "other_trial": [
+      "Clinical Trial",
+      "Clinical Trial, Phase I",
+      "Clinical Trial, Phase II",
+      "Clinical Trial, Phase III",
+      "Clinical Trial, Phase IV",
+      "Controlled Clinical Trial",
+      "Pragmatic Clinical Trial",
+      "Equivalence Trial",
+      "Adaptive Clinical Trial",
+      "Clinical Trial, Veterinary"
+    ],
+    "primary_studies": [
+      "rct",
+      "other_trial"
+    ],
+    "rct": [
+      "Randomized Controlled Trial",
+      "Randomized Controlled Trial, Veterinary"
+    ],
+    "sr_or_ma": [
+      "Systematic Review",
+      "Meta-Analysis",
+      "Network Meta-Analysis"
+    ],
+    "trial_tool_gsr": [
+      "Guideline",
+      "Practice Guideline",
+      "Systematic Review"
+    ],
+    "year_window": "Article.year BETWEEN 2022 AND 2026 inclusive (integer publication year)"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "population": [
+    {
+      "mode": "full",
+      "population": "with_stubs",
+      "topics": 2033,
+      "topics_reaching_source_condition_ancestor_or_list_trial": 1498,
+      "topics_with_guide_and_source_ancestor_trial_same_bridge": 1486,
+      "topics_with_same_descriptor_guide_trial_bridge": 1486,
+      "topics_with_same_major_descriptor_bridge": 1486
+    },
+    {
+      "mode": "none",
+      "population": "with_stubs",
+      "topics": 2033,
+      "topics_reaching_source_condition_ancestor_or_list_trial": 1442,
+      "topics_with_guide_and_source_ancestor_trial_same_bridge": 1440,
+      "topics_with_same_descriptor_guide_trial_bridge": 1438,
+      "topics_with_same_major_descriptor_bridge": 1438
+    },
+    {
+      "mode": "one",
+      "population": "with_stubs",
+      "topics": 2033,
+      "topics_reaching_source_condition_ancestor_or_list_trial": 1480,
+      "topics_with_guide_and_source_ancestor_trial_same_bridge": 1468,
+      "topics_with_same_descriptor_guide_trial_bridge": 1468,
+      "topics_with_same_major_descriptor_bridge": 1468
+    },
+    {
+      "mode": "full",
+      "population": "without_stubs",
+      "topics": 2033,
+      "topics_reaching_source_condition_ancestor_or_list_trial": 1498,
+      "topics_with_guide_and_source_ancestor_trial_same_bridge": 1486,
+      "topics_with_same_descriptor_guide_trial_bridge": 1486,
+      "topics_with_same_major_descriptor_bridge": 1486
+    },
+    {
+      "mode": "none",
+      "population": "without_stubs",
+      "topics": 2033,
+      "topics_reaching_source_condition_ancestor_or_list_trial": 1442,
+      "topics_with_guide_and_source_ancestor_trial_same_bridge": 1440,
+      "topics_with_same_descriptor_guide_trial_bridge": 1438,
+      "topics_with_same_major_descriptor_bridge": 1438
+    },
+    {
+      "mode": "one",
+      "population": "without_stubs",
+      "topics": 2033,
+      "topics_reaching_source_condition_ancestor_or_list_trial": 1480,
+      "topics_with_guide_and_source_ancestor_trial_same_bridge": 1468,
+      "topics_with_same_descriptor_guide_trial_bridge": 1468,
+      "topics_with_same_major_descriptor_bridge": 1468
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+article,article_mesh_edge,distance,hierarchy_edge,matched_descriptor,mesh_type,pub_types,query_descriptor,study_aspect,topic,trial,trial_mesh_edge
+PMID:10920346,urn:uuid:f37a8995-41eb-5521-8adb-72217de77b1c,0,,MESH:D006973,mesh-list,"['Guideline', 'Journal Article', 'Practice Guideline']",MESH:D006973,condition,lunasai:medlineplus_topic.1955,clinicaltrials:NCT00000421,urn:uuid:84ba5b01-dc7c-5b7a-82e3-c4e0441f0c9c

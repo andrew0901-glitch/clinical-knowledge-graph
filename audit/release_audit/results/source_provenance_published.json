@@ -1,0 +1,28 @@
+{
+  "published": [
+    {
+      "distinct_multi_source_edges": 18097,
+      "edges": 736649,
+      "empty_alternate_array": 10,
+      "nonempty_alternate_array": 18097,
+      "primary_repeated_in_alternate_array": 0,
+      "type": "CITES_BACKGROUND"
+    },
+    {
+      "distinct_multi_source_edges": 3621,
+      "edges": 202205,
+      "empty_alternate_array": 31,
+      "nonempty_alternate_array": 3621,
+      "primary_repeated_in_alternate_array": 0,
+      "type": "HAS_DERIVED_PUBLICATION"
+    },
+    {
+      "distinct_multi_source_edges": 2830,
+      "edges": 156167,
+      "empty_alternate_array": 0,
+      "nonempty_alternate_array": 2830,
+      "primary_repeated_in_alternate_array": 0,
+      "type": "VALIDATED_BY"
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+  "conditions": {
+    "D000544": {
+      "committed_csv_comparison": {
+        "by_phase_status.csv": "identical",
+        "by_sponsor.csv": "identical",
+        "by_sponsor_class.csv": "identical",
+        "countries.csv": "identical",
+        "descriptors.csv": "identical",
+        "results_publications.csv": "same_rows_different_order_of_tied_rows",
+        "sites.csv": "same_rows_different_order_of_tied_rows",
+        "timeline_start_year.csv": "identical",
+        "trials.csv": "identical"
+      },
+      "committed_summary_differences": {
+        "run_seconds": {
+          "committed": 1.39,
+          "rerun": 1.45
+        }
+      },
+      "fields_absent_from_committed": [],
+      "population_sensitivity": {
+        "cited_by_guideline_or_sr_distinct_nonself_with_stubs": 65,
+        "cited_by_guideline_or_sr_distinct_nonself_without_stubs": 65,
+        "cited_by_guideline_or_sr_rows_nonself": 68,
+        "cited_by_guideline_or_sr_rows_tool": 68,
+        "results_article_rows_stub": 521,
+        "results_article_rows_tool": 714,
+        "results_articles_distinct": 692,
+        "results_articles_distinct_stub": 504,
+        "results_articles_distinct_without_stubs": 188,
+        "trials_with_results_article_with_stubs": 244,
+        "trials_with_results_article_without_stubs": 106
+      },
+      "substantive_differences": {},
+      "summary": {
+        "condition": {
+          "id": "MESH:D000544",
+          "mesh_id": "D000544",
+          "name": "Alzheimer Disease"
+        },
+        "countries": 72,
+        "crosscheck_ctgov_ancestor_terms_trials": 3853,
+        "crosscheck_ctgov_trials_also_in_our_expansion": 3853,
+        "csv_rows": {
+          "by_sponsor": 2515,
+          "by_sponsor_class": 5,
+          "countries": 73,
+          "descriptors": 1,
+          "phase_status": 74,
+          "results": 714,
+          "sites": 18423,
+          "timeline": 115,
+          "trials": 3853
+        },
+        "descriptor_level_closure": 1,
+        "descriptors_in_expansion": 1,
+        "interventional": 3037,
+        "lead_sponsors": 1265,
+        "not_yet_recruiting": 168,
+        "recruiting": 536,
+        "recruiting_without_sponsor_record": 58,
+        "release": "Lunas Clinical Evidence KG v0.2.1 (snapshot 2026-11-07)",
+        "results_article_rows": 714,
+        "results_articles": 714,
+        "results_articles_cited_by_guideline_or_sr": 68,
+        "results_articles_distinct": 692,
+        "results_articles_distinct_cited_by_guideline_or_sr": 65,
+        "results_articles_distinct_cited_by_guideline_or_sr_not_identity_only": 65,
+        "results_articles_distinct_not_identity_only": 188,
+        "run_seconds": 1.45,
+        "site_merge": false,
+        "sites": 18423,
+        "sites_before_merge": 18423,
+        "trials": 3853,
+        "trials_direct": 3853,
+        "trials_narrower_only": 0,
+        "trials_with_results_article": 244,
+        "trials_with_sites": 3333,
+        "trials_without_sponsor_record": 122
+      }
+    },
+    "D001943": {
+      "committed_csv_comparison": {
+        "by_phase_status.csv": "identical",
+        "by_sponsor.csv": "identical",
+        "by_sponsor_class.csv": "identical",
+        "countries.csv": "identical",
+        "descriptors.csv": "identical",
+        "results_publications.csv": "same_rows_different_order_of_tied_rows",
+        "sites.csv": "same_rows_different_order_of_tied_rows",
+        "timeline_start_year.csv": "identical",
+        "trials.csv": "identical"
+      },
+      "committed_summary_differences": {
+        "run_seconds": {
+          "committed": 2.0,
+          "rerun": 2.04
+        }
+      },
+      "fields_absent_from_committed": [],
+      "population_sensitivity": {
+        "cited_by_guideline_or_sr_distinct_nonself_with_stubs": 646,
+        "cited_by_guideline_or_sr_distinct_nonself_without_stubs": 646,
+        "cited_by_guideline_or_sr_rows_nonself": 735,
+        "cited_by_guideline_or_sr_rows_tool": 735,
+        "results_article_rows_stub": 1931,
+        "results_article_rows_tool": 3258,
+        "results_articles_distinct": 3087,
+        "results_articles_distinct_stub": 1876,
+        "results_articles_distinct_without_stubs": 1211,
+        "trials_with_results_article_with_stubs": 1006,
+        "trials_with_results_article_without_stubs": 553
+      },
+      "substantive_differences": {},
+      "summary": {
+        "condition": {
+          "id": "MESH:D001943",
+          "mesh_id": "D001943",
+          "name": "Breast Neoplasms"
+        },
+        "countries": 119,
+        "crosscheck_ctgov_ancestor_terms_trials": 14321,
+        "crosscheck_ctgov_trials_also_in_our_expansion": 14321,
+        "csv_rows": {
+          "by_sponsor": 5560,
+          "by_sponsor_class": 5,
+          "countries": 120,
+          "descriptors": 9,
+          "phase_status": 82,
+          "results": 3258,
+          "sites": 60591,
+          "timeline": 169,
+          "trials": 14321
+        },
+        "descriptor_level_closure": 11,
+        "descriptors_in_expansion": 9,
+        "interventional": 11198,
+        "lead_sponsors": 3040,
+        "not_yet_recruiting": 645,
+        "recruiting": 1992,
+        "recruiting_without_sponsor_record": 163,
+        "release": "Lunas Clinical Evidence KG v0.2.1 (snapshot 2026-11-07)",
+        "results_article_rows": 3258,
+        "results_articles": 3258,
+        "results_articles_cited_by_guideline_or_sr": 735,
+        "results_articles_distinct": 3087,
+        "results_articles_distinct_cited_by_guideline_or_sr": 646,
+        "results_articles_distinct_cited_by_guideline_or_sr_not_identity_only": 646,
+        "results_articles_distinct_not_identity_only": 1211,
+        "run_seconds": 2.04,
+        "site_merge": false,
+        "sites": 60591,
+        "sites_before_merge": 60591,
+        "trials": 14321,
+        "trials_direct": 13445,
+        "trials_narrower_only": 876,
+        "trials_with_results_article": 1006,
+        "trials_with_sites": 12611,
+        "trials_without_sponsor_record": 437
+      }
+    },
+    "D006333": {
+      "committed_csv_comparison": {
+        "by_phase_status.csv": "identical",
+        "by_sponsor.csv": "identical",
+        "by_sponsor_class.csv": "identical",
+        "countries.csv": "identical",
+        "descriptors.csv": "identical",
+        "results_publications.csv": "same_rows_different_order_of_tied_rows",
+        "sites.csv": "same_rows_different_order_of_tied_rows",
+        "timeline_start_year.csv": "identical",
+        "trials.csv": "identical"
+      },
+      "committed_summary_differences": {
+        "run_seconds": {
+          "committed": 1.49,
+          "rerun": 1.6
+        }
+      },
+      "fields_absent_from_committed": [],
+      "population_sensitivity": {
+        "cited_by_guideline_or_sr_distinct_nonself_with_stubs": 305,
+        "cited_by_guideline_or_sr_distinct_nonself_without_stubs": 305,
+        "cited_by_guideline_or_sr_rows_nonself": 329,
+        "cited_by_guideline_or_sr_rows_tool": 329,
+        "results_article_rows_stub": 1251,
+        "results_article_rows_tool": 1845,
+        "results_articles_distinct": 1738,
+        "results_articles_distinct_stub": 1175,
+        "results_articles_distinct_without_stubs": 563,
+        "trials_with_results_article_with_stubs": 467,
+        "trials_with_results_article_without_stubs": 251
+      },
+      "substantive_differences": {},
+      "summary": {
+        "condition": {
+          "id": "MESH:D006333",
+          "mesh_id": "D006333",
+          "name": "Heart Failure"
+        },
+        "countries": 127,
+        "crosscheck_ctgov_ancestor_terms_trials": 5828,
+        "crosscheck_ctgov_trials_also_in_our_expansion": 5828,
+        "csv_rows": {
+          "by_sponsor": 3727,
+          "by_sponsor_class": 5,
+          "countries": 128,
+          "descriptors": 6,
+          "phase_status": 78,
+          "results": 1845,
+          "sites": 29720,
+          "timeline": 140,
+          "trials": 5828
+        },
+        "descriptor_level_closure": 6,
+        "descriptors_in_expansion": 6,
+        "interventional": 3932,
+        "lead_sponsors": 1853,
+        "not_yet_recruiting": 247,
+        "recruiting": 688,
+        "recruiting_without_sponsor_record": 47,
+        "release": "Lunas Clinical Evidence KG v0.2.1 (snapshot 2026-11-07)",
+        "results_article_rows": 1845,
+        "results_articles": 1845,
+        "results_articles_cited_by_guideline_or_sr": 329,
+        "results_articles_distinct": 1738,
+        "results_articles_distinct_cited_by_guideline_or_sr": 305,
+        "results_articles_distinct_cited_by_guideline_or_sr_not_identity_only": 305,
+        "results_articles_distinct_not_identity_only": 563,
+        "run_seconds": 1.6,
+        "site_merge": false,
+        "sites": 29720,
+        "sites_before_merge": 29720,
+        "trials": 5828,
+        "trials_direct": 5560,
+        "trials_narrower_only": 268,
+        "trials_with_results_article": 467,
+        "trials_with_sites": 5071,
+        "trials_without_sponsor_record": 173
+      }
+    }
+  },
+  "data_check_identical": true,
+  "input_view": "<CLINICAL_KG_DATA>.audit_work/release_v021_view",
+  "self_link_rows_in_tool_result_citers": 49,
+  "tool": "examples/trial_landscape.py",
+  "tool_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+  "tool_rules": {
+    "article_population": "with_stubs: VALIDATED_BY articles are reported whether or not lunasai_layer is ctgov_identity_only (flagged per row as article_is_stub); no stub filter anywhere.",
+    "citing_types": "guideline_or_sr = Guideline / Practice Guideline OR Systematic Review (Meta-Analysis reported separately, not in the summary metric); citing articles may be anywhere in the graph",
+    "hierarchy": "tree-number-precise downward explode of HAS_BROADER (descriptors_in_expansion), not the descriptor-level closure (descriptor_level_closure, reported for comparison)",
+    "results_articles_unit": "trial-article VALIDATED_BY rows, not distinct articles",
+    "self_citation": "not excluded: result_citers keeps CITES rows with subject = object",
+    "trial_condition_link": "HAS_MESH study_aspect='condition' AND mesh_type='mesh-list'"
+  },
+  "tool_sha256": "9a2bf6b098a51896bea1234b469b2a586f752c56cfc0e3f294893cabb1b19adf"
+}

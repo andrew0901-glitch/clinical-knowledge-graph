@@ -1,0 +1,64 @@
+{
+  "all_identical": true,
+  "comparison": "audit/tools/compare_rerun.py: volatile fields, row order of unordered queries and machine paths ignored",
+  "data": "107 graph files of v0.2.1, fetched from the public Hugging Face tag clinical-v0.2.2 and verified against audit/release_inputs_v0.2.1.sha256",
+  "environment": {
+    "duckdb": "2.0.0",
+    "platform": "Linux",
+    "python": "3.12.3"
+  },
+  "not_rerun": {
+    "note": "verify_inputs.py was rewritten for the public layout and was run; the others were run as published here",
+    "rank_and_rank_verify": "long-running, not edited from the original run; committed results are the original run",
+    "scan": "needs about 110 GB of projection files; its output (raw_census.json) was reused, and its row counts are independently confirmed by verify_integrity and lanes/scripts/headline_numbers.py"
+  },
+  "purpose": "Re-execution check for this deposit: the edited release-audit scripts were rerun on the public v0.2.1 files and their outputs compared with the committed (original-run) results.",
+  "rerun_scripts": [
+    "verify_inputs",
+    "prepare",
+    "analyze",
+    "strict_chains",
+    "topic_sensitivity",
+    "metadata_unions",
+    "defects",
+    "profile_examples",
+    "publication_type_sanity",
+    "extra_checks",
+    "verify_headlines",
+    "verify_integrity"
+  ],
+  "result_files_compared": {
+    "analysis.json": "identical",
+    "analysis_preparation_queries.json": "identical",
+    "analysis_queries.json": "identical",
+    "defects.json": "identical",
+    "defects_queries.json": "identical",
+    "examples.json": "identical",
+    "extra.json": "identical",
+    "extra_queries.json": "identical",
+    "metadata_unions.json": "identical",
+    "metadata_unions_queries.json": "identical",
+    "preparation_queries.json": "identical",
+    "profile_examples.json": "identical",
+    "profile_examples_queries.json": "identical",
+    "publication_type_sanity.json": "identical",
+    "publication_type_sanity_queries.json": "identical",
+    "strict_chains.json": "identical",
+    "strict_chains_queries.json": "identical",
+    "topic_sensitivity_v02.json": "identical",
+    "topic_sensitivity_v02_queries.json": "identical"
+  },
+  "verify_headlines": {
+    "checks": 328,
+    "passed": true
+  },
+  "verify_integrity": {
+    "duplicate_edge_ids": 0,
+    "duplicate_node_ids": 0,
+    "edges": 105758066,
+    "endpoint_occurrences": 211516132,
+    "missing_endpoint_ids": 0,
+    "nodes": 12067108,
+    "passed": true
+  }
+}

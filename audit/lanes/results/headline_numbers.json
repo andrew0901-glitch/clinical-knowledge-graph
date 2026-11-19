@@ -1,0 +1,107 @@
+{
+  "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+  "identity_only_articles": [
+    {
+      "articles": 3724062,
+      "identity_only": 578177,
+      "without_stubs": 3145885
+    }
+  ],
+  "medlineplus_english_full_expansion": [
+    {
+      "mode": "full",
+      "population": "with_stubs",
+      "reaching_both_any_descriptor": "748",
+      "reaching_both_same_descriptor": "743",
+      "reaching_condition_trial": "749",
+      "reaching_guideline_or_review": "1011",
+      "reaching_major_both_same_descriptor": "743",
+      "reaching_major_guideline_or_review": "1010",
+      "topic_set": "english",
+      "topics": "1017"
+    }
+  ],
+  "paper_check": [
+    {
+      "computed": 12067108,
+      "item": "nodes",
+      "match": true,
+      "paper": 12067108
+    },
+    {
+      "computed": 105758066,
+      "item": "edges",
+      "match": true,
+      "paper": 105758066
+    },
+    {
+      "computed": 578177,
+      "item": "identity_only_articles",
+      "match": true,
+      "paper": 578177
+    },
+    {
+      "computed": 22793,
+      "item": "trials_with_results_without_stubs",
+      "match": true,
+      "paper": 22793
+    },
+    {
+      "computed": 23460,
+      "item": "results_articles_cited_by_guideline_or_sr (with stubs)",
+      "match": true,
+      "paper": 23460
+    },
+    {
+      "computed": 23460,
+      "item": "results_articles_cited_by_guideline_or_sr (without stubs)",
+      "match": true,
+      "paper": 23460
+    },
+    {
+      "computed": 1017,
+      "item": "english_topics",
+      "match": true,
+      "paper": 1017
+    },
+    {
+      "computed": 743,
+      "item": "english_topics_both_same_descriptor_full",
+      "match": true,
+      "paper": 743
+    }
+  ],
+  "totals": [
+    {
+      "edges": 105758066,
+      "files_edges": 53,
+      "files_nodes": 54,
+      "manifest_totals": {
+        "bytes": 5402875140,
+        "edges": 105758066,
+        "nodes": 12067108
+      },
+      "nodes": 12067108,
+      "sql_edges": "SELECT count(*) FROM read_json(?, format='newline_delimited', columns={'id': 'VARCHAR'})",
+      "sql_nodes": "SELECT count(*) FROM read_json(?, format='newline_delimited', columns={'id': 'VARCHAR'})"
+    }
+  ],
+  "trial_results_chain": [
+    {
+      "population": "without_stubs",
+      "result_articles": 45865,
+      "result_articles_cited_by_guideline_or_sr": 23460,
+      "trials": 606580,
+      "trials_with_results": 22793,
+      "trials_with_results_cited_by_guideline_or_sr": 13721
+    },
+    {
+      "population": "with_stubs",
+      "result_articles": 140372,
+      "result_articles_cited_by_guideline_or_sr": 23460,
+      "trials": 606580,
+      "trials_with_results": 42075,
+      "trials_with_results_cited_by_guideline_or_sr": 13721
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+[
+  {
+    "parameters": "<107 manifest file paths>",
+    "seconds": 9.4,
+    "sql": "CREATE OR REPLACE TABLE nodes AS SELECT id, lunasai_labels[1] AS label, lunasai_layer AS layer, name, mesh_id, pmid, try_cast(year AS INTEGER) AS year, pub_types, language, topic_id, mapped_topic_id, nct_id FROM read_json(?, format='newline_delimited', columns={'id': 'VARCHAR', 'lunasai_labels': 'VARCHAR[]', 'lunasai_layer': 'VARCHAR', 'name': 'VARCHAR', 'mesh_id': 'VARCHAR', 'pmid': 'VARCHAR', 'year': 'VARCHAR', 'pub_types': 'VARCHAR[]', 'language': 'VARCHAR', 'topic_id': 'VARCHAR', 'mapped_topic_id': 'VARCHAR', 'nct_id': 'VARCHAR'}) WHERE lunasai_labels[1] IN ('Article','MeSHConcept','MedlinePlus','ClinicalTrial')"
+  },
+  {
+    "parameters": "<107 manifest file paths>",
+    "seconds": 48.9,
+    "sql": "CREATE OR REPLACE TABLE e AS SELECT * EXCLUDE (original_predicate), split_part(original_predicate, '.', -1) AS type FROM read_json(?, format='newline_delimited', columns={'id': 'VARCHAR', 'subject': 'VARCHAR', 'object': 'VARCHAR', 'original_predicate': 'VARCHAR', 'is_major_topic': 'BOOLEAN', 'study_aspect': 'VARCHAR', 'mesh_type': 'VARCHAR', 'depth': 'INTEGER', 'child_tree_numbers': 'VARCHAR[]', 'parent_tree_numbers': 'VARCHAR[]', 'publication_role': 'VARCHAR', 'reference_type': 'VARCHAR'}) WHERE split_part(original_predicate, '.', -1) IN ('HAS_MESH','CITES','HAS_BROADER','HAS_BROADER_ANCESTOR','TRANSLATION_OF','VALIDATED_BY','CITES_BACKGROUND','HAS_DERIVED_PUBLICATION')"
+  },
+  {
+    "parameters": [],
+    "seconds": 0.3,
+    "sql": "CREATE OR REPLACE TABLE article AS SELECT id, pmid, year, coalesce(pub_types, []) AS pub_types, layer = 'ctgov_identity_only' AS stub FROM nodes WHERE label = 'Article'"
+  },
+  {
+    "parameters": [],
+    "seconds": 0.0,
+    "sql": "CREATE OR REPLACE TABLE populations AS SELECT * FROM (VALUES ('with_stubs', false), ('without_stubs', true)) p(population, exclude_stubs)"
+  },
+  {
+    "parameters": "<107 manifest file paths>",
+    "seconds": 0.0,
+    "sql": "CREATE OR REPLACE TABLE check_tag AS SELECT id, name FROM nodes WHERE label = 'MeSHConcept' AND name IN (SELECT unnest(?::VARCHAR[]))"
+  },
+  {
+    "parameters": [],
+    "seconds": 0.0,
+    "sql": "CREATE OR REPLACE TABLE mesh AS SELECT id, mesh_id, name, id IN (SELECT id FROM check_tag) AS check_tag FROM nodes WHERE label = 'MeSHConcept'"
+  },
+  {
+    "parameters": [],
+    "seconds": 1.0,
+    "sql": "CREATE OR REPLACE TABLE am AS SELECT e.subject AS article, e.object AS descriptor, e.is_major_topic AS major FROM e JOIN article a ON a.id = e.subject WHERE e.type = 'HAS_MESH'"
+  },
+  {
+    "parameters": [],
+    "seconds": 0.1,
+    "sql": "CREATE OR REPLACE TABLE trial_mesh AS SELECT subject AS trial, object AS descriptor FROM e WHERE type = 'HAS_MESH' AND starts_with(subject, 'clinicaltrials:') AND study_aspect = 'condition' AND mesh_type = 'mesh-list'"
+  },
+  {
+    "parameters": [],
+    "seconds": 0.0,
+    "sql": "CREATE OR REPLACE TABLE tm AS SELECT e.subject AS topic, e.object AS descriptor, e.is_major_topic AS major FROM e JOIN nodes n ON n.id = e.subject AND n.label = 'MedlinePlus' WHERE e.type = 'HAS_MESH'"
+  },
+  {
+    "parameters": [],
+    "seconds": 1.5,
+    "sql": "CREATE OR REPLACE TABLE cites AS SELECT subject AS citer, object AS cited FROM e WHERE type = 'CITES' AND subject <> object"
+  },
+  {
+    "parameters": [],
+    "seconds": 0.2,
+    "sql": "CREATE OR REPLACE TABLE hierarchy AS SELECT subject AS child, object AS parent, CASE WHEN type = 'HAS_BROADER' THEN 1 ELSE depth END AS depth, type, child_tree_numbers, parent_tree_numbers FROM e WHERE type IN ('HAS_BROADER','HAS_BROADER_ANCESTOR')"
+  }
+]

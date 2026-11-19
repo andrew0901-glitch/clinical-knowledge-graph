@@ -1,0 +1,264 @@
+{
+  "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+  "languages": [
+    {
+      "language": "en",
+      "topics": 1017
+    },
+    {
+      "language": "es",
+      "topics": 1016
+    }
+  ],
+  "mapping_agreement": [
+    {
+      "differing_descriptor_sets": 0,
+      "english_unmapped": 2,
+      "identical_descriptor_and_major_flags": 1016,
+      "identical_descriptor_sets": 1016,
+      "pairs": 1016,
+      "spanish_strict_subset": 0,
+      "spanish_strict_superset": 0,
+      "spanish_unmapped": 2
+    }
+  ],
+  "mapping_differences": [],
+  "per_topic_csv_rows": 12198,
+  "table_all_topics": [
+    {
+      "mode": "none",
+      "population": "with_stubs",
+      "reaching_both_any_descriptor": 1438,
+      "reaching_both_same_descriptor": 1438,
+      "reaching_condition_trial": 1440,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both_same_descriptor": 1438,
+      "reaching_major_guideline_or_review": 2017,
+      "topic_set": "all",
+      "topics": 2033
+    },
+    {
+      "mode": "one",
+      "population": "with_stubs",
+      "reaching_both_any_descriptor": 1478,
+      "reaching_both_same_descriptor": 1468,
+      "reaching_condition_trial": 1480,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both_same_descriptor": 1468,
+      "reaching_major_guideline_or_review": 2019,
+      "topic_set": "all",
+      "topics": 2033
+    },
+    {
+      "mode": "full",
+      "population": "with_stubs",
+      "reaching_both_any_descriptor": 1496,
+      "reaching_both_same_descriptor": 1486,
+      "reaching_condition_trial": 1498,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both_same_descriptor": 1486,
+      "reaching_major_guideline_or_review": 2019,
+      "topic_set": "all",
+      "topics": 2033
+    },
+    {
+      "mode": "none",
+      "population": "without_stubs",
+      "reaching_both_any_descriptor": 1438,
+      "reaching_both_same_descriptor": 1438,
+      "reaching_condition_trial": 1440,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both_same_descriptor": 1438,
+      "reaching_major_guideline_or_review": 2017,
+      "topic_set": "all",
+      "topics": 2033
+    },
+    {
+      "mode": "one",
+      "population": "without_stubs",
+      "reaching_both_any_descriptor": 1478,
+      "reaching_both_same_descriptor": 1468,
+      "reaching_condition_trial": 1480,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both_same_descriptor": 1468,
+      "reaching_major_guideline_or_review": 2019,
+      "topic_set": "all",
+      "topics": 2033
+    },
+    {
+      "mode": "full",
+      "population": "without_stubs",
+      "reaching_both_any_descriptor": 1496,
+      "reaching_both_same_descriptor": 1486,
+      "reaching_condition_trial": 1498,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both_same_descriptor": 1486,
+      "reaching_major_guideline_or_review": 2019,
+      "topic_set": "all",
+      "topics": 2033
+    }
+  ],
+  "table_english_only": [
+    {
+      "mode": "none",
+      "population": "with_stubs",
+      "reaching_both_any_descriptor": 719,
+      "reaching_both_same_descriptor": 719,
+      "reaching_condition_trial": 720,
+      "reaching_guideline_or_review": 1011,
+      "reaching_major_both_same_descriptor": 719,
+      "reaching_major_guideline_or_review": 1009,
+      "topic_set": "english",
+      "topics": 1017
+    },
+    {
+      "mode": "one",
+      "population": "with_stubs",
+      "reaching_both_any_descriptor": 739,
+      "reaching_both_same_descriptor": 734,
+      "reaching_condition_trial": 740,
+      "reaching_guideline_or_review": 1011,
+      "reaching_major_both_same_descriptor": 734,
+      "reaching_major_guideline_or_review": 1010,
+      "topic_set": "english",
+      "topics": 1017
+    },
+    {
+      "mode": "full",
+      "population": "with_stubs",
+      "reaching_both_any_descriptor": 748,
+      "reaching_both_same_descriptor": 743,
+      "reaching_condition_trial": 749,
+      "reaching_guideline_or_review": 1011,
+      "reaching_major_both_same_descriptor": 743,
+      "reaching_major_guideline_or_review": 1010,
+      "topic_set": "english",
+      "topics": 1017
+    },
+    {
+      "mode": "none",
+      "population": "without_stubs",
+      "reaching_both_any_descriptor": 719,
+      "reaching_both_same_descriptor": 719,
+      "reaching_condition_trial": 720,
+      "reaching_guideline_or_review": 1011,
+      "reaching_major_both_same_descriptor": 719,
+      "reaching_major_guideline_or_review": 1009,
+      "topic_set": "english",
+      "topics": 1017
+    },
+    {
+      "mode": "one",
+      "population": "without_stubs",
+      "reaching_both_any_descriptor": 739,
+      "reaching_both_same_descriptor": 734,
+      "reaching_condition_trial": 740,
+      "reaching_guideline_or_review": 1011,
+      "reaching_major_both_same_descriptor": 734,
+      "reaching_major_guideline_or_review": 1010,
+      "topic_set": "english",
+      "topics": 1017
+    },
+    {
+      "mode": "full",
+      "population": "without_stubs",
+      "reaching_both_any_descriptor": 748,
+      "reaching_both_same_descriptor": 743,
+      "reaching_condition_trial": 749,
+      "reaching_guideline_or_review": 1011,
+      "reaching_major_both_same_descriptor": 743,
+      "reaching_major_guideline_or_review": 1010,
+      "topic_set": "english",
+      "topics": 1017
+    }
+  ],
+  "table_spanish_only": [
+    {
+      "mode": "none",
+      "population": "with_stubs",
+      "reaching_both_any_descriptor": 719,
+      "reaching_both_same_descriptor": 719,
+      "reaching_condition_trial": 720,
+      "reaching_guideline_or_review": 1010,
+      "reaching_major_both_same_descriptor": 719,
+      "reaching_major_guideline_or_review": 1008,
+      "topic_set": "spanish",
+      "topics": 1016
+    },
+    {
+      "mode": "one",
+      "population": "with_stubs",
+      "reaching_both_any_descriptor": 739,
+      "reaching_both_same_descriptor": 734,
+      "reaching_condition_trial": 740,
+      "reaching_guideline_or_review": 1010,
+      "reaching_major_both_same_descriptor": 734,
+      "reaching_major_guideline_or_review": 1009,
+      "topic_set": "spanish",
+      "topics": 1016
+    },
+    {
+      "mode": "full",
+      "population": "with_stubs",
+      "reaching_both_any_descriptor": 748,
+      "reaching_both_same_descriptor": 743,
+      "reaching_condition_trial": 749,
+      "reaching_guideline_or_review": 1010,
+      "reaching_major_both_same_descriptor": 743,
+      "reaching_major_guideline_or_review": 1009,
+      "topic_set": "spanish",
+      "topics": 1016
+    },
+    {
+      "mode": "none",
+      "population": "without_stubs",
+      "reaching_both_any_descriptor": 719,
+      "reaching_both_same_descriptor": 719,
+      "reaching_condition_trial": 720,
+      "reaching_guideline_or_review": 1010,
+      "reaching_major_both_same_descriptor": 719,
+      "reaching_major_guideline_or_review": 1008,
+      "topic_set": "spanish",
+      "topics": 1016
+    },
+    {
+      "mode": "one",
+      "population": "without_stubs",
+      "reaching_both_any_descriptor": 739,
+      "reaching_both_same_descriptor": 734,
+      "reaching_condition_trial": 740,
+      "reaching_guideline_or_review": 1010,
+      "reaching_major_both_same_descriptor": 734,
+      "reaching_major_guideline_or_review": 1009,
+      "topic_set": "spanish",
+      "topics": 1016
+    },
+    {
+      "mode": "full",
+      "population": "without_stubs",
+      "reaching_both_any_descriptor": 748,
+      "reaching_both_same_descriptor": 743,
+      "reaching_condition_trial": 749,
+      "reaching_guideline_or_review": 1010,
+      "reaching_major_both_same_descriptor": 743,
+      "reaching_major_guideline_or_review": 1009,
+      "topic_set": "spanish",
+      "topics": 1016
+    }
+  ],
+  "translation_direction": [
+    {
+      "edges": 1016,
+      "object_language": "en",
+      "objects": 1016,
+      "subject_language": "es",
+      "subjects": 1016
+    }
+  ],
+  "unpaired": [
+    {
+      "language": "en",
+      "topics_without_translation_edge": 1
+    }
+  ]
+}

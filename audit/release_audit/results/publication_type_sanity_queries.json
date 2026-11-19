@@ -1,0 +1,7 @@
+{
+  "by_role": {
+    "denominator": "Complete role-link join against available exact NLM pub_types; protocol counts are lower bounds when linked Articles lack publication types, not clinical role adjudication.",
+    "parameters": [],
+    "sql": "SELECT p.population,l.role,count(*) edges,count(DISTINCT l.article) articles,count(*) FILTER(WHERE array_length(a.pub_types)>0) edges_with_publication_type,count(*) FILTER(WHERE list_contains(a.pub_types,'Clinical Trial Protocol')) protocol_edges,count(DISTINCT l.article) FILTER(WHERE list_contains(a.pub_types,'Clinical Trial Protocol')) protocol_articles FROM result_links l JOIN article a ON a.id=l.article CROSS JOIN populations p WHERE NOT p.exclude_stubs OR NOT a.stub GROUP BY 1,2 ORDER BY 1,2"
+  }
+}

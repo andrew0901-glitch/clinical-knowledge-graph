@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "author profile neurology",
+    "citation witness neurology",
+    "author profile respiratory",
+    "citation witness respiratory",
+    "author profile cardiovascular",
+    "citation witness cardiovascular"
+  ],
+  "method": "Independent Python distinct Article sets by actual indexed descriptor and citing-Article set memberships.",
+  "passed": true
+}

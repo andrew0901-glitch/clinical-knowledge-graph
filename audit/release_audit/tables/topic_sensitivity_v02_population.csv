@@ -1,0 +1,7 @@
+mode,population,topics,topics_reaching_source_condition_ancestor_or_list_trial,topics_with_guide_and_source_ancestor_trial_same_bridge,topics_with_same_descriptor_guide_trial_bridge,topics_with_same_major_descriptor_bridge
+full,with_stubs,2033,1498,1486,1486,1486
+none,with_stubs,2033,1442,1440,1438,1438
+one,with_stubs,2033,1480,1468,1468,1468
+full,without_stubs,2033,1498,1486,1486,1486
+none,without_stubs,2033,1442,1440,1438,1438
+one,without_stubs,2033,1480,1468,1468,1468

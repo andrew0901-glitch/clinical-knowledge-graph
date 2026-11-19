@@ -1,0 +1,983 @@
+{
+  "D000544_expansion": [
+    {
+      "depth": 0,
+      "descriptor": "MESH:D000544",
+      "in_tree_precise": true,
+      "mesh_id": "D000544",
+      "name": "Alzheimer Disease"
+    }
+  ],
+  "D000544_has_broader_closure_sensitivity": [
+    {
+      "articles_added": 0,
+      "articles_any_has_broader_closure": 14468,
+      "condition_trials_has_broader_closure": 3853,
+      "descriptors_has_broader_closure": 1,
+      "extra_descriptors": null,
+      "population": "with_stubs"
+    },
+    {
+      "articles_added": 0,
+      "articles_any_has_broader_closure": 14468,
+      "condition_trials_has_broader_closure": 3853,
+      "descriptors_has_broader_closure": 1,
+      "extra_descriptors": null,
+      "population": "without_stubs"
+    }
+  ],
+  "D000544_map": [
+    {
+      "articles": 14468,
+      "articles_without_year": 0,
+      "condition": "D000544",
+      "descriptors": 1,
+      "distinct_citing_reviews": 266,
+      "distinct_citing_reviews_in_map": 85,
+      "guideline": 6,
+      "guideline_2022_2026": 2,
+      "indexing": "any",
+      "observational": 153,
+      "other": 13463,
+      "other_trial": 198,
+      "other_trial_cited_by_review": 53,
+      "population": "with_stubs",
+      "primary_cited_by_review": 249,
+      "primary_not_cited_by_review": 313,
+      "primary_studies": 562,
+      "rct": 364,
+      "rct_cited_by_review": 196,
+      "sr_or_ma": 284,
+      "sr_or_ma_2022_2026": 124
+    },
+    {
+      "articles": 14468,
+      "articles_without_year": 0,
+      "condition": "D000544",
+      "descriptors": 1,
+      "distinct_citing_reviews": 266,
+      "distinct_citing_reviews_in_map": 85,
+      "guideline": 6,
+      "guideline_2022_2026": 2,
+      "indexing": "any",
+      "observational": 153,
+      "other": 13463,
+      "other_trial": 198,
+      "other_trial_cited_by_review": 53,
+      "population": "without_stubs",
+      "primary_cited_by_review": 249,
+      "primary_not_cited_by_review": 313,
+      "primary_studies": 562,
+      "rct": 364,
+      "rct_cited_by_review": 196,
+      "sr_or_ma": 284,
+      "sr_or_ma_2022_2026": 124
+    },
+    {
+      "articles": 11925,
+      "articles_without_year": 0,
+      "condition": "D000544",
+      "descriptors": 1,
+      "distinct_citing_reviews": 244,
+      "distinct_citing_reviews_in_map": 77,
+      "guideline": 5,
+      "guideline_2022_2026": 2,
+      "indexing": "major",
+      "observational": 128,
+      "other": 11036,
+      "other_trial": 176,
+      "other_trial_cited_by_review": 44,
+      "population": "with_stubs",
+      "primary_cited_by_review": 226,
+      "primary_not_cited_by_review": 290,
+      "primary_studies": 516,
+      "rct": 340,
+      "rct_cited_by_review": 182,
+      "sr_or_ma": 240,
+      "sr_or_ma_2022_2026": 107
+    },
+    {
+      "articles": 11925,
+      "articles_without_year": 0,
+      "condition": "D000544",
+      "descriptors": 1,
+      "distinct_citing_reviews": 244,
+      "distinct_citing_reviews_in_map": 77,
+      "guideline": 5,
+      "guideline_2022_2026": 2,
+      "indexing": "major",
+      "observational": 128,
+      "other": 11036,
+      "other_trial": 176,
+      "other_trial_cited_by_review": 44,
+      "population": "without_stubs",
+      "primary_cited_by_review": 226,
+      "primary_not_cited_by_review": 290,
+      "primary_studies": 516,
+      "rct": 340,
+      "rct_cited_by_review": 182,
+      "sr_or_ma": 240,
+      "sr_or_ma_2022_2026": 107
+    }
+  ],
+  "D000544_recent_reviews_by_year": [
+    {
+      "guideline": 0,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 21,
+      "year": 2022
+    },
+    {
+      "guideline": 0,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 36,
+      "year": 2023
+    },
+    {
+      "guideline": 0,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 25,
+      "year": 2024
+    },
+    {
+      "guideline": 2,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 22,
+      "year": 2025
+    },
+    {
+      "guideline": 0,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 20,
+      "year": 2026
+    },
+    {
+      "guideline": 0,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 21,
+      "year": 2022
+    },
+    {
+      "guideline": 0,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 36,
+      "year": 2023
+    },
+    {
+      "guideline": 0,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 25,
+      "year": 2024
+    },
+    {
+      "guideline": 2,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 22,
+      "year": 2025
+    },
+    {
+      "guideline": 0,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 20,
+      "year": 2026
+    },
+    {
+      "guideline": 0,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 20,
+      "year": 2022
+    },
+    {
+      "guideline": 0,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 35,
+      "year": 2023
+    },
+    {
+      "guideline": 0,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 21,
+      "year": 2024
+    },
+    {
+      "guideline": 2,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 18,
+      "year": 2025
+    },
+    {
+      "guideline": 0,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 13,
+      "year": 2026
+    },
+    {
+      "guideline": 0,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 20,
+      "year": 2022
+    },
+    {
+      "guideline": 0,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 35,
+      "year": 2023
+    },
+    {
+      "guideline": 0,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 21,
+      "year": 2024
+    },
+    {
+      "guideline": 2,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 18,
+      "year": 2025
+    },
+    {
+      "guideline": 0,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 13,
+      "year": 2026
+    }
+  ],
+  "D000544_tree_precise_sensitivity": [
+    {
+      "articles_any_tree_precise": 14468,
+      "condition_trials_full": 3853,
+      "condition_trials_tree_precise": 3853,
+      "descriptors_tree_precise": 1,
+      "population": "with_stubs"
+    },
+    {
+      "articles_any_tree_precise": 14468,
+      "condition_trials_full": 3853,
+      "condition_trials_tree_precise": 3853,
+      "descriptors_tree_precise": 1,
+      "population": "without_stubs"
+    }
+  ],
+  "D001943_expansion": [
+    {
+      "depth": 0,
+      "descriptor": "MESH:D001943",
+      "in_tree_precise": true,
+      "mesh_id": "D001943",
+      "name": "Breast Neoplasms"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D000071960",
+      "in_tree_precise": true,
+      "mesh_id": "D000071960",
+      "name": "Breast Carcinoma In Situ"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D018567",
+      "in_tree_precise": true,
+      "mesh_id": "D018567",
+      "name": "Breast Neoplasms, Male"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D018270",
+      "in_tree_precise": true,
+      "mesh_id": "D018270",
+      "name": "Carcinoma, Ductal, Breast"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D018275",
+      "in_tree_precise": true,
+      "mesh_id": "D018275",
+      "name": "Carcinoma, Lobular"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D061325",
+      "in_tree_precise": true,
+      "mesh_id": "D061325",
+      "name": "Hereditary Breast and Ovarian Cancer Syndrome"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D058922",
+      "in_tree_precise": true,
+      "mesh_id": "D058922",
+      "name": "Inflammatory Breast Neoplasms"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D064726",
+      "in_tree_precise": true,
+      "mesh_id": "D064726",
+      "name": "Triple Negative Breast Neoplasms"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D000069584",
+      "in_tree_precise": true,
+      "mesh_id": "D000069584",
+      "name": "Unilateral Breast Neoplasms"
+    }
+  ],
+  "D001943_has_broader_closure_sensitivity": [
+    {
+      "articles_added": 121,
+      "articles_any_has_broader_closure": 53490,
+      "condition_trials_has_broader_closure": 14385,
+      "descriptors_has_broader_closure": 11,
+      "extra_descriptors": [
+        "Carcinoma, Intraductal, Noninfiltrating",
+        "Paget's Disease, Mammary"
+      ],
+      "population": "with_stubs"
+    },
+    {
+      "articles_added": 121,
+      "articles_any_has_broader_closure": 53490,
+      "condition_trials_has_broader_closure": 14385,
+      "descriptors_has_broader_closure": 11,
+      "extra_descriptors": [
+        "Carcinoma, Intraductal, Noninfiltrating",
+        "Paget's Disease, Mammary"
+      ],
+      "population": "without_stubs"
+    }
+  ],
+  "D001943_map": [
+    {
+      "articles": 53369,
+      "articles_without_year": 0,
+      "condition": "D001943",
+      "descriptors": 9,
+      "distinct_citing_reviews": 2058,
+      "distinct_citing_reviews_in_map": 797,
+      "guideline": 197,
+      "guideline_2022_2026": 47,
+      "indexing": "any",
+      "observational": 406,
+      "other": 46371,
+      "other_trial": 1953,
+      "other_trial_cited_by_review": 632,
+      "population": "with_stubs",
+      "primary_cited_by_review": 2469,
+      "primary_not_cited_by_review": 2732,
+      "primary_studies": 5201,
+      "rct": 3248,
+      "rct_cited_by_review": 1837,
+      "sr_or_ma": 1194,
+      "sr_or_ma_2022_2026": 419
+    },
+    {
+      "articles": 53369,
+      "articles_without_year": 0,
+      "condition": "D001943",
+      "descriptors": 9,
+      "distinct_citing_reviews": 2058,
+      "distinct_citing_reviews_in_map": 797,
+      "guideline": 197,
+      "guideline_2022_2026": 47,
+      "indexing": "any",
+      "observational": 406,
+      "other": 46371,
+      "other_trial": 1953,
+      "other_trial_cited_by_review": 632,
+      "population": "without_stubs",
+      "primary_cited_by_review": 2469,
+      "primary_not_cited_by_review": 2732,
+      "primary_studies": 5201,
+      "rct": 3248,
+      "rct_cited_by_review": 1837,
+      "sr_or_ma": 1194,
+      "sr_or_ma_2022_2026": 419
+    },
+    {
+      "articles": 47004,
+      "articles_without_year": 0,
+      "condition": "D001943",
+      "descriptors": 9,
+      "distinct_citing_reviews": 1874,
+      "distinct_citing_reviews_in_map": 750,
+      "guideline": 180,
+      "guideline_2022_2026": 46,
+      "indexing": "major",
+      "observational": 370,
+      "other": 40499,
+      "other_trial": 1823,
+      "other_trial_cited_by_review": 591,
+      "population": "with_stubs",
+      "primary_cited_by_review": 2297,
+      "primary_not_cited_by_review": 2557,
+      "primary_studies": 4854,
+      "rct": 3031,
+      "rct_cited_by_review": 1706,
+      "sr_or_ma": 1101,
+      "sr_or_ma_2022_2026": 397
+    },
+    {
+      "articles": 47004,
+      "articles_without_year": 0,
+      "condition": "D001943",
+      "descriptors": 9,
+      "distinct_citing_reviews": 1874,
+      "distinct_citing_reviews_in_map": 750,
+      "guideline": 180,
+      "guideline_2022_2026": 46,
+      "indexing": "major",
+      "observational": 370,
+      "other": 40499,
+      "other_trial": 1823,
+      "other_trial_cited_by_review": 591,
+      "population": "without_stubs",
+      "primary_cited_by_review": 2297,
+      "primary_not_cited_by_review": 2557,
+      "primary_studies": 4854,
+      "rct": 3031,
+      "rct_cited_by_review": 1706,
+      "sr_or_ma": 1101,
+      "sr_or_ma_2022_2026": 397
+    }
+  ],
+  "D001943_recent_reviews_by_year": [
+    {
+      "guideline": 10,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 92,
+      "year": 2022
+    },
+    {
+      "guideline": 8,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 98,
+      "year": 2023
+    },
+    {
+      "guideline": 10,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 82,
+      "year": 2024
+    },
+    {
+      "guideline": 13,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 85,
+      "year": 2025
+    },
+    {
+      "guideline": 6,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 62,
+      "year": 2026
+    },
+    {
+      "guideline": 10,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 92,
+      "year": 2022
+    },
+    {
+      "guideline": 8,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 98,
+      "year": 2023
+    },
+    {
+      "guideline": 10,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 82,
+      "year": 2024
+    },
+    {
+      "guideline": 13,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 85,
+      "year": 2025
+    },
+    {
+      "guideline": 6,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 62,
+      "year": 2026
+    },
+    {
+      "guideline": 10,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 91,
+      "year": 2022
+    },
+    {
+      "guideline": 8,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 97,
+      "year": 2023
+    },
+    {
+      "guideline": 10,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 72,
+      "year": 2024
+    },
+    {
+      "guideline": 12,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 78,
+      "year": 2025
+    },
+    {
+      "guideline": 6,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 59,
+      "year": 2026
+    },
+    {
+      "guideline": 10,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 91,
+      "year": 2022
+    },
+    {
+      "guideline": 8,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 97,
+      "year": 2023
+    },
+    {
+      "guideline": 10,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 72,
+      "year": 2024
+    },
+    {
+      "guideline": 12,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 78,
+      "year": 2025
+    },
+    {
+      "guideline": 6,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 59,
+      "year": 2026
+    }
+  ],
+  "D001943_tree_precise_sensitivity": [
+    {
+      "articles_any_tree_precise": 53369,
+      "condition_trials_full": 14321,
+      "condition_trials_tree_precise": 14321,
+      "descriptors_tree_precise": 9,
+      "population": "with_stubs"
+    },
+    {
+      "articles_any_tree_precise": 53369,
+      "condition_trials_full": 14321,
+      "condition_trials_tree_precise": 14321,
+      "descriptors_tree_precise": 9,
+      "population": "without_stubs"
+    }
+  ],
+  "D006333_expansion": [
+    {
+      "depth": 0,
+      "descriptor": "MESH:D006333",
+      "in_tree_precise": true,
+      "mesh_id": "D006333",
+      "name": "Heart Failure"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D059347",
+      "in_tree_precise": true,
+      "mesh_id": "D059347",
+      "name": "Cardio-Renal Syndrome"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D004418",
+      "in_tree_precise": true,
+      "mesh_id": "D004418",
+      "name": "Dyspnea, Paroxysmal"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D004489",
+      "in_tree_precise": true,
+      "mesh_id": "D004489",
+      "name": "Edema, Cardiac"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D054144",
+      "in_tree_precise": true,
+      "mesh_id": "D054144",
+      "name": "Heart Failure, Diastolic"
+    },
+    {
+      "depth": 1,
+      "descriptor": "MESH:D054143",
+      "in_tree_precise": true,
+      "mesh_id": "D054143",
+      "name": "Heart Failure, Systolic"
+    }
+  ],
+  "D006333_has_broader_closure_sensitivity": [
+    {
+      "articles_added": 0,
+      "articles_any_has_broader_closure": 16709,
+      "condition_trials_has_broader_closure": 5828,
+      "descriptors_has_broader_closure": 6,
+      "extra_descriptors": null,
+      "population": "with_stubs"
+    },
+    {
+      "articles_added": 0,
+      "articles_any_has_broader_closure": 16709,
+      "condition_trials_has_broader_closure": 5828,
+      "descriptors_has_broader_closure": 6,
+      "extra_descriptors": null,
+      "population": "without_stubs"
+    }
+  ],
+  "D006333_map": [
+    {
+      "articles": 16709,
+      "articles_without_year": 0,
+      "condition": "D006333",
+      "descriptors": 6,
+      "distinct_citing_reviews": 1477,
+      "distinct_citing_reviews_in_map": 342,
+      "guideline": 29,
+      "guideline_2022_2026": 15,
+      "indexing": "any",
+      "observational": 501,
+      "other": 13396,
+      "other_trial": 401,
+      "other_trial_cited_by_review": 120,
+      "population": "with_stubs",
+      "primary_cited_by_review": 1122,
+      "primary_not_cited_by_review": 1165,
+      "primary_studies": 2287,
+      "rct": 1886,
+      "rct_cited_by_review": 1002,
+      "sr_or_ma": 496,
+      "sr_or_ma_2022_2026": 178
+    },
+    {
+      "articles": 16709,
+      "articles_without_year": 0,
+      "condition": "D006333",
+      "descriptors": 6,
+      "distinct_citing_reviews": 1477,
+      "distinct_citing_reviews_in_map": 342,
+      "guideline": 29,
+      "guideline_2022_2026": 15,
+      "indexing": "any",
+      "observational": 501,
+      "other": 13396,
+      "other_trial": 401,
+      "other_trial_cited_by_review": 120,
+      "population": "without_stubs",
+      "primary_cited_by_review": 1122,
+      "primary_not_cited_by_review": 1165,
+      "primary_studies": 2287,
+      "rct": 1886,
+      "rct_cited_by_review": 1002,
+      "sr_or_ma": 496,
+      "sr_or_ma_2022_2026": 178
+    },
+    {
+      "articles": 13500,
+      "articles_without_year": 0,
+      "condition": "D006333",
+      "descriptors": 6,
+      "distinct_citing_reviews": 1134,
+      "distinct_citing_reviews_in_map": 290,
+      "guideline": 25,
+      "guideline_2022_2026": 15,
+      "indexing": "major",
+      "observational": 413,
+      "other": 10670,
+      "other_trial": 329,
+      "other_trial_cited_by_review": 91,
+      "population": "with_stubs",
+      "primary_cited_by_review": 954,
+      "primary_not_cited_by_review": 1028,
+      "primary_studies": 1982,
+      "rct": 1653,
+      "rct_cited_by_review": 863,
+      "sr_or_ma": 410,
+      "sr_or_ma_2022_2026": 162
+    },
+    {
+      "articles": 13500,
+      "articles_without_year": 0,
+      "condition": "D006333",
+      "descriptors": 6,
+      "distinct_citing_reviews": 1134,
+      "distinct_citing_reviews_in_map": 290,
+      "guideline": 25,
+      "guideline_2022_2026": 15,
+      "indexing": "major",
+      "observational": 413,
+      "other": 10670,
+      "other_trial": 329,
+      "other_trial_cited_by_review": 91,
+      "population": "without_stubs",
+      "primary_cited_by_review": 954,
+      "primary_not_cited_by_review": 1028,
+      "primary_studies": 1982,
+      "rct": 1653,
+      "rct_cited_by_review": 863,
+      "sr_or_ma": 410,
+      "sr_or_ma_2022_2026": 162
+    }
+  ],
+  "D006333_recent_reviews_by_year": [
+    {
+      "guideline": 3,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 46,
+      "year": 2022
+    },
+    {
+      "guideline": 1,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 45,
+      "year": 2023
+    },
+    {
+      "guideline": 4,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 34,
+      "year": 2024
+    },
+    {
+      "guideline": 2,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 36,
+      "year": 2025
+    },
+    {
+      "guideline": 5,
+      "indexing": "any",
+      "population": "with_stubs",
+      "sr_or_ma": 17,
+      "year": 2026
+    },
+    {
+      "guideline": 3,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 46,
+      "year": 2022
+    },
+    {
+      "guideline": 1,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 45,
+      "year": 2023
+    },
+    {
+      "guideline": 4,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 34,
+      "year": 2024
+    },
+    {
+      "guideline": 2,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 36,
+      "year": 2025
+    },
+    {
+      "guideline": 5,
+      "indexing": "any",
+      "population": "without_stubs",
+      "sr_or_ma": 17,
+      "year": 2026
+    },
+    {
+      "guideline": 3,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 45,
+      "year": 2022
+    },
+    {
+      "guideline": 1,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 45,
+      "year": 2023
+    },
+    {
+      "guideline": 4,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 30,
+      "year": 2024
+    },
+    {
+      "guideline": 2,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 29,
+      "year": 2025
+    },
+    {
+      "guideline": 5,
+      "indexing": "major",
+      "population": "with_stubs",
+      "sr_or_ma": 13,
+      "year": 2026
+    },
+    {
+      "guideline": 3,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 45,
+      "year": 2022
+    },
+    {
+      "guideline": 1,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 45,
+      "year": 2023
+    },
+    {
+      "guideline": 4,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 30,
+      "year": 2024
+    },
+    {
+      "guideline": 2,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 29,
+      "year": 2025
+    },
+    {
+      "guideline": 5,
+      "indexing": "major",
+      "population": "without_stubs",
+      "sr_or_ma": 13,
+      "year": 2026
+    }
+  ],
+  "D006333_tree_precise_sensitivity": [
+    {
+      "articles_any_tree_precise": 16709,
+      "condition_trials_full": 5828,
+      "condition_trials_tree_precise": 5828,
+      "descriptors_tree_precise": 6,
+      "population": "with_stubs"
+    },
+    {
+      "articles_any_tree_precise": 16709,
+      "condition_trials_full": 5828,
+      "condition_trials_tree_precise": 5828,
+      "descriptors_tree_precise": 6,
+      "population": "without_stubs"
+    }
+  ],
+  "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+  "design_rule": {
+    "citing_review_types": [
+      "Guideline",
+      "Practice Guideline",
+      "Systematic Review",
+      "Meta-Analysis",
+      "Network Meta-Analysis"
+    ],
+    "guideline": [
+      "Guideline",
+      "Practice Guideline"
+    ],
+    "observational": [
+      "Observational Study",
+      "Observational Study, Veterinary"
+    ],
+    "order": [
+      "guideline",
+      "sr_or_ma",
+      "rct",
+      "other_trial",
+      "observational",
+      "other"
+    ],
+    "other_trial": [
+      "Clinical Trial",
+      "Clinical Trial, Phase I",
+      "Clinical Trial, Phase II",
+      "Clinical Trial, Phase III",
+      "Clinical Trial, Phase IV",
+      "Controlled Clinical Trial",
+      "Pragmatic Clinical Trial",
+      "Equivalence Trial",
+      "Adaptive Clinical Trial",
+      "Clinical Trial, Veterinary"
+    ],
+    "rct": [
+      "Randomized Controlled Trial",
+      "Randomized Controlled Trial, Veterinary"
+    ],
+    "sr_or_ma": [
+      "Systematic Review",
+      "Meta-Analysis",
+      "Network Meta-Analysis"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "major_article_coverage": {
+    "denominator": "All indexed Articles, including true/false known major flags. No node-list fallback.",
+    "parameters": [],
+    "sql": "SELECT p.population,count(DISTINCT m.article) indexed_articles,count(DISTINCT m.article) FILTER(WHERE m.edge_major AND NOT m.check_tag) articles_with_noncheck_major,count(DISTINCT m.article) FILTER(WHERE m.edge_major IS NOT NULL) articles_with_any_known_major FROM am m JOIN article a ON a.id=m.article CROSS JOIN populations p WHERE NOT p.exclude_stubs OR NOT a.stub GROUP BY 1"
+  },
+  "publication_unions": {
+    "denominator": "All Articles, exact NLM labels; nonexclusive categories are unioned rather than summed.",
+    "parameters": [],
+    "sql": "SELECT p.population,count(*) articles,count(*) FILTER(WHERE a.guideline) guideline_union,count(*) FILTER(WHERE a.systematic_review) systematic_review,count(*) FILTER(WHERE a.gr) guideline_review_union FROM article a CROSS JOIN populations p WHERE NOT p.exclude_stubs OR NOT a.stub GROUP BY 1"
+  }
+}

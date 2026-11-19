@@ -1,0 +1,3056 @@
+{
+  "B1_population": [
+    {
+      "population": "without_stubs",
+      "result_articles": 45865,
+      "result_articles_cited_by_guideline_or_systematic_review": 23467,
+      "trials": 606580,
+      "trials_with_results": 22793,
+      "trials_with_results_cited_by_guideline_or_systematic_review": 13724
+    },
+    {
+      "population": "with_stubs",
+      "result_articles": 140372,
+      "result_articles_cited_by_guideline_or_systematic_review": 23467,
+      "trials": 606580,
+      "trials_with_results": 42075,
+      "trials_with_results_cited_by_guideline_or_systematic_review": 13724
+    }
+  ],
+  "B3_population": [
+    {
+      "articles": 3145885,
+      "articles_with_citation_neighbor_and_shared_noncheck_query_term": 2533201,
+      "articles_with_query_terms": 2861756,
+      "population": "without_stubs",
+      "unique_seed_neighbor_pairs": 40468473
+    },
+    {
+      "articles": 3724062,
+      "articles_with_citation_neighbor_and_shared_noncheck_query_term": 2533201,
+      "articles_with_query_terms": 2861756,
+      "population": "with_stubs",
+      "unique_seed_neighbor_pairs": 40468473
+    }
+  ],
+  "B4_population": [
+    {
+      "author_nodes": 5134220,
+      "authors_with_authorship": 5134220,
+      "authors_with_indexed_article": 4684771,
+      "authors_with_matched_authorship": 4802529,
+      "population": "with_stubs"
+    },
+    {
+      "author_nodes": 5134220,
+      "authors_with_authorship": 5134220,
+      "authors_with_indexed_article": 4684771,
+      "authors_with_matched_authorship": 4802529,
+      "population": "without_stubs"
+    }
+  ],
+  "article_example_1": [
+    {
+      "citation_edge": "urn:uuid:8cc2621e-f18b-50a5-ab47-52f9c1fde250",
+      "cited_article": "PMID:15111659",
+      "citing_article": "PMID:18711110",
+      "descriptor": "MESH:D004827",
+      "in_corpus_citations": 46,
+      "neighbor": "PMID:15111659",
+      "neighbor_mesh_edge": "urn:uuid:b0222046-9c10-5256-92cb-8aaf40ad957a",
+      "seed_article": "PMID:18711110",
+      "seed_mesh_edge": "urn:uuid:f0a36e6f-cd6f-5d1f-b442-71cb081baae9"
+    }
+  ],
+  "article_example_2": [
+    {
+      "citation_edge": "urn:uuid:4514cec2-dde9-5333-818f-379b4f784e67",
+      "cited_article": "PMID:2398608",
+      "citing_article": "PMID:9006232",
+      "descriptor": "MESH:D001249",
+      "in_corpus_citations": 102,
+      "neighbor": "PMID:2398608",
+      "neighbor_mesh_edge": "urn:uuid:0aa12c95-b295-5f05-8121-aa275cec4d51",
+      "seed_article": "PMID:9006232",
+      "seed_mesh_edge": "urn:uuid:d5ff1c68-6598-58c9-a3e2-fb6bf8422bf4"
+    }
+  ],
+  "article_example_3": [
+    {
+      "citation_edge": "urn:uuid:e7fd2ec4-2692-5fda-89f9-8c0538cd63a6",
+      "cited_article": "PMID:12748199",
+      "citing_article": "PMID:16585662",
+      "descriptor": "MESH:D006973",
+      "in_corpus_citations": 2680,
+      "neighbor": "PMID:12748199",
+      "neighbor_mesh_edge": "urn:uuid:6e147f29-4285-59e6-994f-7f7c0fe35002",
+      "seed_article": "PMID:16585662",
+      "seed_mesh_edge": "urn:uuid:4288c589-5b69-5ffd-9e74-92fa1144a542"
+    }
+  ],
+  "author_example_1": [
+    {
+      "article": "PMID:10025774",
+      "author": "lunasai:openalex_author.A5018643148",
+      "authorship_edge": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D004827",
+      "identity_flags": [],
+      "match_status": "matched",
+      "mesh_edge": "urn:uuid:ddd312ca-35c3-59c8-96f2-3bfb9f5e3890"
+    }
+  ],
+  "author_example_2": [
+    {
+      "article": "PMID:10023966",
+      "author": "lunasai:openalex_author.A5054519215",
+      "authorship_edge": "urn:uuid:a7780163-b7f3-544a-bb07-4aa57aa8f539",
+      "descriptor": "MESH:D001249",
+      "identity_flags": [],
+      "match_status": "matched",
+      "mesh_edge": "urn:uuid:ff2933d5-66db-5ea2-8655-1d876f81dce9"
+    }
+  ],
+  "author_example_3": [
+    {
+      "article": "PMID:10022680",
+      "author": "lunasai:openalex_author.A5051725638",
+      "authorship_edge": "urn:uuid:ebacb8b2-4460-5f0a-9133-4dffa5ad2185",
+      "descriptor": "MESH:D006973",
+      "identity_flags": [],
+      "match_status": "matched",
+      "mesh_edge": "urn:uuid:c2362d0f-ee3e-5c2b-bbab-891a77a17e66"
+    }
+  ],
+  "author_profile_1": [
+    {
+      "articles": 18,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D009682",
+      "mesh_witness": "urn:uuid:cb604e14-6345-5090-8d7f-05b6e2b4bb09",
+      "name": "Magnetic Resonance Spectroscopy"
+    },
+    {
+      "articles": 12,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D001921",
+      "mesh_witness": "urn:uuid:0731bd27-7e5f-5c35-8737-2315ad68e1fa",
+      "name": "Brain"
+    },
+    {
+      "articles": 10,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D005680",
+      "mesh_witness": "urn:uuid:620a3537-1664-5514-832f-53965272b2c6",
+      "name": "gamma-Aminobutyric Acid"
+    },
+    {
+      "articles": 8,
+      "authorship_witness": "urn:uuid:588d0d3f-4a56-518b-8931-e94522de3fe0",
+      "descriptor": "MESH:D013997",
+      "mesh_witness": "urn:uuid:5ec146df-f1e6-5b8f-813a-83489e887c05",
+      "name": "Time Factors"
+    },
+    {
+      "articles": 7,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D000927",
+      "mesh_witness": "urn:uuid:dc1b4060-2062-56b1-a411-8bb58ad283f9",
+      "name": "Anticonvulsants"
+    },
+    {
+      "articles": 5,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D004827",
+      "mesh_witness": "urn:uuid:ddd312ca-35c3-59c8-96f2-3bfb9f5e3890",
+      "name": "Epilepsy"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:019a5bdf-ec86-5271-9201-263a7ff4f3b0",
+      "descriptor": "MESH:D002336",
+      "mesh_witness": "urn:uuid:086c5741-0382-5749-9e63-d71abf41750d",
+      "name": "Carnosine"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:f6bc6519-8d7b-5e36-9a75-40f37d73ff81",
+      "descriptor": "MESH:D007773",
+      "mesh_witness": "urn:uuid:30d91582-a42c-5cc4-8bb0-977586eda424",
+      "name": "Lactates"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:07a837ef-6140-5013-afbd-fc33a2381f0f",
+      "descriptor": "MESH:D008279",
+      "mesh_witness": "urn:uuid:26c1c0c6-4f76-5f95-ba13-32c95f7edb5b",
+      "name": "Magnetic Resonance Imaging"
+    },
+    {
+      "articles": 4,
+      "authorship_witness": "urn:uuid:b1c67061-42e5-5cdc-95e5-0ba5cb0754ae",
+      "descriptor": "MESH:D009778",
+      "mesh_witness": "urn:uuid:f9466ae5-2a84-522b-9726-3e08935d4eff",
+      "name": "Occipital Lobe"
+    }
+  ],
+  "author_profile_2": [
+    {
+      "articles": 92,
+      "authorship_witness": "urn:uuid:a7780163-b7f3-544a-bb07-4aa57aa8f539",
+      "descriptor": "MESH:D001249",
+      "mesh_witness": "urn:uuid:ff2933d5-66db-5ea2-8655-1d876f81dce9",
+      "name": "Asthma"
+    },
+    {
+      "articles": 46,
+      "authorship_witness": "urn:uuid:3229a724-362f-5ecf-b164-2f77ac97054f",
+      "descriptor": "MESH:D018592",
+      "mesh_witness": "urn:uuid:1bd003d0-c218-5ef6-abd0-9cfed18f4396",
+      "name": "Cross-Over Studies"
+    },
+    {
+      "articles": 42,
+      "authorship_witness": "urn:uuid:3229a724-362f-5ecf-b164-2f77ac97054f",
+      "descriptor": "MESH:D004311",
+      "mesh_witness": "urn:uuid:45f481cf-07bb-5f2d-9815-3b79e688352a",
+      "name": "Double-Blind Method"
+    },
+    {
+      "articles": 40,
+      "authorship_witness": "urn:uuid:9aa378cd-dbc7-5da7-9599-7c3f59308d55",
+      "descriptor": "MESH:D000280",
+      "mesh_witness": "urn:uuid:9fa97d2b-a216-541d-aa59-0722d1c73e61",
+      "name": "Administration, Inhalation"
+    },
+    {
+      "articles": 28,
+      "authorship_witness": "urn:uuid:fe6e8172-8b41-5116-ae51-b71cbcae67f2",
+      "descriptor": "MESH:D004305",
+      "mesh_witness": "urn:uuid:7bed38d8-9109-5d87-ab90-72df5108e58c",
+      "name": "Dose-Response Relationship, Drug"
+    },
+    {
+      "articles": 27,
+      "authorship_witness": "urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc",
+      "descriptor": "MESH:D001993",
+      "mesh_witness": "urn:uuid:44c599ac-918e-5333-b01f-cce3a74c74c3",
+      "name": "Bronchodilator Agents"
+    },
+    {
+      "articles": 27,
+      "authorship_witness": "urn:uuid:a7780163-b7f3-544a-bb07-4aa57aa8f539",
+      "descriptor": "MESH:D018927",
+      "mesh_witness": "urn:uuid:0bc564ce-f78b-53b6-b655-e27f2089b0f7",
+      "name": "Anti-Asthmatic Agents"
+    },
+    {
+      "articles": 26,
+      "authorship_witness": "urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc",
+      "descriptor": "MESH:D000420",
+      "mesh_witness": "urn:uuid:9412e046-2500-5fdc-977e-18313dc2193b",
+      "name": "Albuterol"
+    },
+    {
+      "articles": 24,
+      "authorship_witness": "urn:uuid:3ba3d0ed-f66b-5258-9d0e-56146d2b39c9",
+      "descriptor": "MESH:D000893",
+      "mesh_witness": "urn:uuid:ace5a88e-c929-52c1-ba1a-8b31e28967ea",
+      "name": "Anti-Inflammatory Agents"
+    },
+    {
+      "articles": 24,
+      "authorship_witness": "urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc",
+      "descriptor": "MESH:D005541",
+      "mesh_witness": "urn:uuid:4844a700-9f36-5f83-b36c-8c64de591f4c",
+      "name": "Forced Expiratory Volume"
+    }
+  ],
+  "author_profile_3": [
+    {
+      "articles": 22,
+      "authorship_witness": "urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a",
+      "descriptor": "MESH:D011471",
+      "mesh_witness": "urn:uuid:1f5b0a12-fcad-5b85-ab3a-f2426de9f5cd",
+      "name": "Prostatic Neoplasms"
+    },
+    {
+      "articles": 15,
+      "authorship_witness": "urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a",
+      "descriptor": "MESH:D001918",
+      "mesh_witness": "urn:uuid:dbdd5c2a-30d6-51e1-9127-c45f5dff715e",
+      "name": "Brachytherapy"
+    },
+    {
+      "articles": 14,
+      "authorship_witness": "urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a",
+      "descriptor": "MESH:D011468",
+      "mesh_witness": "urn:uuid:511e9d29-80d2-5384-9244-05d9a85db1c6",
+      "name": "Prostatectomy"
+    },
+    {
+      "articles": 12,
+      "authorship_witness": "urn:uuid:4d369a66-2694-5bf2-a6a3-468476bb9885",
+      "descriptor": "MESH:D016896",
+      "mesh_witness": "urn:uuid:aec6f52a-dda0-50ed-9f0d-e4a148cf564e",
+      "name": "Treatment Outcome"
+    },
+    {
+      "articles": 12,
+      "authorship_witness": "urn:uuid:4d369a66-2694-5bf2-a6a3-468476bb9885",
+      "descriptor": "MESH:D017430",
+      "mesh_witness": "urn:uuid:42fba771-ac9c-5050-9ce3-980230d4c343",
+      "name": "Prostate-Specific Antigen"
+    },
+    {
+      "articles": 11,
+      "authorship_witness": "urn:uuid:a6d75899-b6a9-50b3-a6bf-5e7408d4e213",
+      "descriptor": "MESH:D005500",
+      "mesh_witness": "urn:uuid:74dc2edf-dd2b-5c4e-a224-2d43ca9b3c7b",
+      "name": "Follow-Up Studies"
+    },
+    {
+      "articles": 9,
+      "authorship_witness": "urn:uuid:719e708c-e24b-5c1a-b51f-98c8368330a2",
+      "descriptor": "MESH:D011470",
+      "mesh_witness": "urn:uuid:5cf07406-d736-5375-9c81-304bb7f8d6b6",
+      "name": "Prostatic Hyperplasia"
+    },
+    {
+      "articles": 8,
+      "authorship_witness": "urn:uuid:d4786034-3966-57dd-b090-2f59c0509709",
+      "descriptor": "MESH:D012189",
+      "mesh_witness": "urn:uuid:c15fa947-4958-50e3-ba20-afd785ba19d0",
+      "name": "Retrospective Studies"
+    },
+    {
+      "articles": 8,
+      "authorship_witness": "urn:uuid:cb792d1c-edab-59b2-8ac7-07057d658a56",
+      "descriptor": "MESH:D013997",
+      "mesh_witness": "urn:uuid:d794b9d0-f0fb-5382-ad63-1cdfff788c90",
+      "name": "Time Factors"
+    },
+    {
+      "articles": 7,
+      "authorship_witness": "urn:uuid:877738cb-9b56-5c40-a464-a421ccf16315",
+      "descriptor": "MESH:D001749",
+      "mesh_witness": "urn:uuid:9d71943a-1b91-54fd-b77c-b7e1771f097d",
+      "name": "Urinary Bladder Neoplasms"
+    }
+  ],
+  "background_example_1": [
+    {
+      "article": "PMID:7673957",
+      "descriptor": "MESH:D004827",
+      "mesh_edge": "urn:uuid:003fe32d-fc13-5a88-ac10-ecf9b7147c8b",
+      "name": "Clinicoradiological and pathological correlations in patients with solitary cysticercus granuloma and epilepsy: focus on presence of the parasite and oedema formation.",
+      "pmcid": "486031",
+      "publication_edge": "urn:uuid:158348a6-3ac5-5288-b135-33147dce02f4",
+      "trial": "clinicaltrials:NCT00001912"
+    }
+  ],
+  "background_example_2": [
+    {
+      "article": "PMID:10069869",
+      "descriptor": "MESH:D001249",
+      "mesh_edge": "urn:uuid:c5a1a506-c55d-56f5-8963-52d1feabbf96",
+      "name": "Relationships between duration of asthma and asthma severity among children in the Childhood Asthma Management Program (CAMP).",
+      "pmcid": null,
+      "publication_edge": "urn:uuid:61cbba6d-7337-5bf9-84ac-bc03c85f3def",
+      "trial": "clinicaltrials:NCT00000575"
+    }
+  ],
+  "background_example_3": [
+    {
+      "article": "PMID:11799087",
+      "descriptor": "MESH:D006973",
+      "mesh_edge": "urn:uuid:e5eef0d5-b3c6-53bb-994b-95a610a4e72d",
+      "name": "Development of predictive models for long-term cardiovascular risk associated with systolic and diastolic blood pressure.",
+      "pmcid": null,
+      "publication_edge": "urn:uuid:06abe0c9-c26a-5ddb-8472-01f4a79a7fdb",
+      "trial": "clinicaltrials:NCT00000479"
+    }
+  ],
+  "background_population": [
+    {
+      "background_articles": 146132,
+      "edge_rows": 228957,
+      "pairs": 228957,
+      "population": "without_stubs",
+      "trials": 606580,
+      "trials_with_background": 62788
+    },
+    {
+      "background_articles": 539317,
+      "edge_rows": 736649,
+      "pairs": 736649,
+      "population": "with_stubs",
+      "trials": 606580,
+      "trials_with_background": 97142
+    }
+  ],
+  "check_tags": [
+    {
+      "id": "MESH:D000293",
+      "name": "Adolescent"
+    },
+    {
+      "id": "MESH:D000328",
+      "name": "Adult"
+    },
+    {
+      "id": "MESH:D000368",
+      "name": "Aged"
+    },
+    {
+      "id": "MESH:D000369",
+      "name": "Aged, 80 and over"
+    },
+    {
+      "id": "MESH:D000818",
+      "name": "Animals"
+    },
+    {
+      "id": "MESH:D001516",
+      "name": "Bees"
+    },
+    {
+      "id": "MESH:D002415",
+      "name": "Cats"
+    },
+    {
+      "id": "MESH:D002417",
+      "name": "Cattle"
+    },
+    {
+      "id": "MESH:D002642",
+      "name": "Chick Embryo"
+    },
+    {
+      "id": "MESH:D002648",
+      "name": "Child"
+    },
+    {
+      "id": "MESH:D002675",
+      "name": "Child, Preschool"
+    },
+    {
+      "id": "MESH:D002522",
+      "name": "Chlorocebus aethiops"
+    },
+    {
+      "id": "MESH:D006224",
+      "name": "Cricetinae"
+    },
+    {
+      "id": "MESH:D004285",
+      "name": "Dogs"
+    },
+    {
+      "id": "MESH:D005260",
+      "name": "Female"
+    },
+    {
+      "id": "MESH:D006168",
+      "name": "Guinea Pigs"
+    },
+    {
+      "id": "MESH:D006666",
+      "name": "History of Medicine"
+    },
+    {
+      "id": "MESH:D049668",
+      "name": "History, 15th Century"
+    },
+    {
+      "id": "MESH:D049669",
+      "name": "History, 16th Century"
+    },
+    {
+      "id": "MESH:D049670",
+      "name": "History, 17th Century"
+    },
+    {
+      "id": "MESH:D049671",
+      "name": "History, 18th Century"
+    },
+    {
+      "id": "MESH:D049672",
+      "name": "History, 19th Century"
+    },
+    {
+      "id": "MESH:D049673",
+      "name": "History, 20th Century"
+    },
+    {
+      "id": "MESH:D049674",
+      "name": "History, 21st Century"
+    },
+    {
+      "id": "MESH:D049690",
+      "name": "History, Ancient"
+    },
+    {
+      "id": "MESH:D049691",
+      "name": "History, Medieval"
+    },
+    {
+      "id": "MESH:D006736",
+      "name": "Horses"
+    },
+    {
+      "id": "MESH:D006801",
+      "name": "Humans"
+    },
+    {
+      "id": "MESH:D007223",
+      "name": "Infant"
+    },
+    {
+      "id": "MESH:D007231",
+      "name": "Infant, Newborn"
+    },
+    {
+      "id": "MESH:D008297",
+      "name": "Male"
+    },
+    {
+      "id": "MESH:D051379",
+      "name": "Mice"
+    },
+    {
+      "id": "MESH:D008875",
+      "name": "Middle Aged"
+    },
+    {
+      "id": "MESH:D011247",
+      "name": "Pregnancy"
+    },
+    {
+      "id": "MESH:D011817",
+      "name": "Rabbits"
+    },
+    {
+      "id": "MESH:D051381",
+      "name": "Rats"
+    },
+    {
+      "id": "MESH:D012756",
+      "name": "Sheep"
+    },
+    {
+      "id": "MESH:D013552",
+      "name": "Swine"
+    },
+    {
+      "id": "MESH:D014481",
+      "name": "United States"
+    },
+    {
+      "id": "MESH:D055815",
+      "name": "Young Adult"
+    }
+  ],
+  "citation_denominators": [
+    {
+      "articles": 3724062,
+      "articles_cited_in_corpus": 2409164,
+      "citation_edge_rows": 31922142,
+      "distinct_nonself_citing_pairs": 31898098,
+      "population": "with_stubs",
+      "self_link_rows": 24044
+    },
+    {
+      "articles": 3145885,
+      "articles_cited_in_corpus": 2409164,
+      "citation_edge_rows": 31922142,
+      "distinct_nonself_citing_pairs": 31898098,
+      "population": "without_stubs",
+      "self_link_rows": 24044
+    }
+  ],
+  "community_id_coarse_consistency": [
+    {
+      "groups_with_conflicting_sizes": 0,
+      "groups_with_stored_size_less_than_observed": 0,
+      "largest_observed_group": 162346,
+      "nonnegative_groups": 4436,
+      "population": "without_stubs"
+    },
+    {
+      "groups_with_conflicting_sizes": 0,
+      "groups_with_stored_size_less_than_observed": 0,
+      "largest_observed_group": 162346,
+      "nonnegative_groups": 4436,
+      "population": "with_stubs"
+    }
+  ],
+  "community_id_consistency": [
+    {
+      "groups_with_conflicting_sizes": 0,
+      "groups_with_stored_size_less_than_observed": 0,
+      "largest_observed_group": 104306,
+      "nonnegative_groups": 109370,
+      "population": "without_stubs"
+    },
+    {
+      "groups_with_conflicting_sizes": 0,
+      "groups_with_stored_size_less_than_observed": 0,
+      "largest_observed_group": 104306,
+      "nonnegative_groups": 109370,
+      "population": "with_stubs"
+    }
+  ],
+  "community_id_mesh_consistency": [
+    {
+      "groups_with_conflicting_sizes": 0,
+      "groups_with_stored_size_less_than_observed": 0,
+      "largest_observed_group": 37260,
+      "nonnegative_groups": 2329,
+      "population": "without_stubs"
+    },
+    {
+      "groups_with_conflicting_sizes": 0,
+      "groups_with_stored_size_less_than_observed": 0,
+      "largest_observed_group": 37260,
+      "nonnegative_groups": 2329,
+      "population": "with_stubs"
+    }
+  ],
+  "community_variation": [
+    {
+      "coarse_ids": 4436,
+      "community_ids": 109370,
+      "mesh_ids": 2329,
+      "pagerank_values": 2044853,
+      "population": "without_stubs"
+    },
+    {
+      "coarse_ids": 4436,
+      "community_ids": 109370,
+      "mesh_ids": 2329,
+      "pagerank_values": 2044853,
+      "population": "with_stubs"
+    }
+  ],
+  "directions": [
+    {
+      "edges": 21135411,
+      "object_prefix": "lunasai",
+      "subject_prefix": "PMID",
+      "type": "AUTHORED_BY"
+    },
+    {
+      "edges": 31922142,
+      "object_prefix": "PMID",
+      "subject_prefix": "PMID",
+      "type": "CITES"
+    },
+    {
+      "edges": 736649,
+      "object_prefix": "clinicaltrials",
+      "subject_prefix": "PMID",
+      "type": "CITES_BACKGROUND"
+    },
+    {
+      "edges": 3153344,
+      "object_prefix": "lunasai",
+      "subject_prefix": "clinicaltrials",
+      "type": "CONDUCTED_AT"
+    },
+    {
+      "edges": 42519,
+      "object_prefix": "MESH",
+      "subject_prefix": "MESH",
+      "type": "HAS_BROADER"
+    },
+    {
+      "edges": 185654,
+      "object_prefix": "MESH",
+      "subject_prefix": "MESH",
+      "type": "HAS_BROADER_ANCESTOR"
+    },
+    {
+      "edges": 202205,
+      "object_prefix": "clinicaltrials",
+      "subject_prefix": "PMID",
+      "type": "HAS_DERIVED_PUBLICATION"
+    },
+    {
+      "edges": 4885,
+      "object_prefix": "lunasai",
+      "subject_prefix": "lunasai",
+      "type": "HAS_LANGUAGE_RESOURCE"
+    },
+    {
+      "edges": 35903186,
+      "object_prefix": "MESH",
+      "subject_prefix": "PMID",
+      "type": "HAS_MESH"
+    },
+    {
+      "edges": 6814837,
+      "object_prefix": "MESH",
+      "subject_prefix": "clinicaltrials",
+      "type": "HAS_MESH"
+    },
+    {
+      "edges": 2709,
+      "object_prefix": "MESH",
+      "subject_prefix": "lunasai",
+      "type": "HAS_MESH"
+    },
+    {
+      "edges": 1334074,
+      "object_prefix": "pmc",
+      "subject_prefix": "PMID",
+      "type": "HAS_PMC_RECORD"
+    },
+    {
+      "edges": 3651,
+      "object_prefix": "lunasai",
+      "subject_prefix": "lunasai",
+      "type": "IN_TOPIC_GROUP"
+    },
+    {
+      "edges": 51747,
+      "object_prefix": "lunasai",
+      "subject_prefix": "lunasai",
+      "type": "LINKS_TO_RESOURCE"
+    },
+    {
+      "edges": 6988,
+      "object_prefix": "lunasai",
+      "subject_prefix": "PMID",
+      "type": "PUBLISHED_IN"
+    },
+    {
+      "edges": 3140907,
+      "object_prefix": "nlm",
+      "subject_prefix": "PMID",
+      "type": "PUBLISHED_IN"
+    },
+    {
+      "edges": 6246,
+      "object_prefix": "lunasai",
+      "subject_prefix": "lunasai",
+      "type": "RELATED_TOPIC"
+    },
+    {
+      "edges": 22573,
+      "object_prefix": "lunasai",
+      "subject_prefix": "lunasai",
+      "type": "RESOURCE_TRANSLATION_OF"
+    },
+    {
+      "edges": 931156,
+      "object_prefix": "lunasai",
+      "subject_prefix": "clinicaltrials",
+      "type": "SPONSORED_BY"
+    },
+    {
+      "edges": 1016,
+      "object_prefix": "lunasai",
+      "subject_prefix": "lunasai",
+      "type": "TRANSLATION_OF"
+    },
+    {
+      "edges": 156167,
+      "object_prefix": "clinicaltrials",
+      "subject_prefix": "PMID",
+      "type": "VALIDATED_BY"
+    }
+  ],
+  "endpoint_integrity": [
+    {
+      "edges": 105758066,
+      "missing_object": 0,
+      "missing_subject": 0
+    }
+  ],
+  "entrypoints": [
+    {
+      "articles": 3724062,
+      "doi": 2219302,
+      "journal": 3145885,
+      "major_topic_list": 2855427,
+      "pmcid": 1299544,
+      "population": "with_stubs",
+      "publication_types": 3024048,
+      "title": 3145885
+    },
+    {
+      "articles": 3145885,
+      "doi": 2219302,
+      "journal": 3145885,
+      "major_topic_list": 2855427,
+      "pmcid": 1299544,
+      "population": "without_stubs",
+      "publication_types": 3024048,
+      "title": 3145885
+    }
+  ],
+  "journal_example_1": [
+    {
+      "descriptor": "MESH:D004827",
+      "guideline": "PMID:12601090",
+      "journal": "nlm:401060",
+      "journal_edge": "urn:uuid:00b81f9d-ab09-5c4d-a05c-e7b5fb4695b5",
+      "journal_name": "Neurology",
+      "mesh_edge": "urn:uuid:429ca553-3dc4-5b31-9744-3439fdbff69f",
+      "pub_types": [
+        "Guideline",
+        "Journal Article",
+        "Practice Guideline",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Systematic Review"
+      ]
+    }
+  ],
+  "journal_example_2": [
+    {
+      "descriptor": "MESH:D001249",
+      "guideline": "PMID:11972488",
+      "journal": "nlm:7804028",
+      "journal_edge": "urn:uuid:8297662d-3891-5a0a-82ed-d602d75a7a35",
+      "journal_name": "Allergy",
+      "mesh_edge": "urn:uuid:c656d515-109a-5173-9cc7-5f1487f5a29c",
+      "pub_types": [
+        "Guideline",
+        "Journal Article"
+      ]
+    }
+  ],
+  "journal_example_3": [
+    {
+      "descriptor": "MESH:D006973",
+      "guideline": "PMID:10920346",
+      "journal": "nlm:370476",
+      "journal_edge": "urn:uuid:b798f746-fdf5-574f-930d-363e1266d5c5",
+      "journal_name": "American Journal of Obstetrics and Gynecology",
+      "mesh_edge": "urn:uuid:f37a8995-41eb-5521-8adb-72217de77b1c",
+      "pub_types": [
+        "Guideline",
+        "Journal Article",
+        "Practice Guideline"
+      ]
+    }
+  ],
+  "journal_population": [
+    {
+      "journal_nodes": 2734,
+      "journals_with_articles": 2734,
+      "journals_with_guidelines": 254,
+      "linked_articles": 3147895,
+      "linked_guidelines": 6350,
+      "population": "with_stubs"
+    },
+    {
+      "journal_nodes": 2734,
+      "journals_with_articles": 2310,
+      "journals_with_guidelines": 254,
+      "linked_articles": 3145885,
+      "linked_guidelines": 6350,
+      "population": "without_stubs"
+    }
+  ],
+  "labels": [
+    {
+      "label": "Article",
+      "records": 3724062
+    },
+    {
+      "label": "Author",
+      "records": 5134220
+    },
+    {
+      "label": "ClinicalTrial",
+      "records": 606580
+    },
+    {
+      "label": "ExternalResource",
+      "records": 38751
+    },
+    {
+      "label": "Journal",
+      "records": 2734
+    },
+    {
+      "label": "MeSHConcept",
+      "records": 31110
+    },
+    {
+      "label": "MedlinePlus",
+      "records": 2033
+    },
+    {
+      "label": "MedlinePlusGroup",
+      "records": 88
+    },
+    {
+      "label": "PMCRecord",
+      "records": 1334061
+    },
+    {
+      "label": "Sponsor",
+      "records": 101306
+    },
+    {
+      "label": "TrialSite",
+      "records": 1092163
+    }
+  ],
+  "major_coverage": [
+    {
+      "edge_major": false,
+      "edges": 25474424,
+      "population": "with_stubs"
+    },
+    {
+      "edge_major": true,
+      "edges": 10428762,
+      "population": "with_stubs"
+    },
+    {
+      "edge_major": false,
+      "edges": 25474424,
+      "population": "without_stubs"
+    },
+    {
+      "edge_major": true,
+      "edges": 10428762,
+      "population": "without_stubs"
+    }
+  ],
+  "major_disagreements": [
+    {
+      "comparable_edges": 35826898,
+      "disagreements": 290,
+      "population": "without_stubs"
+    },
+    {
+      "comparable_edges": 35826898,
+      "disagreements": 290,
+      "population": "with_stubs"
+    }
+  ],
+  "major_label_unmatched": [
+    {
+      "article_label_pairs": 10465269,
+      "population": "without_stubs",
+      "unmatched_article_label_pairs": 36797
+    },
+    {
+      "article_label_pairs": 10465269,
+      "population": "with_stubs",
+      "unmatched_article_label_pairs": 36797
+    }
+  ],
+  "other_entrypoints": [
+    {
+      "direct_url": 0,
+      "label": "Author",
+      "nct_id": 0,
+      "nodes": 5134220,
+      "openalex_author_id": 5134220,
+      "orcid": 0,
+      "profile_orcid": 0,
+      "title": 5134220
+    },
+    {
+      "direct_url": 606580,
+      "label": "ClinicalTrial",
+      "nct_id": 606580,
+      "nodes": 606580,
+      "openalex_author_id": 0,
+      "orcid": 0,
+      "profile_orcid": 0,
+      "title": 605610
+    },
+    {
+      "direct_url": 376,
+      "label": "Journal",
+      "nct_id": 0,
+      "nodes": 2734,
+      "openalex_author_id": 0,
+      "orcid": 0,
+      "profile_orcid": 0,
+      "title": 2734
+    },
+    {
+      "direct_url": 2033,
+      "label": "MedlinePlus",
+      "nct_id": 0,
+      "nodes": 2033,
+      "openalex_author_id": 0,
+      "orcid": 0,
+      "profile_orcid": 0,
+      "title": 2033
+    },
+    {
+      "direct_url": 1334061,
+      "label": "PMCRecord",
+      "nct_id": 0,
+      "nodes": 1334061,
+      "openalex_author_id": 0,
+      "orcid": 0,
+      "profile_orcid": 0,
+      "title": 0
+    }
+  ],
+  "pmc_integrity": [
+    {
+      "edges": 1334074,
+      "extra_edges_over_articles": 0,
+      "linked_articles": 1334074,
+      "linked_pmc_records": 1334061,
+      "pmc_records": 1334061
+    }
+  ],
+  "pmc_traversal_coverage": [
+    {
+      "any_pmc_route": 1172507,
+      "articles": 2790093,
+      "pmc_link": 1172507,
+      "pmcid": 1153794,
+      "population": "with_stubs",
+      "traversal": "author_indexed_articles"
+    },
+    {
+      "any_pmc_route": 1172507,
+      "articles": 2790093,
+      "pmc_link": 1172507,
+      "pmcid": 1153794,
+      "population": "without_stubs",
+      "traversal": "author_indexed_articles"
+    },
+    {
+      "any_pmc_route": 46107,
+      "articles": 539317,
+      "pmc_link": 46107,
+      "pmcid": 45940,
+      "population": "with_stubs",
+      "traversal": "background_publications"
+    },
+    {
+      "any_pmc_route": 46093,
+      "articles": 146132,
+      "pmc_link": 46093,
+      "pmcid": 45940,
+      "population": "without_stubs",
+      "traversal": "background_publications"
+    },
+    {
+      "any_pmc_route": 1038861,
+      "articles": 2546024,
+      "pmc_link": 1038861,
+      "pmcid": 1030251,
+      "population": "with_stubs",
+      "traversal": "citation_shared_neighbors"
+    },
+    {
+      "any_pmc_route": 1038861,
+      "articles": 2546024,
+      "pmc_link": 1038861,
+      "pmcid": 1030251,
+      "population": "without_stubs",
+      "traversal": "citation_shared_neighbors"
+    },
+    {
+      "any_pmc_route": 1139,
+      "articles": 6350,
+      "pmc_link": 1139,
+      "pmcid": 1107,
+      "population": "with_stubs",
+      "traversal": "journal_guidelines"
+    },
+    {
+      "any_pmc_route": 1139,
+      "articles": 6350,
+      "pmc_link": 1139,
+      "pmcid": 1107,
+      "population": "without_stubs",
+      "traversal": "journal_guidelines"
+    },
+    {
+      "any_pmc_route": 7282,
+      "articles": 23467,
+      "pmc_link": 7282,
+      "pmcid": 7254,
+      "population": "with_stubs",
+      "traversal": "results_cited_by_guideline_systematic"
+    },
+    {
+      "any_pmc_route": 7282,
+      "articles": 23467,
+      "pmc_link": 7282,
+      "pmcid": 7254,
+      "population": "without_stubs",
+      "traversal": "results_cited_by_guideline_systematic"
+    },
+    {
+      "any_pmc_route": 18818,
+      "articles": 140372,
+      "pmc_link": 18818,
+      "pmcid": 14428,
+      "population": "with_stubs",
+      "traversal": "results_publications"
+    },
+    {
+      "any_pmc_route": 17594,
+      "articles": 45865,
+      "pmc_link": 17594,
+      "pmcid": 14428,
+      "population": "without_stubs",
+      "traversal": "results_publications"
+    },
+    {
+      "any_pmc_route": 88126,
+      "articles": 263927,
+      "pmc_link": 88126,
+      "pmcid": 86120,
+      "population": "with_stubs",
+      "traversal": "topic_guidelines_reviews"
+    },
+    {
+      "any_pmc_route": 88126,
+      "articles": 263927,
+      "pmc_link": 88126,
+      "pmcid": 86120,
+      "population": "without_stubs",
+      "traversal": "topic_guidelines_reviews"
+    }
+  ],
+  "publication_types": [
+    {
+      "articles": 121,
+      "population": "with_stubs",
+      "type": "Adaptive Clinical Trial"
+    },
+    {
+      "articles": 139,
+      "population": "with_stubs",
+      "type": "Address"
+    },
+    {
+      "articles": 44,
+      "population": "with_stubs",
+      "type": "Autobiography"
+    },
+    {
+      "articles": 27,
+      "population": "with_stubs",
+      "type": "Bibliography"
+    },
+    {
+      "articles": 1914,
+      "population": "with_stubs",
+      "type": "Biography"
+    },
+    {
+      "articles": 133275,
+      "population": "with_stubs",
+      "type": "Case Reports"
+    },
+    {
+      "articles": 81,
+      "population": "with_stubs",
+      "type": "Classical Article"
+    },
+    {
+      "articles": 391,
+      "population": "with_stubs",
+      "type": "Clinical Conference"
+    },
+    {
+      "articles": 740,
+      "population": "with_stubs",
+      "type": "Clinical Study"
+    },
+    {
+      "articles": 91952,
+      "population": "with_stubs",
+      "type": "Clinical Trial"
+    },
+    {
+      "articles": 7934,
+      "population": "with_stubs",
+      "type": "Clinical Trial Protocol"
+    },
+    {
+      "articles": 8186,
+      "population": "with_stubs",
+      "type": "Clinical Trial, Phase I"
+    },
+    {
+      "articles": 14319,
+      "population": "with_stubs",
+      "type": "Clinical Trial, Phase II"
+    },
+    {
+      "articles": 10225,
+      "population": "with_stubs",
+      "type": "Clinical Trial, Phase III"
+    },
+    {
+      "articles": 672,
+      "population": "with_stubs",
+      "type": "Clinical Trial, Phase IV"
+    },
+    {
+      "articles": 27,
+      "population": "with_stubs",
+      "type": "Clinical Trial, Veterinary"
+    },
+    {
+      "articles": 18670,
+      "population": "with_stubs",
+      "type": "Comment"
+    },
+    {
+      "articles": 225545,
+      "population": "with_stubs",
+      "type": "Comparative Study"
+    },
+    {
+      "articles": 927,
+      "population": "with_stubs",
+      "type": "Conference Proceedings"
+    },
+    {
+      "articles": 47,
+      "population": "with_stubs",
+      "type": "Congress"
+    },
+    {
+      "articles": 176,
+      "population": "with_stubs",
+      "type": "Consensus Development Conference"
+    },
+    {
+      "articles": 116,
+      "population": "with_stubs",
+      "type": "Consensus Development Conference, NIH"
+    },
+    {
+      "articles": 4599,
+      "population": "with_stubs",
+      "type": "Consensus Statement"
+    },
+    {
+      "articles": 10694,
+      "population": "with_stubs",
+      "type": "Controlled Clinical Trial"
+    },
+    {
+      "articles": 105,
+      "population": "with_stubs",
+      "type": "Corrected and Republished Article"
+    },
+    {
+      "articles": 58,
+      "population": "with_stubs",
+      "type": "Dataset"
+    },
+    {
+      "articles": 1,
+      "population": "with_stubs",
+      "type": "Dictionary"
+    },
+    {
+      "articles": 5,
+      "population": "with_stubs",
+      "type": "Directory"
+    },
+    {
+      "articles": 101,
+      "population": "with_stubs",
+      "type": "Duplicate Publication"
+    },
+    {
+      "articles": 11560,
+      "population": "with_stubs",
+      "type": "Editorial"
+    },
+    {
+      "articles": 312,
+      "population": "with_stubs",
+      "type": "English Abstract"
+    },
+    {
+      "articles": 2408,
+      "population": "with_stubs",
+      "type": "Equivalence Trial"
+    },
+    {
+      "articles": 40952,
+      "population": "with_stubs",
+      "type": "Evaluation Study"
+    },
+    {
+      "articles": 3,
+      "population": "with_stubs",
+      "type": "Evidence Synthesis"
+    },
+    {
+      "articles": 24,
+      "population": "with_stubs",
+      "type": "Expression of Concern"
+    },
+    {
+      "articles": 11,
+      "population": "with_stubs",
+      "type": "Festschrift"
+    },
+    {
+      "articles": 3,
+      "population": "with_stubs",
+      "type": "Government Publication"
+    },
+    {
+      "articles": 1299,
+      "population": "with_stubs",
+      "type": "Guideline"
+    },
+    {
+      "articles": 9261,
+      "population": "with_stubs",
+      "type": "Historical Article"
+    },
+    {
+      "articles": 22,
+      "population": "with_stubs",
+      "type": "Interactive Tutorial"
+    },
+    {
+      "articles": 215,
+      "population": "with_stubs",
+      "type": "Interview"
+    },
+    {
+      "articles": 1221,
+      "population": "with_stubs",
+      "type": "Introductory Journal Article"
+    },
+    {
+      "articles": 2995700,
+      "population": "with_stubs",
+      "type": "Journal Article"
+    },
+    {
+      "articles": 412,
+      "population": "with_stubs",
+      "type": "Lecture"
+    },
+    {
+      "articles": 58,
+      "population": "with_stubs",
+      "type": "Legal Case"
+    },
+    {
+      "articles": 3514,
+      "population": "with_stubs",
+      "type": "Letter"
+    },
+    {
+      "articles": 41156,
+      "population": "with_stubs",
+      "type": "Meta-Analysis"
+    },
+    {
+      "articles": 111878,
+      "population": "with_stubs",
+      "type": "Multicenter Study"
+    },
+    {
+      "articles": 1923,
+      "population": "with_stubs",
+      "type": "Network Meta-Analysis"
+    },
+    {
+      "articles": 2486,
+      "population": "with_stubs",
+      "type": "News"
+    },
+    {
+      "articles": 37824,
+      "population": "with_stubs",
+      "type": "Observational Study"
+    },
+    {
+      "articles": 11,
+      "population": "with_stubs",
+      "type": "Observational Study, Veterinary"
+    },
+    {
+      "articles": 9,
+      "population": "with_stubs",
+      "type": "Overall"
+    },
+    {
+      "articles": 70,
+      "population": "with_stubs",
+      "type": "Patient Education Handout"
+    },
+    {
+      "articles": 1,
+      "population": "with_stubs",
+      "type": "Periodical Index"
+    },
+    {
+      "articles": 163,
+      "population": "with_stubs",
+      "type": "Personal Narrative"
+    },
+    {
+      "articles": 1306,
+      "population": "with_stubs",
+      "type": "Portrait"
+    },
+    {
+      "articles": 5826,
+      "population": "with_stubs",
+      "type": "Practice Guideline"
+    },
+    {
+      "articles": 1930,
+      "population": "with_stubs",
+      "type": "Pragmatic Clinical Trial"
+    },
+    {
+      "articles": 15,
+      "population": "with_stubs",
+      "type": "Preprint"
+    },
+    {
+      "articles": 11846,
+      "population": "with_stubs",
+      "type": "Published Erratum"
+    },
+    {
+      "articles": 141405,
+      "population": "with_stubs",
+      "type": "Randomized Controlled Trial"
+    },
+    {
+      "articles": 83,
+      "population": "with_stubs",
+      "type": "Randomized Controlled Trial, Veterinary"
+    },
+    {
+      "articles": 438,
+      "population": "with_stubs",
+      "type": "Research Support, American Recovery and Reinvestment Act"
+    },
+    {
+      "articles": 300219,
+      "population": "with_stubs",
+      "type": "Research Support, N.I.H., Extramural"
+    },
+    {
+      "articles": 14359,
+      "population": "with_stubs",
+      "type": "Research Support, N.I.H., Intramural"
+    },
+    {
+      "articles": 1156031,
+      "population": "with_stubs",
+      "type": "Research Support, Non-U.S. Gov't"
+    },
+    {
+      "articles": 127247,
+      "population": "with_stubs",
+      "type": "Research Support, U.S. Gov't, Non-P.H.S."
+    },
+    {
+      "articles": 159677,
+      "population": "with_stubs",
+      "type": "Research Support, U.S. Gov't, P.H.S."
+    },
+    {
+      "articles": 2904,
+      "population": "with_stubs",
+      "type": "Retracted Publication"
+    },
+    {
+      "articles": 328,
+      "population": "with_stubs",
+      "type": "Retraction Notice"
+    },
+    {
+      "articles": 218211,
+      "population": "with_stubs",
+      "type": "Review"
+    },
+    {
+      "articles": 5183,
+      "population": "with_stubs",
+      "type": "Scoping Review"
+    },
+    {
+      "articles": 74,
+      "population": "with_stubs",
+      "type": "Seminal Article"
+    },
+    {
+      "articles": 59012,
+      "population": "with_stubs",
+      "type": "Systematic Review"
+    },
+    {
+      "articles": 498,
+      "population": "with_stubs",
+      "type": "Technical Report"
+    },
+    {
+      "articles": 1764,
+      "population": "with_stubs",
+      "type": "Twin Study"
+    },
+    {
+      "articles": 20701,
+      "population": "with_stubs",
+      "type": "Validation Study"
+    },
+    {
+      "articles": 5319,
+      "population": "with_stubs",
+      "type": "Video-Audio Media"
+    },
+    {
+      "articles": 44,
+      "population": "with_stubs",
+      "type": "Webcast"
+    },
+    {
+      "articles": 121,
+      "population": "without_stubs",
+      "type": "Adaptive Clinical Trial"
+    },
+    {
+      "articles": 139,
+      "population": "without_stubs",
+      "type": "Address"
+    },
+    {
+      "articles": 44,
+      "population": "without_stubs",
+      "type": "Autobiography"
+    },
+    {
+      "articles": 27,
+      "population": "without_stubs",
+      "type": "Bibliography"
+    },
+    {
+      "articles": 1914,
+      "population": "without_stubs",
+      "type": "Biography"
+    },
+    {
+      "articles": 133275,
+      "population": "without_stubs",
+      "type": "Case Reports"
+    },
+    {
+      "articles": 81,
+      "population": "without_stubs",
+      "type": "Classical Article"
+    },
+    {
+      "articles": 391,
+      "population": "without_stubs",
+      "type": "Clinical Conference"
+    },
+    {
+      "articles": 740,
+      "population": "without_stubs",
+      "type": "Clinical Study"
+    },
+    {
+      "articles": 91952,
+      "population": "without_stubs",
+      "type": "Clinical Trial"
+    },
+    {
+      "articles": 7934,
+      "population": "without_stubs",
+      "type": "Clinical Trial Protocol"
+    },
+    {
+      "articles": 8186,
+      "population": "without_stubs",
+      "type": "Clinical Trial, Phase I"
+    },
+    {
+      "articles": 14319,
+      "population": "without_stubs",
+      "type": "Clinical Trial, Phase II"
+    },
+    {
+      "articles": 10225,
+      "population": "without_stubs",
+      "type": "Clinical Trial, Phase III"
+    },
+    {
+      "articles": 672,
+      "population": "without_stubs",
+      "type": "Clinical Trial, Phase IV"
+    },
+    {
+      "articles": 27,
+      "population": "without_stubs",
+      "type": "Clinical Trial, Veterinary"
+    },
+    {
+      "articles": 18670,
+      "population": "without_stubs",
+      "type": "Comment"
+    },
+    {
+      "articles": 225545,
+      "population": "without_stubs",
+      "type": "Comparative Study"
+    },
+    {
+      "articles": 927,
+      "population": "without_stubs",
+      "type": "Conference Proceedings"
+    },
+    {
+      "articles": 47,
+      "population": "without_stubs",
+      "type": "Congress"
+    },
+    {
+      "articles": 176,
+      "population": "without_stubs",
+      "type": "Consensus Development Conference"
+    },
+    {
+      "articles": 116,
+      "population": "without_stubs",
+      "type": "Consensus Development Conference, NIH"
+    },
+    {
+      "articles": 4599,
+      "population": "without_stubs",
+      "type": "Consensus Statement"
+    },
+    {
+      "articles": 10694,
+      "population": "without_stubs",
+      "type": "Controlled Clinical Trial"
+    },
+    {
+      "articles": 105,
+      "population": "without_stubs",
+      "type": "Corrected and Republished Article"
+    },
+    {
+      "articles": 58,
+      "population": "without_stubs",
+      "type": "Dataset"
+    },
+    {
+      "articles": 1,
+      "population": "without_stubs",
+      "type": "Dictionary"
+    },
+    {
+      "articles": 5,
+      "population": "without_stubs",
+      "type": "Directory"
+    },
+    {
+      "articles": 101,
+      "population": "without_stubs",
+      "type": "Duplicate Publication"
+    },
+    {
+      "articles": 11560,
+      "population": "without_stubs",
+      "type": "Editorial"
+    },
+    {
+      "articles": 312,
+      "population": "without_stubs",
+      "type": "English Abstract"
+    },
+    {
+      "articles": 2408,
+      "population": "without_stubs",
+      "type": "Equivalence Trial"
+    },
+    {
+      "articles": 40952,
+      "population": "without_stubs",
+      "type": "Evaluation Study"
+    },
+    {
+      "articles": 3,
+      "population": "without_stubs",
+      "type": "Evidence Synthesis"
+    },
+    {
+      "articles": 24,
+      "population": "without_stubs",
+      "type": "Expression of Concern"
+    },
+    {
+      "articles": 11,
+      "population": "without_stubs",
+      "type": "Festschrift"
+    },
+    {
+      "articles": 3,
+      "population": "without_stubs",
+      "type": "Government Publication"
+    },
+    {
+      "articles": 1299,
+      "population": "without_stubs",
+      "type": "Guideline"
+    },
+    {
+      "articles": 9261,
+      "population": "without_stubs",
+      "type": "Historical Article"
+    },
+    {
+      "articles": 22,
+      "population": "without_stubs",
+      "type": "Interactive Tutorial"
+    },
+    {
+      "articles": 215,
+      "population": "without_stubs",
+      "type": "Interview"
+    },
+    {
+      "articles": 1221,
+      "population": "without_stubs",
+      "type": "Introductory Journal Article"
+    },
+    {
+      "articles": 2995700,
+      "population": "without_stubs",
+      "type": "Journal Article"
+    },
+    {
+      "articles": 412,
+      "population": "without_stubs",
+      "type": "Lecture"
+    },
+    {
+      "articles": 58,
+      "population": "without_stubs",
+      "type": "Legal Case"
+    },
+    {
+      "articles": 3514,
+      "population": "without_stubs",
+      "type": "Letter"
+    },
+    {
+      "articles": 41156,
+      "population": "without_stubs",
+      "type": "Meta-Analysis"
+    },
+    {
+      "articles": 111878,
+      "population": "without_stubs",
+      "type": "Multicenter Study"
+    },
+    {
+      "articles": 1923,
+      "population": "without_stubs",
+      "type": "Network Meta-Analysis"
+    },
+    {
+      "articles": 2486,
+      "population": "without_stubs",
+      "type": "News"
+    },
+    {
+      "articles": 37824,
+      "population": "without_stubs",
+      "type": "Observational Study"
+    },
+    {
+      "articles": 11,
+      "population": "without_stubs",
+      "type": "Observational Study, Veterinary"
+    },
+    {
+      "articles": 9,
+      "population": "without_stubs",
+      "type": "Overall"
+    },
+    {
+      "articles": 70,
+      "population": "without_stubs",
+      "type": "Patient Education Handout"
+    },
+    {
+      "articles": 1,
+      "population": "without_stubs",
+      "type": "Periodical Index"
+    },
+    {
+      "articles": 163,
+      "population": "without_stubs",
+      "type": "Personal Narrative"
+    },
+    {
+      "articles": 1306,
+      "population": "without_stubs",
+      "type": "Portrait"
+    },
+    {
+      "articles": 5826,
+      "population": "without_stubs",
+      "type": "Practice Guideline"
+    },
+    {
+      "articles": 1930,
+      "population": "without_stubs",
+      "type": "Pragmatic Clinical Trial"
+    },
+    {
+      "articles": 15,
+      "population": "without_stubs",
+      "type": "Preprint"
+    },
+    {
+      "articles": 11846,
+      "population": "without_stubs",
+      "type": "Published Erratum"
+    },
+    {
+      "articles": 141405,
+      "population": "without_stubs",
+      "type": "Randomized Controlled Trial"
+    },
+    {
+      "articles": 83,
+      "population": "without_stubs",
+      "type": "Randomized Controlled Trial, Veterinary"
+    },
+    {
+      "articles": 438,
+      "population": "without_stubs",
+      "type": "Research Support, American Recovery and Reinvestment Act"
+    },
+    {
+      "articles": 300219,
+      "population": "without_stubs",
+      "type": "Research Support, N.I.H., Extramural"
+    },
+    {
+      "articles": 14359,
+      "population": "without_stubs",
+      "type": "Research Support, N.I.H., Intramural"
+    },
+    {
+      "articles": 1156031,
+      "population": "without_stubs",
+      "type": "Research Support, Non-U.S. Gov't"
+    },
+    {
+      "articles": 127247,
+      "population": "without_stubs",
+      "type": "Research Support, U.S. Gov't, Non-P.H.S."
+    },
+    {
+      "articles": 159677,
+      "population": "without_stubs",
+      "type": "Research Support, U.S. Gov't, P.H.S."
+    },
+    {
+      "articles": 2904,
+      "population": "without_stubs",
+      "type": "Retracted Publication"
+    },
+    {
+      "articles": 328,
+      "population": "without_stubs",
+      "type": "Retraction Notice"
+    },
+    {
+      "articles": 218211,
+      "population": "without_stubs",
+      "type": "Review"
+    },
+    {
+      "articles": 5183,
+      "population": "without_stubs",
+      "type": "Scoping Review"
+    },
+    {
+      "articles": 74,
+      "population": "without_stubs",
+      "type": "Seminal Article"
+    },
+    {
+      "articles": 59012,
+      "population": "without_stubs",
+      "type": "Systematic Review"
+    },
+    {
+      "articles": 498,
+      "population": "without_stubs",
+      "type": "Technical Report"
+    },
+    {
+      "articles": 1764,
+      "population": "without_stubs",
+      "type": "Twin Study"
+    },
+    {
+      "articles": 20701,
+      "population": "without_stubs",
+      "type": "Validation Study"
+    },
+    {
+      "articles": 5319,
+      "population": "without_stubs",
+      "type": "Video-Audio Media"
+    },
+    {
+      "articles": 44,
+      "population": "without_stubs",
+      "type": "Webcast"
+    }
+  ],
+  "relationships": [
+    {
+      "predicate": "biolink:has_author",
+      "records": 21135411,
+      "type": "AUTHORED_BY"
+    },
+    {
+      "predicate": "lunasai:predicate.cites",
+      "records": 31922142,
+      "type": "CITES"
+    },
+    {
+      "predicate": "biolink:mentions",
+      "records": 736649,
+      "type": "CITES_BACKGROUND"
+    },
+    {
+      "predicate": "biolink:located_in",
+      "records": 3153344,
+      "type": "CONDUCTED_AT"
+    },
+    {
+      "predicate": "skos:broader",
+      "records": 42519,
+      "type": "HAS_BROADER"
+    },
+    {
+      "predicate": "skos:broaderTransitive",
+      "records": 185654,
+      "type": "HAS_BROADER_ANCESTOR"
+    },
+    {
+      "predicate": "biolink:mentions",
+      "records": 202205,
+      "type": "HAS_DERIVED_PUBLICATION"
+    },
+    {
+      "predicate": "biolink:related_to",
+      "records": 4885,
+      "type": "HAS_LANGUAGE_RESOURCE"
+    },
+    {
+      "predicate": "biolink:mentions",
+      "records": 42720732,
+      "type": "HAS_MESH"
+    },
+    {
+      "predicate": "biolink:related_to",
+      "records": 1334074,
+      "type": "HAS_PMC_RECORD"
+    },
+    {
+      "predicate": "biolink:member_of",
+      "records": 3651,
+      "type": "IN_TOPIC_GROUP"
+    },
+    {
+      "predicate": "biolink:mentions",
+      "records": 51747,
+      "type": "LINKS_TO_RESOURCE"
+    },
+    {
+      "predicate": "biolink:published_in",
+      "records": 3147895,
+      "type": "PUBLISHED_IN"
+    },
+    {
+      "predicate": "biolink:related_to",
+      "records": 6246,
+      "type": "RELATED_TOPIC"
+    },
+    {
+      "predicate": "biolink:related_to",
+      "records": 22573,
+      "type": "RESOURCE_TRANSLATION_OF"
+    },
+    {
+      "predicate": "biolink:related_to",
+      "records": 931156,
+      "type": "SPONSORED_BY"
+    },
+    {
+      "predicate": "biolink:related_to",
+      "records": 1016,
+      "type": "TRANSLATION_OF"
+    },
+    {
+      "predicate": "biolink:mentions",
+      "records": 156167,
+      "type": "VALIDATED_BY"
+    }
+  ],
+  "results_example_1": [
+    {
+      "citation_edge": "urn:uuid:a3c277ef-9752-5e84-ae6f-2f10c93d696b",
+      "citing_article": "PMID:28118460",
+      "citing_types": [
+        "Journal Article",
+        "Meta-Analysis",
+        "Research Support, N.I.H., Extramural",
+        "Systematic Review"
+      ],
+      "descriptor": "MESH:D004827",
+      "mesh_edge": "urn:uuid:f0a36e6f-cd6f-5d1f-b442-71cb081baae9",
+      "publication_edge": "urn:uuid:b4ba48b4-824c-5bc7-95b6-418dc1371ae8",
+      "result_article": "PMID:18711110",
+      "trial": "clinicaltrials:NCT00047463"
+    }
+  ],
+  "results_example_2": [
+    {
+      "citation_edge": "urn:uuid:aabb8cd3-69bc-59b8-8db1-8522a0034bae",
+      "citing_article": "PMID:35998970",
+      "citing_types": [
+        "Journal Article",
+        "Systematic Review",
+        "Research Support, Non-U.S. Gov't"
+      ],
+      "descriptor": "MESH:D001249",
+      "mesh_edge": "urn:uuid:d5ff1c68-6598-58c9-a3e2-fb6bf8422bf4",
+      "publication_edge": "urn:uuid:a1c371f6-19b9-5458-b028-297af84d2596",
+      "result_article": "PMID:9006232",
+      "trial": "clinicaltrials:NCT00005711"
+    }
+  ],
+  "results_example_3": [
+    {
+      "citation_edge": "urn:uuid:137bdfa7-6fda-5355-bef7-c370a9a8772d",
+      "citing_article": "PMID:25155419",
+      "citing_types": [
+        "Journal Article",
+        "Practice Guideline",
+        "Research Support, U.S. Gov't, P.H.S."
+      ],
+      "descriptor": "MESH:D006973",
+      "mesh_edge": "urn:uuid:4288c589-5b69-5ffd-9e74-92fa1144a542",
+      "publication_edge": "urn:uuid:821fff14-8d8a-5a4a-a1e2-7a2725e2cf07",
+      "result_article": "PMID:16585662",
+      "trial": "clinicaltrials:NCT00000616"
+    }
+  ],
+  "role_consistency": [
+    {
+      "edges": 721922,
+      "multi_source_edges": 9086,
+      "pairs": 721922,
+      "role": "BACKGROUND",
+      "source_system": "aact",
+      "type": "CITES_BACKGROUND"
+    },
+    {
+      "edges": 14727,
+      "multi_source_edges": 9011,
+      "pairs": 14727,
+      "role": "BACKGROUND",
+      "source_system": "ctgov_api",
+      "type": "CITES_BACKGROUND"
+    },
+    {
+      "edges": 200277,
+      "multi_source_edges": 1805,
+      "pairs": 200277,
+      "role": "DERIVED",
+      "source_system": "aact",
+      "type": "HAS_DERIVED_PUBLICATION"
+    },
+    {
+      "edges": 1928,
+      "multi_source_edges": 1816,
+      "pairs": 1928,
+      "role": "DERIVED",
+      "source_system": "ctgov_api",
+      "type": "HAS_DERIVED_PUBLICATION"
+    },
+    {
+      "edges": 153486,
+      "multi_source_edges": 1386,
+      "pairs": 153486,
+      "role": "RESULT",
+      "source_system": "aact",
+      "type": "VALIDATED_BY"
+    },
+    {
+      "edges": 2515,
+      "multi_source_edges": 1444,
+      "pairs": 2515,
+      "role": "RESULT",
+      "source_system": "ctgov_api",
+      "type": "VALIDATED_BY"
+    },
+    {
+      "edges": 166,
+      "multi_source_edges": 0,
+      "pairs": 166,
+      "role": "RESULT",
+      "source_system": null,
+      "type": "VALIDATED_BY"
+    }
+  ],
+  "source_registry": [
+    {
+      "agent_type": 105758066,
+      "edges": 105758066,
+      "knowledge_level": 105758066,
+      "primary_source": 13981969,
+      "provenance_id": 41714
+    }
+  ],
+  "stub_edges": [
+    {
+      "edges": 507692,
+      "stub_object": 0,
+      "stub_subject": 507692,
+      "type": "CITES_BACKGROUND"
+    },
+    {
+      "edges": 142648,
+      "stub_object": 0,
+      "stub_subject": 142648,
+      "type": "HAS_DERIVED_PUBLICATION"
+    },
+    {
+      "edges": 1234,
+      "stub_object": 0,
+      "stub_subject": 1234,
+      "type": "HAS_PMC_RECORD"
+    },
+    {
+      "edges": 2010,
+      "stub_object": 0,
+      "stub_subject": 2010,
+      "type": "PUBLISHED_IN"
+    },
+    {
+      "edges": 103289,
+      "stub_object": 0,
+      "stub_subject": 103289,
+      "type": "VALIDATED_BY"
+    }
+  ],
+  "topic_example_1": [
+    {
+      "article": "PMID:12601090",
+      "article_mesh_edge": "urn:uuid:429ca553-3dc4-5b31-9744-3439fdbff69f",
+      "distance": 0,
+      "hierarchy_edge": null,
+      "matched_descriptor": "MESH:D004827",
+      "mesh_type": "mesh-list",
+      "pub_types": [
+        "Guideline",
+        "Journal Article",
+        "Practice Guideline",
+        "Research Support, Non-U.S. Gov't",
+        "Research Support, U.S. Gov't, P.H.S.",
+        "Systematic Review"
+      ],
+      "query_descriptor": "MESH:D004827",
+      "study_aspect": "condition",
+      "topic": "lunasai:medlineplus_topic.1888",
+      "trial": "clinicaltrials:NCT00001149",
+      "trial_mesh_edge": "urn:uuid:b042fcb5-6df9-5914-a4a2-e2c7e28bc039"
+    }
+  ],
+  "topic_example_2": [
+    {
+      "article": "PMID:11972488",
+      "article_mesh_edge": "urn:uuid:c656d515-109a-5173-9cc7-5f1487f5a29c",
+      "distance": 0,
+      "hierarchy_edge": null,
+      "matched_descriptor": "MESH:D001249",
+      "mesh_type": "mesh-list",
+      "pub_types": [
+        "Guideline",
+        "Journal Article"
+      ],
+      "query_descriptor": "MESH:D001249",
+      "study_aspect": "condition",
+      "topic": "lunasai:medlineplus_topic.1507",
+      "trial": "clinicaltrials:NCT00000575",
+      "trial_mesh_edge": "urn:uuid:0781844a-466c-52ba-b922-3e910f071611"
+    }
+  ],
+  "topic_example_3": [
+    {
+      "article": "PMID:10920346",
+      "article_mesh_edge": "urn:uuid:f37a8995-41eb-5521-8adb-72217de77b1c",
+      "distance": 0,
+      "hierarchy_edge": null,
+      "matched_descriptor": "MESH:D006973",
+      "mesh_type": "mesh-list",
+      "pub_types": [
+        "Guideline",
+        "Journal Article",
+        "Practice Guideline"
+      ],
+      "query_descriptor": "MESH:D006973",
+      "study_aspect": "condition",
+      "topic": "lunasai:medlineplus_topic.1955",
+      "trial": "clinicaltrials:NCT00000421",
+      "trial_mesh_edge": "urn:uuid:84ba5b01-dc7c-5b7a-82e3-c4e0441f0c9c"
+    }
+  ],
+  "topic_population": [
+    {
+      "mode": "full",
+      "population": "with_stubs",
+      "reaching_both": 1496,
+      "reaching_condition_trial": 1498,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both": 1496,
+      "reaching_major_guideline_or_review": 2019,
+      "topics": 2033
+    },
+    {
+      "mode": "none",
+      "population": "with_stubs",
+      "reaching_both": 1438,
+      "reaching_condition_trial": 1440,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both": 1438,
+      "reaching_major_guideline_or_review": 2017,
+      "topics": 2033
+    },
+    {
+      "mode": "one",
+      "population": "with_stubs",
+      "reaching_both": 1478,
+      "reaching_condition_trial": 1480,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both": 1478,
+      "reaching_major_guideline_or_review": 2019,
+      "topics": 2033
+    },
+    {
+      "mode": "full",
+      "population": "without_stubs",
+      "reaching_both": 1496,
+      "reaching_condition_trial": 1498,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both": 1496,
+      "reaching_major_guideline_or_review": 2019,
+      "topics": 2033
+    },
+    {
+      "mode": "none",
+      "population": "without_stubs",
+      "reaching_both": 1438,
+      "reaching_condition_trial": 1440,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both": 1438,
+      "reaching_major_guideline_or_review": 2017,
+      "topics": 2033
+    },
+    {
+      "mode": "one",
+      "population": "without_stubs",
+      "reaching_both": 1478,
+      "reaching_condition_trial": 1480,
+      "reaching_guideline_or_review": 2021,
+      "reaching_major_both": 1478,
+      "reaching_major_guideline_or_review": 2019,
+      "topics": 2033
+    }
+  ],
+  "totals": [
+    {
+      "distinct_ids": 12067108,
+      "family": "nodes",
+      "records": 12067108
+    },
+    {
+      "distinct_ids": 105758066,
+      "family": "edges",
+      "records": 105758066
+    }
+  ],
+  "trial_mesh_semantics": [
+    {
+      "edges": 3543161,
+      "mesh_type": "mesh-ancestor",
+      "study_aspect": "condition"
+    },
+    {
+      "edges": 825812,
+      "mesh_type": "mesh-list",
+      "study_aspect": "condition"
+    },
+    {
+      "edges": 2085674,
+      "mesh_type": "mesh-ancestor",
+      "study_aspect": "intervention"
+    },
+    {
+      "edges": 360190,
+      "mesh_type": "mesh-list",
+      "study_aspect": "intervention"
+    }
+  ],
+  "whole_field_leaders_1_with_stubs": [
+    {
+      "direct_query_matches": 2,
+      "id": "PMID:15781100",
+      "in_corpus_citations": 470,
+      "name": "Long-term cardiovascular outcomes in men with obstructive sleep apnoea-hypopnoea with or without treatment with continuous positive airway pressure: an observational study."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11991871",
+      "in_corpus_citations": 398,
+      "name": "Epidemiology of obstructive sleep apnea: a population health perspective."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:10660394",
+      "in_corpus_citations": 349,
+      "name": "Early identification of refractory epilepsy."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:31300334",
+      "in_corpus_citations": 290,
+      "name": "Estimation of the global prevalence and burden of obstructive sleep apnoea: a literature-based analysis."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:16282178",
+      "in_corpus_citations": 270,
+      "name": "Obstructive sleep apnea as a risk factor for stroke and death."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:22926173",
+      "in_corpus_citations": 248,
+      "name": "Diagnosis and management of childhood obstructive sleep apnea syndrome."
+    },
+    {
+      "direct_query_matches": 2,
+      "id": "PMID:27571048",
+      "in_corpus_citations": 209,
+      "name": "CPAP for Prevention of Cardiovascular Events in Obstructive Sleep Apnea."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:24401051",
+      "in_corpus_citations": 205,
+      "name": "Upper-airway stimulation for obstructive sleep apnea."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:25682233",
+      "in_corpus_citations": 188,
+      "name": "Prevalence of sleep-disordered breathing in the general population: the HypnoLaus study."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:23692173",
+      "in_corpus_citations": 186,
+      "name": "A randomized trial of adenotonsillectomy for childhood sleep apnea."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11522572",
+      "in_corpus_citations": 183,
+      "name": "Presurgical evaluation of epilepsy."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:18431116",
+      "in_corpus_citations": 179,
+      "name": "STOP questionnaire: a tool to screen patients for obstructive sleep apnea."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:20625114",
+      "in_corpus_citations": 148,
+      "name": "Prospective study of obstructive sleep apnea and incident coronary heart disease and heart failure: the sleep heart health study."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:18272893",
+      "in_corpus_citations": 144,
+      "name": "Nasal CPAP or intubation at birth for very preterm infants."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11812555",
+      "in_corpus_citations": 141,
+      "name": "Ambulatory blood pressure after therapeutic and subtherapeutic nasal continuous positive airway pressure for obstructive sleep apnoea: a randomised parallel trial."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:20472939",
+      "in_corpus_citations": 137,
+      "name": "Early CPAP versus surfactant in extremely preterm infants."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11927718",
+      "in_corpus_citations": 130,
+      "name": "Clinical practice guideline: diagnosis and management of childhood obstructive sleep apnea syndrome."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:15758038",
+      "in_corpus_citations": 128,
+      "name": "Long-term seizure outcomes following epilepsy surgery: a systematic review and meta-analysis."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:27986877",
+      "in_corpus_citations": 123,
+      "name": "Prevalence and incidence of epilepsy: A systematic review and meta-analysis of international studies."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11874812",
+      "in_corpus_citations": 122,
+      "name": "Obstructive sleep apnea is independently associated with insulin resistance."
+    }
+  ],
+  "whole_field_leaders_1_without_stubs": [
+    {
+      "direct_query_matches": 2,
+      "id": "PMID:15781100",
+      "in_corpus_citations": 470,
+      "name": "Long-term cardiovascular outcomes in men with obstructive sleep apnoea-hypopnoea with or without treatment with continuous positive airway pressure: an observational study."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11991871",
+      "in_corpus_citations": 398,
+      "name": "Epidemiology of obstructive sleep apnea: a population health perspective."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:10660394",
+      "in_corpus_citations": 349,
+      "name": "Early identification of refractory epilepsy."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:31300334",
+      "in_corpus_citations": 290,
+      "name": "Estimation of the global prevalence and burden of obstructive sleep apnoea: a literature-based analysis."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:16282178",
+      "in_corpus_citations": 270,
+      "name": "Obstructive sleep apnea as a risk factor for stroke and death."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:22926173",
+      "in_corpus_citations": 248,
+      "name": "Diagnosis and management of childhood obstructive sleep apnea syndrome."
+    },
+    {
+      "direct_query_matches": 2,
+      "id": "PMID:27571048",
+      "in_corpus_citations": 209,
+      "name": "CPAP for Prevention of Cardiovascular Events in Obstructive Sleep Apnea."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:24401051",
+      "in_corpus_citations": 205,
+      "name": "Upper-airway stimulation for obstructive sleep apnea."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:25682233",
+      "in_corpus_citations": 188,
+      "name": "Prevalence of sleep-disordered breathing in the general population: the HypnoLaus study."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:23692173",
+      "in_corpus_citations": 186,
+      "name": "A randomized trial of adenotonsillectomy for childhood sleep apnea."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11522572",
+      "in_corpus_citations": 183,
+      "name": "Presurgical evaluation of epilepsy."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:18431116",
+      "in_corpus_citations": 179,
+      "name": "STOP questionnaire: a tool to screen patients for obstructive sleep apnea."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:20625114",
+      "in_corpus_citations": 148,
+      "name": "Prospective study of obstructive sleep apnea and incident coronary heart disease and heart failure: the sleep heart health study."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:18272893",
+      "in_corpus_citations": 144,
+      "name": "Nasal CPAP or intubation at birth for very preterm infants."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11812555",
+      "in_corpus_citations": 141,
+      "name": "Ambulatory blood pressure after therapeutic and subtherapeutic nasal continuous positive airway pressure for obstructive sleep apnoea: a randomised parallel trial."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:20472939",
+      "in_corpus_citations": 137,
+      "name": "Early CPAP versus surfactant in extremely preterm infants."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11927718",
+      "in_corpus_citations": 130,
+      "name": "Clinical practice guideline: diagnosis and management of childhood obstructive sleep apnea syndrome."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:15758038",
+      "in_corpus_citations": 128,
+      "name": "Long-term seizure outcomes following epilepsy surgery: a systematic review and meta-analysis."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:27986877",
+      "in_corpus_citations": 123,
+      "name": "Prevalence and incidence of epilepsy: A systematic review and meta-analysis of international studies."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11874812",
+      "in_corpus_citations": 122,
+      "name": "Obstructive sleep apnea is independently associated with insulin resistance."
+    }
+  ],
+  "whole_field_leaders_2_with_stubs": [
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:7800004",
+      "in_corpus_citations": 717,
+      "name": "Asthma and wheezing in the first six years of life. The Group Health Medical Associates."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:1530827",
+      "in_corpus_citations": 486,
+      "name": "Predominant TH2-like bronchoalveolar T-lymphocyte population in atopic asthma."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:2215562",
+      "in_corpus_citations": 485,
+      "name": "Eosinophilic inflammation in asthma."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:16935684",
+      "in_corpus_citations": 437,
+      "name": "Worldwide time trends in the prevalence of symptoms of asthma, allergic rhinoconjunctivitis, and eczema in childhood: ISAAC Phases One and Three repeat multicountry cross-sectional surveys."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11560536",
+      "in_corpus_citations": 420,
+      "name": "Peripheral arterial disease detection, awareness, and treatment in primary care."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:9856949",
+      "in_corpus_citations": 407,
+      "name": "Interleukin-13: central mediator of allergic asthma."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:19892860",
+      "in_corpus_citations": 401,
+      "name": "Identification of asthma phenotypes using cluster analysis in the Severe Asthma Research Program."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:17515374",
+      "in_corpus_citations": 394,
+      "name": "Femoroacetabular impingement: radiographic diagnosis--what the radiologist should know."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:20860503",
+      "in_corpus_citations": 394,
+      "name": "A large-scale, consortium-based genomewide association study of asthma."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:12435261",
+      "in_corpus_citations": 380,
+      "name": "Patient self-management of chronic disease in primary care."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:14713908",
+      "in_corpus_citations": 358,
+      "name": "Development of the asthma control test: a survey for assessing asthma control."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:15343421",
+      "in_corpus_citations": 356,
+      "name": "Brief questions to identify patients with inadequate health literacy."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:19535666",
+      "in_corpus_citations": 354,
+      "name": "An official American Thoracic Society/European Respiratory Society statement: asthma control and exacerbations: standardizing endpoints for clinical asthma trials and clinical practice."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:7767192",
+      "in_corpus_citations": 346,
+      "name": "Community study of role of viral infections in exacerbations of asthma in 9-11 year old children."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:9643741",
+      "in_corpus_citations": 340,
+      "name": "Worldwide variation in prevalence of symptoms of asthma, allergic rhinoconjunctivitis, and atopic eczema: ISAAC. The International Study of Asthma and Allergies in Childhood (ISAAC) Steering Committee."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:18480428",
+      "in_corpus_citations": 336,
+      "name": "Cluster analysis and clinical asthma phenotypes."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:12480423",
+      "in_corpus_citations": 332,
+      "name": "Asthma exacerbations and sputum eosinophil counts: a randomised controlled trial."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:22561835",
+      "in_corpus_citations": 329,
+      "name": "Asthma phenotypes: the evolution from clinical to molecular approaches."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:17213046",
+      "in_corpus_citations": 326,
+      "name": "eHEALS: The eHealth Literacy Scale."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:19483109",
+      "in_corpus_citations": 322,
+      "name": "T-helper type 2-driven inflammation defines major subphenotypes of asthma."
+    }
+  ],
+  "whole_field_leaders_2_without_stubs": [
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:7800004",
+      "in_corpus_citations": 717,
+      "name": "Asthma and wheezing in the first six years of life. The Group Health Medical Associates."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:1530827",
+      "in_corpus_citations": 486,
+      "name": "Predominant TH2-like bronchoalveolar T-lymphocyte population in atopic asthma."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:2215562",
+      "in_corpus_citations": 485,
+      "name": "Eosinophilic inflammation in asthma."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:16935684",
+      "in_corpus_citations": 437,
+      "name": "Worldwide time trends in the prevalence of symptoms of asthma, allergic rhinoconjunctivitis, and eczema in childhood: ISAAC Phases One and Three repeat multicountry cross-sectional surveys."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11560536",
+      "in_corpus_citations": 420,
+      "name": "Peripheral arterial disease detection, awareness, and treatment in primary care."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:9856949",
+      "in_corpus_citations": 407,
+      "name": "Interleukin-13: central mediator of allergic asthma."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:19892860",
+      "in_corpus_citations": 401,
+      "name": "Identification of asthma phenotypes using cluster analysis in the Severe Asthma Research Program."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:17515374",
+      "in_corpus_citations": 394,
+      "name": "Femoroacetabular impingement: radiographic diagnosis--what the radiologist should know."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:20860503",
+      "in_corpus_citations": 394,
+      "name": "A large-scale, consortium-based genomewide association study of asthma."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:12435261",
+      "in_corpus_citations": 380,
+      "name": "Patient self-management of chronic disease in primary care."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:14713908",
+      "in_corpus_citations": 358,
+      "name": "Development of the asthma control test: a survey for assessing asthma control."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:15343421",
+      "in_corpus_citations": 356,
+      "name": "Brief questions to identify patients with inadequate health literacy."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:19535666",
+      "in_corpus_citations": 354,
+      "name": "An official American Thoracic Society/European Respiratory Society statement: asthma control and exacerbations: standardizing endpoints for clinical asthma trials and clinical practice."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:7767192",
+      "in_corpus_citations": 346,
+      "name": "Community study of role of viral infections in exacerbations of asthma in 9-11 year old children."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:9643741",
+      "in_corpus_citations": 340,
+      "name": "Worldwide variation in prevalence of symptoms of asthma, allergic rhinoconjunctivitis, and atopic eczema: ISAAC. The International Study of Asthma and Allergies in Childhood (ISAAC) Steering Committee."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:18480428",
+      "in_corpus_citations": 336,
+      "name": "Cluster analysis and clinical asthma phenotypes."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:12480423",
+      "in_corpus_citations": 332,
+      "name": "Asthma exacerbations and sputum eosinophil counts: a randomised controlled trial."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:22561835",
+      "in_corpus_citations": 329,
+      "name": "Asthma phenotypes: the evolution from clinical to molecular approaches."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:17213046",
+      "in_corpus_citations": 326,
+      "name": "eHEALS: The eHealth Literacy Scale."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:19483109",
+      "in_corpus_citations": 322,
+      "name": "T-helper type 2-driven inflammation defines major subphenotypes of asthma."
+    }
+  ],
+  "whole_field_leaders_3_with_stubs": [
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:12748199",
+      "in_corpus_citations": 2680,
+      "name": "The Seventh Report of the Joint National Committee on Prevention, Detection, Evaluation, and Treatment of High Blood Pressure: the JNC 7 report."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11832527",
+      "in_corpus_citations": 2633,
+      "name": "Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:17554300",
+      "in_corpus_citations": 1404,
+      "name": "Genome-wide association study of 14,000 cases of seven common diseases and 3,000 shared controls."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:14656957",
+      "in_corpus_citations": 1317,
+      "name": "Seventh report of the Joint National Committee on Prevention, Detection, Evaluation, and Treatment of High Blood Pressure."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:18091006",
+      "in_corpus_citations": 1116,
+      "name": "Physical activity in the United States measured by accelerometer."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:26551272",
+      "in_corpus_citations": 870,
+      "name": "A Randomized Trial of Intensive versus Standard Blood-Pressure Control."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:24352797",
+      "in_corpus_citations": 836,
+      "name": "2014 evidence-based guideline for the management of high blood pressure in adults: report from the panel members appointed to the Eighth Joint National Committee (JNC 8)."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:12618519",
+      "in_corpus_citations": 682,
+      "name": "Excess placental soluble fms-like tyrosine kinase 1 (sFlt1) may contribute to endothelial dysfunction, hypertension, and proteinuria in preeclampsia."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:1969567",
+      "in_corpus_citations": 605,
+      "name": "Blood pressure, stroke, and coronary heart disease. Part 2, Short-term reductions in blood pressure: overview of randomised drug trials in their epidemiological context."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:35078371",
+      "in_corpus_citations": 591,
+      "name": "Heart Disease and Stroke Statistics-2022 Update: A Report From the American Heart Association."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:15652604",
+      "in_corpus_citations": 519,
+      "name": "Global burden of hypertension: analysis of worldwide data."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:10805822",
+      "in_corpus_citations": 518,
+      "name": "Prospective study of the association between sleep-disordered breathing and hypertension."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:9635947",
+      "in_corpus_citations": 514,
+      "name": "Effects of intensive blood-pressure lowering and low-dose aspirin in patients with hypertension: principal results of the Hypertension Optimal Treatment (HOT) randomised trial. HOT Study Group."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:12479763",
+      "in_corpus_citations": 494,
+      "name": "Major outcomes in high-risk hypertensive patients randomized to angiotensin-converting enzyme inhibitor or calcium channel blocker vs diuretic: The Antihypertensive and Lipid-Lowering Treatment to Prevent Heart Attack Trial (ALLHAT)."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:26724178",
+      "in_corpus_citations": 486,
+      "name": "Blood pressure lowering for prevention of cardiovascular disease and death: a systematic review and meta-analysis."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:9099655",
+      "in_corpus_citations": 485,
+      "name": "A clinical trial of the effects of dietary patterns on blood pressure. DASH Collaborative Research Group."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11136953",
+      "in_corpus_citations": 480,
+      "name": "Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet. DASH-Sodium Collaborative Research Group."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:20228401",
+      "in_corpus_citations": 480,
+      "name": "Effects of intensive blood-pressure control in type 2 diabetes mellitus."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11937178",
+      "in_corpus_citations": 469,
+      "name": "Cardiovascular morbidity and mortality in the Losartan Intervention For Endpoint reduction in hypertension study (LIFE): a randomised trial against atenolol."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:2044434",
+      "in_corpus_citations": 461,
+      "name": "Insulin resistance. A multifaceted syndrome responsible for NIDDM, obesity, hypertension, dyslipidemia, and atherosclerotic cardiovascular disease."
+    }
+  ],
+  "whole_field_leaders_3_without_stubs": [
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:12748199",
+      "in_corpus_citations": 2680,
+      "name": "The Seventh Report of the Joint National Committee on Prevention, Detection, Evaluation, and Treatment of High Blood Pressure: the JNC 7 report."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11832527",
+      "in_corpus_citations": 2633,
+      "name": "Reduction in the incidence of type 2 diabetes with lifestyle intervention or metformin."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:17554300",
+      "in_corpus_citations": 1404,
+      "name": "Genome-wide association study of 14,000 cases of seven common diseases and 3,000 shared controls."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:14656957",
+      "in_corpus_citations": 1317,
+      "name": "Seventh report of the Joint National Committee on Prevention, Detection, Evaluation, and Treatment of High Blood Pressure."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:18091006",
+      "in_corpus_citations": 1116,
+      "name": "Physical activity in the United States measured by accelerometer."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:26551272",
+      "in_corpus_citations": 870,
+      "name": "A Randomized Trial of Intensive versus Standard Blood-Pressure Control."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:24352797",
+      "in_corpus_citations": 836,
+      "name": "2014 evidence-based guideline for the management of high blood pressure in adults: report from the panel members appointed to the Eighth Joint National Committee (JNC 8)."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:12618519",
+      "in_corpus_citations": 682,
+      "name": "Excess placental soluble fms-like tyrosine kinase 1 (sFlt1) may contribute to endothelial dysfunction, hypertension, and proteinuria in preeclampsia."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:1969567",
+      "in_corpus_citations": 605,
+      "name": "Blood pressure, stroke, and coronary heart disease. Part 2, Short-term reductions in blood pressure: overview of randomised drug trials in their epidemiological context."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:35078371",
+      "in_corpus_citations": 591,
+      "name": "Heart Disease and Stroke Statistics-2022 Update: A Report From the American Heart Association."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:15652604",
+      "in_corpus_citations": 519,
+      "name": "Global burden of hypertension: analysis of worldwide data."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:10805822",
+      "in_corpus_citations": 518,
+      "name": "Prospective study of the association between sleep-disordered breathing and hypertension."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:9635947",
+      "in_corpus_citations": 514,
+      "name": "Effects of intensive blood-pressure lowering and low-dose aspirin in patients with hypertension: principal results of the Hypertension Optimal Treatment (HOT) randomised trial. HOT Study Group."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:12479763",
+      "in_corpus_citations": 494,
+      "name": "Major outcomes in high-risk hypertensive patients randomized to angiotensin-converting enzyme inhibitor or calcium channel blocker vs diuretic: The Antihypertensive and Lipid-Lowering Treatment to Prevent Heart Attack Trial (ALLHAT)."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:26724178",
+      "in_corpus_citations": 486,
+      "name": "Blood pressure lowering for prevention of cardiovascular disease and death: a systematic review and meta-analysis."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:9099655",
+      "in_corpus_citations": 485,
+      "name": "A clinical trial of the effects of dietary patterns on blood pressure. DASH Collaborative Research Group."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11136953",
+      "in_corpus_citations": 480,
+      "name": "Effects on blood pressure of reduced dietary sodium and the Dietary Approaches to Stop Hypertension (DASH) diet. DASH-Sodium Collaborative Research Group."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:20228401",
+      "in_corpus_citations": 480,
+      "name": "Effects of intensive blood-pressure control in type 2 diabetes mellitus."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:11937178",
+      "in_corpus_citations": 469,
+      "name": "Cardiovascular morbidity and mortality in the Losartan Intervention For Endpoint reduction in hypertension study (LIFE): a randomised trial against atenolol."
+    },
+    {
+      "direct_query_matches": 1,
+      "id": "PMID:2044434",
+      "in_corpus_citations": 461,
+      "name": "Insulin resistance. A multifaceted syndrome responsible for NIDDM, obesity, hypertension, dyslipidemia, and atherosclerotic cardiovascular disease."
+    }
+  ]
+}

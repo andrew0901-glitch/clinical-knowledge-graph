@@ -1,0 +1,4 @@
+descriptor,mesh_id,name,depth,ewing_branch,branches,tree_numbers
+MESH:D012516,D012516,Osteosarcoma,0,False,,"['C04.557.450.565.575.650', 'C04.557.450.795.620']"
+MESH:D018217,D018217,"Osteosarcoma, Juxtacortical",1,False,['MESH:D018217'],"['C04.557.450.565.575.650.655', 'C04.557.450.795.620.655']"
+MESH:D012512,D012512,"Sarcoma, Ewing",1,True,['MESH:D012512'],"['C04.557.450.565.575.650.800', 'C04.557.450.795.620.800']"

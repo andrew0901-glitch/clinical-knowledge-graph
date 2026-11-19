@@ -1,0 +1,15 @@
+traversal,population,articles,pmcid,any_pmc_route
+author_indexed_articles,with_stubs,2790093,1153794,1172507
+author_indexed_articles,without_stubs,2790093,1153794,1172507
+background_publications,with_stubs,539317,45940,46107
+background_publications,without_stubs,146132,45940,46093
+citation_shared_neighbors,with_stubs,2546024,1030251,1038861
+citation_shared_neighbors,without_stubs,2546024,1030251,1038861
+journal_guidelines,with_stubs,6350,1107,1139
+journal_guidelines,without_stubs,6350,1107,1139
+results_cited_by_guideline_systematic,with_stubs,23460,7251,7277
+results_cited_by_guideline_systematic,without_stubs,23460,7251,7277
+results_publications,with_stubs,140372,14428,18818
+results_publications,without_stubs,45865,14428,17594
+topic_guidelines_reviews,with_stubs,263927,86120,88126
+topic_guidelines_reviews,without_stubs,263927,86120,88126

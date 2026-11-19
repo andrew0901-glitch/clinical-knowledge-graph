@@ -1,0 +1,5 @@
+population,variant,contexts,hub_lower,hub_same,hub_higher,single_only_lower,single_only_same,single_only_higher
+with_stubs,count,36,0,36,0,0,36,0
+with_stubs,idf,36,0,36,0,0,36,0
+without_stubs,count,36,0,36,0,0,36,0
+without_stubs,idf,36,0,36,0,0,36,0

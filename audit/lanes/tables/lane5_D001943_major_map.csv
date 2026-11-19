@@ -1,0 +1,3 @@
+condition,population,articles,guideline,sr_or_ma,rct,other_trial,observational,other,primary_studies,primary_cited,primary_not_cited,rct_cited,distinct_citing_reviews,sr_or_ma_2022_2026,guideline_2022_2026,articles_without_year,min_year,max_year
+D001943,with_stubs,47004,180,1101,3031,1823,370,40499,4854,2297,2557,1706,1874,397,46,0,1990,2026
+D001943,without_stubs,47004,180,1101,3031,1823,370,40499,4854,2297,2557,1706,1874,397,46,0,1990,2026

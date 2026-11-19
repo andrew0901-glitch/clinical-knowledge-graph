@@ -1,0 +1,58 @@
+{
+  "by_role": [
+    {
+      "articles": 539317,
+      "edges": 736649,
+      "edges_with_publication_type": 216211,
+      "population": "with_stubs",
+      "protocol_articles": 487,
+      "protocol_edges": 536,
+      "role": "BACKGROUND"
+    },
+    {
+      "articles": 179610,
+      "edges": 202205,
+      "edges_with_publication_type": 58150,
+      "population": "with_stubs",
+      "protocol_articles": 3810,
+      "protocol_edges": 3854,
+      "role": "DERIVED"
+    },
+    {
+      "articles": 140372,
+      "edges": 156167,
+      "edges_with_publication_type": 50672,
+      "population": "with_stubs",
+      "protocol_articles": 157,
+      "protocol_edges": 162,
+      "role": "RESULT"
+    },
+    {
+      "articles": 146132,
+      "edges": 228957,
+      "edges_with_publication_type": 216211,
+      "population": "without_stubs",
+      "protocol_articles": 487,
+      "protocol_edges": 536,
+      "role": "BACKGROUND"
+    },
+    {
+      "articles": 55313,
+      "edges": 59557,
+      "edges_with_publication_type": 58150,
+      "population": "without_stubs",
+      "protocol_articles": 3810,
+      "protocol_edges": 3854,
+      "role": "DERIVED"
+    },
+    {
+      "articles": 45865,
+      "edges": 52878,
+      "edges_with_publication_type": 50672,
+      "population": "without_stubs",
+      "protocol_articles": 157,
+      "protocol_edges": 162,
+      "role": "RESULT"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+articles,authorship_witness,descriptor,mesh_witness,name
+22,urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a,MESH:D011471,urn:uuid:1f5b0a12-fcad-5b85-ab3a-f2426de9f5cd,Prostatic Neoplasms
+15,urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a,MESH:D001918,urn:uuid:dbdd5c2a-30d6-51e1-9127-c45f5dff715e,Brachytherapy
+14,urn:uuid:37e35638-1c9c-5395-b02b-10c0ddc8711a,MESH:D011468,urn:uuid:511e9d29-80d2-5384-9244-05d9a85db1c6,Prostatectomy
+12,urn:uuid:4d369a66-2694-5bf2-a6a3-468476bb9885,MESH:D016896,urn:uuid:aec6f52a-dda0-50ed-9f0d-e4a148cf564e,Treatment Outcome
+12,urn:uuid:4d369a66-2694-5bf2-a6a3-468476bb9885,MESH:D017430,urn:uuid:42fba771-ac9c-5050-9ce3-980230d4c343,Prostate-Specific Antigen
+11,urn:uuid:a6d75899-b6a9-50b3-a6bf-5e7408d4e213,MESH:D005500,urn:uuid:74dc2edf-dd2b-5c4e-a224-2d43ca9b3c7b,Follow-Up Studies
+9,urn:uuid:719e708c-e24b-5c1a-b51f-98c8368330a2,MESH:D011470,urn:uuid:5cf07406-d736-5375-9c81-304bb7f8d6b6,Prostatic Hyperplasia
+8,urn:uuid:d4786034-3966-57dd-b090-2f59c0509709,MESH:D012189,urn:uuid:c15fa947-4958-50e3-ba20-afd785ba19d0,Retrospective Studies
+8,urn:uuid:cb792d1c-edab-59b2-8ac7-07057d658a56,MESH:D013997,urn:uuid:d794b9d0-f0fb-5382-ad63-1cdfff788c90,Time Factors
+7,urn:uuid:877738cb-9b56-5c40-a464-a421ccf16315,MESH:D001749,urn:uuid:9d71943a-1b91-54fd-b77c-b7e1771f097d,Urinary Bladder Neoplasms

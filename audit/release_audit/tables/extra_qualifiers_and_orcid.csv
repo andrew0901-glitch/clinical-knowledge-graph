@@ -1,0 +1,6 @@
+author,author_ids_with_orcid_on_edge,edges,match_method,mesh_type,source_table,study_aspect
+False,0,3543161,exact_name_mesh_hierarchy,mesh-ancestor,medical_coding.kg_edge_studies_mesh,condition
+False,0,825812,exact_name_mesh_hierarchy,mesh-list,medical_coding.kg_edge_studies_mesh,condition
+False,0,2085674,exact_name_mesh_hierarchy,mesh-ancestor,medical_coding.kg_edge_studies_mesh,intervention
+False,0,360190,exact_name_mesh_hierarchy,mesh-list,medical_coding.kg_edge_studies_mesh,intervention
+True,2644104,21135411,,,,

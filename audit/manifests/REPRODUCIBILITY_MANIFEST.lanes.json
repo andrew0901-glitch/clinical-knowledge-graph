@@ -1,0 +1,295 @@
+{
+  "v023_lanes": {
+    "build": {
+      "cache_db": "<CLINICAL_KG_DATA>.audit_work/lanes.duckdb",
+      "census": "lanes/results/build_census.json",
+      "check_tags_resolved": 40,
+      "cites_self_links_removed": 24044,
+      "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+      "script": "lanes/scripts/build.py",
+      "sql_registry": "lanes/results/build_queries.json",
+      "stubs": 578177
+    },
+    "companion_pr9": {
+      "head_commit": "0d80fd5db8c460389fbba6444f2cbbc14a0ed1ea",
+      "merge_commit": "be2f8559e09159b942ea8484b000a945600320d9",
+      "merge_method": "squash",
+      "pr": 9,
+      "repo": "lunas-health/clinical-evidence-kg",
+      "tests": "tests/test_evidence_map.py: 8 passed on PR head and again on main after merge"
+    },
+    "description": "Audit lanes for release v0.2.1: build + census, trial-landscape rerun, MedlinePlus English-only topic table, evidence maps, osteosarcoma hierarchy example, final paper numbers, headline numbers. Local DuckDB over the 107 release graph files only.",
+    "environment": {
+      "packages": {
+        "duckdb": "2.0.0"
+      },
+      "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "sql_memory_limit": "20GB",
+      "sql_threads": 8
+    },
+    "input": {
+      "all_sha256_passed": true,
+      "file_sha256": {
+        "edges/part-pmcj-00000.jsonl.gz": "86487f8f7cd4edcdd1c1eca244e6d39f7a10a30ef527eeb80b0918e1dea03242",
+        "edges/part-w00-00000.jsonl.gz": "78d54f6aa88636665f0fa6d60c68d994a6916fcfca8b4b89ae41aae85698620c",
+        "edges/part-w00-00001.jsonl.gz": "a183340255d15d3b58ca9ff6afc6217bf131f129420a23bc778d46ddf9cf29ab",
+        "edges/part-w00-00002.jsonl.gz": "8bb29b4526335394b2c7a60f44119194af5cb4e0935062e9d242c54315889e75",
+        "edges/part-w00-00003.jsonl.gz": "af185161976b28705b44bb195dca2d3567200814080415f82d37ab186f2c2eaf",
+        "edges/part-w00-00004.jsonl.gz": "dabe3f3cf079b714d321bebcb1baa901e190520eda32fbe16d45736e77c70ab8",
+        "edges/part-w00-00005.jsonl.gz": "e68349e1a47284c4606db2460bc32027a2f02ec26dc52978f0273bc7f1d690b6",
+        "edges/part-w00-00006.jsonl.gz": "8ca57cf912b9ddce23958709ae6d086bcb9c75f3e64e8e9c3751fcf9796371e8",
+        "edges/part-w00-00007.jsonl.gz": "c2c75c1a280a8d266b997a9a1f30bad803ac6faacdf1fa2e45b5ad94273b2eb7",
+        "edges/part-w00-00008.jsonl.gz": "212a1a343af6bd97877b27fd8b1f3fe228d5646b997426f3f41d8743ad0e09d0",
+        "edges/part-w00-00009.jsonl.gz": "3e794330cf121593efe530f9bb4e14b4be54b0d57a720bf43169a546fa3404ed",
+        "edges/part-w00-00010.jsonl.gz": "d183d0380868109c575c0a74545795714ee0b4afd8f30ebfec22136f5b113b21",
+        "edges/part-w00-00011.jsonl.gz": "52e0cfeb8422012ddbc994cd8d72bffbe7c53abb4efc15f5be6ac6c604ba0bc4",
+        "edges/part-w00-00012.jsonl.gz": "8f22d3cbff467b7a984ed2d745ffcc14232cf1fd25b8f354a286afe6e03274a1",
+        "edges/part-w01-00000.jsonl.gz": "be753f1b61f9a876be235d7a822807a11482dfa4eb79aecefc64997a2de34f03",
+        "edges/part-w01-00001.jsonl.gz": "c773081767331279bdefb8a7e16fb253c039a2299225c9b1010fc2dbdc3e9b33",
+        "edges/part-w01-00002.jsonl.gz": "6e0a129ba5c81dd4e9afe89052d3fc83bdb00e3c6d70c8b6e85e4e4d77f4efe8",
+        "edges/part-w01-00003.jsonl.gz": "fad43d6205e0598e8f2e06cfafc38801e04d2049a89feed8378974fa2cf890a8",
+        "edges/part-w01-00004.jsonl.gz": "ab2ebf4dae9a59d40edf5453c404f64a47ed88c4547ade7977dba242d4d7edae",
+        "edges/part-w01-00005.jsonl.gz": "75e56b72a1b5d32f7951a9eafc4b2124d012728af66bf84a77295db91c58d2bd",
+        "edges/part-w01-00006.jsonl.gz": "46a9426450c27d3d7bc45c44efdbbed0ddf9f0b98d7ec3d86f605a5126aac0a9",
+        "edges/part-w01-00007.jsonl.gz": "f8136a96a242fd4232beac9d19ebd05bdc345af575f9632e48bab160f762ec2a",
+        "edges/part-w01-00008.jsonl.gz": "7bee3d058af33c439346201b31d7f3ad58c822ca8107d800304dd636aff662ff",
+        "edges/part-w01-00009.jsonl.gz": "9a3c31675c0626947c55caff6f84af4965cd3946a2523d15a94796cfc086e9df",
+        "edges/part-w01-00010.jsonl.gz": "ba56c7f9094fd10b47cd0c7ecc899309d9ff7a3c434907acfc9ff17e640b92aa",
+        "edges/part-w01-00011.jsonl.gz": "4f88b9fe5374a6c081733478ef9d83dc6c110261c880e22485d586b2ebd3f519",
+        "edges/part-w01-00012.jsonl.gz": "8732e5bd926800eea24815a0c974a5c28f7d31d9dd29a46470ece85d2636a003",
+        "edges/part-w02-00000.jsonl.gz": "569cbfcf92c597d35cc6522f66c0b4ae4f4630aef09c5b62a1b327d22566f25d",
+        "edges/part-w02-00001.jsonl.gz": "01ef780922d19e384acb44366da0b52761639f8018f41e62061c52c2e8148f3b",
+        "edges/part-w02-00002.jsonl.gz": "dce0aa8403ada1fb59d6cc2e266fe6df464999b7e94590ddd58a39f9afd0ed3b",
+        "edges/part-w02-00003.jsonl.gz": "afefa8ad23a943b77776ae7bf828674546a0a90d12d4180d623694a722addf5b",
+        "edges/part-w02-00004.jsonl.gz": "582fa5f93acad93515887b6352684d6a6a6321f9b4d96ccdfa6945bd280a5e83",
+        "edges/part-w02-00005.jsonl.gz": "14d6783c4621eaad818fd91fa54436b08b7a6a3434c3cba329255c9f4cd180a9",
+        "edges/part-w02-00006.jsonl.gz": "21f9eee2fe4186e626b54f7a6643033c01eaac77fea87b1b66ca1aa4078695e8",
+        "edges/part-w02-00007.jsonl.gz": "cfc214643bff0feb45d62357e6532584111d695275ac367d17c96a87e66bdff1",
+        "edges/part-w02-00008.jsonl.gz": "21e74333d68b8fd36b5923acc99011fec59e06069b7c81b09d1b9540cc44af1b",
+        "edges/part-w02-00009.jsonl.gz": "b32c73030bf7bbf53ef8af31199127384245ba91174fd841826f2b08e1d425cd",
+        "edges/part-w02-00010.jsonl.gz": "850baaa3eaa01212b9e769efd182d4a2e1c1aa058f6686f68f86c94c67195d0a",
+        "edges/part-w02-00011.jsonl.gz": "607a7ea70d79324c84158cbcfad827db93bc9f4245f3db9f7731ddbef1e63ca6",
+        "edges/part-w02-00012.jsonl.gz": "c600a87208ff0ae135c8943596849e14afd93c18f8bf95cc514f5743ca161a6f",
+        "edges/part-w03-00000.jsonl.gz": "67800052dd6dbff0d313004d6a081ce562d942709ef0573bf7d2c6b0b134f2a7",
+        "edges/part-w03-00001.jsonl.gz": "8deeccf8e96426801a9653a04eadb5713fbb01ba1c189141d7813975705edd19",
+        "edges/part-w03-00002.jsonl.gz": "07ebafc628f8faebf46a0f360377bb60db398710d528bd6067066897bbeaa5f3",
+        "edges/part-w03-00003.jsonl.gz": "102b29ef15f2109ecf1396c111d8f1892a125f5d7cf2ed2410d023a57b445f7e",
+        "edges/part-w03-00004.jsonl.gz": "2573f3fdd5c637cf3c61d6ac1ef5f712365727b1eb620b1e04a6cf32b5440448",
+        "edges/part-w03-00005.jsonl.gz": "167b2429961fc0069536ff06fcf28f54a38ecd3ed1fab7d96edb0a47ad550f77",
+        "edges/part-w03-00006.jsonl.gz": "b5c7827ab536ea0a86474748eb7776002cf76ee15c9798a21704c3117bc9c47b",
+        "edges/part-w03-00007.jsonl.gz": "3b3219567be4d72643bf1747e6b9d41c780e4c5d3c831bbb430245d48b63e02a",
+        "edges/part-w03-00008.jsonl.gz": "744fc2b72b1b30cfad838dce0e0c6bc1c5c352ceac79d57f5763d0cbb6d1c212",
+        "edges/part-w03-00009.jsonl.gz": "e802ea99ca337061c02006ae4fc956f1395661502c2aad80ff6e2471a7d8baf6",
+        "edges/part-w03-00010.jsonl.gz": "ffdf4d95fa1555aa173717171492659f89d93c6636e9a55b49b3fe3671993b51",
+        "edges/part-w03-00011.jsonl.gz": "5b8e81dc1cf589782ed7c0e668176b76d901965df840fb98fa794b1580bf15a0",
+        "edges/part-w03-00012.jsonl.gz": "a8a1c3ba4a59171b3b7f9a1a969213d752be1daa6a5eaa06546540ecae5af8cb",
+        "nodes/part-ctstub-00000.jsonl.gz": "9692375d5a7c1d1710394ef146f4e29f02dd76ab0d4dfd9f836dd2a96d0f76df",
+        "nodes/part-pmcj-00000.jsonl.gz": "bd8a7a8a06ac8e8657ff5819dee22bc49176c9e2ee4a9e8a842c6b3d18500fa6",
+        "nodes/part-w00-00000.jsonl.gz": "1c4e829d366da13e4e9b2421168aad096f63d1cafad6ec2352c771b9974b5055",
+        "nodes/part-w00-00001.jsonl.gz": "45c7491ab8f8c1a1df625c4e5c70beb1c5bd8bfed25aa835ba069d0c9102c523",
+        "nodes/part-w00-00002.jsonl.gz": "c96bd2bb9979b331e6ba11961514a563f0d84f5a8935bb5312204d82f7ac56b9",
+        "nodes/part-w00-00003.jsonl.gz": "b4ffa9f6e6c4ad132d6b6daf81f8ee9c8a7ff98498f2f3d58f159836efef826a",
+        "nodes/part-w00-00004.jsonl.gz": "5b9b0e1334bc4f855c8c04a91dc0064e9156918a7f0733fc71237b2a0aaec8fb",
+        "nodes/part-w00-00005.jsonl.gz": "2cee97ff2209e8edac475c56f7c7665e658273a1c5cd748255ff0ff7756362d4",
+        "nodes/part-w00-00006.jsonl.gz": "7aeb5b94d8f9080a9cf298bc36e055929293036a8f59edc67944eb859e51b8e1",
+        "nodes/part-w00-00007.jsonl.gz": "ddbede75846ad3df355900a544bb3840a3f3d13ed6ad86e1c35ef009372543d2",
+        "nodes/part-w00-00008.jsonl.gz": "95a8abd67a96a0c011834c227d42effc5f1503f30ce8e570d2efa2898c06f775",
+        "nodes/part-w00-00009.jsonl.gz": "3b752684bd6ea8f86ee621fceaea41e3ee87eb276e4199e23113abbd2f548e61",
+        "nodes/part-w00-00010.jsonl.gz": "4e5f5f539c9ef9055957aa144c744da48929246adf38f8289a8fda9420d9d86c",
+        "nodes/part-w00-00011.jsonl.gz": "9a1502e37c3e7b03e0a40457176fc1f5058a9e1c7279d0e14fff3d0dd86ba88c",
+        "nodes/part-w00-00012.jsonl.gz": "b078445a3c8f293ac22b8020a1a904a0dbf36191f3fa37f468ee30f93f1602ad",
+        "nodes/part-w01-00000.jsonl.gz": "f38352dfa57fbaac27ab47c2f3ca92d13c20aa894fe554963bbc988f8a892cb0",
+        "nodes/part-w01-00001.jsonl.gz": "db16ed8458484bd55be3fe627fd77251aa69079ad9181c981d9077067611b1c8",
+        "nodes/part-w01-00002.jsonl.gz": "d73e2497dab2a4b55b5a534b6fb28497cab1a821e5ed4a655b3dbf2028a4a136",
+        "nodes/part-w01-00003.jsonl.gz": "2e61d17109f5899379407f9b7da1b13cdda72646b7b0ff8fbbbf82bd8878ee95",
+        "nodes/part-w01-00004.jsonl.gz": "806b57928ba0b58715c454e882b4057ce085be4c74584308a603ea33322b09a6",
+        "nodes/part-w01-00005.jsonl.gz": "48ad967bfe9c3d6ed297ce2681b1ce153853db18d6528be7002c2c5c196310bc",
+        "nodes/part-w01-00006.jsonl.gz": "a8739e36b7035c507cd0f0e630dd99e0f219067415d607fe7e97be25fb5b91cf",
+        "nodes/part-w01-00007.jsonl.gz": "df49e19e5a094186b44e46f89047b7ea523a3b832e1a57d239e1a2f51290f521",
+        "nodes/part-w01-00008.jsonl.gz": "5ab4a9c9ce4e9750690b64bd6f32e0c459fa5f36a3ec8b1d4a56931e91d3240a",
+        "nodes/part-w01-00009.jsonl.gz": "758208133a17f89eb2ccd9ebb62c17da1597b3fef608b1d518b22a964f4c9edd",
+        "nodes/part-w01-00010.jsonl.gz": "244d56d5bbb7286e01c4395c9dcafc073bbafc25ad99bab64b41f2a58a5f75bc",
+        "nodes/part-w01-00011.jsonl.gz": "dea7be9808b587527888510519fb0da5abb535a4534fe2d68d27a510ffb27e67",
+        "nodes/part-w01-00012.jsonl.gz": "d306beb6c25221386d20eb949a50b6fdbf96976be07074b5f29296b7d14a0f55",
+        "nodes/part-w02-00000.jsonl.gz": "317c1d82a21a002bc44002015469b2a39bf0d0974cfb8a54a255269be2ae742f",
+        "nodes/part-w02-00001.jsonl.gz": "52de4752d10befe5b4aff93b65a3eb36496c94ce4d0cd0f0a3db7b6a0bd35c90",
+        "nodes/part-w02-00002.jsonl.gz": "43b14a9f4389553a31420ea9aaa08ec59835334367ab7383b95faa9ef57713eb",
+        "nodes/part-w02-00003.jsonl.gz": "55e1bbbb2394c0b48c8f1067cbb65490087daa1d7d0039a6a95c26c59af04857",
+        "nodes/part-w02-00004.jsonl.gz": "0fd9bf7805ebd452a863a296c6a3f67dab85240bb52a2e4ae06f9bb020c18092",
+        "nodes/part-w02-00005.jsonl.gz": "1bbb86e001dcfb80a86305fec6b3129a66fd0d02cc121a47f68bbf2a74541cfb",
+        "nodes/part-w02-00006.jsonl.gz": "56bd70d606d9b2ecd8412046ebcc5d6a0a34f13352ae833246f9b9dc98e53494",
+        "nodes/part-w02-00007.jsonl.gz": "c95b38b5b5342462b988fb4a2e937ba7bd30fb5b4d631fbf4c335f0becb43785",
+        "nodes/part-w02-00008.jsonl.gz": "a06316c32642e35531d3f9c3cc1bc5cafd72acbe6f0cb4b6f4ef315dbe636a7e",
+        "nodes/part-w02-00009.jsonl.gz": "e70e5b3600346ebeb9881639b432353e855159146577cb3c1bde9c3f5dbc9457",
+        "nodes/part-w02-00010.jsonl.gz": "385ff11af9c8395a0819bed0d1d135af4610b1885f59582f64c1fa396f160202",
+        "nodes/part-w02-00011.jsonl.gz": "249b4d9ed98221b86095439a212689d6cd18b1021fc8aade5323778a10bd8c01",
+        "nodes/part-w02-00012.jsonl.gz": "41576fc0a586713154c1cbbf6a34839fefb4c8e03e4b095211032d13c833de3f",
+        "nodes/part-w03-00000.jsonl.gz": "b7a99125fd46cfe670fc8d9ae198922cde0a35320ed8b4accac148f530bea17a",
+        "nodes/part-w03-00001.jsonl.gz": "e1463d3df485b0392adaf837fd58dfe380de1937817cf2a910b6048e4a973a76",
+        "nodes/part-w03-00002.jsonl.gz": "66c1ee79520c6a14d1b188e9effea5922e92e3056d3e19c6f3c5e13ab23765be",
+        "nodes/part-w03-00003.jsonl.gz": "2b1f5b1ce3a4c9120e3725ee2b9a0d08bc78784989ba654d054c07ce54171f2e",
+        "nodes/part-w03-00004.jsonl.gz": "5fb0175744d07535d9912d8e90c7904499e2f08b6da1dd14ec0ad632a9b76d29",
+        "nodes/part-w03-00005.jsonl.gz": "1faf51919e65c824469b694288159b3e56ba73c92d7deb15d8c8238089c7c2d5",
+        "nodes/part-w03-00006.jsonl.gz": "b0f42f23e79041b84d1030cf037f5df4763fcb9defb3986b76e4a3b2ff026444",
+        "nodes/part-w03-00007.jsonl.gz": "41cf8c23879c6d8d8ab851701126b4ca41271b31424ef3433379be7d2b6e4716",
+        "nodes/part-w03-00008.jsonl.gz": "367db3d6b29f5d294c6940257c05b2d9bec2625d976e7b8d09c26dfd719c38ca",
+        "nodes/part-w03-00009.jsonl.gz": "70ed157aad874db72efd83182247603bce2c789d50b02a7da825e069afa8a7fc",
+        "nodes/part-w03-00010.jsonl.gz": "2a83699328cb24cadb92c18782908f31f7cc45238b0029828867ae26babe7b50",
+        "nodes/part-w03-00011.jsonl.gz": "4fd084b09bd2fe1a13c9ce3d0a53aad643c82827cb3c468ad2d0d03e8129b096",
+        "nodes/part-w03-00012.jsonl.gz": "8d9b57aee1e58823e230fd1206dac1a472b4cd13ebb3a487a002190499435fad"
+      },
+      "files_verified": 107,
+      "input_root": "<CLINICAL_KG_DATA>",
+      "manifest": "<CLINICAL_KG_DATA>/manifest.json",
+      "manifest_sha256": "518ed9ae1f2e132aeec9a6d216cbd40d43db01e1ded9ee42901ad635c38aa17c",
+      "pinned_hash_list": "release_inputs_v0.2.1.sha256",
+      "release_version": "0.2.1",
+      "snapshot_date": "2026-11-07",
+      "verification_record": "lanes/results/input_verification.json",
+      "zenodo_bundle_verification": "lanes/results/zenodo_bundle_verification.json",
+      "zenodo_bundles_all_match": true
+    },
+    "lanes": {
+      "build": {
+        "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+        "outputs_sha256": {
+          "lanes/results/build_census.json": "27955cca8388163151bf16a9bf1702e08901ec7447f1ef0d784832fff8f3bef8",
+          "lanes/results/input_verification.json": "97491d018cd751de5ecf6aaf54ab8e7f5dc70b9440d69066f42d8cf5a9846bc7"
+        },
+        "script": "lanes/scripts/build.py",
+        "script_sha256": "db03bb771ecab9bc9696f20e45a9e239bae383fd68af93f6cc67bcf864147be6",
+        "sql_registry": "lanes/results/build_queries.json"
+      },
+      "headline_numbers": {
+        "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+        "outputs_sha256": {
+          "lanes/results/headline_numbers.json": "f94c5d931f20cc0cb0664e5207f1b84ba994d2065889dbfb35a1b2bdac45c741",
+          "lanes/tables/headline_numbers.csv": "225017d6443349cc93b20257671ad8997ebd59ca84fd41c8786f85856c4d3bdb",
+          "lanes/tables/headline_trial_results_chain.csv": "66a3f0e3a9b1e61ec84a1b28dee721cc5c4f4c41c13d5f40eba39e27d7c136e3"
+        },
+        "script": "lanes/scripts/headline_numbers.py",
+        "script_sha256": "eeb0a3a2a2e16fcc669ac31ba3118e45787e277dea392158e36eb4c9822bb5bc",
+        "sql_registry": "lanes/results/headline_numbers_queries.json"
+      },
+      "lane1_trial_landscape": {
+        "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+        "outputs_sha256": {
+          "lanes/results/lane1_summaries/D000544_summary.json": "d4e6a233ee53d91c8bdc36c8c9c4efe66549de23a95b9546c58623b386520d67",
+          "lanes/results/lane1_summaries/D001943_summary.json": "9f7f0d1144ffb882b2313f63df6e880509469a9e68213da462811940af24a22a",
+          "lanes/results/lane1_summaries/D006333_summary.json": "96fa7849d2bf05ec0c8da74355f0dfbf0c89a79b7b6edfc08d5db4e154ef4cfc",
+          "lanes/results/lane1_trial_landscape.json": "f111aac2cfe6423eeeec9d3f39c5e361f686350dd6fff9631f0fe4ff340c0f93",
+          "lanes/tables/lane1_summary_fields.csv": "e07fdfc8c90d586ee8ab31f86cd33caec9f438efbadfa32ad219566a3846d7cc"
+        },
+        "script": "lanes/scripts/lane1_trial_landscape.py",
+        "script_sha256": "a4863a271db3e31a275c25dc1e41580f83574368539a092084ed4b0c1fbd333d",
+        "sql_registry": null,
+        "tool": {
+          "tool": "examples/trial_landscape.py",
+          "tool_sha256": "9a2bf6b098a51896bea1234b469b2a586f752c56cfc0e3f294893cabb1b19adf"
+        }
+      },
+      "lane2_medlineplus_english": {
+        "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+        "outputs_sha256": {
+          "lanes/results/lane2_medlineplus.json": "7cef8e4bf87697df3c8717109bfdf87adae50ffbfcdb802c7b18bcd84ba67275",
+          "lanes/tables/lane2_per_topic.csv": "72de31e43d600e93aed13360908d6a3bd6febac842b7d99d19b142d7f9af6a86",
+          "lanes/tables/lane2_topic_table_all.csv": "ec2ee52e52f4bbc46916cd0a96b2ff18087087c44cc4add1be62151c1f948889",
+          "lanes/tables/lane2_topic_table_english.csv": "751b7ae50d3fc251119404a34527fc57ab8adc60b1160247ecf175b7321a5576",
+          "lanes/tables/lane2_topic_table_spanish.csv": "35348a931b7915c0abcb2b6f4c678ae814efbdc2d0cf50c4dfe4cff58a3ec849",
+          "lanes/tables/lane2_translation_mapping_differences.csv": "2551133de39505d2691961daca20a2f7b678ff30e540511fbb3630b02f568a9c"
+        },
+        "script": "lanes/scripts/lane2_medlineplus_english.py",
+        "script_sha256": "f19a64eab864c62a40e242d661447d974c6c6859992199ad3a541376fe2a4cb7",
+        "sql_registry": "lanes/results/lane2_medlineplus_queries.json"
+      },
+      "lane3_crosscheck_companion": {
+        "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+        "outputs_sha256": {
+          "lanes/results/lane3_crosscheck_companion.json": "cd9da753f094dece5240d980aa746a17881aa7f8dc9838a354ddf8b5299ea911"
+        },
+        "script": "lanes/scripts/lane3_crosscheck_companion.py",
+        "script_sha256": "34c481708151b087f2e8c6e5ad467542dff85764553b1067cf252b952ec7154e",
+        "sql_registry": null,
+        "tool": {
+          "tool": "examples/evidence_map.py",
+          "tool_sha256": "b1882df0e7bcc4a9e996bd8b285759c0e19ad7029ea49e57a4f8c2cae08664ef"
+        }
+      },
+      "lane3_evidence_maps": {
+        "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+        "outputs_sha256": {
+          "lanes/results/lane3_evidence_maps.json": "01306cdea7d80460f9b8a391c600f2ef7397980ba5b2467d43aab2c1f8524f6c",
+          "lanes/tables/lane3_D000544_expansion.csv": "1b96d5f2f98e51e0a4ceff21ffd2e1275fc2dd4c7eec375b7c139feec8b0f6ba",
+          "lanes/tables/lane3_D000544_map.csv": "4584aab4b1a5448486b53ec73b40a608d7e0ef94408dd918e3c200c01277868c",
+          "lanes/tables/lane3_D000544_reviews_2022_2026.csv": "3caf2a1d5c100aa88d0d5e63405b5788c900d8b628dbf63ec67c28e74bc95c13",
+          "lanes/tables/lane3_D001943_expansion.csv": "11bf96623bf64ed6d4e5a88b51ddf1d87652ec3af6f7d14662225f1c927f78cd",
+          "lanes/tables/lane3_D001943_map.csv": "de326b214cdbec5d3a97fbb82d3e2f9cad83715b859cdd3fec624ec8d8572a8d",
+          "lanes/tables/lane3_D001943_reviews_2022_2026.csv": "efbb7613f00c16b3c3aa9a36432a80b2704af01c002e4c06e1a6efefa659213e",
+          "lanes/tables/lane3_D006333_expansion.csv": "43dc30dbb1693ccbeea6c1b29f07d9850ad27464532c61fa31ce7101e36e418d",
+          "lanes/tables/lane3_D006333_map.csv": "3b9c921720890b0d4b7c867de93ebbd5b977627b8cc4d3ffe30c9dd91f382c7c",
+          "lanes/tables/lane3_D006333_reviews_2022_2026.csv": "2c5f4be1679203490c5e4c4afa7648d51e3516dc0ac6f22ca11402d9f6f9edb5"
+        },
+        "script": "lanes/scripts/lane3_evidence_maps.py",
+        "script_sha256": "ecd940b0192fd15889d67f5c226c85cc7186c39da5be755da7a5a48f5d078717",
+        "sql_registry": "lanes/results/lane3_evidence_maps_queries.json"
+      },
+      "lane4_osteosarcoma": {
+        "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+        "outputs_sha256": {
+          "lanes/results/lane4_osteosarcoma.json": "fd9dfa81dc2ea44a52f7d8a05ec979f4f09bd8f3c087a791ecbede2c7b769d31",
+          "lanes/tables/lane4_articles.csv": "6faf471afe023819fea8a26c8c61df6ba61b39601362838480d1a83889c06d91",
+          "lanes/tables/lane4_branches.csv": "022a15803394a2958adfbc2f99e7dbf74a8ef3d821309d23406730b3f4209f17",
+          "lanes/tables/lane4_expansion.csv": "eefb7102b5a2d873d6668e05bf10c601eaaa05bb752ac4ea02acdb1b9491b827",
+          "lanes/tables/lane4_trials.csv": "64a523503d82070a1f3fc7459d6cac1adb541c032b40a7a3d3e66bd649b71b85"
+        },
+        "script": "lanes/scripts/lane4_osteosarcoma.py",
+        "script_sha256": "ef33d2fd324485392d2034227c127594a7e69544acf68d4c4e2f81005bdbd368",
+        "sql_registry": "lanes/results/lane4_osteosarcoma_queries.json"
+      },
+      "lane5_paper_numbers": {
+        "code_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+        "outputs_sha256": {
+          "lanes/results/lane5_paper_numbers.json": "c076e1c3a0f651ce0ac5c7e15a10fe6c3f45f59bb907a1de2fee99ec2b0f465d",
+          "lanes/tables/lane5_D000544_major_map.csv": "26f5e8b7f0f81b86b7b1de57f588f355162136fb47d0df9bfee157c2994866dc",
+          "lanes/tables/lane5_D000544_results_articles.csv": "541710392828997eb5780db85504f84833a9548f8d21bc5aebae01607933c437",
+          "lanes/tables/lane5_D001943_major_map.csv": "d9776cb82a907ba94e18618e6d1f29769c99cab3221b75fd78feb3ecd0072248",
+          "lanes/tables/lane5_D001943_results_articles.csv": "91d8e19185993636164981ca6c9e41a80703e9e1b09e1b67f1ac047c5169b879",
+          "lanes/tables/lane5_D006333_major_map.csv": "5d7c8ed9f922fc1a423211de8a5c5df929aa6a318a7c0e9979925561fe1fc82c",
+          "lanes/tables/lane5_D006333_results_articles.csv": "3a29e88a7f9345ea16dbd77a23b946703959ee7e90f72a9cb5ae464b21746754",
+          "lanes/tables/lane5_clinicaltrial_properties.csv": "a450b93427cbe75fa32e0548ea099edb4a245b364b4073e135344215507219fb"
+        },
+        "script": "lanes/scripts/lane5_paper_numbers.py",
+        "script_sha256": "a30aa736f56aa26ae2075fda96b36360c28737b895e4eb5a50ac5b46dca931d8",
+        "sql_registry": "lanes/results/lane5_paper_numbers_queries.json"
+      }
+    },
+    "recorded_at_commit": "2dbcf84ef0016f128a87b871429aafea48ab04db",
+    "release_fetch_and_verify": {
+      "fetch_release.py": "14a66a23574dd437a7c49f4df5a3010dcf72ccdb32666eca3e6ec60a06b7ec5b",
+      "verify_zenodo_bundles.py": "97de24d5cb571a456df54b2d7c5d32e8e972df375c13b2ccc71d5b39a1698591"
+    },
+    "report_sha256": {
+      "lanes/LANES_REPORT.md": "809640ce8749a9a94e4b24d0a860ea65b91ff154ce96884d9a88abf67f793d22"
+    },
+    "restrictions": "No production access, no paid model calls, no rights-reserved annotation-layer files. The only network use is downloading the public release files and reading the public Hugging Face / Zenodo record metadata (audit/scripts/fetch_release.py, verify_zenodo_bundles.py). No release file was changed.",
+    "rules": {
+      "check_tags": "40-name NLM check-tag list never used as query, matched or expansion descriptor.",
+      "full_expansion": "descriptor + HAS_BROADER_ANCESTOR descendants (tree-number precise in this release).",
+      "populations": "with_stubs and without_stubs; stubs = Article lunasai_layer ctgov_identity_only (578,177), removed as map Articles and as citers. In v0.2.1 stubs have no pub_types, HAS_MESH or CITES, so MeSH-reached Article results are identical in both populations.",
+      "self_citations": "CITES with subject = object removed (24,044 edges)."
+    },
+    "scripts_sha256": {
+      "lanes/scripts/build.py": "db03bb771ecab9bc9696f20e45a9e239bae383fd68af93f6cc67bcf864147be6",
+      "lanes/scripts/headline_numbers.py": "eeb0a3a2a2e16fcc669ac31ba3118e45787e277dea392158e36eb4c9822bb5bc",
+      "lanes/scripts/lane1_trial_landscape.py": "a4863a271db3e31a275c25dc1e41580f83574368539a092084ed4b0c1fbd333d",
+      "lanes/scripts/lane2_medlineplus_english.py": "f19a64eab864c62a40e242d661447d974c6c6859992199ad3a541376fe2a4cb7",
+      "lanes/scripts/lane3_crosscheck_companion.py": "34c481708151b087f2e8c6e5ad467542dff85764553b1067cf252b952ec7154e",
+      "lanes/scripts/lane3_evidence_maps.py": "ecd940b0192fd15889d67f5c226c85cc7186c39da5be755da7a5a48f5d078717",
+      "lanes/scripts/lane4_osteosarcoma.py": "ef33d2fd324485392d2034227c127594a7e69544acf68d4c4e2f81005bdbd368",
+      "lanes/scripts/lane5_paper_numbers.py": "a30aa736f56aa26ae2075fda96b36360c28737b895e4eb5a50ac5b46dca931d8",
+      "lanes/scripts/lane_common.py": "8bd243d1f2893776f48cb583696180e646d857cb48a499be36ecf2b9231ee43d",
+      "lanes/scripts/lanes_manifest.py": "e555015d75d3606fe6d3d86624c252b811d35349f276030f1485ecaa193f2a5a"
+    }
+  }
+}

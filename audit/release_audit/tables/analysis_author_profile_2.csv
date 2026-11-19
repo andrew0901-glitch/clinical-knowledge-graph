@@ -1,0 +1,11 @@
+articles,authorship_witness,descriptor,mesh_witness,name
+92,urn:uuid:a7780163-b7f3-544a-bb07-4aa57aa8f539,MESH:D001249,urn:uuid:ff2933d5-66db-5ea2-8655-1d876f81dce9,Asthma
+46,urn:uuid:3229a724-362f-5ecf-b164-2f77ac97054f,MESH:D018592,urn:uuid:1bd003d0-c218-5ef6-abd0-9cfed18f4396,Cross-Over Studies
+42,urn:uuid:3229a724-362f-5ecf-b164-2f77ac97054f,MESH:D004311,urn:uuid:45f481cf-07bb-5f2d-9815-3b79e688352a,Double-Blind Method
+40,urn:uuid:9aa378cd-dbc7-5da7-9599-7c3f59308d55,MESH:D000280,urn:uuid:9fa97d2b-a216-541d-aa59-0722d1c73e61,"Administration, Inhalation"
+28,urn:uuid:fe6e8172-8b41-5116-ae51-b71cbcae67f2,MESH:D004305,urn:uuid:7bed38d8-9109-5d87-ab90-72df5108e58c,"Dose-Response Relationship, Drug"
+27,urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc,MESH:D001993,urn:uuid:44c599ac-918e-5333-b01f-cce3a74c74c3,Bronchodilator Agents
+27,urn:uuid:a7780163-b7f3-544a-bb07-4aa57aa8f539,MESH:D018927,urn:uuid:0bc564ce-f78b-53b6-b655-e27f2089b0f7,Anti-Asthmatic Agents
+26,urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc,MESH:D000420,urn:uuid:9412e046-2500-5fdc-977e-18313dc2193b,Albuterol
+24,urn:uuid:3ba3d0ed-f66b-5258-9d0e-56146d2b39c9,MESH:D000893,urn:uuid:ace5a88e-c929-52c1-ba1a-8b31e28967ea,Anti-Inflammatory Agents
+24,urn:uuid:74bbaad1-0058-50e6-81d0-00c391cb1cbc,MESH:D005541,urn:uuid:4844a700-9f36-5f83-b36c-8c64de591f4c,Forced Expiratory Volume

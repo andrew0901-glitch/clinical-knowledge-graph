@@ -1,0 +1,278 @@
+[
+  {
+    "parameters": [
+      "<CLINICAL_KG_WORK>/nodes*.jsonl"
+    ],
+    "sql": "CREATE OR REPLACE TABLE nodes AS SELECT * REPLACE(CASE WHEN json_type(props)='VARCHAR' THEN json_extract_string(props,'$')::JSON ELSE props END AS props) FROM read_json(?,format='newline_delimited',columns={'id': 'VARCHAR', 'label': 'VARCHAR', 'lunasai_layer': 'VARCHAR', 'name': 'VARCHAR', 'iri': 'VARCHAR', 'doi': 'VARCHAR', 'pmcid': 'VARCHAR', 'pmid': 'VARCHAR', 'journal': 'VARCHAR', 'url': 'VARCHAR', 'year': 'VARCHAR', 'openalex_id': 'VARCHAR', 'openalex_author_id': 'VARCHAR', 'orcid': 'VARCHAR', 'profile_orcid': 'VARCHAR', 'nct_id': 'VARCHAR', 'stub': 'BOOLEAN', 'pub_types': 'VARCHAR[]', 'mesh_major_topics': 'VARCHAR[]', 'props': 'JSON'})"
+  },
+  {
+    "parameters": [
+      "<CLINICAL_KG_WORK>/edges*.jsonl"
+    ],
+    "sql": "CREATE OR REPLACE TABLE e AS SELECT * FROM read_json(?,format='newline_delimited',columns={'id': 'VARCHAR', 'subject': 'VARCHAR', 'object': 'VARCHAR', 'type': 'VARCHAR', 'predicate': 'VARCHAR', 'original_predicate': 'VARCHAR', 'lunasai_layer': 'VARCHAR', 'study_aspect': 'VARCHAR', 'mesh_type': 'VARCHAR', 'mapping_method': 'VARCHAR', 'source_predicate': 'VARCHAR', 'publication_role': 'VARCHAR', 'reference_type': 'VARCHAR', 'source_system': 'VARCHAR', 'source_record_id': 'VARCHAR', 'source_row_id': 'VARCHAR', 'source_row_table': 'VARCHAR', 'assertion_id': 'VARCHAR', 'currentness_status': 'VARCHAR', 'source_url': 'VARCHAR', 'iri': 'VARCHAR', 'primary_knowledge_source': 'VARCHAR', 'agent_type': 'VARCHAR', 'knowledge_level': 'VARCHAR', 'provenance_id': 'VARCHAR', 'derivation': 'VARCHAR', 'match_status': 'VARCHAR', 'is_major_topic': 'BOOLEAN', 'depth': 'INTEGER', 'also_asserted_by_source_system': 'VARCHAR[]', 'profile_orcid_valid': 'BOOLEAN', 'publication_orcid_valid': 'BOOLEAN', 'identity_flags': 'VARCHAR[]', 'author_order': 'INTEGER'})"
+  },
+  {
+    "parameters": [
+      "<CLINICAL_KG_WORK>/independent_audit/audit.duckdb"
+    ],
+    "sql": "ATTACH ? AS base_build"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE base_build.c AS SELECT id,subject,object,predicate FROM e WHERE type='CITES'"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE base_build.core AS SELECT id,subject article,object trial,coalesce(publication_role,reference_type) reference_type FROM e WHERE type='VALIDATED_BY'"
+  },
+  {
+    "parameters": [],
+    "sql": "DETACH base_build"
+  },
+  {
+    "parameters": [
+      "<CLINICAL_KG_WORK>/independent_audit/audit.duckdb"
+    ],
+    "sql": "ATTACH ? AS base (READ_ONLY)"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE article AS SELECT *,coalesce(list_has_any(pub_types,['Practice Guideline','Guideline']),false) guideline,coalesce(list_contains(pub_types,'Systematic Review'),false) systematic_review,coalesce(list_has_any(pub_types,['Practice Guideline','Guideline','Systematic Review','Meta-Analysis','Review']),false) gr,CASE WHEN list_has_any(pub_types,['Practice Guideline','Guideline']) THEN 1 WHEN list_contains(pub_types,'Systematic Review') THEN 2 WHEN list_contains(pub_types,'Meta-Analysis') THEN 3 WHEN list_contains(pub_types,'Review') THEN 4 ELSE 5 END publication_priority FROM nodes WHERE label='Article'"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE populations AS SELECT * FROM (VALUES ('with_stubs',false),('without_stubs',true)) p(population,exclude_stubs)"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE stop(id VARCHAR,name VARCHAR)"
+  },
+  {
+    "parameters": [
+      [
+        "Humans",
+        "Female",
+        "Male",
+        "Adult",
+        "Animals",
+        "Aged",
+        "Middle Aged",
+        "Aged, 80 and over",
+        "Adolescent",
+        "Child",
+        "Child, Preschool",
+        "Infant",
+        "Infant, Newborn",
+        "Pregnancy",
+        "Mice",
+        "Rats",
+        "Young Adult",
+        "Cats",
+        "Dogs",
+        "Guinea Pigs",
+        "Rabbits",
+        "Cricetinae",
+        "Swine",
+        "Cattle",
+        "Sheep",
+        "Bees",
+        "Chlorocebus aethiops",
+        "Chick Embryo",
+        "History of Medicine",
+        "Horses",
+        "United States",
+        "History, 15th Century",
+        "History, 16th Century",
+        "History, 17th Century",
+        "History, 18th Century",
+        "History, 19th Century",
+        "History, 20th Century",
+        "History, 21st Century",
+        "History, Ancient",
+        "History, Medieval"
+      ]
+    ],
+    "sql": "INSERT INTO stop SELECT id,name FROM nodes WHERE label='MeSHConcept' AND name IN (SELECT unnest(?::VARCHAR[]))"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE am AS SELECT e.subject article,e.object descriptor,e.id edge_id,e.is_major_topic edge_major,e.is_major_topic major,CASE WHEN array_length(a.mesh_major_topics)>0 THEN list_contains(a.mesh_major_topics,d.name) ELSE NULL END node_label_major,CASE WHEN e.is_major_topic IS NOT NULL THEN 'edge_flag' ELSE 'unknown' END major_source,EXISTS(SELECT 1 FROM stop s WHERE s.id=e.object) check_tag FROM e JOIN article a ON a.id=e.subject JOIN nodes d ON d.id=e.object AND d.label='MeSHConcept' WHERE e.type='HAS_MESH'"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE tm AS SELECT e.id,e.subject,e.object,e.is_major_topic edge_major FROM e JOIN nodes n ON n.id=e.subject AND n.label='MedlinePlus' WHERE e.type='HAS_MESH'"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE trial_qualified AS SELECT * FROM e WHERE type='HAS_MESH' AND starts_with(subject,'clinicaltrials:')"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE trial_mesh AS SELECT * FROM trial_qualified WHERE study_aspect='condition' AND mesh_type='mesh-list'"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE authorship AS SELECT * FROM e WHERE type='AUTHORED_BY'"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE hierarchy AS SELECT subject child,object parent,id edge_id,CASE WHEN type='HAS_BROADER' THEN 1 ELSE depth END depth,CASE WHEN type='HAS_BROADER' THEN 0 ELSE 1 END priority,predicate FROM e WHERE type IN ('HAS_BROADER','HAS_BROADER_ANCESTOR')"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE incoming AS SELECT object article,count(DISTINCT subject) in_corpus_citations FROM base.c WHERE subject<>object GROUP BY object"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE modes AS SELECT * FROM (VALUES ('none',0),('one',1),('full',2)) t(mode,level)"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE seeds(key VARCHAR,kind VARCHAR,id VARCHAR,area VARCHAR,term VARCHAR)"
+  },
+  {
+    "parameters": [
+      "article1",
+      "article",
+      "PMID:18711110",
+      "neurology",
+      "Epilepsy"
+    ],
+    "sql": "INSERT INTO seeds VALUES (?,?,?,?,?)"
+  },
+  {
+    "parameters": [
+      "article2",
+      "article",
+      "PMID:9006232",
+      "respiratory",
+      "Asthma"
+    ],
+    "sql": "INSERT INTO seeds VALUES (?,?,?,?,?)"
+  },
+  {
+    "parameters": [
+      "article3",
+      "article",
+      "PMID:16585662",
+      "cardiovascular",
+      "Hypertension"
+    ],
+    "sql": "INSERT INTO seeds VALUES (?,?,?,?,?)"
+  },
+  {
+    "parameters": [
+      "topic1",
+      "topic",
+      "lunasai:medlineplus_topic.244",
+      "neurology",
+      "Epilepsy"
+    ],
+    "sql": "INSERT INTO seeds VALUES (?,?,?,?,?)"
+  },
+  {
+    "parameters": [
+      "topic2",
+      "topic",
+      "lunasai:medlineplus_topic.1507",
+      "respiratory",
+      "Asthma"
+    ],
+    "sql": "INSERT INTO seeds VALUES (?,?,?,?,?)"
+  },
+  {
+    "parameters": [
+      "topic3",
+      "topic",
+      "lunasai:medlineplus_topic.34",
+      "cardiovascular",
+      "Hypertension"
+    ],
+    "sql": "INSERT INTO seeds VALUES (?,?,?,?,?)"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE query_terms AS SELECT DISTINCT s.key seed,m.descriptor query_descriptor FROM seeds s JOIN am m ON m.article=s.id WHERE s.kind='article' AND m.edge_major IS TRUE AND NOT m.check_tag UNION SELECT DISTINCT s.key,t.object FROM seeds s JOIN tm t ON t.subject=s.id WHERE s.kind='topic' AND NOT EXISTS(SELECT 1 FROM stop WHERE id=t.object)"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE source_terms AS SELECT a.* FROM am a WHERE NOT check_tag AND (a.major OR NOT EXISTS(SELECT 1 FROM am x WHERE x.article=a.article AND x.major AND NOT x.check_tag))"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE profiles AS SELECT a.article,list(DISTINCT a.descriptor) indexed_terms,list(DISTINCT s.descriptor) FILTER(WHERE s.descriptor IS NOT NULL) source_terms FROM am a LEFT JOIN source_terms s ON s.article=a.article AND s.descriptor=a.descriptor WHERE NOT a.check_tag GROUP BY a.article"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE topic_expansion AS WITH q AS (SELECT DISTINCT subject topic,object descriptor FROM tm WHERE NOT EXISTS(SELECT 1 FROM stop WHERE id=object)),raw AS (SELECT q.topic,q.descriptor query_descriptor,m.mode,q.descriptor matched_descriptor,0 distance,NULL::VARCHAR hierarchy_edge FROM q CROSS JOIN modes m UNION ALL SELECT q.topic,q.descriptor,m.mode,h.child,h.depth,h.edge_id FROM q JOIN hierarchy h ON h.parent=q.descriptor CROSS JOIN modes m WHERE (m.level=2 OR (m.level=1 AND h.priority=0)) AND NOT EXISTS(SELECT 1 FROM stop WHERE id=h.child)) SELECT * FROM raw QUALIFY row_number() OVER(PARTITION BY topic,mode,query_descriptor,matched_descriptor ORDER BY distance,hierarchy_edge)=1"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE result_links AS SELECT id,subject article,object trial,type,coalesce(publication_role,reference_type) role FROM e WHERE type IN ('VALIDATED_BY','CITES_BACKGROUND','HAS_DERIVED_PUBLICATION')"
+  },
+  {
+    "parameters": [],
+    "sql": "CREATE OR REPLACE TABLE annotation_capability AS SELECT descriptor,bool_or(a.gr) gr,bool_or(a.gr AND m.edge_major) gr_major FROM am m JOIN article a ON a.id=m.article GROUP BY descriptor"
+  },
+  {
+    "parameters": [
+      [
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00000.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00001.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00002.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00003.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00004.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00005.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00006.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00007.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00008.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00009.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00010.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00011.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w00-00012.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00000.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00001.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00002.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00003.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00004.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00005.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00006.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00007.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00008.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00009.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00010.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00011.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w01-00012.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00000.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00001.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00002.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00003.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00004.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00005.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00006.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00007.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00008.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00009.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00010.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00011.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w02-00012.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00000.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00001.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00002.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00003.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00004.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00005.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00006.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00007.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00008.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00009.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00010.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00011.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-w03-00012.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-pmcj-00000.jsonl.gz",
+        "<CLINICAL_KG_DATA>/nodes/part-ctstub-00000.jsonl.gz"
+      ]
+    ],
+    "sql": "CREATE OR REPLACE TABLE analytics AS SELECT * FROM read_json(?,format='newline_delimited',columns={'id': 'VARCHAR', 'community_id': 'DOUBLE', 'community_id_coarse': 'DOUBLE', 'community_id_mesh': 'DOUBLE', 'community_size': 'DOUBLE', 'community_size_coarse': 'DOUBLE', 'community_size_mesh': 'DOUBLE', 'pagerank_score': 'DOUBLE', 'betweenness_score': 'DOUBLE'}) WHERE starts_with(id,'PMID:')"
+  }
+]

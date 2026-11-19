@@ -1,0 +1,32 @@
+{
+  "major_article_coverage": [
+    {
+      "articles_with_any_known_major": 2861802,
+      "articles_with_noncheck_major": 2854567,
+      "indexed_articles": 2861802,
+      "population": "without_stubs"
+    },
+    {
+      "articles_with_any_known_major": 2861802,
+      "articles_with_noncheck_major": 2854567,
+      "indexed_articles": 2861802,
+      "population": "with_stubs"
+    }
+  ],
+  "publication_unions": [
+    {
+      "articles": 3724062,
+      "guideline_review_union": 292235,
+      "guideline_union": 6350,
+      "population": "with_stubs",
+      "systematic_review": 59012
+    },
+    {
+      "articles": 3145885,
+      "guideline_review_union": 292235,
+      "guideline_union": 6350,
+      "population": "without_stubs",
+      "systematic_review": 59012
+    }
+  ]
+}

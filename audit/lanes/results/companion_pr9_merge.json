@@ -1,0 +1,8 @@
+{
+  "repo": "lunas-health/clinical-evidence-kg",
+  "pr": 9,
+  "head_commit": "0d80fd5db8c460389fbba6444f2cbbc14a0ed1ea",
+  "merge_method": "squash",
+  "merge_commit": "be2f8559e09159b942ea8484b000a945600320d9",
+  "tests": "tests/test_evidence_map.py: 8 passed on PR head and again on main after merge"
+}

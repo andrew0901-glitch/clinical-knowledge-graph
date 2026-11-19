@@ -1,0 +1,33 @@
+{
+  "articles": {
+    "note": "Both Article populations; any and major indexing.",
+    "parameters": [
+      "MESH:D012516"
+    ],
+    "sql": "WITH per AS (SELECT population, indexing, article,\n                bool_and(descriptor IN (SELECT descriptor FROM ewing)) AS only_ewing,\n                bool_or(descriptor IN (SELECT descriptor FROM ewing)) AS any_ewing, bool_or(descriptor = $1) AS direct\n            FROM amatch GROUP BY 1, 2, 3)\n        SELECT population, indexing, count(*) AS articles_with_ewing_branch,\n               count(*) FILTER (WHERE NOT only_ewing) AS articles_without_ewing_branch,\n               count(*) FILTER (WHERE only_ewing) AS articles_only_through_ewing,\n               count(*) FILTER (WHERE any_ewing) AS articles_indexed_to_ewing_branch,\n               count(*) FILTER (WHERE direct) AS articles_direct_on_osteosarcoma,\n               round(100.0 * count(*) FILTER (WHERE only_ewing) / count(*), 2) AS pct_only_through_ewing\n        FROM per GROUP BY 1, 2 ORDER BY indexing, population"
+  },
+  "branches": {
+    "note": "Direct narrower branches of D012516, ranked by trials then articles.",
+    "parameters": [],
+    "sql": "WITH tb AS (SELECT b.branch, t.trial FROM branch b JOIN tmatch t USING (descriptor)),\n             ab AS (SELECT b.branch, a.population, a.indexing, a.article FROM branch b JOIN amatch a USING (descriptor))\n        SELECT m.mesh_id AS branch_mesh_id, m.name AS branch,\n               (SELECT count(DISTINCT descriptor) FROM branch b2 WHERE b2.branch = b.branch) AS descriptors,\n               (SELECT count(DISTINCT trial) FROM tb WHERE tb.branch = b.branch) AS trials,\n               (SELECT count(DISTINCT trial) FROM tb WHERE tb.branch = b.branch AND trial NOT IN\n                   (SELECT trial FROM tmatch WHERE descriptor NOT IN (SELECT descriptor FROM branch b3 WHERE b3.branch = b.branch))) AS trials_only_through_branch,\n               (SELECT count(DISTINCT article) FROM ab WHERE ab.branch = b.branch AND population = 'with_stubs' AND indexing = 'any') AS articles_with_stubs,\n               (SELECT count(DISTINCT article) FROM ab WHERE ab.branch = b.branch AND population = 'without_stubs' AND indexing = 'any') AS articles_without_stubs,\n               (SELECT count(DISTINCT article) FROM ab WHERE ab.branch = b.branch AND population = 'with_stubs' AND indexing = 'any' AND article NOT IN\n                   (SELECT article FROM amatch WHERE population = 'with_stubs' AND indexing = 'any' AND descriptor NOT IN\n                       (SELECT descriptor FROM branch b4 WHERE b4.branch = b.branch))) AS articles_only_through_branch\n        FROM (SELECT DISTINCT branch FROM branch) b JOIN mesh m ON m.id = b.branch\n        ORDER BY trials DESC, articles_with_stubs DESC"
+  },
+  "expansion": {
+    "note": "Full expansion of D012516 with Ewing-branch flag and tree numbers.",
+    "parameters": [],
+    "sql": "SELECT x.descriptor, m.mesh_id, m.name, x.depth, x.descriptor IN (SELECT descriptor FROM ewing) AS ewing_branch,\n            (SELECT list(DISTINCT b.branch) FROM branch b WHERE b.descriptor = x.descriptor) AS branches,\n            (SELECT list(DISTINCT tn) FROM (SELECT unnest(child_tree_numbers) tn FROM hierarchy h\n                WHERE h.child = x.descriptor AND h.type = 'HAS_BROADER')) AS tree_numbers\n        FROM exp x JOIN mesh m ON m.id = x.descriptor ORDER BY x.depth, m.name"
+  },
+  "root_only": {
+    "note": "Root descriptor contribution.",
+    "parameters": [
+      "MESH:D012516"
+    ],
+    "sql": "SELECT (SELECT count(DISTINCT trial) FROM tmatch WHERE descriptor = $1) AS trials_on_root_descriptor,\n            (SELECT count(DISTINCT trial) FROM tmatch WHERE trial NOT IN (SELECT trial FROM tmatch WHERE descriptor <> $1)) AS trials_only_on_root,\n            (SELECT count(DISTINCT article) FROM amatch WHERE population='with_stubs' AND indexing='any' AND descriptor = $1) AS articles_on_root_descriptor"
+  },
+  "trials": {
+    "note": "Condition mesh-list trials.",
+    "parameters": [
+      "MESH:D012516"
+    ],
+    "sql": "WITH per AS (SELECT trial, bool_and(descriptor IN (SELECT descriptor FROM ewing)) AS only_ewing,\n                bool_or(descriptor IN (SELECT descriptor FROM ewing)) AS any_ewing, bool_or(descriptor = $1) AS direct\n            FROM tmatch GROUP BY 1)\n        SELECT count(*) AS trials_full_expansion, count(*) FILTER (WHERE direct) AS trials_direct_on_osteosarcoma,\n               count(*) FILTER (WHERE only_ewing) AS trials_only_through_ewing,\n               count(*) FILTER (WHERE any_ewing) AS trials_matching_ewing_branch,\n               count(*) FILTER (WHERE NOT only_ewing) AS trials_without_ewing_branch,\n               round(100.0 * count(*) FILTER (WHERE only_ewing) / count(*), 2) AS pct_only_through_ewing\n        FROM per"
+  }
+}

@@ -1,0 +1,7 @@
+population,mode,topic_set,topics,reaching_guideline_or_review,reaching_condition_trial,reaching_both_same_descriptor,reaching_both_any_descriptor,reaching_major_guideline_or_review,reaching_major_both_same_descriptor
+with_stubs,none,all,2033,2021,1440,1438,1438,2017,1438
+with_stubs,one,all,2033,2021,1480,1468,1478,2019,1468
+with_stubs,full,all,2033,2021,1498,1486,1496,2019,1486
+without_stubs,none,all,2033,2021,1440,1438,1438,2017,1438
+without_stubs,one,all,2033,2021,1480,1468,1478,2019,1468
+without_stubs,full,all,2033,2021,1498,1486,1496,2019,1486

@@ -1,0 +1,161 @@
+articles,population,type
+121,with_stubs,Adaptive Clinical Trial
+139,with_stubs,Address
+44,with_stubs,Autobiography
+27,with_stubs,Bibliography
+1914,with_stubs,Biography
+133275,with_stubs,Case Reports
+81,with_stubs,Classical Article
+391,with_stubs,Clinical Conference
+740,with_stubs,Clinical Study
+91952,with_stubs,Clinical Trial
+7934,with_stubs,Clinical Trial Protocol
+8186,with_stubs,"Clinical Trial, Phase I"
+14319,with_stubs,"Clinical Trial, Phase II"
+10225,with_stubs,"Clinical Trial, Phase III"
+672,with_stubs,"Clinical Trial, Phase IV"
+27,with_stubs,"Clinical Trial, Veterinary"
+18670,with_stubs,Comment
+225545,with_stubs,Comparative Study
+927,with_stubs,Conference Proceedings
+47,with_stubs,Congress
+176,with_stubs,Consensus Development Conference
+116,with_stubs,"Consensus Development Conference, NIH"
+4599,with_stubs,Consensus Statement
+10694,with_stubs,Controlled Clinical Trial
+105,with_stubs,Corrected and Republished Article
+58,with_stubs,Dataset
+1,with_stubs,Dictionary
+5,with_stubs,Directory
+101,with_stubs,Duplicate Publication
+11560,with_stubs,Editorial
+312,with_stubs,English Abstract
+2408,with_stubs,Equivalence Trial
+40952,with_stubs,Evaluation Study
+3,with_stubs,Evidence Synthesis
+24,with_stubs,Expression of Concern
+11,with_stubs,Festschrift
+3,with_stubs,Government Publication
+1299,with_stubs,Guideline
+9261,with_stubs,Historical Article
+22,with_stubs,Interactive Tutorial
+215,with_stubs,Interview
+1221,with_stubs,Introductory Journal Article
+2995700,with_stubs,Journal Article
+412,with_stubs,Lecture
+58,with_stubs,Legal Case
+3514,with_stubs,Letter
+41156,with_stubs,Meta-Analysis
+111878,with_stubs,Multicenter Study
+1923,with_stubs,Network Meta-Analysis
+2486,with_stubs,News
+37824,with_stubs,Observational Study
+11,with_stubs,"Observational Study, Veterinary"
+9,with_stubs,Overall
+70,with_stubs,Patient Education Handout
+1,with_stubs,Periodical Index
+163,with_stubs,Personal Narrative
+1306,with_stubs,Portrait
+5826,with_stubs,Practice Guideline
+1930,with_stubs,Pragmatic Clinical Trial
+15,with_stubs,Preprint
+11846,with_stubs,Published Erratum
+141405,with_stubs,Randomized Controlled Trial
+83,with_stubs,"Randomized Controlled Trial, Veterinary"
+438,with_stubs,"Research Support, American Recovery and Reinvestment Act"
+300219,with_stubs,"Research Support, N.I.H., Extramural"
+14359,with_stubs,"Research Support, N.I.H., Intramural"
+1156031,with_stubs,"Research Support, Non-U.S. Gov't"
+127247,with_stubs,"Research Support, U.S. Gov't, Non-P.H.S."
+159677,with_stubs,"Research Support, U.S. Gov't, P.H.S."
+2904,with_stubs,Retracted Publication
+328,with_stubs,Retraction Notice
+218211,with_stubs,Review
+5183,with_stubs,Scoping Review
+74,with_stubs,Seminal Article
+59012,with_stubs,Systematic Review
+498,with_stubs,Technical Report
+1764,with_stubs,Twin Study
+20701,with_stubs,Validation Study
+5319,with_stubs,Video-Audio Media
+44,with_stubs,Webcast
+121,without_stubs,Adaptive Clinical Trial
+139,without_stubs,Address
+44,without_stubs,Autobiography
+27,without_stubs,Bibliography
+1914,without_stubs,Biography
+133275,without_stubs,Case Reports
+81,without_stubs,Classical Article
+391,without_stubs,Clinical Conference
+740,without_stubs,Clinical Study
+91952,without_stubs,Clinical Trial
+7934,without_stubs,Clinical Trial Protocol
+8186,without_stubs,"Clinical Trial, Phase I"
+14319,without_stubs,"Clinical Trial, Phase II"
+10225,without_stubs,"Clinical Trial, Phase III"
+672,without_stubs,"Clinical Trial, Phase IV"
+27,without_stubs,"Clinical Trial, Veterinary"
+18670,without_stubs,Comment
+225545,without_stubs,Comparative Study
+927,without_stubs,Conference Proceedings
+47,without_stubs,Congress
+176,without_stubs,Consensus Development Conference
+116,without_stubs,"Consensus Development Conference, NIH"
+4599,without_stubs,Consensus Statement
+10694,without_stubs,Controlled Clinical Trial
+105,without_stubs,Corrected and Republished Article
+58,without_stubs,Dataset
+1,without_stubs,Dictionary
+5,without_stubs,Directory
+101,without_stubs,Duplicate Publication
+11560,without_stubs,Editorial
+312,without_stubs,English Abstract
+2408,without_stubs,Equivalence Trial
+40952,without_stubs,Evaluation Study
+3,without_stubs,Evidence Synthesis
+24,without_stubs,Expression of Concern
+11,without_stubs,Festschrift
+3,without_stubs,Government Publication
+1299,without_stubs,Guideline
+9261,without_stubs,Historical Article
+22,without_stubs,Interactive Tutorial
+215,without_stubs,Interview
+1221,without_stubs,Introductory Journal Article
+2995700,without_stubs,Journal Article
+412,without_stubs,Lecture
+58,without_stubs,Legal Case
+3514,without_stubs,Letter
+41156,without_stubs,Meta-Analysis
+111878,without_stubs,Multicenter Study
+1923,without_stubs,Network Meta-Analysis
+2486,without_stubs,News
+37824,without_stubs,Observational Study
+11,without_stubs,"Observational Study, Veterinary"
+9,without_stubs,Overall
+70,without_stubs,Patient Education Handout
+1,without_stubs,Periodical Index
+163,without_stubs,Personal Narrative
+1306,without_stubs,Portrait
+5826,without_stubs,Practice Guideline
+1930,without_stubs,Pragmatic Clinical Trial
+15,without_stubs,Preprint
+11846,without_stubs,Published Erratum
+141405,without_stubs,Randomized Controlled Trial
+83,without_stubs,"Randomized Controlled Trial, Veterinary"
+438,without_stubs,"Research Support, American Recovery and Reinvestment Act"
+300219,without_stubs,"Research Support, N.I.H., Extramural"
+14359,without_stubs,"Research Support, N.I.H., Intramural"
+1156031,without_stubs,"Research Support, Non-U.S. Gov't"
+127247,without_stubs,"Research Support, U.S. Gov't, Non-P.H.S."
+159677,without_stubs,"Research Support, U.S. Gov't, P.H.S."
+2904,without_stubs,Retracted Publication
+328,without_stubs,Retraction Notice
+218211,without_stubs,Review
+5183,without_stubs,Scoping Review
+74,without_stubs,Seminal Article
+59012,without_stubs,Systematic Review
+498,without_stubs,Technical Report
+1764,without_stubs,Twin Study
+20701,without_stubs,Validation Study
+5319,without_stubs,Video-Audio Media
+44,without_stubs,Webcast

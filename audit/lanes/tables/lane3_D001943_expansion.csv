@@ -1,0 +1,10 @@
+descriptor,mesh_id,name,depth,in_tree_precise
+MESH:D001943,D001943,Breast Neoplasms,0,True
+MESH:D000071960,D000071960,Breast Carcinoma In Situ,1,True
+MESH:D018567,D018567,"Breast Neoplasms, Male",1,True
+MESH:D018270,D018270,"Carcinoma, Ductal, Breast",1,True
+MESH:D018275,D018275,"Carcinoma, Lobular",1,True
+MESH:D061325,D061325,Hereditary Breast and Ovarian Cancer Syndrome,1,True
+MESH:D058922,D058922,Inflammatory Breast Neoplasms,1,True
+MESH:D064726,D064726,Triple Negative Breast Neoplasms,1,True
+MESH:D000069584,D000069584,Unilateral Breast Neoplasms,1,True

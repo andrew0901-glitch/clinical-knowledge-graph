@@ -1,0 +1,12 @@
+{
+  "pmc_v02": {
+    "denominator": "Primary non-self result->guideline/SR chains; PMC metadata route proxy only.",
+    "parameters": [],
+    "sql": "WITH hit AS (SELECT DISTINCT cc.object article,p.population FROM e cc JOIN article g ON g.id=cc.subject CROSS JOIN populations p WHERE cc.type='CITES' AND cc.subject<>cc.object AND (g.guideline OR g.systematic_review) AND (NOT p.exclude_stubs OR NOT g.stub)),aa AS (SELECT DISTINCT l.article,p.population FROM result_links l JOIN article a ON a.id=l.article CROSS JOIN populations p JOIN hit h ON h.article=l.article AND h.population=p.population WHERE l.type='VALIDATED_BY' AND (NOT p.exclude_stubs OR NOT a.stub)) SELECT aa.population,count(*) articles,count(*) FILTER(WHERE coalesce(a.pmcid,'')<>'') pmcid,count(*) FILTER(WHERE coalesce(a.pmcid,'')<>'' OR EXISTS(SELECT 1 FROM e WHERE type='HAS_PMC_RECORD' AND subject=a.id)) any_pmc_route FROM aa JOIN article a ON a.id=aa.article GROUP BY 1"
+  },
+  "v02": {
+    "denominator": "Primary paper definition excludes self-citations and all stub endpoints in without-stubs population; historical B1 without self exclusion is separately retained.",
+    "parameters": [],
+    "sql": "WITH hit AS (SELECT DISTINCT cc.object article,p.population FROM e cc JOIN article g ON g.id=cc.subject CROSS JOIN populations p WHERE cc.type='CITES' AND cc.subject<>cc.object AND (g.guideline OR g.systematic_review) AND (NOT p.exclude_stubs OR NOT g.stub)) SELECT p.population,(SELECT count(*) FROM nodes WHERE label='ClinicalTrial') trials,count(DISTINCT l.trial) trials_with_results,count(DISTINCT l.article) result_articles,count(DISTINCT l.article) FILTER(WHERE h.article IS NOT NULL) result_articles_cited_by_guideline_or_systematic_review,count(DISTINCT l.trial) FILTER(WHERE h.article IS NOT NULL) trials_with_results_cited_by_guideline_or_systematic_review FROM result_links l JOIN article a ON a.id=l.article CROSS JOIN populations p LEFT JOIN hit h ON h.article=l.article AND h.population=p.population WHERE l.type='VALIDATED_BY' AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY p.population"
+  }
+}

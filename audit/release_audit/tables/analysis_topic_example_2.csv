@@ -1,0 +1,2 @@
+article,article_mesh_edge,distance,hierarchy_edge,matched_descriptor,mesh_type,pub_types,query_descriptor,study_aspect,topic,trial,trial_mesh_edge
+PMID:11972488,urn:uuid:c656d515-109a-5173-9cc7-5f1487f5a29c,0,,MESH:D001249,mesh-list,"['Guideline', 'Journal Article']",MESH:D001249,condition,lunasai:medlineplus_topic.1507,clinicaltrials:NCT00000575,urn:uuid:0781844a-466c-52ba-b922-3e910f071611

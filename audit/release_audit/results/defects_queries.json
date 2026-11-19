@@ -1,0 +1,52 @@
+{
+  "duplicate_role_examples": {
+    "denominator": "Purposive witnesses of repeated same pair-role, preserving exported IDs and source identities.",
+    "parameters": [],
+    "sql": "SELECT l.*,e.source_system,e.source_row_table,e.source_row_id,e.also_asserted_by_source_system FROM result_links l JOIN e USING(id) WHERE (l.role,l.article,l.trial) IN (SELECT role,article,trial FROM result_links GROUP BY 1,2,3 HAVING count(*)>1) ORDER BY l.role,l.trial,l.article,l.id LIMIT 30"
+  },
+  "duplicate_role_pairs": {
+    "denominator": "Complete role-pair duplicate population; tests the README canonicalization claim independently of exporter reports.",
+    "parameters": [],
+    "sql": "SELECT role,count(*) repeated_pair_groups,sum(n-1) extra_edges,max(n) maximum_multiplicity FROM (SELECT role,article,trial,count(*) n FROM result_links GROUP BY 1,2,3 HAVING count(*)>1) GROUP BY role ORDER BY role"
+  },
+  "journal_identity": {
+    "denominator": "Actual NLM-ID and fallback Journal identities; generic Serial category alone does not establish identifier normalization.",
+    "parameters": [],
+    "sql": "SELECT json_extract_string(props,'$.identity_tier') identity_tier,count(*) journals,count(*) FILTER(WHERE coalesce(iri,'')<>'') with_source_url FROM nodes WHERE label='Journal' GROUP BY 1 ORDER BY 1"
+  },
+  "journal_name_collisions": {
+    "denominator": "Exact shared exported journal abbreviations across different Journal IDs; aliases are not inferred.",
+    "parameters": [],
+    "sql": "SELECT count(*) shared_abbreviations,sum(n) journal_nodes_in_shared_abbreviations FROM (SELECT json_extract_string(props,'$.pubmed_abbreviation') abbreviation,count(*) n FROM nodes WHERE label='Journal' GROUP BY 1 HAVING count(*)>1)"
+  },
+  "pmc_id_disagreement": {
+    "denominator": "Literal PMCID agreement after normalizing only the PMC prefix; differences reported, not repaired.",
+    "parameters": [],
+    "sql": "SELECT p.population,count(*) comparable_links,count(*) FILTER(WHERE replace(upper(a.pmcid),'PMC','')<>replace(upper(n.pmcid),'PMC','')) differing_pmcid FROM e JOIN article a ON a.id=e.subject JOIN nodes n ON n.id=e.object CROSS JOIN populations p WHERE e.type='HAS_PMC_RECORD' AND coalesce(a.pmcid,'')<>'' AND coalesce(n.pmcid,'')<>'' AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1"
+  },
+  "pmc_mapping_comparison": {
+    "denominator": "Article PMCID property vs graph PMC link; both are metadata routes, not availability validation.",
+    "parameters": [],
+    "sql": "SELECT p.population,count(*) articles_with_pmcid,count(*) FILTER(WHERE NOT EXISTS(SELECT 1 FROM e WHERE type='HAS_PMC_RECORD' AND subject=a.id)) lacking_pmc_link FROM article a CROSS JOIN populations p WHERE coalesce(a.pmcid,'')<>'' AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1"
+  },
+  "pmc_multiple_pubmed_ids": {
+    "denominator": "Complete graph PMC-node endpoint fan-in; may reflect duplicate/source records, cause not assumed.",
+    "parameters": [],
+    "sql": "SELECT count(*) pmc_records_with_multiple_article_endpoints,max(articles) maximum_articles FROM (SELECT object,count(DISTINCT subject) articles FROM e WHERE type='HAS_PMC_RECORD' GROUP BY object HAVING count(DISTINCT subject)>1)"
+  },
+  "provenance_by_type": {
+    "denominator": "All relationships; null lineage IDs are distinct from source URLs and qualitative knowledge/agent classifications.",
+    "parameters": [],
+    "sql": "SELECT type,count(*) edges,count(*) FILTER(WHERE provenance_id IS NOT NULL AND provenance_id<>'') release_provenance_id,count(*) FILTER(WHERE coalesce(primary_knowledge_source,'')<>'') primary_source,count(*) FILTER(WHERE coalesce(source_url,iri,'')<>'') direct_source_url,count(*) FILTER(WHERE knowledge_level='not_provided') knowledge_level_not_provided,count(*) FILTER(WHERE agent_type='not_provided') agent_type_not_provided FROM e GROUP BY 1 ORDER BY 1"
+  },
+  "self_citation_chain_sensitivity": {
+    "denominator": "Quantifies self-citation susceptibility of the historical B1 definition; self-links are always excluded from in-corpus citation rank scores.",
+    "parameters": [],
+    "sql": "SELECT p.population,count(DISTINCT l.article) result_articles_with_guideline_self_cite FROM result_links l JOIN article a ON a.id=l.article JOIN e cc ON cc.type='CITES' AND cc.subject=l.article AND cc.object=l.article CROSS JOIN populations p WHERE l.type='VALIDATED_BY' AND (a.guideline OR a.systematic_review) AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1"
+  },
+  "stub_metadata": {
+    "denominator": "All canonical layer-marked stubs; richer properties are observed, not presumed absent.",
+    "parameters": [],
+    "sql": "SELECT count(*) stubs,count(*) FILTER(WHERE coalesce(name,'')<>'') titles,count(*) FILTER(WHERE array_length(pub_types)>0) publication_types,count(*) FILTER(WHERE coalesce(doi,'')<>'') doi,count(*) FILTER(WHERE coalesce(pmcid,'')<>'') pmcid,count(*) FILTER(WHERE array_length(mesh_major_topics)>0) major_lists FROM article WHERE stub"
+  }
+}

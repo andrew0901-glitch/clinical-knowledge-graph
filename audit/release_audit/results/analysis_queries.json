@@ -1,0 +1,342 @@
+{
+  "B1_population": {
+    "denominator": "All trials; RESULT native links only. Incoming CITES from NLM guideline/Practice Guideline/Systematic Review; Review alone excluded.",
+    "parameters": [],
+    "sql": "SELECT p.population,(SELECT count(*) FROM nodes WHERE label='ClinicalTrial') trials,count(DISTINCT l.trial) trials_with_results,count(DISTINCT l.article) result_articles,count(DISTINCT l.article) FILTER(WHERE g.article IS NOT NULL) result_articles_cited_by_guideline_or_systematic_review,count(DISTINCT l.trial) FILTER(WHERE g.article IS NOT NULL) trials_with_results_cited_by_guideline_or_systematic_review FROM result_links l JOIN article a ON a.id=l.article CROSS JOIN populations p LEFT JOIN cited_guideline g ON g.article=l.article AND g.population=p.population WHERE l.type='VALIDATED_BY' AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1"
+  },
+  "B3_population": {
+    "denominator": "Complete Article/citation population; non-check major query terms preferred, otherwise non-check indexing, matching v0.1 traversal definition. Ranking separately requires explicit major on both sides.",
+    "parameters": [],
+    "sql": "SELECT p.population,(SELECT count(*) FROM article a WHERE NOT p.exclude_stubs OR NOT a.stub) articles,(SELECT count(*) FROM profiles q JOIN article a ON a.id=q.article WHERE NOT p.exclude_stubs OR NOT a.stub) articles_with_query_terms,count(DISTINCT x.seed) articles_with_citation_neighbor_and_shared_noncheck_query_term,count(*) unique_seed_neighbor_pairs FROM citation_reach x JOIN article a ON a.id=x.seed JOIN article b ON b.id=x.neighbor CROSS JOIN populations p WHERE NOT p.exclude_stubs OR (NOT a.stub AND NOT b.stub) GROUP BY 1,p.exclude_stubs"
+  },
+  "B4_population": {
+    "denominator": "All Author nodes; identity caveats retained. Article population explicitly with/without stubs.",
+    "parameters": [],
+    "sql": "SELECT p.population,(SELECT count(*) FROM nodes WHERE label='Author') author_nodes,count(DISTINCT au.object) authors_with_authorship,count(DISTINCT au.object) FILTER(WHERE m.article IS NOT NULL) authors_with_indexed_article,count(DISTINCT au.object) FILTER(WHERE au.match_status='matched') authors_with_matched_authorship FROM authorship au JOIN article a ON a.id=au.subject LEFT JOIN (SELECT DISTINCT article FROM am) m ON m.article=au.subject CROSS JOIN populations p WHERE NOT p.exclude_stubs OR NOT a.stub GROUP BY 1"
+  },
+  "article_example_1": {
+    "denominator": "Purposive neurology example; one exact path, not sampled population.",
+    "parameters": [
+      "article1"
+    ],
+    "sql": "WITH ss AS (SELECT * FROM seeds WHERE key=?),neighbors AS (SELECT cc.id,cc.subject,cc.object,cc.object neighbor FROM base.c cc JOIN ss ON cc.subject=ss.id UNION ALL SELECT cc.id,cc.subject,cc.object,cc.subject FROM base.c cc JOIN ss ON cc.object=ss.id) SELECT ss.id seed_article,cc.subject citing_article,cc.object cited_article,cc.id citation_edge,m.article neighbor,m.edge_id neighbor_mesh_edge,q.edge_id seed_mesh_edge,m.descriptor,coalesce(ii.in_corpus_citations,0) in_corpus_citations FROM ss JOIN am q ON q.article=ss.id AND q.edge_major AND NOT q.check_tag JOIN neighbors cc ON cc.neighbor<>ss.id JOIN am m ON m.article=cc.neighbor AND m.descriptor=q.descriptor LEFT JOIN incoming ii ON ii.article=m.article ORDER BY in_corpus_citations DESC,m.article,m.descriptor LIMIT 1"
+  },
+  "article_example_2": {
+    "denominator": "Purposive respiratory example; one exact path, not sampled population.",
+    "parameters": [
+      "article2"
+    ],
+    "sql": "WITH ss AS (SELECT * FROM seeds WHERE key=?),neighbors AS (SELECT cc.id,cc.subject,cc.object,cc.object neighbor FROM base.c cc JOIN ss ON cc.subject=ss.id UNION ALL SELECT cc.id,cc.subject,cc.object,cc.subject FROM base.c cc JOIN ss ON cc.object=ss.id) SELECT ss.id seed_article,cc.subject citing_article,cc.object cited_article,cc.id citation_edge,m.article neighbor,m.edge_id neighbor_mesh_edge,q.edge_id seed_mesh_edge,m.descriptor,coalesce(ii.in_corpus_citations,0) in_corpus_citations FROM ss JOIN am q ON q.article=ss.id AND q.edge_major AND NOT q.check_tag JOIN neighbors cc ON cc.neighbor<>ss.id JOIN am m ON m.article=cc.neighbor AND m.descriptor=q.descriptor LEFT JOIN incoming ii ON ii.article=m.article ORDER BY in_corpus_citations DESC,m.article,m.descriptor LIMIT 1"
+  },
+  "article_example_3": {
+    "denominator": "Purposive cardiovascular example; one exact path, not sampled population.",
+    "parameters": [
+      "article3"
+    ],
+    "sql": "WITH ss AS (SELECT * FROM seeds WHERE key=?),neighbors AS (SELECT cc.id,cc.subject,cc.object,cc.object neighbor FROM base.c cc JOIN ss ON cc.subject=ss.id UNION ALL SELECT cc.id,cc.subject,cc.object,cc.subject FROM base.c cc JOIN ss ON cc.object=ss.id) SELECT ss.id seed_article,cc.subject citing_article,cc.object cited_article,cc.id citation_edge,m.article neighbor,m.edge_id neighbor_mesh_edge,q.edge_id seed_mesh_edge,m.descriptor,coalesce(ii.in_corpus_citations,0) in_corpus_citations FROM ss JOIN am q ON q.article=ss.id AND q.edge_major AND NOT q.check_tag JOIN neighbors cc ON cc.neighbor<>ss.id JOIN am m ON m.article=cc.neighbor AND m.descriptor=q.descriptor LEFT JOIN incoming ii ON ii.article=m.article ORDER BY in_corpus_citations DESC,m.article,m.descriptor LIMIT 1"
+  },
+  "author_example_1": {
+    "denominator": "Purposive neurology example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D004827"
+    ],
+    "sql": "SELECT au.object author,au.subject article,au.id authorship_edge,au.match_status,au.identity_flags,m.descriptor,m.edge_id mesh_edge FROM authorship au JOIN am m ON m.article=au.subject WHERE m.descriptor=? AND au.match_status='matched' ORDER BY au.subject,au.author_order,au.id LIMIT 1"
+  },
+  "author_example_2": {
+    "denominator": "Purposive respiratory example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D001249"
+    ],
+    "sql": "SELECT au.object author,au.subject article,au.id authorship_edge,au.match_status,au.identity_flags,m.descriptor,m.edge_id mesh_edge FROM authorship au JOIN am m ON m.article=au.subject WHERE m.descriptor=? AND au.match_status='matched' ORDER BY au.subject,au.author_order,au.id LIMIT 1"
+  },
+  "author_example_3": {
+    "denominator": "Purposive cardiovascular example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D006973"
+    ],
+    "sql": "SELECT au.object author,au.subject article,au.id authorship_edge,au.match_status,au.identity_flags,m.descriptor,m.edge_id mesh_edge FROM authorship au JOIN am m ON m.article=au.subject WHERE m.descriptor=? AND au.match_status='matched' ORDER BY au.subject,au.author_order,au.id LIMIT 1"
+  },
+  "author_profile_1": {
+    "denominator": "Exact profile of a corpus Author ID, not proof of person disambiguation.",
+    "parameters": [
+      "lunasai:openalex_author.A5018643148"
+    ],
+    "sql": "SELECT m.descriptor,n.name,count(DISTINCT au.subject) articles,arg_min(au.id,au.subject||m.edge_id) authorship_witness,arg_min(m.edge_id,au.subject||m.edge_id) mesh_witness FROM authorship au JOIN am m ON m.article=au.subject JOIN nodes n ON n.id=m.descriptor WHERE au.object=? AND NOT m.check_tag GROUP BY 1,2 ORDER BY articles DESC,m.descriptor LIMIT 10"
+  },
+  "author_profile_2": {
+    "denominator": "Exact profile of a corpus Author ID, not proof of person disambiguation.",
+    "parameters": [
+      "lunasai:openalex_author.A5054519215"
+    ],
+    "sql": "SELECT m.descriptor,n.name,count(DISTINCT au.subject) articles,arg_min(au.id,au.subject||m.edge_id) authorship_witness,arg_min(m.edge_id,au.subject||m.edge_id) mesh_witness FROM authorship au JOIN am m ON m.article=au.subject JOIN nodes n ON n.id=m.descriptor WHERE au.object=? AND NOT m.check_tag GROUP BY 1,2 ORDER BY articles DESC,m.descriptor LIMIT 10"
+  },
+  "author_profile_3": {
+    "denominator": "Exact profile of a corpus Author ID, not proof of person disambiguation.",
+    "parameters": [
+      "lunasai:openalex_author.A5051725638"
+    ],
+    "sql": "SELECT m.descriptor,n.name,count(DISTINCT au.subject) articles,arg_min(au.id,au.subject||m.edge_id) authorship_witness,arg_min(m.edge_id,au.subject||m.edge_id) mesh_witness FROM authorship au JOIN am m ON m.article=au.subject JOIN nodes n ON n.id=m.descriptor WHERE au.object=? AND NOT m.check_tag GROUP BY 1,2 ORDER BY articles DESC,m.descriptor LIMIT 10"
+  },
+  "background_example_1": {
+    "denominator": "Purposive neurology example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D004827"
+    ],
+    "sql": "SELECT l.trial,l.article,l.id publication_edge,m.edge_id mesh_edge,m.descriptor,a.name,a.pmcid FROM result_links l JOIN am m ON m.article=l.article JOIN article a ON a.id=l.article WHERE l.type='CITES_BACKGROUND' AND m.descriptor=? AND m.edge_major ORDER BY l.trial,l.article LIMIT 1"
+  },
+  "background_example_2": {
+    "denominator": "Purposive respiratory example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D001249"
+    ],
+    "sql": "SELECT l.trial,l.article,l.id publication_edge,m.edge_id mesh_edge,m.descriptor,a.name,a.pmcid FROM result_links l JOIN am m ON m.article=l.article JOIN article a ON a.id=l.article WHERE l.type='CITES_BACKGROUND' AND m.descriptor=? AND m.edge_major ORDER BY l.trial,l.article LIMIT 1"
+  },
+  "background_example_3": {
+    "denominator": "Purposive cardiovascular example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D006973"
+    ],
+    "sql": "SELECT l.trial,l.article,l.id publication_edge,m.edge_id mesh_edge,m.descriptor,a.name,a.pmcid FROM result_links l JOIN am m ON m.article=l.article JOIN article a ON a.id=l.article WHERE l.type='CITES_BACKGROUND' AND m.descriptor=? AND m.edge_major ORDER BY l.trial,l.article LIMIT 1"
+  },
+  "background_population": {
+    "denominator": "All trials and explicitly source-designated background publications; no results interpretation.",
+    "parameters": [],
+    "sql": "SELECT p.population,(SELECT count(*) FROM nodes WHERE label='ClinicalTrial') trials,count(*) edge_rows,count(DISTINCT l.trial) trials_with_background,count(DISTINCT l.article) background_articles,count(DISTINCT (l.trial,l.article)) pairs FROM result_links l JOIN article a ON a.id=l.article CROSS JOIN populations p WHERE l.type='CITES_BACKGROUND' AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1"
+  },
+  "check_tags": {
+    "denominator": "Same declared 40-name NLM reference list as v0.1; resolved to frozen v0.2 node IDs.",
+    "parameters": [],
+    "sql": "SELECT * FROM stop ORDER BY name"
+  },
+  "citation_denominators": {
+    "denominator": "In-corpus citation population with both endpoints eligible; self-links excluded from ranking counts.",
+    "parameters": [],
+    "sql": "SELECT p.population,(SELECT count(*) FROM article a WHERE NOT p.exclude_stubs OR NOT a.stub) articles,count(*) citation_edge_rows,count(*) FILTER(WHERE cc.subject=cc.object) self_link_rows,count(DISTINCT (cc.subject,cc.object)) FILTER(WHERE cc.subject<>cc.object) distinct_nonself_citing_pairs,count(DISTINCT cc.object) articles_cited_in_corpus FROM base.c cc JOIN article a ON a.id=cc.subject JOIN article b ON b.id=cc.object CROSS JOIN populations p WHERE NOT p.exclude_stubs OR (NOT a.stub AND NOT b.stub) GROUP BY p.population,p.exclude_stubs"
+  },
+  "community_id_coarse_consistency": {
+    "denominator": "Observed group sizes within each Article population; stored size is not assumed current.",
+    "parameters": [],
+    "sql": "SELECT population,count(*) nonnegative_groups,count(*) FILTER(WHERE sizes>1) groups_with_conflicting_sizes,count(*) FILTER(WHERE stored_size<observed) groups_with_stored_size_less_than_observed,max(observed) largest_observed_group FROM (SELECT p.population,x.community_id_coarse,count(*) observed,count(DISTINCT x.community_size_coarse) sizes,min(x.community_size_coarse) stored_size FROM article a JOIN analytics x ON x.id=a.id CROSS JOIN populations p WHERE x.community_id_coarse>=0 AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1,2) GROUP BY 1"
+  },
+  "community_id_consistency": {
+    "denominator": "Observed group sizes within each Article population; stored size is not assumed current.",
+    "parameters": [],
+    "sql": "SELECT population,count(*) nonnegative_groups,count(*) FILTER(WHERE sizes>1) groups_with_conflicting_sizes,count(*) FILTER(WHERE stored_size<observed) groups_with_stored_size_less_than_observed,max(observed) largest_observed_group FROM (SELECT p.population,x.community_id,count(*) observed,count(DISTINCT x.community_size) sizes,min(x.community_size) stored_size FROM article a JOIN analytics x ON x.id=a.id CROSS JOIN populations p WHERE x.community_id>=0 AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1,2) GROUP BY 1"
+  },
+  "community_id_mesh_consistency": {
+    "denominator": "Observed group sizes within each Article population; stored size is not assumed current.",
+    "parameters": [],
+    "sql": "SELECT population,count(*) nonnegative_groups,count(*) FILTER(WHERE sizes>1) groups_with_conflicting_sizes,count(*) FILTER(WHERE stored_size<observed) groups_with_stored_size_less_than_observed,max(observed) largest_observed_group FROM (SELECT p.population,x.community_id_mesh,count(*) observed,count(DISTINCT x.community_size_mesh) sizes,min(x.community_size_mesh) stored_size FROM article a JOIN analytics x ON x.id=a.id CROSS JOIN populations p WHERE x.community_id_mesh>=0 AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1,2) GROUP BY 1"
+  },
+  "community_variation": {
+    "denominator": "All observed analytic values; zero/sentinel states are separately reported.",
+    "parameters": [],
+    "sql": "SELECT p.population,count(DISTINCT x.community_id) community_ids,count(DISTINCT x.community_id_coarse) coarse_ids,count(DISTINCT x.community_id_mesh) mesh_ids,count(DISTINCT x.pagerank_score) pagerank_values FROM article a JOIN analytics x ON x.id=a.id CROSS JOIN populations p WHERE NOT p.exclude_stubs OR NOT a.stub GROUP BY 1"
+  },
+  "directions": {
+    "denominator": "Actual subject/object prefixes for every edge; README is interpretation guidance, not proof.",
+    "parameters": [],
+    "sql": "SELECT type,split_part(subject,':',1) subject_prefix,split_part(object,':',1) object_prefix,count(*) edges FROM e GROUP BY 1,2,3 ORDER BY 1,2,3"
+  },
+  "endpoint_integrity": {
+    "denominator": "Every released relationship; no missing endpoint is silently dropped.",
+    "parameters": [],
+    "sql": "SELECT count(*) edges,count(*) FILTER(WHERE s.id IS NULL) missing_subject,count(*) FILTER(WHERE o.id IS NULL) missing_object FROM e LEFT JOIN nodes s ON s.id=e.subject LEFT JOIN nodes o ON o.id=e.object"
+  },
+  "entrypoints": {
+    "denominator": "All Article denominators, with/without canonical stub marker. Empty/null values are not counted as metadata.",
+    "parameters": [],
+    "sql": "SELECT p.population,count(*) articles,count(*) FILTER(WHERE coalesce(a.doi,'')<>'') doi,count(*) FILTER(WHERE coalesce(a.pmcid,'')<>'') pmcid,count(*) FILTER(WHERE coalesce(a.name,'')<>'') title,count(*) FILTER(WHERE coalesce(a.journal,'')<>'') journal,count(*) FILTER(WHERE array_length(a.pub_types)>0) publication_types,count(*) FILTER(WHERE array_length(a.mesh_major_topics)>0) major_topic_list FROM article a CROSS JOIN populations p WHERE NOT p.exclude_stubs OR NOT a.stub GROUP BY 1"
+  },
+  "journal_example_1": {
+    "denominator": "Purposive neurology example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D004827"
+    ],
+    "sql": "SELECT j.id journal,j.name journal_name,a.id guideline,a.pub_types,e.id journal_edge,m.edge_id mesh_edge,m.descriptor FROM e JOIN nodes j ON j.id=e.object AND j.label='Journal' JOIN article a ON a.id=e.subject JOIN am m ON m.article=a.id WHERE e.type='PUBLISHED_IN' AND a.guideline AND m.descriptor=? AND m.edge_major ORDER BY a.id,j.id LIMIT 1"
+  },
+  "journal_example_2": {
+    "denominator": "Purposive respiratory example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D001249"
+    ],
+    "sql": "SELECT j.id journal,j.name journal_name,a.id guideline,a.pub_types,e.id journal_edge,m.edge_id mesh_edge,m.descriptor FROM e JOIN nodes j ON j.id=e.object AND j.label='Journal' JOIN article a ON a.id=e.subject JOIN am m ON m.article=a.id WHERE e.type='PUBLISHED_IN' AND a.guideline AND m.descriptor=? AND m.edge_major ORDER BY a.id,j.id LIMIT 1"
+  },
+  "journal_example_3": {
+    "denominator": "Purposive cardiovascular example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D006973"
+    ],
+    "sql": "SELECT j.id journal,j.name journal_name,a.id guideline,a.pub_types,e.id journal_edge,m.edge_id mesh_edge,m.descriptor FROM e JOIN nodes j ON j.id=e.object AND j.label='Journal' JOIN article a ON a.id=e.subject JOIN am m ON m.article=a.id WHERE e.type='PUBLISHED_IN' AND a.guideline AND m.descriptor=? AND m.edge_major ORDER BY a.id,j.id LIMIT 1"
+  },
+  "journal_population": {
+    "denominator": "Article -> Journal; guideline = exact Guideline/Practice Guideline labels. Journals with no linked guideline remain in denominator.",
+    "parameters": [],
+    "sql": "SELECT p.population,(SELECT count(*) FROM nodes WHERE label='Journal') journal_nodes,count(DISTINCT e.object) journals_with_articles,count(DISTINCT e.object) FILTER(WHERE a.guideline) journals_with_guidelines,count(DISTINCT a.id) linked_articles,count(DISTINCT a.id) FILTER(WHERE a.guideline) linked_guidelines FROM e JOIN article a ON a.id=e.subject CROSS JOIN populations p WHERE e.type='PUBLISHED_IN' AND (NOT p.exclude_stubs OR NOT a.stub) GROUP BY 1"
+  },
+  "labels": {
+    "denominator": "Complete node families.",
+    "parameters": [],
+    "sql": "SELECT label,count(*) records FROM nodes GROUP BY 1 ORDER BY 1"
+  },
+  "major_coverage": {
+    "denominator": "Article HAS_MESH flags with/without identity-only stubs; true is required for ranking.",
+    "parameters": [],
+    "sql": "SELECT p.population,m.edge_major,count(*) edges FROM am m JOIN article a ON a.id=m.article CROSS JOIN populations p WHERE NOT p.exclude_stubs OR NOT a.stub GROUP BY 1,2 ORDER BY 1,2"
+  },
+  "major_disagreements": {
+    "denominator": "Both edge flag and Article major-label list observed; preferred-name comparison only.",
+    "parameters": [],
+    "sql": "SELECT p.population,count(*) comparable_edges,count(*) FILTER(WHERE edge_major<>node_label_major) disagreements FROM am m JOIN article a ON a.id=m.article CROSS JOIN populations p WHERE (NOT p.exclude_stubs OR NOT a.stub) AND edge_major IS NOT NULL AND node_label_major IS NOT NULL GROUP BY 1"
+  },
+  "major_label_unmatched": {
+    "denominator": "Exact descriptor-name identity only; unmatched labels never create graph links.",
+    "parameters": [],
+    "sql": "WITH labels AS (SELECT DISTINCT id,stub,unnest(mesh_major_topics) term FROM article WHERE array_length(mesh_major_topics)>0) SELECT p.population,count(*) article_label_pairs,count(*) FILTER(WHERE NOT EXISTS(SELECT 1 FROM am JOIN nodes d ON d.id=am.descriptor WHERE am.article=l.id AND d.name=l.term)) unmatched_article_label_pairs FROM labels l CROSS JOIN populations p WHERE NOT p.exclude_stubs OR NOT l.stub GROUP BY 1"
+  },
+  "other_entrypoints": {
+    "denominator": "All named node families; presence of a CURIE does not manufacture a missing property.",
+    "parameters": [],
+    "sql": "SELECT label,count(*) nodes,count(*) FILTER(WHERE coalesce(name,'')<>'') title,count(*) FILTER(WHERE coalesce(iri,url,'')<>'') direct_url,count(*) FILTER(WHERE coalesce(openalex_author_id,'')<>'') openalex_author_id,count(*) FILTER(WHERE coalesce(orcid,'')<>'') orcid,count(*) FILTER(WHERE coalesce(profile_orcid,'')<>'') profile_orcid,count(*) FILTER(WHERE coalesce(nct_id,'')<>'') nct_id FROM nodes WHERE label IN ('Author','ClinicalTrial','MedlinePlus','Journal','PMCRecord') GROUP BY 1 ORDER BY 1"
+  },
+  "pmc_integrity": {
+    "denominator": "Identity links to PMC, not a verified download/access/rights claim.",
+    "parameters": [],
+    "sql": "SELECT (SELECT count(*) FROM nodes WHERE label='PMCRecord') pmc_records,count(*) edges,count(DISTINCT subject) linked_articles,count(DISTINCT object) linked_pmc_records,count(*)-count(DISTINCT subject) extra_edges_over_articles FROM e WHERE type='HAS_PMC_RECORD'"
+  },
+  "pmc_traversal_coverage": {
+    "denominator": "Distinct Articles in complete traversal families; induced Article populations exclude stub endpoints. PMC route coverage is not independently verified full-text availability/access/rights.",
+    "parameters": [],
+    "sql": "SELECT x.traversal,x.population,count(*) articles,count(*) FILTER(WHERE coalesce(a.pmcid,'')<>'') pmcid,count(*) FILTER(WHERE EXISTS(SELECT 1 FROM e WHERE type='HAS_PMC_RECORD' AND subject=a.id)) pmc_link,count(*) FILTER(WHERE coalesce(a.pmcid,'')<>'' OR EXISTS(SELECT 1 FROM e WHERE type='HAS_PMC_RECORD' AND subject=a.id)) any_pmc_route FROM traversal_articles x JOIN article a ON a.id=x.article GROUP BY 1,2 ORDER BY 1,2"
+  },
+  "publication_types": {
+    "denominator": "Complete exact nonexclusive publication type labels, no title-derived designs.",
+    "parameters": [],
+    "sql": "SELECT p.population,t.type,count(DISTINCT a.id) articles FROM article a CROSS JOIN populations p CROSS JOIN unnest(a.pub_types) t(type) WHERE NOT p.exclude_stubs OR NOT a.stub GROUP BY 1,2 ORDER BY 1,2"
+  },
+  "relationships": {
+    "denominator": "Complete relationship distribution; native/Biolink types observed, not assumed.",
+    "parameters": [],
+    "sql": "SELECT type,predicate,count(*) records FROM e GROUP BY 1,2 ORDER BY 1,2"
+  },
+  "results_example_1": {
+    "denominator": "Purposive neurology example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D004827"
+    ],
+    "sql": "SELECT l.trial,l.article result_article,g.id citing_article,l.id publication_edge,cc.id citation_edge,m.edge_id mesh_edge,m.descriptor,g.pub_types citing_types FROM result_links l JOIN am m ON m.article=l.article JOIN base.c cc ON cc.object=l.article JOIN article g ON g.id=cc.subject WHERE l.type='VALIDATED_BY' AND (g.guideline OR g.systematic_review) AND m.descriptor=? AND m.edge_major ORDER BY l.trial,l.article,g.publication_priority,g.id LIMIT 1"
+  },
+  "results_example_2": {
+    "denominator": "Purposive respiratory example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D001249"
+    ],
+    "sql": "SELECT l.trial,l.article result_article,g.id citing_article,l.id publication_edge,cc.id citation_edge,m.edge_id mesh_edge,m.descriptor,g.pub_types citing_types FROM result_links l JOIN am m ON m.article=l.article JOIN base.c cc ON cc.object=l.article JOIN article g ON g.id=cc.subject WHERE l.type='VALIDATED_BY' AND (g.guideline OR g.systematic_review) AND m.descriptor=? AND m.edge_major ORDER BY l.trial,l.article,g.publication_priority,g.id LIMIT 1"
+  },
+  "results_example_3": {
+    "denominator": "Purposive cardiovascular example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D006973"
+    ],
+    "sql": "SELECT l.trial,l.article result_article,g.id citing_article,l.id publication_edge,cc.id citation_edge,m.edge_id mesh_edge,m.descriptor,g.pub_types citing_types FROM result_links l JOIN am m ON m.article=l.article JOIN base.c cc ON cc.object=l.article JOIN article g ON g.id=cc.subject WHERE l.type='VALIDATED_BY' AND (g.guideline OR g.systematic_review) AND m.descriptor=? AND m.edge_major ORDER BY l.trial,l.article,g.publication_priority,g.id LIMIT 1"
+  },
+  "role_consistency": {
+    "denominator": "Complete native trial-publication population by observed source role; repeated source provenance is not independent clinical validation.",
+    "parameters": [],
+    "sql": "SELECT type,coalesce(publication_role,reference_type) role,source_system,count(*) edges,count(DISTINCT (subject,object)) pairs,count(*) FILTER(WHERE array_length(also_asserted_by_source_system)>0) multi_source_edges FROM e WHERE type IN ('VALIDATED_BY','CITES_BACKGROUND','HAS_DERIVED_PUBLICATION') GROUP BY 1,2,3 ORDER BY 1,2,3"
+  },
+  "source_registry": {
+    "denominator": "Complete edges; primary knowledge source is distinct from a release-linked provenance ID.",
+    "parameters": [],
+    "sql": "SELECT count(*) edges,count(*) FILTER(WHERE provenance_id IS NOT NULL AND provenance_id<>'') provenance_id,count(*) FILTER(WHERE primary_knowledge_source IS NOT NULL AND primary_knowledge_source<>'') primary_source,count(*) FILTER(WHERE knowledge_level IS NOT NULL) knowledge_level,count(*) FILTER(WHERE agent_type IS NOT NULL) agent_type FROM e"
+  },
+  "stub_edges": {
+    "denominator": "Every relationship incident to identity-only Articles; determines whether traversal/ranking invariance can be asserted.",
+    "parameters": [],
+    "sql": "SELECT e.type,count(*) edges,count(*) FILTER(WHERE s.stub) stub_subject,count(*) FILTER(WHERE o.stub) stub_object FROM e LEFT JOIN article s ON s.id=e.subject LEFT JOIN article o ON o.id=e.object WHERE s.stub OR o.stub GROUP BY 1 ORDER BY 1"
+  },
+  "topic_example_1": {
+    "denominator": "Purposive neurology example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D004827"
+    ],
+    "sql": "SELECT x.topic,x.query_descriptor,x.matched_descriptor,x.distance,x.hierarchy_edge,m.article,m.edge_id article_mesh_edge,a.pub_types,t.subject trial,t.id trial_mesh_edge,t.study_aspect,t.mesh_type FROM topic_expansion x JOIN am m ON m.descriptor=x.matched_descriptor JOIN article a ON a.id=m.article JOIN trial_mesh t ON t.object=x.matched_descriptor WHERE x.mode='full' AND x.query_descriptor=? AND a.gr AND m.edge_major ORDER BY a.publication_priority,x.distance,a.id,x.topic,t.subject LIMIT 1"
+  },
+  "topic_example_2": {
+    "denominator": "Purposive respiratory example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D001249"
+    ],
+    "sql": "SELECT x.topic,x.query_descriptor,x.matched_descriptor,x.distance,x.hierarchy_edge,m.article,m.edge_id article_mesh_edge,a.pub_types,t.subject trial,t.id trial_mesh_edge,t.study_aspect,t.mesh_type FROM topic_expansion x JOIN am m ON m.descriptor=x.matched_descriptor JOIN article a ON a.id=m.article JOIN trial_mesh t ON t.object=x.matched_descriptor WHERE x.mode='full' AND x.query_descriptor=? AND a.gr AND m.edge_major ORDER BY a.publication_priority,x.distance,a.id,x.topic,t.subject LIMIT 1"
+  },
+  "topic_example_3": {
+    "denominator": "Purposive cardiovascular example; one exact path, not sampled population.",
+    "parameters": [
+      "MESH:D006973"
+    ],
+    "sql": "SELECT x.topic,x.query_descriptor,x.matched_descriptor,x.distance,x.hierarchy_edge,m.article,m.edge_id article_mesh_edge,a.pub_types,t.subject trial,t.id trial_mesh_edge,t.study_aspect,t.mesh_type FROM topic_expansion x JOIN am m ON m.descriptor=x.matched_descriptor JOIN article a ON a.id=m.article JOIN trial_mesh t ON t.object=x.matched_descriptor WHERE x.mode='full' AND x.query_descriptor=? AND a.gr AND m.edge_major ORDER BY a.publication_priority,x.distance,a.id,x.topic,t.subject LIMIT 1"
+  },
+  "topic_population": {
+    "denominator": "All topic nodes/all mapped non-check descriptors; downward none/one/all descendants. Each population excludes stub Article results; trials require condition mesh-list, not source ancestor or intervention mappings.",
+    "parameters": [],
+    "sql": "WITH cap AS (SELECT x.topic,x.mode,p.population,bool_or(coalesce(a.gr,false)) gr,bool_or(coalesce(a.gr_major,false)) gr_major,bool_or(EXISTS(SELECT 1 FROM trial_mesh t WHERE t.object=x.matched_descriptor)) trial FROM topic_expansion x CROSS JOIN populations p LEFT JOIN annotation_capability a ON a.descriptor=x.matched_descriptor AND a.population=p.population GROUP BY 1,2,3) SELECT p.population,m.mode,(SELECT count(*) FROM nodes WHERE label='MedlinePlus') topics,count(*) FILTER(WHERE gr) reaching_guideline_or_review,count(*) FILTER(WHERE gr_major) reaching_major_guideline_or_review,count(*) FILTER(WHERE trial) reaching_condition_trial,count(*) FILTER(WHERE gr AND trial) reaching_both,count(*) FILTER(WHERE gr_major AND trial) reaching_major_both FROM modes m CROSS JOIN populations p CROSS JOIN (SELECT id FROM nodes WHERE label='MedlinePlus') n LEFT JOIN cap c ON c.topic=n.id AND c.mode=m.mode AND c.population=p.population GROUP BY 1,2 ORDER BY 1,2"
+  },
+  "totals": {
+    "denominator": "Complete snapshot, independently counted from manifest-verified input rows.",
+    "parameters": [],
+    "sql": "SELECT 'nodes' family,count(*) records,count(DISTINCT id) distinct_ids FROM nodes UNION ALL SELECT 'edges',count(*),count(DISTINCT id) FROM e"
+  },
+  "trial_mesh_semantics": {
+    "denominator": "All trial HAS_MESH; condition mesh-list alone is used for same-condition paths.",
+    "parameters": [],
+    "sql": "SELECT study_aspect,mesh_type,count(*) edges FROM trial_qualified GROUP BY 1,2 ORDER BY 1,2"
+  },
+  "whole_field_leaders_1_with_stubs": {
+    "denominator": "Whole-corpus field, direct major matches, actual in-corpus citations; induced Article population with_stubs",
+    "parameters": [
+      "article1",
+      "with_stubs"
+    ],
+    "sql": "SELECT a.id,a.name,count(DISTINCT q.query_descriptor) direct_query_matches,coalesce(ii.in_corpus_citations,0) in_corpus_citations FROM query_terms q JOIN am m ON m.descriptor=q.query_descriptor AND m.edge_major JOIN article a ON a.id=m.article LEFT JOIN incoming ii ON ii.article=a.id WHERE q.seed=? AND (?='with_stubs' OR NOT a.stub) GROUP BY a.id,a.name,ii.in_corpus_citations ORDER BY in_corpus_citations DESC,a.id LIMIT 20"
+  },
+  "whole_field_leaders_1_without_stubs": {
+    "denominator": "Whole-corpus field, direct major matches, actual in-corpus citations; induced Article population without_stubs",
+    "parameters": [
+      "article1",
+      "without_stubs"
+    ],
+    "sql": "SELECT a.id,a.name,count(DISTINCT q.query_descriptor) direct_query_matches,coalesce(ii.in_corpus_citations,0) in_corpus_citations FROM query_terms q JOIN am m ON m.descriptor=q.query_descriptor AND m.edge_major JOIN article a ON a.id=m.article LEFT JOIN incoming_nonstub ii ON ii.article=a.id WHERE q.seed=? AND (?='with_stubs' OR NOT a.stub) GROUP BY a.id,a.name,ii.in_corpus_citations ORDER BY in_corpus_citations DESC,a.id LIMIT 20"
+  },
+  "whole_field_leaders_2_with_stubs": {
+    "denominator": "Whole-corpus field, direct major matches, actual in-corpus citations; induced Article population with_stubs",
+    "parameters": [
+      "article2",
+      "with_stubs"
+    ],
+    "sql": "SELECT a.id,a.name,count(DISTINCT q.query_descriptor) direct_query_matches,coalesce(ii.in_corpus_citations,0) in_corpus_citations FROM query_terms q JOIN am m ON m.descriptor=q.query_descriptor AND m.edge_major JOIN article a ON a.id=m.article LEFT JOIN incoming ii ON ii.article=a.id WHERE q.seed=? AND (?='with_stubs' OR NOT a.stub) GROUP BY a.id,a.name,ii.in_corpus_citations ORDER BY in_corpus_citations DESC,a.id LIMIT 20"
+  },
+  "whole_field_leaders_2_without_stubs": {
+    "denominator": "Whole-corpus field, direct major matches, actual in-corpus citations; induced Article population without_stubs",
+    "parameters": [
+      "article2",
+      "without_stubs"
+    ],
+    "sql": "SELECT a.id,a.name,count(DISTINCT q.query_descriptor) direct_query_matches,coalesce(ii.in_corpus_citations,0) in_corpus_citations FROM query_terms q JOIN am m ON m.descriptor=q.query_descriptor AND m.edge_major JOIN article a ON a.id=m.article LEFT JOIN incoming_nonstub ii ON ii.article=a.id WHERE q.seed=? AND (?='with_stubs' OR NOT a.stub) GROUP BY a.id,a.name,ii.in_corpus_citations ORDER BY in_corpus_citations DESC,a.id LIMIT 20"
+  },
+  "whole_field_leaders_3_with_stubs": {
+    "denominator": "Whole-corpus field, direct major matches, actual in-corpus citations; induced Article population with_stubs",
+    "parameters": [
+      "article3",
+      "with_stubs"
+    ],
+    "sql": "SELECT a.id,a.name,count(DISTINCT q.query_descriptor) direct_query_matches,coalesce(ii.in_corpus_citations,0) in_corpus_citations FROM query_terms q JOIN am m ON m.descriptor=q.query_descriptor AND m.edge_major JOIN article a ON a.id=m.article LEFT JOIN incoming ii ON ii.article=a.id WHERE q.seed=? AND (?='with_stubs' OR NOT a.stub) GROUP BY a.id,a.name,ii.in_corpus_citations ORDER BY in_corpus_citations DESC,a.id LIMIT 20"
+  },
+  "whole_field_leaders_3_without_stubs": {
+    "denominator": "Whole-corpus field, direct major matches, actual in-corpus citations; induced Article population without_stubs",
+    "parameters": [
+      "article3",
+      "without_stubs"
+    ],
+    "sql": "SELECT a.id,a.name,count(DISTINCT q.query_descriptor) direct_query_matches,coalesce(ii.in_corpus_citations,0) in_corpus_citations FROM query_terms q JOIN am m ON m.descriptor=q.query_descriptor AND m.edge_major JOIN article a ON a.id=m.article LEFT JOIN incoming_nonstub ii ON ii.article=a.id WHERE q.seed=? AND (?='with_stubs' OR NOT a.stub) GROUP BY a.id,a.name,ii.in_corpus_citations ORDER BY in_corpus_citations DESC,a.id LIMIT 20"
+  }
+}
