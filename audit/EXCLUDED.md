@@ -9,10 +9,9 @@ tree for these (result: 0 findings). Original paths below are relative to the au
 **Why there is a pre-correction/v0.1.0 group.** The release-wide audit was run against v0.2.0 and also compared it
 with the earlier public release v0.1.0 and with an unreleased pre-correction build of v0.2. Those comparisons need
 files that are not the v0.2.1 shards, so they are not reproducible from this repository and were removed. This
-includes the paper-referenced finding that **38 merged BACKGROUND/DERIVED role-pairs lost a prior `aact` source
-label**: it is a difference between the unreleased build and the release and cannot be recomputed from the public
-files. The release itself shows the measurable end state (see `release_audit/results/source_provenance_published.json`,
-which counts non-empty alternate-source arrays per role type).
+includes the finding that **38 merged BACKGROUND/DERIVED role-pairs lost a prior `aact` source
+label**: the 38 merged edges themselves are published: [`release_audit/results/provenance_38_lost_aact_label.csv`](release_audit/results/provenance_38_lost_aact_label.csv) (edge id, subject, object, predicate, `source_system` as released, and the lost label `aact`; 10 BACKGROUND, 28 DERIVED, 0 RESULT). The list is public and checkable against the release: every id is an edge of the v0.2.1 files, with the stated endpoints and source labels. But deriving it required comparing the release with an unreleased internal build, so it cannot be recomputed from the release alone.
+The release itself also shows the measurable end state (`release_audit/results/source_provenance_published.json` counts non-empty alternate-source arrays per role type).
 
 | Group | Items | Why |
 |---|---|---|
